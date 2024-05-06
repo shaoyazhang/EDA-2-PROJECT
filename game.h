@@ -12,6 +12,7 @@
 #define MAX_SKILL 4
 #define MAX_QUESTION 200
 #define MAX_ENEMIES 4
+#define MAX_CHARACTS 4
 
 // 1. Skills
 typedef struct
@@ -70,6 +71,12 @@ typedef struct
     int hp; 
     int def;   
 }Enemy;
+
+// Initialize charcters
+void charcter_init(Character* players);
+
+// run game 
+void game(Character players[]);
 
 #endif
 
