@@ -1,5 +1,9 @@
 # include "game.h"
 
+
+// ********* LAB 1 ****************//
+// ********* DO NOT MODIFY ********//
+
 // Initialize charcters
 void charcter_init(Character* players)
 {
@@ -96,3 +100,4 @@ void game(Character players[])
     }
 
 }
+// ********* DO NOT MODIFY ********//

@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <string.h>
 
-//*********do not modify pls*******
-//******** Lab 1 *************
+//********** DO NOT MODIFY ********//
+//*********** LAB 1 **************//
 #define MAX_CHAR_NAME 50
 #define MAX_SKILL_NAME 80
 #define MAX_SCENARIO_NAME 80
@@ -79,4 +79,4 @@ void game(Character players[]);
 
 #endif
 
-//*********do not modify pls*******
+// ********* DO NOT MODIFY ********//
