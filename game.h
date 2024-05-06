@@ -1,33 +1,76 @@
+# ifndef _GAME_H
+# define _GAME_H
+
 #include <stdio.h>
-#define MAX_NAME 120
-#define MAX_SKILL 200
+#include <string.h>
 
-typedef struct{
-char name[MAX_NAME];
-int hp ;
-int atk;
-int def; 
-int skill;
-}Character;
+//*********do not modify pls*******
+#define MAX_CHAR_NAME 50
+#define MAX_SKILL_NAME 80
+#define MAX_SCENARIO_NAME 80
+#define MAX_DESCRIPTION 200
+#define MAX_SKILL 4
+#define MAX_QUESTION 200
+#define MAX_ENEMIES 4
 
-typedef struct{
-char sword_attack[MAX_SKILL];
-char kick[MAX_SKILL];
-char wrestle[MAX_SKILL];
+// 1. Skills
+typedef struct
+{
+    char name[MAX_SKILL_NAME];
+    char description[MAX_DESCRIPTION];
+    int type; // 0 means temporary modifier; 1 means direct attack
+    int duration;
+    int atk;
+    int hp; 
+    int def;
 }Skill;
 
-typedef struct{
+// 2. characters
+typedef struct
+{
+    char name[MAX_CHAR_NAME];
+    int hp;
+    int atk;
+    int def; 
+    Skill skills[MAX_SKILL];
+}Character;
 
-}Scenario;
+// 3. options
+typedef struct
+{
+    char response[MAX_QUESTION];
+    char narra_bf[MAX_QUESTION];
+    char enemies[MAX_ENEMIES];
+    char narra_af[MAX_QUESTION];
+}Option;
 
-typedef struct{
-
-}Enemy;
-
-typedef struct{
-
+// 4. Decisions
+typedef struct
+{
+    char question[MAX_QUESTION];
+    Option options;
+    int option_num;
 }Decision;
 
-typedef struct{
 
-}Option;
+// 5. 4 Scenarios
+typedef struct
+{
+    char name[MAX_SCENARIO_NAME];
+    char description[MAX_DESCRIPTION];
+    Decision decisions;
+}Scenario;
+
+
+// 6. enemy
+typedef struct
+{
+    char name[MAX_CHAR_NAME];
+    int atk;
+    int hp; 
+    int def;   
+}Enemy;
+
+#endif
+
+//*********do not modify pls*******
