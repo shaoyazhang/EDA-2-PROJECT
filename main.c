@@ -17,7 +17,7 @@ int main()
     menu();
     do
     {
-        printf("Please select: 1 for New game; 2 for Quit game\n");
+        printf("Please select: 1 for New game; 0 for Quit game\n");
         scanf("%d", &input);  
         switch(input)
         {

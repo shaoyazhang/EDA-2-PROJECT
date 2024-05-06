@@ -5,6 +5,7 @@
 #include <string.h>
 
 //*********do not modify pls*******
+//******** Lab 1 *************
 #define MAX_CHAR_NAME 50
 #define MAX_SKILL_NAME 80
 #define MAX_SCENARIO_NAME 80
@@ -72,10 +73,8 @@ typedef struct
     int def;   
 }Enemy;
 
-// Initialize charcters
-void charcter_init(Character* players);
 
-// run game 
+void charcter_init(Character* players); 
 void game(Character players[]);
 
 #endif
