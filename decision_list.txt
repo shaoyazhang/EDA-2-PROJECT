@@ -16,6 +16,10 @@ Opt 1: Whole body armor
 
 Choosen in wood, life points get reduced to significantly less when attacked.
 In fire, theyreduce a little bit the attack but doesn't help with the flames in the floor. !Not good option for fire.
+If chosen in the Earth field scenario, it provides high protection against stone attacks and reduces the damage taken. However, 
+if the player triggers a rock trap in the hidden mines he will recieve +25% of damage.
+In the Water field scenario, the whole body armor offers protection against some physical attacks from enemies encountered along the way.
+However, it doesn't aid in swimming or traversing the river.
 
 Opt 2: Flying boots
 
