@@ -16,7 +16,14 @@ of this hot place whilst escaping the flames. Failure to withstand results in in
 
 3rd scenario: Earth field
 
+As you journey on, you come across a rugged landscape, surrounded by towering cliffs and jagged rocks. 
+Welcome to the third element of Wuxing, Earth. Beware of the Earth Devil, a formidable rock golem beneath the ground,
+waiting to test your strength. Dodge stone attacks and navigate through treacherous terrain as you search for the hidden mine.
+Be alert, since danger awaits at every turn. Failure to survive the onslaught of attacks or falling victim to the hidden mine spells
+will doom your mission.
+
 4th scenario: Water field
+
 You finally arrive to your last destination, but what awaits you is even more breathtaking than you anticipated.
 In front of you lies a vast expanse of water, the final element of Wuxing. Here, amidst the serene surface, lurk hidden dangers and 
 formidable enemies. Battle against fierce adversaries and overcome their aquatic assaults as you search for the tool to unlock
