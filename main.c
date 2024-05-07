@@ -1,5 +1,7 @@
 # include "game.h"
 
+// ************* DO NOT MODIFY **********//
+// ***************** LAB 1 **************//
 // Game start menu
 void menu()
 {
@@ -88,3 +90,5 @@ int main()
 
     return 0;
 }
+
+// ************* DO NOT MODIFY **********//
