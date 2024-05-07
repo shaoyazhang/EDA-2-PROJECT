@@ -75,3 +75,10 @@ If they choose stone, it can go directly to the heart as it is thin.
 Stone:
 
 Water:
+If they choose fire, it extinguishes upon contact with the water, making it a normal arrow. Therefore, unuseful against most enemies.
+If they choose wood, it becomes waterlogged upon contact with the water, but instead of breaking, it absorbs the moisture and gains a 
+unique property. When hitting an enemy, it drains a portion of the enemy's HP and transfers it to the user.
+If they choose stone, it sinks into the water, making it difficult to retrieve and rendering it useless in combat.
+If they choose water, it has no effect, as they essentially shoot water at water.
+
+
