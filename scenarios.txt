@@ -13,3 +13,7 @@ Hint: Look after protecting yourself from the wood's devil as it is very strong.
 You find yourself in a place that looks and feels as if you're in hell. You made it to the second element of Wuxing, fire. 
 You see the devil in flames. Pass its relentless fire attacks as you navigate through the flaming space in order to get out 
 of this hot place whilst escaping the flames. Failure to withstand results in instant defeat, mission over.
+
+3rd scenario: Earth field
+
+4th scenario: Water field
