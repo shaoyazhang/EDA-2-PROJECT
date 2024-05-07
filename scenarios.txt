@@ -5,6 +5,7 @@ You're in the heart of a dark forest, it's the first element of Wuxing, wood.
 Watch out for the Wood Devil and other sneaky creatures armed with arrows made from the forest's own wood
 attacking from the shadows. Be careful exploring here, as both treasure and danger lurk within, 
 where it's hard to tell what's real and what's just stories among the rustling leaves.
+Hint: Look after protecting yourself from the wood's devil as it is very strong.
 
 
 2nd scenario: Fire field
@@ -12,12 +13,3 @@ where it's hard to tell what's real and what's just stories among the rustling l
 You find yourself in a place that looks and feels as if you're in hell. You made it to the second element of Wuxing, fire. 
 You see the devil in flames. Pass its relentless fire attacks as you navigate through the flaming space in order to get out 
 of this hot place whilst escaping the flames. Failure to withstand results in instant defeat, mission over.
-
-3rd scenario: Earth field
-As you journey on, you come across a rugged landscape, surrounded by towering cliffs and jagged rocks.
-Welcome to the third element of Wuxing, Earth. Beware of the Earth Devil, a formidable rock golem hidden beneath the ground,
-waiting to test your strength. Dodge stone attacks and navigate through treacherous terrain as you search for the hidden mine.
-Be aware of your surroundingd, since danger awaits at every turn. Failure to survive the onslaught of attacks or falling victim to the hidden mine
-spells doom for your mission.
-
-4th scenario: Water field

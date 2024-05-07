@@ -1,0 +1,66 @@
+
+You are given 4 arrows of each element. You have an arrow that burst fire, another that bursts water,
+a normal wood arrow (thiner than stone) and a stone arrow (which is stronger than wood).
+Idea is they use them along other skills until they defeat the devil of each place without reaching 0 life points.
+Of course in any given moment they can jump, and other things to avoid attacks.
+
+
+· 1st decision: Protection.
+
+******************************************** " Choose your protection wisely" ***************************************************
+Here, they can choose between: 
+
+Opt 1: Whole body armor 
+
+-------- How does it affect in each scenario? 
+
+Choosen in wood, life points get reduced to significantly less when attacked.
+In fire, theyreduce a little bit the attack but doesn't help with the flames in the floor. !Not good option for fire.
+
+Opt 2: Flying boots
+
+-------- How does it affect in each scenario? 
+
+If they choose this option in wood, doesn't benefit at all.
+But in fire, they don't have to worry about flames just the devil.
+
+Opt 3: 
+-------- How does it affect in each scenario? 
+
+Opt 4:
+-------- How does it affect in each scenario? 
+
+
+
+
+
+
+· 2nd decision: Weapon
+
+*****************************  "Choose the arrow you are going to use agains the devil"  ************************************
+
+4 options:
+
+
+Opt 1: Fire arrow
+Opt 2: Wood arrow
+Opt 3: Water arrow
+Opt 4: Stone arrow
+
+
+-------- How does it affect in each scenario? 
+
+Wood:
+
+If they choose fire, they'll burn the whole forest with themselves in. They loose all life points.
+If they choose water, it won't affect much; they'll need to pass to second option: they get less life points as they give time 
+to devil to attack.
+If they choose a normal wood, it will simply break. Same as water, less life points.
+If they choose the stone arrow, it will succesfully break the whole wood structure. Devil gets extremely hurted.
+
+Fire:
+
+If they choose fire, nothing happens to devil. Less life points.
+If they choose water, it will start hurting the devil but doesn't do much.
+If they choose wood, it will burn without effect as it is very heavy.
+If they choose stone, it can go directly to the heart as it is thin. 
