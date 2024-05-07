@@ -17,8 +17,35 @@ of this hot place whilst escaping the flames. Failure to withstand results in in
 3rd scenario: Earth field
 
 As you journey on, you come across a rugged landscape, surrounded by towering cliffs and jagged rocks. 
-Welcome to the third element of Wuxing, Earth. Beware of the Earth Devil, a formidable rock golem beneath the ground,
-waiting to test your strength. Dodge stone attacks and navigate through treacherous terrain as you search for the hidden mine.
+Welcome to the third element of Wuxing, Earth. To your left is a dark, rocky path that climbs to the top of a giant mountain. 
+And just on the opposite side, in the distance you can discern a town, an option that seems much quieter.
+Which path do you want to take ?
+
+a) Climb the mountain.   
+You decide to take the rocky path that climbs to the top of the giant mountain. As you ascend, the air grows colder and thinner,
+and the path becomes steeper and more treacherous. But your determination drives you forward, pushing you to conquer the formidable peak.
+
+After hours of arduous climbing, you finally reach a plateau halfway up the mountain. 
+Here, you encounter your first challenge: a group of mountain trolls guarding the path ahead. 
+They are large and fearsome, with rocky skin and clubs fashioned from ancient tree trunks.
+
+
+
+b) Explore the town.
+You get to the town and it looks empty but you feel observed. It gets dark and you decide to sleep there but when you are about
+to close your eyes a rock troll (Hulking creatures with thick stone skin and massive clubs) attacks you:
+
+b.1) After the town you follow your path and reach a fork, one path continues straight towards some desert lands,
+the other towards an old mine.
+
+b.1.1) Explore the mine 
+
+b.1.2)Follow the desrtic path.
+(You have to finish this story line both paths have some traps, in the first one you find yourself in quicksand  and 
+fins some snakes and the other one in old mine traps put to stop the thiefs and then fight rock guardians.
+ AFter both of them you get to the Earth devil)
+
+Beware of the Earth Devil, a formidable rock golem beneath the ground, waiting to test your strength. Dodge stone attacks and navigate through treacherous terrain as you search for the hidden mine.
 Be alert, since danger awaits at every turn. Failure to survive the onslaught of attacks or falling victim to the hidden mine spells
 will doom your mission.
 
