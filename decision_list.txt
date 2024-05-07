@@ -31,13 +31,25 @@ Choosing the flying boots in the Earth field doesn't offer any direct benefit,
 as flying wouldn't help in navigating through the rocky terrain or facing the Earth Devil's attacks.
 In Water, the flying boots allow the player to hover above the water's surface, avoiding underwater enemies and obstacles.
 
-Opt 3: 
+Opt 3: Shield of Reflection
+
 -------- How does it affect in each scenario? 
 
-Opt 4:
+When wielded in the wood field scenario, the Shield of Reflection possesses a formidable chance of deflecting incoming attacks from enemies.
+In the fire scenario it doesn't offer any special resistance to fire, its reflective properties still come into play when being attacked.
+In the earth fields, it continues to prove its worth by offering a chance of deflecting attacks from enemies. As stones and debris bounce
+against it towards the enemies.
+In the water, it behaves similarly to its performance in the fire field. However, due to prolonged exposure to water,
+ the shield gradually oxidizes after a certain number of uses.
+
+Opt 4: ELixir of life 
+
 -------- How does it affect in each scenario? 
 
-
+The Elixir of Life serves as a vital lifeline for the player, replenishing their health points when consumed.
+This rejuvenating potion restores a portion of the player's HP, allowing them to recover from injuries sustained during battles 
+or encounters with enemies. Additionally, after defeating three enemies in any of the four scenarios, the Elixir of Life magically refills, 
+ready to be used again to aid the player in their quest through the field.
 
 
 
