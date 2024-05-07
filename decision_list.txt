@@ -70,4 +70,8 @@ Fire:
 If they choose fire, nothing happens to devil. Less life points.
 If they choose water, it will start hurting the devil but doesn't do much.
 If they choose wood, it will burn without effect as it is very heavy.
-If they choose stone, it can go directly to the heart as it is thin. 
+If they choose stone, it can go directly to the heart as it is thin.
+
+Stone:
+
+Water:
