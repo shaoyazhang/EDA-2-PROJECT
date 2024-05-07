@@ -83,7 +83,7 @@ int main()
                 printf("Exit game\n");  
                 break;
             default:
-                printf("Wrong selection, please select again\n");
+                printf("Wrong option, please select again\n");
                 break;
         }
     }while(input);
