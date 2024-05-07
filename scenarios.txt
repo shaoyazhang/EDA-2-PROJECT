@@ -29,6 +29,17 @@ After hours of arduous climbing, you finally reach a plateau halfway up the moun
 Here, you encounter your first challenge: a group of mountain trolls guarding the path ahead. 
 They are large and fearsome, with rocky skin and clubs fashioned from ancient tree trunks.
 
+a.1)After overcoming the mountain trolls, you continue your ascent, determined to reach the summit.
+ As you climb higher, the path grows narrower and more precarious, and the winds begin to howl ominously around you.
+ Finally, you reach the peak of the mountain, where a massive cavern looms before you.
+
+ This is the lair of the Earth Devil, a fearsome rock golem that dwells deep within the mountain.
+ Its presence fills you with a sense of dread, but you know that confronting it is the only way to complete your quest.
+ You can't see much because the obscurity of the golem's domain but you can feel all the cave shaking. What are you going to do ?
+
+ a.1.1) Run away from the cave and think of a new strategy.
+
+ b.1.2) Get ready to fight!!!
 
 
 b) Explore the town.
@@ -39,15 +50,15 @@ b.1) After the town you follow your path and reach a fork, one path continues st
 the other towards an old mine.
 
 b.1.1) Explore the mine 
+You fins danger signs that advert of mines and other danger, you follow the path and after steping in a tile a boulder drops to your head
+if you have the reflection shield you are protected if not you lose HP.
+
 
 b.1.2)Follow the desrtic path.
-(You have to finish this story line both paths have some traps, in the first one you find yourself in quicksand  and 
-fins some snakes and the other one in old mine traps put to stop the thiefs and then fight rock guardians.
- AFter both of them you get to the Earth devil)
+You find yourself in quicksand and in front a group of snakes, you are able to defeat them and escape from the quicksand,
+but you lose HP.
 
-Beware of the Earth Devil, a formidable rock golem beneath the ground, waiting to test your strength. Dodge stone attacks and navigate through treacherous terrain as you search for the hidden mine.
-Be alert, since danger awaits at every turn. Failure to survive the onslaught of attacks or falling victim to the hidden mine spells
-will doom your mission.
+(In both cases after this you fight the earth devil)
 
 4th scenario: Water field
 
