@@ -73,9 +73,14 @@ typedef struct
     int def;   
 }Enemy;
 
-
+// Initializations
+void skill_init(Skill* skills);
 void charcter_init(Character* players); 
-void game(Character players[]);
+void scenario_init(Scenario* scenarios);
+void decision_init(Decision* decisions);
+void option_init(Option* options);
+void enemy_init(Enemy* enemies);
+void game(Character *players);
 
 #endif
 
