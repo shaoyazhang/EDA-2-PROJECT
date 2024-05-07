@@ -27,6 +27,9 @@ Opt 2: Flying boots
 
 If they choose this option in wood, doesn't benefit at all.
 But in fire, they don't have to worry about flames just the devil.
+Choosing the flying boots in the Earth field doesn't offer any direct benefit,
+as flying wouldn't help in navigating through the rocky terrain or facing the Earth Devil's attacks.
+In Water, the flying boots allow the player to hover above the water's surface, avoiding underwater enemies and obstacles.
 
 Opt 3: 
 -------- How does it affect in each scenario? 
