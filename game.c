@@ -48,56 +48,5 @@ void charcter_init(Character* players)
 
 }
 
-// Run game
-void game(Character players[])
-{   
-    // Initialize Character structures 
-    charcter_init(players);
-    printf("1. %s\n2. %s\n3. %s\n4. %s\n",
-        players[0].name, players[1].name, players[2].name, players[3].name);
-    
-    // Select character and associate their skills
-    int selection;
-    printf("Please select your charcter\n");
-    scanf("%d", &selection);
-    switch (selection)
-    {
-        case 1:
-            printf("Character name: %s\n", players[0].name);
-            printf("Skills: \n");
-            for (int i = 0; i < MAX_SKILL; i++)
-                printf("%d. %s\n", (i+1), players[0].skills[i].name);
-            break;
- 
-        case 2: 
-            printf("Character name: %s\n", players[1].name);
-            printf("Skills: \n");
-            for (int i = 0; i < MAX_SKILL; i++)
-                printf("%d. %s\n", (i+1), players[1].skills[i].name);
-            break;
 
-        case 3: 
-            printf("Character name: %s\n", players[2].name);
-            printf("Skills: \n");
-            for (int i = 0; i < MAX_SKILL; i++)
-                printf("%d. %s\n", (i+1), players[2].skills[i].name);
-            break;
-
-        case 4: 
-            printf("Character name: %s\n", players[3].name);
-            printf("Skills: \n");
-            for (int i = 0; i < MAX_SKILL; i++)
-                printf("%d. %s\n", (i+1), players[3].skills[i].name);
-            break;
-
-        default:
-            do
-            {
-                printf("Wrong option, please select again\n");
-                scanf("%d", &selection);
-            }while(selection > 4 || selection < 1);    
-            break;
-    }
-
-}
 // ********* DO NOT MODIFY ********//
