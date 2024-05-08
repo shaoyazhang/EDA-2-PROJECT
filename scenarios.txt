@@ -22,43 +22,54 @@ And just on the opposite side, in the distance you can discern a town, an option
 Which path do you want to take ?
 
 a) Climb the mountain.   
-You decide to take the rocky path that climbs to the top of the giant mountain. As you ascend, the air grows colder and thinner,
-and the path becomes steeper and more treacherous. But your determination drives you forward, pushing you to conquer the formidable peak.
+    You decide to take the rocky path that climbs to the top of the giant mountain. As you ascend, the air grows colder and thinner,
+    and the path becomes steeper and more treacherous. But your determination drives you forward, pushing you to conquer the formidable peak.
 
-After hours of arduous climbing, you finally reach a plateau halfway up the mountain. 
-Here, you encounter your first challenge: a group of mountain trolls guarding the path ahead. 
-They are large and fearsome, with rocky skin and clubs fashioned from ancient tree trunks.
+    After hours of arduous climbing, you finally reach a plateau halfway up the mountain. 
+    Here, you encounter your first challenge: a group of mountain trolls guarding the path ahead. 
+    They are large and fearsome, with rocky skin and clubs fashioned from ancient tree trunks.
 
-a.1)After overcoming the mountain trolls, you continue your ascent, determined to reach the summit.
- As you climb higher, the path grows narrower and more precarious, and the winds begin to howl ominously around you.
- Finally, you reach the peak of the mountain, where a massive cavern looms before you.
+    a.1) After overcoming the mountain trolls, you continue your ascent, determined to reach the summit.
+    As you climb higher, the path grows narrower and more precarious, and the winds begin to howl ominously around you.
+    Finally, you reach the peak of the mountain, where a massive cavern looms before you.
 
- This is the lair of the Earth Devil, a fearsome rock golem that dwells deep within the mountain.
- Its presence fills you with a sense of dread, but you know that confronting it is the only way to complete your quest.
- You can't see much because the obscurity of the golem's domain but you can feel all the cave shaking. What are you going to do ?
+    This is the lair of the Earth Devil, a fearsome rock golem that dwells deep within the mountain.
+    Its presence fills you with a sense of dread, but you know that confronting it is the only way to complete your quest.
+    You can't see much because the obscurity of the golem's domain but you can feel all the cave shaking. 
+    
+        What are you going to do ?
 
- a.1.1) Run away from the cave and think of a new strategy.
+        a.1.1) Run away from the cave and think of a new strategy.
+                -While you are tourning around rock spikes come from the darkness and you get hit, the devil that was hidden beneath the rock
+                floor starts to emerge. (You start the fight with 25% less HP)
 
- b.1.2) Get ready to fight!!!
+        b.1.2) Get ready to fight!!!
+                -Lots of rock spikes fly quickly towards you from the darkness, but you are able to dodge them. Beneath you the floor
+                starts to breaking and the devil emerges in front of you. (The fight against the devil begins)
 
 
 b) Explore the town.
-You get to the town and it looks empty but you feel observed. It gets dark and you decide to sleep there but when you are about
-to close your eyes a rock troll (Hulking creatures with thick stone skin and massive clubs) attacks you:
+    You get to the town and it looks empty but you feel observed. It gets dark and you decide to sleep there but when you are about
+    to close your eyes a rock troll (Hulking creatures with thick stone skin and massive clubs) attacks you:
+    (The fight starts)
 
-b.1) After the town you follow your path and reach a fork, one path continues straight towards some desert lands,
-the other towards an old mine.
+    b.1) After the town you follow your path and reach a fork, one path continues straight towards some desert lands,
+    the other towards an old mine.
 
-b.1.1) Explore the mine 
-You fins danger signs that advert of mines and other danger, you follow the path and after steping in a tile a boulder drops to your head
-if you have the reflection shield you are protected if not you lose HP.
+    What pathe are you choosing ?
+
+        b.1.1) Explore the mine 
+        You find danger signs that advert of traps and other dangers set by the miners to scare thiefs, 
+        you follow the path and after steping in a tile a boulder drops to your head (if you have the reflection 
+        shield you are protected, and you have flying boots you are able to escape, if not you lose HP).
+        
 
 
-b.1.2)Follow the desrtic path.
-You find yourself in quicksand and in front a group of snakes, you are able to defeat them and escape from the quicksand,
-but you lose HP.
+        b.1.2) Follow the desrtic path.
+        You find yourself in quicksand and in front a group of snakes, you are able to defeat them and escape from the quicksand,
+        but you lose HP.
 
-(In both cases after this you fight the earth devil)
+    (In both cases after this you fight the earth devil)
 
 4th scenario: Water field
 
