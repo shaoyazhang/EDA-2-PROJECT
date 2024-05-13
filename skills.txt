@@ -11,8 +11,12 @@
   d. roundhouse kick: You can use roundhouse kick to attack enemies to make the loose points.
 3. sword wanderer: 
   a. Stab: You will be equipped with a sword to be able to stab enemies to make them loose points.
-  b. 
-  c.
-  d. 
+  b. wrestle: Ability to wrestle enemies to make them loose point.
+  c. step back: You can step back when the enemy attacks you.
+  d. punch: You can punch the enemy in their face or body to make them loose points.
 4. shadowless
+  a. Move fast: You can move faster than normal to either better attack enemies or avoid their attacks.
+  b.
+  c.
+  d.
 
