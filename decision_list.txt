@@ -1,5 +1,5 @@
-//*****************************To Be Updated*******************************************//
-//******************************************************************************************//
+//********************************  To Be Updated  *****************************************//
+//********************  Description of Implementation  *************************************//
 Each Scenario has a main text that is shown to the user presenting a piece of the story and a decision to be made by the player that will determine how many and what type of enemies (maximum 3) will be presented for battling immediately after selection.
 
 Example: "You are now in a deep and dark forest, in the distance you see a light emanating from the depths of the trees. Do you wish to advance towards the light or walk in the opposite direction?
