@@ -1,3 +1,14 @@
-# Skills of character per scenarios
-
+# Skills per character 
+1. night walker
+  a. jump high: With this skill, you have the ability to jump quite high and attack the enemy from high or avoid their attacks.
+  b. high kick: You can use this skill to combine jumping and attacking enemy from high.
+  c. step back: You can step back when the enemy attacks you.
+  d. punch: You can punch the enemy in their face or body to make them loose points.
+2. snow flier
+  a. 
+  b.
+  c.
+  d.
+3. sword wanderer
+4. shadowless
 
