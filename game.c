@@ -69,31 +69,32 @@ int isEmpty (Queue* q)
 
 
 // 3. Enqueue
-void enqueue (Queue* q, void* rol)
-{
+// void enqueue (Queue* q, void* rol)
+// {
     
-    Node* newNode = (Node*)malloc(sizeof(Node));
-    newNode->rol = rol;
-    newNode->next = NULL;
+//     Node* newNode = (Node*)malloc(sizeof(Node));
+//     newNode->rol = rol;
+//     newNode->next = NULL;
 
-    if (isEmpty(q))
-    {
-        q->front = newNode;
-        q->rear = newNode;
-    }
-    else
-    {
-        q->rear->next = newNode;
-        q->rear = newNode;
-    }
-    q->size++;
-}
+//     if (isEmpty(q))
+//     {
+//         q->front = newNode;
+//         q->rear = newNode;
+//     }
+//     else
+//     {
+//         q->rear->next = newNode;
+//         q->rear = newNode;
+//     }
+//     q->size++;
+// }
 
 void enqueueCharacter (Queue* q, Character* player)
 {
     
     Node* newNode = (Node*)malloc(sizeof(Node));
-    newNode->rol = player;
+    newNode->player = player;
+    newNode->enemy = NULL;
     newNode->next = NULL;
 
     if (isEmpty(q))
@@ -113,7 +114,8 @@ void enqueueEnemy (Queue* q, Enemy* enemy)
 {
     
     Node* newNode = (Node*)malloc(sizeof(Node));
-    newNode->rol = enemy;
+    newNode->player = NULL;
+    newNode->enemy = enemy;
     newNode->next = NULL;
 
     if (isEmpty(q))
@@ -148,7 +150,7 @@ void dequeue (Queue* q)
 }
 
 
-// 5. Generate queue-based turn //
+// 5. Generate queue-based turn 
 void queueTurn (Queue* q, Character* player, Enemy* enemies)
 {
     for ( int i = 0; i < NUM_TURNS; i++)

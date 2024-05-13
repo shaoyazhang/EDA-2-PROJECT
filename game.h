@@ -98,7 +98,8 @@ void game(Character *players);
 
 typedef struct Node
 {
-    void* rol;
+    Character* player;
+    Enemy* enemy;
     struct Node* next;
 }Node;
 

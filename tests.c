@@ -22,9 +22,20 @@ void test01()
     queueTurn (&q, &player, &enemy);
     for ( int i = 0; i < NUM_TURNS; i++)
     {
-        printf("%s\n", q.front->rol);
+        if (q.front->enemy == NULL)
+        {
+            printf("%s\n", q.front->player->name);
+        }
+        else if(q.front->player == NULL)
+        {
+            printf("%s\n", q.front->enemy->name);
+        }
+
         q.front = q.front->next;
     }
     printf("%d \n", q.size);
+    
 }
+
+
 
