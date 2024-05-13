@@ -1,14 +1,18 @@
-# Skills per character 
+# Skills per character & points
 1. night walker
   a. jump high: With this skill, you have the ability to jump quite high and attack the enemy from high or avoid their attacks.
   b. high kick: You can use this skill to combine jumping and attacking enemy from high.
   c. step back: You can step back when the enemy attacks you.
   d. punch: You can punch the enemy in their face or body to make them loose points.
 2. snow flier
-  a. 
-  b.
+  a. launch star darts: You will be equipped with star darts to attack your enemies to make them loose points.
+  b. shielding: You will be equipped with a golden shield to protect your self from enemies attack.
+  c. step back: You can step back when the enemy attacks you.
+  d. roundhouse kick: You can use roundhouse kick to attack enemies to make the loose points.
+3. sword wanderer: 
+  a. Stab: You will be equipped with a sword to be able to stab enemies to make them loose points.
+  b. 
   c.
-  d.
-3. sword wanderer
+  d. 
 4. shadowless
 
