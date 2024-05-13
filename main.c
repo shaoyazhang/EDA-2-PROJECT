@@ -67,6 +67,7 @@ void game(Character *players)
 
 int main()
 {
+    # if 0
     Character players[MAX_CHARACTS];
     int input = 0;
     menu();
@@ -87,7 +88,8 @@ int main()
                 break;
         }
     }while(input);
-
+    # endif
+    test01();
     return 0;
 }
 

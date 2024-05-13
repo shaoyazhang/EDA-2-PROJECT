@@ -1,8 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+
 # ifndef _GAME_H
 # define _GAME_H
 
-#include <stdio.h>
-#include <string.h>
 
 //********** DO NOT MODIFY ********//
 //*********** LAB 1 **************//
@@ -14,6 +17,7 @@
 #define MAX_QUESTION 100
 #define MAX_ENEMIES 4
 #define MAX_CHARACTS 4
+#define NUM_TURNS 15
 
 // 1. Skills
 typedef struct
@@ -70,7 +74,8 @@ typedef struct
     char name[MAX_CHAR_NAME];
     int atk;
     int hp; 
-    int def;   
+    int def;
+    Skill skills[MAX_SKILL];   
 }Enemy;
 
 // Initializations
@@ -84,4 +89,29 @@ void game(Character *players);
 
 #endif
 
-// ********* DO NOT MODIFY ********//
+//********** DO NOT MODIFY ********//
+
+//*********** LAB 2 **************//
+//********** DO NOT MODIFY ********//
+
+typedef struct Node
+{
+    void* rol;
+    struct Node* next;
+}Node;
+
+typedef struct queue
+{
+    Node* front; 
+    Node* rear;
+    int size;
+}Queue;
+
+int isEmpty (Queue* q);
+void queueInit (Queue* q);
+void enqueue (Queue* q, void* rol);
+void dequeue (Queue* q);
+void queueTurn (Queue* q, Character* player, Enemy* enemies);
+void fightFlow ();
+
+void test01();
