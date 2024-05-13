@@ -9,6 +9,7 @@
                 "-Wall",
                 "-g",
                 "${fileDirname}/game.c",
+                "${fileDirname}/tests.c",
                 "${fileDirname}/main.c",
                 "-o",
                 "${fileDirname}/main"

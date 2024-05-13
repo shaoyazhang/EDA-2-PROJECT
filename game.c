@@ -71,8 +71,49 @@ int isEmpty (Queue* q)
 // 3. Enqueue
 void enqueue (Queue* q, void* rol)
 {
+    
     Node* newNode = (Node*)malloc(sizeof(Node));
     newNode->rol = rol;
+    newNode->next = NULL;
+
+    if (isEmpty(q))
+    {
+        q->front = newNode;
+        q->rear = newNode;
+    }
+    else
+    {
+        q->rear->next = newNode;
+        q->rear = newNode;
+    }
+    q->size++;
+}
+
+void enqueueCharacter (Queue* q, Character* player)
+{
+    
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    newNode->rol = player;
+    newNode->next = NULL;
+
+    if (isEmpty(q))
+    {
+        q->front = newNode;
+        q->rear = newNode;
+    }
+    else
+    {
+        q->rear->next = newNode;
+        q->rear = newNode;
+    }
+    q->size++;
+}
+
+void enqueueEnemy (Queue* q, Enemy* enemy)
+{
+    
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    newNode->rol = enemy;
     newNode->next = NULL;
 
     if (isEmpty(q))
@@ -107,7 +148,7 @@ void dequeue (Queue* q)
 }
 
 
-// 5. Generate queue-based turn
+// 5. Generate queue-based turn //
 void queueTurn (Queue* q, Character* player, Enemy* enemies)
 {
     for ( int i = 0; i < NUM_TURNS; i++)
@@ -115,38 +156,12 @@ void queueTurn (Queue* q, Character* player, Enemy* enemies)
         int ret = rand () % 2;
         if (ret == 0)
         {
-            enqueue (q, player);
+            enqueueCharacter (q, player);
         }
         else 
-        {
-            enqueue (q, enemies);
+        {   
+            enqueueEnemy (q, enemies);
         }
     }    
 }
 
-void test01()
-{
-    srand((unsigned)time(NULL));
-    Queue q;
-    queueInit(&q);
-
-    Skill playerSkills[4] = {
-        {"skill 1", "skill 1", 0, 0, 0, 0, 0},
-        {"skill 2", "skill 2", 0, 0, 0, 0, 0},
-
-    };
-
-    Character player = {"Player", 100, 20, 10, {playerSkills[0],playerSkills[1], playerSkills[2], playerSkills[3]}};
-
-    Skill enemySkills[4] = {
-       {"Eskill 1", "Eskill 1", 0, 0, 0, 0, 0},
-        {"Eskill 2", "Eskill 2", 0, 0, 0, 0, 0},
-    };
-    Enemy enemy = {"Enemy", 30, 50, 5, {enemySkills[0], enemySkills[1], enemySkills[2], enemySkills[3]}};
-    queueTurn (&q, &player, &enemy);
-    queueTurn (&q, &player, &enemy);
-    queueTurn (&q, &player, &enemy);
-    queueTurn (&q, &player, &enemy);
-    printf("%s ", q.front->rol);
-    printf("%s ", q.rear->next->rol);
-}

@@ -1,3 +1,5 @@
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -87,7 +89,7 @@ void option_init(Option* options);
 void enemy_init(Enemy* enemies);
 void game(Character *players);
 
-#endif
+
 
 //********** DO NOT MODIFY ********//
 
@@ -114,4 +116,4 @@ void dequeue (Queue* q);
 void queueTurn (Queue* q, Character* player, Enemy* enemies);
 void fightFlow ();
 
-void test01();
+#endif

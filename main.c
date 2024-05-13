@@ -1,4 +1,5 @@
 # include "game.h"
+#include "tests.h"
 
 // ************* DO NOT MODIFY **********//
 // ***************** LAB 1 **************//
