@@ -42,3 +42,33 @@ points:
   atk: 40
   hp: 100
   def: 60
+
+
+# Skills per character per scenario & points
+//********* To Be Updated***********//
+1st scenario: Wood field
+  enemy 1:
+    skills
+    points
+  enemy 2: 
+    skills
+    points
+  ...
+
+2nd scenario: Fire field
+  enemy 1:
+    skills
+    points
+  enemy 2:
+    skills
+    points
+  ...
+
+3rd scenario: Earth field
+  enemy 1:
+    skills
+    points
+  enemy 2:
+    skills
+    points
+  ...
