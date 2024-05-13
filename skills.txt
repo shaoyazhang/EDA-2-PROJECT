@@ -6,17 +6,31 @@
   c. advance/step back: You can go forward to attack or step back to avoid attacks you.
   d. punch: You can punch the enemy in their face or body to make them loose points.
 
+points: 
+  atk: 70
+  hp: 100
+  def: 30
+
 2. snow flier
   a. launch star darts: You will be equipped with star darts to attack your enemies to make them loose points.
   b. shielding: You will be equipped with a golden shield to protect your self from enemies attack.
   c. advance/step back: You can go forward to attack or step back to avoid attacks you.
   d. roundhouse kick: You can use roundhouse kick to attack enemies to make the loose points.
 
+points: 
+  atk: 40
+  hp: 100
+  def: 60
 3. sword wanderer: 
   a. Stab: You will be equipped with a sword to be able to stab enemies to make them loose points.
   b. wrestle: Ability to wrestle enemies to make them loose point.
   c. advance/step back: You can go forward to attack or step back to avoid attacks you.
   d. punch: You can punch the enemy in their face or body to make them loose points.
+
+points: 
+  atk: 75
+  hp: 100
+  def: 25
 
 4. shadowless
   a. Move fast: You can move faster than normal to either better attack enemies or avoid their attacks.
@@ -24,3 +38,7 @@
   c. advance/step back: You can go forward to attack or step back to avoid attacks you.
   d. kick: You can kick enemies to make them loose points.
 
+points: 
+  atk: 40
+  hp: 100
+  def: 60
