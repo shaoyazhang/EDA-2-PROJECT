@@ -73,8 +73,58 @@ b) Explore the town.
 
 4th scenario: Water field
 
-You finally arrive to your last destination, but what awaits you is even more breathtaking than you anticipated.
-In front of you lies a vast expanse of water, the final element of Wuxing. Here, amidst the serene surface, lurk hidden dangers and 
-formidable enemies. Battle against fierce adversaries and overcome their aquatic assaults as you search for the tool to unlock
-the power of swimming. Only then you will be able traverse the raging river and emerge victorious. But beware, defeat at the hands 
-of your enemies will lead your journey to an abrupt end.
+You finally arrive at your last destination, but what awaits you is even more breathtaking than you anticipated.
+In front of you lies a vast expanse of water, the final element of Wuxing. Here, amidst the serene surface,
+lurk hidden dangers and formidable enemies. Battle against fierce adversaries and overcome their aquatic assaults as you search
+for the tool to unlock the power of swimming. Only then will you be able to traverse the raging river and emerge victorious.
+But beware, defeat at the hands of your enemies will lead your journey to an abrupt end.
+
+As you stand at the water's edge, you assess your options:
+
+a) Dive into the water.
+With a determined resolve, you plunge into the cool depths of the water, ready to face whatever challenges lie beneath the surface.
+As you swim deeper, you encounter a school of razor-toothed piranhas, their sharp teeth glinting ominously in the dim light.
+They swarm around you, snapping their jaws hungrily, intent on making you their next meal. 
+(Battle begins, If you have the flying boots, you're able to fight them off with ease, your aerial advantage giving you the upper hand.
+But if not, you find your attacks slightly weakened by the resistance of the water.)
+a.1) After defeating the piranhas, you notice a floating wooden stem nearby, drifting lazily on the current. 
+Grasping it tightly, you find that it provides just enough buoyancy to keep you afloat in the water. 
+With your newfound makeshift floatation device,you continue your journey through the aquatic realm.
+
+But just as you begin to relax, a sudden surge of magic disrupts the water around you, and you find yourself
+face to face with a water wizard. This powerful sorcerer had been lurking beneath the surface,
+waiting for an unsuspecting victim to cross its path. (second fight)
+After a fierce battle, you emerge victorious,the wizard's magic fading into the depths. As you catch your breath,
+you feel a strange sensation wash over you. (You have absorved the wizard power and now you can swim freely)
+
+
+b) Search for a boat.
+Instead of diving headfirst into the water, you decide to search for a more cautious approach. Scanning the shoreline,
+you spot a weather-beaten rowboat half-buried in the sand, a relic of some forgotten voyage.
+You approach it cautiously, wary of any lurking dangers that may be hiding nearby.
+
+You sail but just as seconds past and a whirpool. You fight against a magician who trows powerful water spels
+
+After a fierce battle, you emerge victorious,the wizard's magic fading into the depths. As you catch your breath,
+you feel a strange sensation wash over you. (You have absorved the wizard power and now you can swim freely)
+
+b.1) After swimming and escaping from other dangers, you find yourself standing before a dark cave,
+its yawning entrance beckoning you forward with a sense of foreboding.
+You can coose between tow options:
+
+b.1.1) Enter the cave
+Suddenly, as you step into the cave, you find yourself face to face with the water devil, 
+its menacing form looming ominously before you. In a desperate bid for survival, you must choose between two options,
+both of which involve destroying the cave entrance to prevent the water devil from pursuing you further. 
+Whether by collapsing the cave with brute force or using cunning tactics to outsmart your foe, the fate of your quest hangs in the balance.
+
+b.1.2) Continue exploring the deeps.
+As you continue swimming downstream, your journey is interrupted by a sudden attack from a group of magic sharks. With swift reflexes and unwavering determination,
+you fend off the vicious predators, their powerful jaws snapping hungrily at your heels. (Battle begins)
+
+Even that you defeates you enemies, you have not mastered the art of breathing under water yet. And in a few seconds after
+finishing the battle you find yourself succumbing to the darkness, your consciousness slips away as you lose consciousness.
+
+When you finally awaken, you find yourself inside the dark cave, face to face with the water devil itself.
+With the creature still sleeping soundly before you, you seize the opportunity to launch a surprise attack, hoping to catch it off guard and turn the tide of battle
+in your favor. (You attack first).
