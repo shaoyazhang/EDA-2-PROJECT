@@ -55,18 +55,26 @@ void charcter_init(Character* players)
 // ********* DO NOT MODIFY ********//
 
 // 1. Initialize queue
-void queueInit (Queue* q)
-{
-    q->front = q->rear = NULL;
-    q->size = 0;
+
+// void queueInit (Queue* q)
+// {
+//     q->front = q->rear = NULL;
+//     q->size = 0;
+// }
+
+Queue* queueInit ()
+{   
+    Queue* newQueue = (Queue*)malloc(sizeof(Queue));
+    newQueue->front = newQueue->rear = NULL;
+    newQueue->size = 0;
+    return newQueue;
 }
 
 // 2. chek if queue is empty
 int isEmpty (Queue* q)
 {
-    return q->size == 0;
+    return (q->size == 0);
 }
-
 
 // 3. Enqueue
 // void enqueue (Queue* q, void* rol)
@@ -89,6 +97,7 @@ int isEmpty (Queue* q)
 //     q->size++;
 // }
 
+// 3.1 Enque Character
 void enqueueCharacter (Queue* q, Character* player)
 {
     
@@ -97,7 +106,7 @@ void enqueueCharacter (Queue* q, Character* player)
     newNode->enemy = NULL;
     newNode->next = NULL;
 
-    if (isEmpty(q))
+    if (q->front == NULL)
     {
         q->front = newNode;
         q->rear = newNode;
@@ -110,6 +119,8 @@ void enqueueCharacter (Queue* q, Character* player)
     q->size++;
 }
 
+
+// 3.2 Enque Enemy
 void enqueueEnemy (Queue* q, Enemy* enemy)
 {
     
@@ -117,8 +128,8 @@ void enqueueEnemy (Queue* q, Enemy* enemy)
     newNode->player = NULL;
     newNode->enemy = enemy;
     newNode->next = NULL;
-
-    if (isEmpty(q))
+    //
+    if (q->rear == NULL)
     {
         q->front = newNode;
         q->rear = newNode;
@@ -128,6 +139,7 @@ void enqueueEnemy (Queue* q, Enemy* enemy)
         q->rear->next = newNode;
         q->rear = newNode;
     }
+    
     q->size++;
 }
 
@@ -139,14 +151,17 @@ void dequeue (Queue* q)
         printf("No more turns\n");
         return;
     }
-    else
-    {
-        Node* tmp = q->front;
-        q->front = q->front->next;
-        free(tmp);
-        tmp = NULL;
-        q->size--;
-    }
+    
+    Node* tmp = q->front;
+    q->front = q->front->next;
+    q->size--;
+        
+    // if (q->front == NULL)
+    //     q->rear = NULL;
+    free(tmp);
+    tmp = NULL;
+        
+    
 }
 
 
@@ -160,7 +175,7 @@ void queueTurn (Queue* q, Character* player, Enemy* enemies)
         {
             enqueueCharacter (q, player);
         }
-        else 
+        else if (ret == 1)
         {   
             enqueueEnemy (q, enemies);
         }

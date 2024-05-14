@@ -19,7 +19,7 @@
 #define MAX_QUESTION 100
 #define MAX_ENEMIES 4
 #define MAX_CHARACTS 4
-#define NUM_TURNS 15
+#define NUM_TURNS 4
 
 // 1. Skills
 typedef struct
@@ -111,7 +111,7 @@ typedef struct queue
 }Queue;
 
 int isEmpty (Queue* q);
-void queueInit (Queue* q);
+Queue* queueInit ();
 void enqueue (Queue* q, void* rol);
 void dequeue (Queue* q);
 void queueTurn (Queue* q, Character* player, Enemy* enemies);
