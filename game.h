@@ -93,7 +93,7 @@ void game(Character *players);
 
 //********** DO NOT MODIFY ********//
 
-//*********** LAB 2 **************//
+//************ LAB 2 **************//
 //********** DO NOT MODIFY ********//
 
 typedef struct Node
@@ -110,11 +110,16 @@ typedef struct queue
     int size;
 }Queue;
 
+void printCharacter (Character* player);
 int isEmpty (Queue* q);
 Queue* queueInit ();
-void enqueue (Queue* q, void* rol);
+void enqueueCharacter (Queue* q, Character* player);
+void enqueueEnemy (Queue* q, Enemy* enemy);
 void dequeue (Queue* q);
 void queueTurn (Queue* q, Character* player, Enemy* enemies);
-void fightFlow ();
+void fightFlow (Queue* q);
 
+
+
+//********** DO NOT MODIFY ********//
 #endif

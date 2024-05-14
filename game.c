@@ -54,6 +54,29 @@ void charcter_init(Character* players)
 // ********* LAB 1 ****************//
 // ********* DO NOT MODIFY ********//
 
+// Show character's skill attributions
+void printCharacterSkill (Character* player)
+{
+    printf("skill:\n1. %s\n2. %s\n3. %s\n4. %s\n", 
+    player->skills[0].name,
+    player->skills[1].name,
+    player->skills[2].name,
+    player->skills[3].name
+    );
+}
+
+// Show enemy's skill attributions
+void printEnemySkill (Enemy* enemy)
+{
+    printf("skill:\n1. %s\n2. %s\n3. %s\n4. %s\n",
+    enemy->skills[0].name,
+    enemy->skills[1].name,
+    enemy->skills[2].name,
+    enemy->skills[3].name
+    );
+
+}
+
 // 1. Initialize queue
 
 // void queueInit (Queue* q)
@@ -61,7 +84,6 @@ void charcter_init(Character* players)
 //     q->front = q->rear = NULL;
 //     q->size = 0;
 // }
-
 Queue* queueInit ()
 {   
     Queue* newQueue = (Queue*)malloc(sizeof(Queue));
@@ -155,13 +177,12 @@ void dequeue (Queue* q)
     Node* tmp = q->front;
     q->front = q->front->next;
     q->size--;
-        
-    // if (q->front == NULL)
-    //     q->rear = NULL;
+  
+    // If front is NULL, change rear to NULL too
+    if (q->front == NULL)
+        q->rear = NULL;
     free(tmp);
     tmp = NULL;
-        
-    
 }
 
 
@@ -182,3 +203,29 @@ void queueTurn (Queue* q, Character* player, Enemy* enemies)
     }    
 }
 
+// 6. Fight flow
+void fightFlow (Queue* q)
+{
+    if (isEmpty(q))
+    {
+        printf("Combat turns are over\n");
+        return;
+    }
+
+    if (q->front->enemy == NULL)
+    {
+        printf("Select skill:\n" );
+        printCharacterSkill (q->front->player);
+        dequeue (q);  
+        return;          
+    }
+    else if (q->front->player == NULL)
+    {
+        printf("Select skill:\n" );
+        printEnemySkill (q->front->enemy);
+        dequeue (q);
+        return;
+    }
+}
+
+// ********* DO NOT MODIFY ********//
