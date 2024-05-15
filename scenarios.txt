@@ -31,9 +31,10 @@ a) Climb the mountain.
 
     a.1) After overcoming the mountain trolls, you continue your ascent, determined to reach the summit.
     As you climb higher, the path grows narrower and more precarious, and the winds begin to howl ominously around you.
-    Finally, you reach the peak of the mountain, where a massive cavern looms before you.
+    Finally, you reach the peak of the mountain, where a massive cavern looms before you. At the entrance a pair of stone guardians are waiting
+    your arrival and confront you. (Battle begins)
 
-    This is the lair of the Earth Devil, a fearsome rock golem that dwells deep within the mountain.
+    This is the lair of the Earth Devil, a fearsome rock golem that dwells deep within the mountain, your next adversary if you want to keep going.
     Its presence fills you with a sense of dread, but you know that confronting it is the only way to complete your quest.
     You can't see much because the obscurity of the golem's domain but you can feel all the cave shaking. 
     
@@ -96,6 +97,27 @@ a) Dive into the water.
     waiting for an unsuspecting victim to cross its path. (second fight)
     After a fierce battle, you emerge victorious,the wizard's magic fading into the depths. As you catch your breath,
     you feel a strange sensation wash over you. (You have absorved the wizard power and now you can swim freely)
+
+    After swimming and escaping from other dangers, you find yourself standing before a dark cave,
+    its yawning entrance beckoning you forward with a sense of foreboding.
+    You can choose between tow options:
+
+    a.1.1) Enter the cave
+        Suddenly, as you step into the cave, you find yourself face to face with the water devil, 
+        its menacing form looming ominously before you. In a desperate bid for survival, you must choose between two options,
+        both of which involve destroying the cave entrance to prevent the water devil from pursuing you further. 
+        Whether by collapsing the cave with brute force or using cunning tactics to outsmart your foe, the fate of your quest hangs in the balance.
+
+    a.1.2) Continue exploring the deeps.
+        As you continue swimming downstream, your journey is interrupted by a sudden attack from a group of magic sharks. With swift reflexes and unwavering determination,
+        you fend off the vicious predators, their powerful jaws snapping hungrily at your heels. (Battle begins)
+
+        Even that you defeates you enemies, you have not mastered the art of breathing under water yet. And in a few seconds after
+        finishing the battle you find yourself succumbing to the darkness, your consciousness slips away as you lose consciousness.
+
+        When you finally awaken, you find yourself inside the dark cave, face to face with the water devil itself.
+        With the creature still sleeping soundly before you, you seize the opportunity to launch a surprise attack, hoping to catch it off guard and turn the tide of battle
+        in your favor. (You attack first).
 
 
 b) Search for a boat.
