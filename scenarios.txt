@@ -134,6 +134,7 @@ Recognizing the danger posed by the fiery bridge, you seek shelter beneath its s
 As you journey on, you come across a rugged landscape, surrounded by towering cliffs and jagged rocks. 
 Welcome to the third element of Wuxing, Earth. To your left is a dark, rocky path that climbs to the top of a giant mountain. 
 And just on the opposite side, in the distance you can discern a town, an option that seems much quieter.
+
 Which path do you want to take ?
 
 a) Climb the mountain.   
@@ -143,9 +144,14 @@ a) Climb the mountain.
     After hours of arduous climbing, you finally reach a plateau halfway up the mountain. 
     Here, you encounter your first challenge: a group of mountain trolls guarding the path ahead. 
     They are large and fearsome, with rocky skin and clubs fashioned from ancient tree trunks.
-
-    a.1) After overcoming the mountain trolls, you continue your ascent, determined to reach the summit.
+    
+    After overcoming the mountain trolls, you continue your ascent, determined to reach the summit.
     As you climb higher, the path grows narrower and more precarious, and the winds begin to howl ominously around you.
+
+    What do you want to do ?
+
+    a.1) Keep climbing the mountain.
+
     Finally, you reach the peak of the mountain, where a massive cavern looms before you. At the entrance a pair of stone guardians are waiting
     your arrival and confront you. (Battle begins)
 
