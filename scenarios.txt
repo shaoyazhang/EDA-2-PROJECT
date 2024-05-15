@@ -6,8 +6,10 @@ attacking from the shadows. Be careful exploring here, as both treasure and dang
 where it's hard to tell what's real and what's just stories among the rustling leaves.
 Hint: Look after protecting yourself from the wood's devil as it is very strong.
 
+// Decision question.
 You see a dark river with a boat and on the left there is a luminous path, which path are you taking?
 
+// Option 1 -->response
 a) Take the boat
 
 You decide to jump on the boat not knowing where the river takes. You start going through the river and you can see behind the 
@@ -27,6 +29,7 @@ You find yourself alone in the cave. It's cold and smells like rotten wood. You 
 help you climb the tree. You decide to do so. A the top of the tree there's a big throne and a tree-like big creature sitting in 
 it. It looks asleep, but as you start walking away it wakes up. You got him angry and you have to defend yourself.
 
+// Option 2 --> response
 b) Take the road
 
 You decide to take the road as it is more luminous. You don't see anything at first. It's very quite. Suddenly you see in the
