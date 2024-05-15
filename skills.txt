@@ -57,21 +57,61 @@ Example: "You are now in a deep and dark forest, in the distance you see a light
 //******************************************************************************************//
 
 1st scenario: Wood field
-  enemy 1:
-    skills
-    points
-  enemy 2: 
-    skills
-    points
-  ...
+  enemy 1: Creatures
+    skills: 
+      a. their screams make the air wave and hurt
+      b. bitting. they have the ability to bite
+    points:
+      atk:10
+      hp: 30
+      def: 20
+
+  enemy 2: tree-like creature
+    skills:
+      a. hitting with mallet 
+    points:
+      atk: 40
+      hp: 120
+      def: 30
+  enemy 3: Flting wood birds
+   skills:
+      a. throw arrows
+    points:
+      atk: 10
+      hp: 20
+      def:5
+  enemy 4: devil 
+    skills:
+      a. roots that can get very large and wrap around the body
+      b. getting creatures to help him
+    points:
+      atk: 50
+      hp: 220
+      def: 30
 
 2nd scenario: Fire field
-  enemy 1:
-    skills
-    points
-  enemy 2:
-    skills
-    points
+  enemy 1: elemental guard
+    skills:
+      a. throw fire arrows
+    points:
+      atk: 20
+      hp: 90
+      def: 10
+    enemy 2: cave guardian  (same as before)
+    skills: 
+      a. throw fire arrows
+    points:
+      atk: 20
+      hp: 90 
+      def: 10
+  enemy 4: Devil 
+     skills:
+      a. bursting fire
+      b. throwing fire balls
+    points:
+      atk: 50
+      hp: 220
+      def: 40
   ...
 
 3rd scenario: Earth field

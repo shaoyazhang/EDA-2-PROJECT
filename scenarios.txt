@@ -99,7 +99,7 @@ of steel against flame reverberates through the cavern, testing your skills and 
 a.2.1.2) Bypass Unnoticed
 
 Preferring to avoid unnecessary conflict, you carefully navigate around the fiery guardian, using stealth and cunning to evade its watchful gaze. 
-Though the path ahead remains uncertain, your decision to bypass the guardian unnoticed preserves your life experience for future challenges.
+He noticed you, and he won't let you pass unless you defeat him.
 
 a.2.2) Discover a Hidden Passage
 
@@ -118,7 +118,7 @@ Driven by a desire to reach the other side quickly, you break into a sprint, dod
  across the bridge. With adrenaline coursing through your veins, you narrowly escape the fiery onslaught, but at a cost to your 
  life experience from the harrowing experience.
 
-b.2) Take Shelter Beneath the Bridge
+b.2) Take Shelter Beneath the Bridge risking being seen
 
 Recognizing the danger posed by the fiery bridge, you seek shelter beneath its sturdy structure, waiting patiently for the flames
  to subside before continuing your journey. Though delayed, your cautious approach preserves your life experience, ensuring you're
