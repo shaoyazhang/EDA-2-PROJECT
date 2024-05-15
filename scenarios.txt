@@ -165,31 +165,44 @@ a) Climb the mountain.
                 -While you are tourning around rock spikes come from the darkness and you get hit, the devil that was hidden beneath the rock
                 floor starts to emerge. (You start the fight with 25% less HP)
 
-        b.1.2) Get ready to fight!!!
+        a.1.2) Get ready to fight!!!
                 -Lots of rock spikes fly quickly towards you from the darkness, but you are able to dodge them. Beneath you the floor
                 starts to breaking and the devil emerges in front of you. (The fight against the devil begins)
 
+    a.2) Turn around.
+
+    As soon as you tour around a giant boulder falls from the sky and you lose HP. (If you have the shield of reflection you are protected).
+    The boulder destroys the path and you have no choice but keep going higher
 
 b) Explore the town.
     You get to the town and it looks empty but you feel observed. It gets dark and you decide to sleep there but when you are about
     to close your eyes a rock troll (Hulking creatures with thick stone skin and massive clubs) attacks you:
     (The fight starts)
 
-    b.1) After the town you follow your path and reach a fork, one path continues straight towards some desert lands,
+    After the town you follow your path and reach a fork, one path continues straight towards some desert lands,
     the other towards an old mine.
 
-    What pathe are you choosing ?
+    What path are you choosing ?
 
-        b.1.1) Explore the mine 
-        You find danger signs that advert of traps and other dangers set by the miners to scare thiefs, 
+        b.1) Explore the mine 
+        You find danger signs that advert of traps and other dangers set by the miners to scare thiefs. You keep going and a pickaxe is thrown
+        towards you from behind a column. Following it, a decaying corpse from a miner stands up and starts to run fiercley in you direction.
+        (Battle begins).
+
+        You keep walking and the path gets smaller every time until you get infront of a lever.
+       
+        What do you do ?
+        
         you follow the path and after steping in a tile a boulder drops to your head (if you have the reflection 
         shield you are protected, and you have flying boots you are able to escape, if not you lose HP).
-        
+
+        Due to the being hit in the head you lose consciousness for a few seconds. Enough time to lose balance and fall into a hole filled 
+        with darkness. 
 
 
-        b.1.2) Follow the desrtic path.
-        You find yourself in quicksand and in front a group of snakes, you are able to defeat them and escape from the quicksand,
-        but you lose HP.
+        b.2) Follow the desrtic path.
+        You find yourself in quicksand and in front a group of snakes,(Fight begins) you are able to defeat them but not to escape
+        from the quicksand, you.
 
     (In both cases after this you fight the earth devil)
 
