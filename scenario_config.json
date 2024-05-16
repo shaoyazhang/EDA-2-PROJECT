@@ -11,7 +11,7 @@
                     "decision_question": "To be up dated1",
                     "options":
                     {
-                        "response": "To be up dated1",
+                        "response": "response 1",
                         "narra_bf": "To be up dated1",
                         "enemies": ["enemy 1", "enemy 2", "enemy 3"],
                         "narra_af": "To be up dated"
@@ -19,12 +19,12 @@
                     
                 }, 
                 {
-                    "decision_id": "field name",
+                    "decision_id": 2,
                     "decision_question": "To be up dated1",
                     "options":
                     {
-                        "response": "To be up dated1",
-                        "narra_bf": "To be up dated1",
+                        "response": "response 2",
+                        "narra_bf": "narra_bf 2",
                         "enemies": ["enemy 1", "enemy 2", "enemy 3"],
                         "narra_af": "To be up dated"
                     }
@@ -33,7 +33,7 @@
         },
 
         {
-            "scenario_id": "field name",
+            "scenario_id": "field name 2",
             "description": "To be up dated2",
             "decisions": 
             [
@@ -42,7 +42,7 @@
                     "decision_question": "To be up dated2",
                     "options":
                     {
-                        "response": "To be up dated2",
+                        "response": "response 1",
                         "narra_bf": "To be up dated2",
                         "enemies": ["enemy 1", "enemy 2", "enemy 3"],
                         "narra_af": "To be up dated"
@@ -50,11 +50,42 @@
                     
                 }, 
                 {
-                    "decision_id": "field name",
+                    "decision_id": 2,
                     "decision_question": "To be up dated2",
                     "options":
                     {
-                        "response": "To be up dated ",
+                        "response": "response 2 ",
+                        "narra_bf": "narra_bf 2",
+                        "enemies": ["enemy 1", "enemy 2", "enemy 3"],
+                        "narra_af": "To be up dated"
+                    }
+                }
+            ]
+        },
+
+        {
+            "scenario_id": "field name 3",
+            "description": " To be up dated",
+            "decisions": 
+            [
+                {
+                    "decision_id": 1,
+                    "decision_question": "To be up dated",
+                    "options":
+                    {
+                        "response": "response 1",
+                        "narra_bf": "To be up dated 2",
+                        "enemies": ["enemy 1", "enemy 2", "enemy 3"],
+                        "narra_af": "To be up dated"
+                    }
+                    
+                }, 
+                {
+                    "decision_id": 2,
+                    "decision_question": "To be up dated",
+                    "options":
+                    {
+                        "response": "response 2",
                         "narra_bf": "To be up dated ",
                         "enemies": ["enemy 1", "enemy 2", "enemy 3"],
                         "narra_af": "To be up dated"
@@ -68,13 +99,14 @@
             "description": "As you journey on, you come across a rugged landscape, surrounded by towering cliffs and jagged rocks,\nWelcome to the third element of Wuxing, Earth. To your left is a dark, rocky path that climbs to the top\nof a giant mountain. And just on the opposite side, in the distance you can discern a town,\nan option that seems much quieter\n\nWhich path do you want to take ?",
             "decisions": 
             [
+                
                 {
                     "decision_id": 1,
-                    "decision_question": "Climb the mountain",
+                    "decision_question": "You decide to take the rocky path that climbs to the top of the giant mountain. As you ascend, the air grows colder and thinner,\nand the path becomes steeper and more treacherous. But your determination drives you forward, pushing you to conquer the formidable peak.\n\nAfter hours of arduous climbing, you finally reach a plateau halfway up the mountain.\nHere, you encounter your first challenge: a group of mountain trolls guarding the path ahead. \nThey are large and fearsome, with rocky skin and clubs fashioned from ancient tree trunks.",
                     "options":
                     {
                         "response": "You have chosen climbing the mountain.",
-                        "narra_bf": "You decide to take the rocky path that climbs to the top of the giant mountain. As you ascend, the air grows colder and thinner,\nand the path becomes steeper and more treacherous. But your determination drives you forward, pushing you to conquer the formidable peak.\n\nAfter hours of arduous climbing, you finally reach a plateau halfway up the mountain.\nHere, you encounter your first challenge: a group of mountain trolls guarding the path ahead. \nThey are large and fearsome, with rocky skin and clubs fashioned from ancient tree trunks.",
+                        "narra_bf": "narra_bf 2",
                         "enemies": ["enemy 1", "enemy 2", "enemy 3"],
                         "narra_af": "To be up dated"
                     }
@@ -85,10 +117,11 @@
                     "decision_question": "To be up dated",
                     "options":
                     {
-                        "response": "To be up dated ",
-                        "narra_bf": "To be up dated ",
+
+                        "response": "response 2",
+                        "narra_bf": "narra_bf 2",
                         "enemies": ["enemy 1", "enemy 2", "enemy 3"],
-                        "narra_af": "To be up dated",
+                        "narra_af": "To be up dated"
                     }
                 }
             ]
