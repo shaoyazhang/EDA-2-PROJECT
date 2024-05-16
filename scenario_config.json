@@ -95,16 +95,17 @@
         },
 
         {
-            "scenario_id": "field name 4",
-            "description": " To be up dated",
+            "scenario_id": "Earth field ",
+            "description": "As you journey on, you come across a rugged landscape, surrounded by towering cliffs and jagged rocks,\nWelcome to the third element of Wuxing, Earth. To your left is a dark, rocky path that climbs to the top\nof a giant mountain. And just on the opposite side, in the distance you can discern a town,\nan option that seems much quieter\n\nWhich path do you want to take ?",
             "decisions": 
             [
+                
                 {
                     "decision_id": 1,
-                    "decision_question": "Climb the mountain",
+                    "decision_question": "You decide to take the rocky path that climbs to the top of the giant mountain. As you ascend, the air grows colder and thinner,\nand the path becomes steeper and more treacherous. But your determination drives you forward, pushing you to conquer the formidable peak.\n\nAfter hours of arduous climbing, you finally reach a plateau halfway up the mountain.\nHere, you encounter your first challenge: a group of mountain trolls guarding the path ahead. \nThey are large and fearsome, with rocky skin and clubs fashioned from ancient tree trunks.",
                     "options":
                     {
-                        "response": "response 1",
+                        "response": "You have chosen climbing the mountain.",
                         "narra_bf": "narra_bf 2",
                         "enemies": ["enemy 1", "enemy 2", "enemy 3"],
                         "narra_af": "To be up dated"
@@ -127,8 +128,8 @@
         },
 
         {
-            "scenario_id": "field name",
-            "description": " To be up dated",
+            "scenario_id": "Water field",
+            "description": " You finally arrive at your last destination, but what awaits you is even more breathtaking than you anticipated.\nIn front of you lies a vast expanse of water, the final element of Wuxing. Here, amidst the serene surface,\nlurk hidden dangers and formidable enemies. Battle against fierce adversaries and overcome their aquatic assaults as you search \nfor the tool to unlock the power of swimming. Only then will you be able to traverse the raging river and emerge victorious.\nBut beware, defeat at the hands of your enemies will lead your journey to an abrupt end.",
             "decisions": 
             [
                 {
