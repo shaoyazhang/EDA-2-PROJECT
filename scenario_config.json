@@ -101,7 +101,7 @@
             [
                 {
                     "decision_id": 1,
-                    "decision_question": "To be up dated",
+                    "decision_question": "Climb the mountain",
                     "options":
                     {
                         "response": "response 1",
@@ -116,8 +116,40 @@
                     "decision_question": "To be up dated",
                     "options":
                     {
+
                         "response": "response 2",
                         "narra_bf": "narra_bf 2",
+                        "enemies": ["enemy 1", "enemy 2", "enemy 3"],
+                        "narra_af": "To be up dated"
+                    }
+                }
+            ]
+        },
+
+        {
+            "scenario_id": "field name",
+            "description": " To be up dated",
+            "decisions": 
+            [
+                {
+                    "decision_id": 1,
+                    "decision_question": "To be up dated",
+                    "options":
+                    {
+                        "response": "To be up dated2",
+                        "narra_bf": "To be up dated2",
+                        "enemies": ["enemy 1", "enemy 2", "enemy 3"],
+                        "narra_af": "To be up dated"
+                    }
+                    
+                }, 
+                {
+                    "decision_id": 2,
+                    "decision_question": "To be up dated",
+                    "options":
+                    {
+                        "response": "To be up dated ",
+                        "narra_bf": "To be up dated ",
                         "enemies": ["enemy 1", "enemy 2", "enemy 3"],
                         "narra_af": "To be up dated"
                     }
