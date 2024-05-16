@@ -21,7 +21,7 @@
 #define MAX_ENEMIES 4
 #define MAX_CHARACTS 4
 #define NUM_TURNS 4
-#define MAX_DECISION 3
+#define MAX_DECISION 2
 
 // 1. Skills
 typedef struct
