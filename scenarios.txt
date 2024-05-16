@@ -128,16 +128,28 @@ Recognizing the danger posed by the fiery bridge, you seek shelter beneath its s
   ready to face whatever challenges lie ahead.
 
 --------------------------------------
+ NAME
 
-3rd scenario: Earth field
+3rd scenario: Earth field    
+
+DESCRIPTION
 
 As you journey on, you come across a rugged landscape, surrounded by towering cliffs and jagged rocks. 
 Welcome to the third element of Wuxing, Earth. To your left is a dark, rocky path that climbs to the top of a giant mountain. 
 And just on the opposite side, in the distance you can discern a town, an option that seems much quieter.
 
+DECISION
+
 Which path do you want to take ?
 
-a) Climb the mountain.   
+a) Climb the mountain. 
+    
+    RESPONSE
+
+    You have chosen climbing the mountain.
+
+    NARRATIVE BEFORE COMBAT 
+    
     You decide to take the rocky path that climbs to the top of the giant mountain. As you ascend, the air grows colder and thinner,
     and the path becomes steeper and more treacherous. But your determination drives you forward, pushing you to conquer the formidable peak.
 
@@ -145,71 +157,63 @@ a) Climb the mountain.
     Here, you encounter your first challenge: a group of mountain trolls guarding the path ahead. 
     They are large and fearsome, with rocky skin and clubs fashioned from ancient tree trunks.
     
+    NARRATIVE AFTER COMBAT
+
     After overcoming the mountain trolls, you continue your ascent, determined to reach the summit.
     As you climb higher, the path grows narrower and more precarious, and the winds begin to howl ominously around you.
 
-    What do you want to do ?
-
-    a.1) Keep climbing the mountain.
+    NARRATIVE BEFORE COMBAT
 
     Finally, you reach the peak of the mountain, where a massive cavern looms before you. At the entrance a pair of stone guardians are waiting
     your arrival and confront you. (Battle begins)
 
-    This is the lair of the Earth Devil, a fearsome rock golem that dwells deep within the mountain, your next adversary if you want to keep going.
+    NARRATIVE AFTER COMBAT AND BEFORE COMBAT WITH THE DEVIL
+
+    This cave is the lair of the Earth Devil, a fearsome rock golem that dwells deep within the mountain, your next adversary if you want to keep going.
     Its presence fills you with a sense of dread, but you know that confronting it is the only way to complete your quest.
     You can't see much because the obscurity of the golem's domain but you can feel all the cave shaking. 
-    
-        What are you going to do ?
 
-        a.1.1) Run away from the cave and think of a new strategy.
-                -While you are tourning around rock spikes come from the darkness and you get hit, the devil that was hidden beneath the rock
-                floor starts to emerge. (You start the fight with 25% less HP)
-
-        a.1.2) Get ready to fight!!!
-                -Lots of rock spikes fly quickly towards you from the darkness, but you are able to dodge them. Beneath you the floor
-                starts to breaking and the devil emerges in front of you. (The fight against the devil begins)
-
-    a.2) Turn around.
-
-    As soon as you tour around a giant boulder falls from the sky and you lose HP. (If you have the shield of reflection you are protected).
-    The boulder destroys the path and you have no choice but keep going higher
 
 b) Explore the town.
+
+    RESPONSE
+
+    You have chosen exploring the town.
+
+    NARRATIVE BEFORE COMBAT
+
     You get to the town and it looks empty but you feel observed. It gets dark and you decide to sleep there but when you are about
     to close your eyes a rock troll (Hulking creatures with thick stone skin and massive clubs) attacks you:
     (The fight starts)
 
+    NARRATIVE AFTER COMBAT
+
     After the town you follow your path and reach a fork, one path continues straight towards some desert lands,
-    the other towards an old mine.
+    the other towards an old mine. You decide to investigate the mine.
 
-    What path are you choosing ?
+        NARRATIVE BEFORE COMBAT
 
-        b.1) Explore the mine 
         You find danger signs that advert of traps and other dangers set by the miners to scare thiefs. You keep going and a pickaxe is thrown
         towards you from behind a column. Following it, a decaying corpse from a miner stands up and starts to run fiercley in you direction.
         (Battle begins).
-
-        You keep walking and the path gets smaller every time until you get infront of a lever.
-       
-        What do you do ?
         
-        you follow the path and after steping in a tile a boulder drops to your head (if you have the reflection 
-        shield you are protected, and you have flying boots you are able to escape, if not you lose HP).
+        NARRATIVE AFTER COMBAT AND BEFORE BATTLE WITH THE DEVIL
 
-        Due to the being hit in the head you lose consciousness for a few seconds. Enough time to lose balance and fall into a hole filled 
-        with darkness. 
+        You keep walking and the path gets smaller every time until you get in front of a lever you pull it and floor under your feet disappear.
+        You close your eyes thinking that you arrived at the end of your adventure, but you fall just a few meters and end up in front of a cave.
 
-
-        b.2) Follow the desrtic path.
-        You find yourself in quicksand and in front a group of snakes,(Fight begins) you are able to defeat them but not to escape
-        from the quicksand, you.
-
-    (In both cases after this you fight the earth devil)
+        This cave is the lair of the Earth Devil, a fearsome rock golem that dwells deep within the mountain, your next adversary if you want to keep going.
+        Its presence fills you with a sense of dread, but you know that confronting it is the only way to complete your quest.
+        You can't see much because the obscurity of the golem's domain but you can feel all the cave shaking.
 
 
 --------------------------------------
 
+NAME 
+
 4th scenario: Water field
+
+DESCRIPTION
 
 You finally arrive at your last destination, but what awaits you is even more breathtaking than you anticipated.
 In front of you lies a vast expanse of water, the final element of Wuxing. Here, amidst the serene surface,
@@ -217,73 +221,72 @@ lurk hidden dangers and formidable enemies. Battle against fierce adversaries an
 for the tool to unlock the power of swimming. Only then will you be able to traverse the raging river and emerge victorious.
 But beware, defeat at the hands of your enemies will lead your journey to an abrupt end.
 
+DECISION
 As you stand at the water's edge, you assess your options:
 
-a) Dive into the water.
+a) Dive into the water
+    RESPONSE
+
+    You have chosen to dive into the water
+
+    NARRATIVE BEFORE COMBAT 
+
     With a determined resolve, you plunge into the cool depths of the water, ready to face whatever challenges lie beneath the surface.
     As you swim deeper, you encounter a school of razor-toothed piranhas, their sharp teeth glinting ominously in the dim light.
     They swarm around you, snapping their jaws hungrily, intent on making you their next meal. 
     (Battle begins, If you have the flying boots, you're able to fight them off with ease, your aerial advantage giving you the upper hand.
     But if not, you find your attacks slightly weakened by the resistance of the water.)
-    a.1) After defeating the piranhas, you notice a floating wooden stem nearby, drifting lazily on the current. 
+    
+    NARRATIVE AFTER COMBAT
+
+    After defeating the piranhas, you notice a floating wooden stem nearby, drifting lazily on the current. 
     Grasping it tightly, you find that it provides just enough buoyancy to keep you afloat in the water. 
     With your newfound makeshift floatation device,you continue your journey through the aquatic realm.
+
+    NARRATIVE BEFORE COMBAT 
 
     But just as you begin to relax, a sudden surge of magic disrupts the water around you, and you find yourself
     face to face with a water wizard. This powerful sorcerer had been lurking beneath the surface,
     waiting for an unsuspecting victim to cross its path. (second fight)
+    
+    NARRATIVE AFTER COMBAT AND BEFORE BATTLE WITH THE DEVIL
+
     After a fierce battle, you emerge victorious,the wizard's magic fading into the depths. As you catch your breath,
     you feel a strange sensation wash over you. (You have absorved the wizard power and now you can swim freely)
 
-    After swimming and escaping from other dangers, you find yourself standing before a dark cave,
-    its yawning entrance beckoning you forward with a sense of foreboding.
-    You can choose between tow options:
-
-    a.1.1) Enter the cave
-        Suddenly, as you step into the cave, you find yourself face to face with the water devil, 
-        its menacing form looming ominously before you. In a desperate bid for survival, you must choose between two options,
-        both of which involve destroying the cave entrance to prevent the water devil from pursuing you further. 
-        Whether by collapsing the cave with brute force or using cunning tactics to outsmart your foe, the fate of your quest hangs in the balance.
-
-    a.1.2) Continue exploring the deeps.
-        As you continue swimming downstream, your journey is interrupted by a sudden attack from a group of magic sharks. With swift reflexes and unwavering determination,
-        you fend off the vicious predators, their powerful jaws snapping hungrily at your heels. (Battle begins)
-
-        Even that you defeates you enemies, you have not mastered the art of breathing under water yet. And in a few seconds after
-        finishing the battle you find yourself succumbing to the darkness, your consciousness slips away as you lose consciousness.
-
-        When you finally awaken, you find yourself inside the dark cave, face to face with the water devil itself.
-        With the creature still sleeping soundly before you, you seize the opportunity to launch a surprise attack, hoping to catch it off guard and turn the tide of battle
-        in your favor. (You attack first).
+    You hear monstrous noises in the distance that sound closer with each passing moment. After a while, 
+    they disappear, and just when you least expect it, a kraken appears in front of you, the Water Devil.
 
 
 b) Search for a boat.
+    
+    RESPONSE 
+
+    You have chosen searching for a boat.
+
+    NARRATIVE BEFORE COMBAT
+
     Instead of diving headfirst into the water, you decide to search for a more cautious approach. Scanning the shoreline,
     you spot a weather-beaten rowboat half-buried in the sand, a relic of some forgotten voyage.
     You approach it cautiously, wary of any lurking dangers that may be hiding nearby.
 
-    You sail but just as seconds past and a whirpool. You fight against a magician who trows powerful water spels
+    You sail but just as seconds past a whirpool appears and from inside of it an old man starts to emerge.
+    You fight against a magician who trows powerful water spels.
+    
+    NARRATIVE AFTERE COMBAT
 
     After a fierce battle, you emerge victorious,the wizard's magic fading into the depths. As you catch your breath,
-    you feel a strange sensation wash over you. (You have absorved the wizard power and now you can swim freely)
+    you feel a strange sensation wash over you. (You have absorved the wizard power and now you can swim freely).
+    
+    NARRATIVE BFORE COMBAT
 
-    b.1) After swimming and escaping from other dangers, you find yourself standing before a dark cave,
-    its yawning entrance beckoning you forward with a sense of foreboding.
-    You can choose between tow options:
+    As you swim deeper, you encounter a school of razor-toothed piranhas, their sharp teeth glinting ominously in the dim light.
+    They swarm around you, snapping their jaws hungrily, intent on making you their next meal. 
 
-    b.1.1) Enter the cave
-        Suddenly, as you step into the cave, you find yourself face to face with the water devil, 
-        its menacing form looming ominously before you. In a desperate bid for survival, you must choose between two options,
-        both of which involve destroying the cave entrance to prevent the water devil from pursuing you further. 
-        Whether by collapsing the cave with brute force or using cunning tactics to outsmart your foe, the fate of your quest hangs in the balance.
+    NARRATIVE AFTER COMBAT AND BEFORE BATTLE WITH THE DEVIL
 
-    b.1.2) Continue exploring the deeps.
-        As you continue swimming downstream, your journey is interrupted by a sudden attack from a group of magic sharks. With swift reflexes and unwavering determination,
-        you fend off the vicious predators, their powerful jaws snapping hungrily at your heels. (Battle begins)
+    After a fierce battle, you emerge victorious, following defeating the piranhas, You hear monstrous noises in the distance that 
+    sound closer with each passing moment. After a while, they disappear, and just when you least expect it, a kraken appears in front of you,
+    the Water Devil, your last enemy to finally get the all of the four elements.
 
-        Even that you defeates you enemies, you have not mastered the art of breathing under water yet. And in a few seconds after
-        finishing the battle you find yourself succumbing to the darkness, your consciousness slips away as you lose consciousness.
 
-        When you finally awaken, you find yourself inside the dark cave, face to face with the water devil itself.
-        With the creature still sleeping soundly before you, you seize the opportunity to launch a surprise attack, hoping to catch it off guard and turn the tide of battle
-        in your favor. (You attack first).
