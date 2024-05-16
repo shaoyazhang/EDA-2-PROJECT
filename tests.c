@@ -127,3 +127,31 @@ void test03()
     free(jsonString);
 }
 
+
+void test04 ()
+{
+    const char* fp = "skills.json";
+    char* jsonString = readFile (fp);
+
+    if (jsonString == NULL)
+    {
+        fprintf(stderr, "Failed to read JSON file\n");
+        return;
+    }
+
+    Skill* skill = NULL;
+    int num_skills;
+    loadSkills(jsonString, &skill, &num_skills);
+    for (int i = 0; i < MAX_SKILL; i++)
+    {
+        printf("skill:\n");
+        printf("name: %s\n", skill[i].name);
+        printf("    Description: %s\n", skill[i].description);
+        printf("    type: %d\n", skill[i].type);
+        printf("    duration: %d\n", skill[i].duration);
+        printf("    atk: %d\n", skill[i].atk);
+        printf("    hp: %d\n", skill[i].hp);
+        printf("    def: %d\n", skill[i].def);
+    }
+    
+}

@@ -45,7 +45,7 @@ typedef struct
     Skill skills[MAX_SKILL];
 }Character;
 
-// 3. options
+// 3. Option
 typedef struct
 {
     char response[MAX_QUESTION];
@@ -54,7 +54,7 @@ typedef struct
     char narra_af[MAX_QUESTION];
 }Option;
 
-// 4. Decisions
+// 4. Decision
 typedef struct
 {
     char question[MAX_QUESTION];
@@ -63,7 +63,7 @@ typedef struct
 }Decision;
 
 
-// 5. 4 Scenarios
+// 5. Scenario
 typedef struct
 {
     char name[MAX_SCENARIO_NAME];
@@ -85,9 +85,9 @@ typedef struct
 // Initializations
 // void skill_init(Skill* skills);
 void charcter_init(Character* players); 
-void scenarioInit(Scenario* scenarios);
-void decision_init(Decision* decisions);
-void option_init(Option* options);
+//void scenarioInit(Scenario* scenarios);
+//void decision_init(Decision* decisions);
+//void option_init(Option* options);
 void enemy_init(Enemy* enemies);
 void game(Character *players);
 
