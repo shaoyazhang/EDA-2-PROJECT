@@ -19,12 +19,12 @@
                     
                 }, 
                 {
-                    "decision_id": "field name",
+                    "decision_id": 2,
                     "decision_question": "To be up dated1",
                     "options":
                     {
-                        "response": "To be up dated1",
-                        "narra_bf": "To be up dated1",
+                        "response": "To be up dated 1",
+                        "narra_bf": "To be up dated 1",
                         "enemies": ["enemy 1", "enemy 2", "enemy 3"],
                         "narra_af": "To be up dated"
                     }
@@ -33,7 +33,7 @@
         },
 
         {
-            "scenario_id": "field name",
+            "scenario_id": "field name 2",
             "description": "To be up dated2",
             "decisions": 
             [
@@ -50,7 +50,7 @@
                     
                 }, 
                 {
-                    "decision_id": "field name",
+                    "decision_id": 2,
                     "decision_question": "To be up dated2",
                     "options":
                     {
@@ -64,7 +64,7 @@
         },
 
         {
-            "scenario_id": "field name 4",
+            "scenario_id": "field name 3",
             "description": " To be up dated",
             "decisions": 
             [
@@ -95,7 +95,7 @@
         },
 
         {
-            "scenario_id": "field name",
+            "scenario_id": "field name 4",
             "description": " To be up dated",
             "decisions": 
             [
