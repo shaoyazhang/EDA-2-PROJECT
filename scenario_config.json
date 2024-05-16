@@ -64,15 +64,9 @@
         },
 
         {
-<<<<<<< HEAD
-            "scenario_id": 3,
-            "description": " As you journey on, you come across a rugged landscape, surrounded by towering cliffs and jagged rocks,\nWelcome to the third element of Wuxing, Earth. To your left is a dark, rocky path that climbs to the top \nof a giant mountain.And just on the opposite side, in the distance you can discern a town, \nan option that seems much quieter",
-            "decisions": "Which path do you want to take ?",
-=======
             "scenario_id": "field name 4",
             "description": " To be up dated",
             "decisions": 
->>>>>>> e5c8b63ef8ed1fc0f3a3bf98ed757d72da773a3b
             [
                 {
                     "decision_id": 1,
