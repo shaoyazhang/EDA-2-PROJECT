@@ -183,7 +183,7 @@ b) Explore the town.
     NARRATIVE BEFORE COMBAT
 
     You get to the town and it looks empty but you feel observed. It gets dark and you decide to sleep there but when you are about
-    to close your eyes a rock troll (Hulking creatures with thick stone skin and massive clubs) attacks you:
+    to close your eyes a rock gargoyle attacks you from a house roof.
     (The fight starts)
 
     NARRATIVE AFTER COMBAT
@@ -270,8 +270,8 @@ b) Search for a boat.
     you spot a weather-beaten rowboat half-buried in the sand, a relic of some forgotten voyage.
     You approach it cautiously, wary of any lurking dangers that may be hiding nearby.
 
-    You sail but just as seconds past a whirpool appears and from inside of it an old man starts to emerge.
-    You fight against a magician who trows powerful water spels.
+    You sail but just as seconds past a whirpool appears and from inside of it water being starts to emerge.
+    You fight against a water elemental who throws powerful water spels.
     
     NARRATIVE AFTERE COMBAT
 
@@ -287,6 +287,6 @@ b) Search for a boat.
 
     After a fierce battle, you emerge victorious, following defeating the piranhas, You hear monstrous noises in the distance that 
     sound closer with each passing moment. After a while, they disappear, and just when you least expect it, a kraken appears in front of you,
-    the Water Devil, your last enemy to finally get the all of the four elements.
+    the Water Devil, your last enemy to finally get the all of the four elements Wuxing.
 
 

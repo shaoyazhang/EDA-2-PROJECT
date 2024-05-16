@@ -115,10 +115,81 @@ Example: "You are now in a deep and dark forest, in the distance you see a light
   ...
 
 3rd scenario: Earth field
-  enemy 1:
-    skills
-    points
-  enemy 2:
-    skills
-    points
-  ...
+
+  enemy 1: Mountain trolls
+     skills:
+      a. Slam
+    points:
+      atk: 12
+      hp: 170
+      def: 10
+
+  enemy 2: Stone Guardians
+     skills:
+      a. Stone Barrage
+    points:
+      atk: 45
+      hp:  112
+      def: 20
+
+  enemy 3: Rock Gargoyle
+     skills:
+      a. Petrifying Gaze
+    points:
+      atk: 35
+      hp:  80
+      def: 20
+
+  enemy 4: Zombie miner
+     skills:
+      a. bursting fire
+    points:
+      atk: 60
+      hp:  250
+      def: 35
+
+  enemy 5: Earth devil
+     skills:
+      a. Quake, The earth devil triggers a seismic disturbance, causing the ground to rupture and fissures to open up beneath its adversaries
+      b. Stone spikes, spikes of hardened stone erupt from the earth with thunderous force, piercing the air with their razor-sharp edges.
+    points:
+      atk: 60
+      hp:  250
+      def: 35
+
+4th scenario: Water field
+  enemy 1: School of piranhas
+     skills:
+      a. Slam
+    points:
+      atk: 
+      hp: 
+      def: 
+  enemy 2: Water wizard
+     skills:
+      a. 
+    points:
+      atk: 
+      hp: 
+      def:
+  enemy 3: Water elemental
+     skills:
+      a. 
+    points:
+      atk: 
+      hp: 
+      def:
+  enemy 4: Zombie miner
+     skills:
+      a. 
+    points:
+      atk: 
+      hp: 
+      def:
+  enemy 5: Earth devil
+     skills:
+       
+    points:
+      atk: 
+      hp: 
+      def:
