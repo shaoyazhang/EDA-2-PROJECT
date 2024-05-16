@@ -11,7 +11,7 @@
                     "decision_question": "To be up dated1",
                     "options":
                     {
-                        "response": "To be up dated1",
+                        "response": "response 1",
                         "narra_bf": "To be up dated1",
                         "enemies": ["enemy 1", "enemy 2", "enemy 3"],
                         "narra_af": "To be up dated"
@@ -23,8 +23,8 @@
                     "decision_question": "To be up dated1",
                     "options":
                     {
-                        "response": "To be up dated 1",
-                        "narra_bf": "To be up dated 1",
+                        "response": "response 2",
+                        "narra_bf": "narra_bf 2",
                         "enemies": ["enemy 1", "enemy 2", "enemy 3"],
                         "narra_af": "To be up dated"
                     }
@@ -42,7 +42,7 @@
                     "decision_question": "To be up dated2",
                     "options":
                     {
-                        "response": "To be up dated2",
+                        "response": "response 1",
                         "narra_bf": "To be up dated2",
                         "enemies": ["enemy 1", "enemy 2", "enemy 3"],
                         "narra_af": "To be up dated"
@@ -54,8 +54,8 @@
                     "decision_question": "To be up dated2",
                     "options":
                     {
-                        "response": "To be up dated ",
-                        "narra_bf": "To be up dated ",
+                        "response": "response 2 ",
+                        "narra_bf": "narra_bf 2",
                         "enemies": ["enemy 1", "enemy 2", "enemy 3"],
                         "narra_af": "To be up dated"
                     }
@@ -73,8 +73,8 @@
                     "decision_question": "To be up dated",
                     "options":
                     {
-                        "response": "To be up dated2",
-                        "narra_bf": "To be up dated2",
+                        "response": "response 1",
+                        "narra_bf": "To be up dated 2",
                         "enemies": ["enemy 1", "enemy 2", "enemy 3"],
                         "narra_af": "To be up dated"
                     }
@@ -85,7 +85,7 @@
                     "decision_question": "To be up dated",
                     "options":
                     {
-                        "response": "To be up dated ",
+                        "response": "response 2",
                         "narra_bf": "To be up dated ",
                         "enemies": ["enemy 1", "enemy 2", "enemy 3"],
                         "narra_af": "To be up dated"
@@ -104,8 +104,8 @@
                     "decision_question": "To be up dated",
                     "options":
                     {
-                        "response": "To be up dated2",
-                        "narra_bf": "To be up dated2",
+                        "response": "response 1",
+                        "narra_bf": "narra_bf 2",
                         "enemies": ["enemy 1", "enemy 2", "enemy 3"],
                         "narra_af": "To be up dated"
                     }
@@ -116,8 +116,8 @@
                     "decision_question": "To be up dated",
                     "options":
                     {
-                        "response": "To be up dated ",
-                        "narra_bf": "To be up dated ",
+                        "response": "response 2",
+                        "narra_bf": "narra_bf 2",
                         "enemies": ["enemy 1", "enemy 2", "enemy 3"],
                         "narra_af": "To be up dated"
                     }

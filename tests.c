@@ -113,7 +113,7 @@ void test03()
         for (int j = 0; j < 2; j++)
         {
             printf("Decision: %d\n", scenarios[i].decisions[j].option_num);
-            printf("    Response: %s\n", scenarios[i].decisions[j].question);
+            printf("    Response: %s\n", scenarios[i].decisions[j].options.response);
             printf("    Narrative before: %s\n", scenarios[i].decisions[j].options.narra_bf);
             printf("    Narrative after: %s\n", scenarios[i].decisions[j].options.narra_af);
             printf("    Enemies:\n");
