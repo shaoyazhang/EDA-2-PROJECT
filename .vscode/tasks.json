@@ -11,6 +11,8 @@
                 "${fileDirname}/game.c",
                 "${fileDirname}/tests.c",
                 "${fileDirname}/main.c",
+                "${fileDirname}/initialization.c",
+                "${fileDirname}/cJSON.c",
                 "-o",
                 "${fileDirname}/main"
             ],

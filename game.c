@@ -48,10 +48,21 @@ void charcter_init(Character* players)
 
 }
 
+// Initialize Scenario
+void scenarioInit(Scenario* scenarios)
+{
+    int i;
+    for (i = 0; i < SCE_NUM; i++)
+    {
+        strcpy (scenarios[i].description, " ");
+    }
+} // To update the text of scenarios
 
 // ********* DO NOT MODIFY ********//
 
-// ********* LAB 1 ****************//
+
+
+// ************ LAB 2 *************//
 // ********* DO NOT MODIFY ********//
 
 // Show character's skill attributions
@@ -78,7 +89,6 @@ void printEnemySkill (Enemy* enemy)
 }
 
 // 1. Initialize queue
-
 // void queueInit (Queue* q)
 // {
 //     q->front = q->rear = NULL;

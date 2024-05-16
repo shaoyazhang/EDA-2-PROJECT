@@ -1,5 +1,6 @@
 # include "game.h"
-#include "tests.h"
+# include "tests.h"
+# include "initialization.h"
 
 // ************* DO NOT MODIFY **********//
 // ***************** LAB 1 **************//
@@ -90,7 +91,8 @@ int main()
         }
     }while(input);
     # endif
-    test02();
+    //test02();
+    test03();
     return 0;
 }
 
