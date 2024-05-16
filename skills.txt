@@ -158,38 +158,36 @@ Example: "You are now in a deep and dark forest, in the distance you see a light
       def: 35
 
 4th scenario: Water field
+
   enemy 1: School of piranhas
      skills:
-      a. Slam
+      a. Rapid bite
     points:
-      atk: 
-      hp: 
-      def: 
+      atk: 25
+      hp:  90
+      def: 5
+
   enemy 2: Water wizard
      skills:
-      a. 
+      a. Aqua blast
     points:
-      atk: 
-      hp: 
-      def:
+      atk: 30
+      hp:  80
+      def: 15
+
   enemy 3: Water elemental
      skills:
-      a. 
+      a. Tidal wave
     points:
-      atk: 
-      hp: 
-      def:
-  enemy 4: Zombie miner
+      atk: 35
+      hp:  100
+      def: 20
+
+  enemy 4: Water devil
      skills:
-      a. 
+      a. Aqua Prison, he water devil traps its targets in a watery prison, immobilizing them and causing damage.
+      b. Hydro Vortex, the devil creates a swirling vortex of water that pulls enemies fiercely towards it.
     points:
-      atk: 
-      hp: 
-      def:
-  enemy 5: Earth devil
-     skills:
-       
-    points:
-      atk: 
-      hp: 
-      def:
+      atk: 40
+      hp:  120
+      def: 25
