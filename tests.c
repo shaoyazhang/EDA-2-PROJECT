@@ -1,5 +1,5 @@
 #include "tests.h"
-
+# include "initialization.h"
 void test01()
 {
     srand((unsigned)time(NULL));
@@ -90,4 +90,40 @@ void test02()
     fightFlow(q);
 }
 
+
+void test03()
+{   
+    
+    const char* fp = "scenario_config.json";
+    char* jsonString = readFile (fp);
+
+    if (jsonString == NULL)
+    {
+        fprintf(stderr, "Failed to read JSON file\n");
+        return;
+    }
+
+    Scenario* scenarios = NULL;
+    int num_scenarios;
+    loadScenario(jsonString, &scenarios, &num_scenarios);
+    for ( int i = 0; i < num_scenarios; i++)
+    {
+        printf("Scenario name: %s\n", scenarios[i].name);
+        printf("Description: %s\n", scenarios[i].description);
+        for (int j = 0; j < 2; j++)
+        {
+            printf("Decision: %d\n", scenarios[i].decisions[j].option_num);
+            printf("    Response: %s\n", scenarios[i].decisions[j].question);
+            printf("    Narrative before: %s\n", scenarios[i].decisions[j].options.narra_bf);
+            printf("    Narrative after: %s\n", scenarios[i].decisions[j].options.narra_af);
+            printf("    Enemies:\n");
+            for (int k = 0; k < MAX_ENEMIES; k++)
+            {
+                printf("    -%s\n", scenarios[i].decisions[j].options.enemies[k]);
+            }
+        }
+    }
+    free(scenarios);
+    free(jsonString);
+}
 

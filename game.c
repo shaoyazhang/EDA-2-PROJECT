@@ -48,6 +48,7 @@ void charcter_init(Character* players)
 
 }
 
+
 void enemy_init(Enemy* enemies)
 {
     // Initialize enemies' names
@@ -92,7 +93,9 @@ void enemy_init(Enemy* enemies)
 
 // ********* DO NOT MODIFY ********//
 
-// ********* LAB 1 ****************//
+
+
+// ************ LAB 2 *************//
 // ********* DO NOT MODIFY ********//
 
 // Show character's skill attributions
@@ -119,7 +122,6 @@ void printEnemySkill (Enemy* enemy)
 }
 
 // 1. Initialize queue
-
 // void queueInit (Queue* q)
 // {
 //     q->front = q->rear = NULL;
