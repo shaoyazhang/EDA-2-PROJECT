@@ -52,8 +52,8 @@ void charcter_init(Character* players)
 void enemy_init(Enemy* enemies)
 {
     // Initialize enemies' names
-    strcpy(enemies[0].name, "Rock-troll"); // first scenario
-    strcpy(enemies[1].name, "Stone_guardian"); // second scenario
+    strcpy(enemies[0].name, "Goblin"); // first scenario
+    strcpy(enemies[1].name, "fire_enemy"); // second scenario
     strcpy(enemies[2].name, "Rock_Golem"); // third scenario
     strcpy(enemies[3].name, "water_wizard"); // fourth scenario
 
