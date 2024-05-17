@@ -40,6 +40,7 @@ void test01()
         tmp = tmp->next;  
     }
     printf("%d \n", q->size);
+
     // printf("%p ", q->front);
     
     // while (q->size)
@@ -66,29 +67,57 @@ void test01()
 
 }
 
+
 void test02()
 {
     srand((unsigned)time(NULL));
     Queue* q = queueInit ();
+    
+    const char* fp = "enemy_skills.json";
+    char* jsonString = readFile (fp);
 
-    Skill playerSkills[4] = {
-        {"skill 1", "skill 1", 1, 2, 3, 4, 5},
-        {"skill 2", "skill 2", 1, 2, 3, 4, 5},
-        {"skill 3", "skill 2", 1, 2, 3, 4, 5},
-        {"skill 4", "skill 2", 1, 2, 3, 4, 5}
-    };
+    if (jsonString == NULL)
+    {
+        fprintf(stderr, "Failed to read JSON file\n");
+        return;
+    }
 
-    Character player = {"Player", 100, 20, 10, {playerSkills[0],playerSkills[1], playerSkills[2], playerSkills[3]}};
+    Enemy* enemies = NULL;
+    int num_enemies;
 
-    Skill enemySkills[4] = {
-        {"Eskill 1", "Eskill 1", 1, 2, 3, 4, 5},
-        {"Eskill 2", "Eskill 2", 1, 2, 3, 4, 5},
-        {"Eskill 3", "Eskill 2", 1, 2, 3, 4, 5},
-        {"Eskill 4", "Eskill 2", 1, 2, 3, 4, 5}
-    };
-    Enemy enemy = {"Enemy", 30, 50, 5, {enemySkills[0], enemySkills[1], enemySkills[2], enemySkills[3]}};
-    queueTurn (q, &player, &enemy);
+    loadEnemySkills(jsonString, &enemies, &num_enemies);
+    // Skill playerSkills[4] = {
+    //     {"skill 1", "skill 1", 1, 2, 3, 4, 5},
+    //     {"skill 2", "skill 2", 1, 2, 3, 4, 5},
+    //     {"skill 3", "skill 2", 1, 2, 3, 4, 5},
+    //     {"skill 4", "skill 2", 1, 2, 3, 4, 5}
+    // };
 
+    // Character player = {"Player", 100, 20, 10, {playerSkills[0],playerSkills[1], playerSkills[2], playerSkills[3]}};
+
+    // Skill enemySkills[4] = {
+    //     {"Eskill 1", "Eskill 1", 1, 2, 3, 4, 5},
+    //     {"Eskill 2", "Eskill 2", 1, 2, 3, 4, 5},
+    //     {"Eskill 3", "Eskill 2", 1, 2, 3, 4, 5},
+    //     {"Eskill 4", "Eskill 2", 1, 2, 3, 4, 5}
+    // };
+    // Enemy enemy = {"Enemy", 30, 50, 5, {enemySkills[0], enemySkills[1], enemySkills[2], enemySkills[3]}};
+    printf("%s ", enemies[1].name);
+    const char* fp01 = "skills.json";
+    char* jsonString1 = readFile (fp01);
+
+    if (jsonString1 == NULL)
+    {
+        fprintf(stderr, "Failed to read JSON file\n");
+        return;
+    }
+
+    Character* players = NULL;
+    int num_charcter;
+    loadSkills(jsonString1, &players, &num_charcter);
+
+    printf("%s\n", players[1].name);
+    queueTurn (q, &players[1], &enemies[1]);
     fightFlow(q);
 }
 
@@ -141,19 +170,52 @@ void test04 ()
         return;
     }
 
-    Skill* skill = NULL;
-    int num_skills;
-    loadSkills(jsonString, &skill, &num_skills);
+    Character* players = NULL;
+    int num_charcter;
+    loadSkills(jsonString, &players, &num_charcter);
     for (int i = 0; i < MAX_SKILL; i++)
+    {   
+        printf("skill %d:\n", (i+1));
+        for (int j = 0; j < MAX_DECISION; j++)
+        { 
+            // printf("name: %s\n", players[i].skills[j].name);
+            // printf("    Description: %s\n", players[i].skills[j].description);
+            // printf("    type: %d\n", players[i].skills[j].type);
+            // printf("    duration: %d\n", players[i].skills[j].duration);
+            // printf("    atk: %d\n", players[i].skills[j].atk);
+            // printf("    hp: %d\n", players[i].skills[j].hp);
+            // printf("    def: %d\n", players[i].skills[j].def);
+        }       
+   }  
+}
+
+void test05 ()
+{
+    const char* fp = "enemy_skills.json";
+    char* jsonString = readFile (fp);
+
+    if (jsonString == NULL)
     {
-        printf("skill:\n");
-        printf("name: %s\n", skill[i].name);
-        printf("    Description: %s\n", skill[i].description);
-        printf("    type: %d\n", skill[i].type);
-        printf("    duration: %d\n", skill[i].duration);
-        printf("    atk: %d\n", skill[i].atk);
-        printf("    hp: %d\n", skill[i].hp);
-        printf("    def: %d\n", skill[i].def);
+        fprintf(stderr, "Failed to read JSON file\n");
+        return;
+    }
+
+    Enemy* enemies = NULL;
+    int num_enemies;
+    loadEnemySkills(jsonString, &enemies, &num_enemies);
+    for (int i = 0; i < 8; i++)
+    {
+        printf("enemy: %d\n", i+1);
+        for (int j = 0; j < MAX_SKILL; j++)
+        {
+            printf("name: %s\n", enemies[i].skills[j].name);
+            printf("    Description: %s\n", enemies[i].skills[j].description);
+            printf("    type: %d\n", enemies[i].skills[j].type);
+            printf("    duration: %d\n", enemies[i].skills[j].duration);
+            printf("    atk: %d\n", enemies[i].skills[j].atk);
+            printf("    hp: %d\n", enemies[i].skills[j].hp);
+            printf("    def: %d\n", enemies[i].skills[j].def);
+        }
     }
     
 }

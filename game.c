@@ -6,7 +6,8 @@
 
 // Initialize charcters
 void charcter_init(Character* players)
-{
+{   
+    players = (Character*)realloc(players, sizeof(Character) * MAX_CHARACTS); 
     // Initialize characters' name
     strcpy(players[0].name, "night walker");
     strcpy(players[1].name, "snow flier");
@@ -49,47 +50,62 @@ void charcter_init(Character* players)
 }
 
 
-void enemy_init(Enemy* enemies)
+void enemy_init(Enemy* enemies, int scenario_num)
 {
-    // Initialize enemies' names
+    
+    enemies = (Enemy*)realloc(enemies,sizeof(Enemy) * 8);
+           
     strcpy(enemies[0].name, "Goblin"); // first scenario
+    enemies->atk = 0;
+    enemies->def = 0;
+    enemies->hp = 0;
+    
     strcpy(enemies[1].name, "fire_enemy"); // second scenario
+    enemies->atk = 0;
+    enemies->def = 0;
+    enemies->hp = 0;
+
     strcpy(enemies[2].name, "Rock_Golem"); // third scenario
+    enemies->atk = 0;
+    enemies->def = 0;
+    enemies->hp = 0;
+
     strcpy(enemies[3].name, "water_wizard"); // fourth scenario
+    enemies->atk = 0;
+    enemies->def = 0;
+    enemies->hp = 0;
 
-    // Initialize points
-    for (int i = 0; i < MAX_ENEMIES; i++)
-    {
-        enemies[i].atk = 10; // es un ejemplo
-        enemies[i].def = 10; // ejemplo
-        enemies[i].hp = 10;  // ejemplo
-    }
+    
+    strcpy(enemies[4].name, "Goblin"); // first scenario
+    enemies->atk = 0;
+    enemies->def = 0;
+    enemies->hp = 0;
+    strcpy(enemies[1].name, "fire_enemy"); // second scenario
+    enemies->atk = 0;
+    enemies->def = 0;
+    enemies->hp = 0;
 
-    // Initialize skills for each enemy
-    // Enemy 1
-    strcpy(enemies[0].skills[0].name, "Bite");
-    strcpy(enemies[0].skills[1].name, "Scratch");
-    strcpy(enemies[0].skills[2].name, "Charge");
-    strcpy(enemies[0].skills[3].name, "Roar");
+    strcpy(enemies[5].name, "Rock_Golem"); // third scenario
+    enemies->atk = 0;
+    enemies->def = 0;
+    enemies->hp = 0;
+    strcpy(enemies[6].name, "water_wizard"); // fourth scenario
+    enemies->atk = 0;
+    enemies->def = 0;
+    enemies->hp = 0;
+            
 
-    // Enemy 2
-    strcpy(enemies[1].skills[0].name, "Axe Swing");
-    strcpy(enemies[1].skills[1].name, "Smash");
-    strcpy(enemies[1].skills[2].name, "Fury");
-    strcpy(enemies[1].skills[3].name, "Rage");
-
-    // Enemy 3
-    strcpy(enemies[2].skills[0].name, "Dark Slash");
-    strcpy(enemies[2].skills[1].name, "Shadow Strike");
-    strcpy(enemies[2].skills[2].name, "Guard Break");
-    strcpy(enemies[2].skills[3].name, "Sword Slam");
-
-    // Enemy 4
-    strcpy(enemies[3].skills[0].name, "Fire Breath");
-    strcpy(enemies[3].skills[1].name, "Tail Swipe");
-    strcpy(enemies[3].skills[2].name, "Wing Gust");
-    strcpy(enemies[3].skills[3].name, "Dragon Roar");
+            
+    strcpy(enemies[7].name, "Goblin"); // first scenario
+    enemies->atk = 0;
+    enemies->def = 0;
+    enemies->hp = 0; 
+    strcpy(enemies[1].name, "fire_enemy"); // second scenario
+    enemies->atk = 0;
+    enemies->def = 0;
+    enemies->hp = 0;          
 }
+   
 
 // ********* DO NOT MODIFY ********//
 
@@ -257,14 +273,15 @@ void fightFlow (Queue* q)
 
     if (q->front->enemy == NULL)
     {
-        printf("Select skill:\n" );
+        printf("Your turn, please select skill:\n" );
+        // Character* playerTurn = q->front->player;
         printCharacterSkill (q->front->player);
-        dequeue (q);  
-        return;          
+        dequeue (q);    
+        return;
     }
     else if (q->front->player == NULL)
     {
-        printf("Skill:\n" );
+        printf("Select skill:\n" );
         printEnemySkill (q->front->enemy);
         dequeue (q);
         return;

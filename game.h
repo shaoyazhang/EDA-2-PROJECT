@@ -11,17 +11,17 @@
 
 //********** DO NOT MODIFY ********//
 //*********** LAB 1 **************//
-#define MAX_CHAR_NAME 20
-#define MAX_SKILL_NAME 20
-#define MAX_SCENARIO_NAME 20
-#define SCE_NUM 4
+#define MAX_CHAR_NAME 50
+#define MAX_SKILL_NAME 80
+#define MAX_SCENARIO_NAME 80
 #define MAX_DESCRIPTION 200
 #define MAX_SKILL 4
 #define MAX_QUESTION 100
-#define MAX_ENEMIES 3
+#define MAX_ENEMIES 4
 #define MAX_CHARACTS 4
 #define NUM_TURNS 4
 #define MAX_DECISION 2
+#define MAX_ENEMY_SKILLS 8
 
 // 1. Skills
 typedef struct
@@ -89,7 +89,7 @@ void charcter_init(Character* players);
 //void scenarioInit(Scenario* scenarios);
 //void decision_init(Decision* decisions);
 //void option_init(Option* options);
-void enemy_init(Enemy* enemies);
+void enemy_init(Enemy* enemies, int scenario_num);
 void game(Character *players);
 
 

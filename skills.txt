@@ -59,7 +59,7 @@ Example: "You are now in a deep and dark forest, in the distance you see a light
 1st scenario: Wood field
   enemy 1: Creatures
     skills: 
-      a. their screams make the air wave and hurt
+      a. soar
       b. bitting. they have the ability to bite
     points:
       atk:10
