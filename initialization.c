@@ -26,7 +26,7 @@ char* readFile (const char* filename)
 }
 
 // Load Scenario JSON file
-void loadScenario(const char* jsonString, Scenario** scenarios, int* num_sce) {
+void scenarioInit(const char* jsonString, Scenario** scenarios, int* num_sce) {
     cJSON *json = cJSON_Parse(jsonString);
     if (json == NULL) {
         printf("Failed to parse JSON\n");
@@ -53,53 +53,65 @@ void loadScenario(const char* jsonString, Scenario** scenarios, int* num_sce) {
     cJSON_ArrayForEach(scenario_json, scenarios_json) {
         cJSON *scenario_id = cJSON_GetObjectItemCaseSensitive(scenario_json, "scenario_id");
         cJSON *description = cJSON_GetObjectItemCaseSensitive(scenario_json, "description");
-        cJSON *decisions = cJSON_GetObjectItemCaseSensitive(scenario_json, "decisions");
+        cJSON *decision = cJSON_GetObjectItemCaseSensitive(scenario_json, "decision");
 
-        if (cJSON_IsString(scenario_id) && cJSON_IsString(description) && cJSON_IsArray(decisions)) {
+        if (cJSON_IsString(scenario_id) && cJSON_IsString(description) && cJSON_IsObject(decision)) {
             strncpy((*scenarios)[sce_idx].name, scenario_id->valuestring, sizeof((*scenarios)[sce_idx].name) - 1);
+            //(*scenarios)[sce_idx].name[sizeof((*scenarios)[sce_idx].name) - 1] = '\0';  // Ensure null-termination
+
             strncpy((*scenarios)[sce_idx].description, description->valuestring, sizeof((*scenarios)[sce_idx].description) - 1);
-        }
+            //(*scenarios)[sce_idx].description[sizeof((*scenarios)[sce_idx].description) - 1] = '\0';  // Ensure null-termination
 
-        int decision_idx = 0;
-        cJSON* decision_json = NULL;
-        cJSON_ArrayForEach(decision_json, decisions) {
-            if (decision_idx >= MAX_DECISION)
-                break;
+            cJSON* option_num = cJSON_GetObjectItemCaseSensitive(decision, "option_num");
+            cJSON* decision_question = cJSON_GetObjectItemCaseSensitive(decision, "decision_question");
+            cJSON* options = cJSON_GetObjectItemCaseSensitive(decision, "options");
 
-            cJSON* decision_id = cJSON_GetObjectItemCaseSensitive(decision_json, "decision_id");
-            cJSON* decision_question = cJSON_GetObjectItemCaseSensitive(decision_json, "decision_question");
-            cJSON* options = cJSON_GetObjectItemCaseSensitive(decision_json, "options");
+            if (cJSON_IsNumber(option_num) && cJSON_IsString(decision_question) && cJSON_IsArray(options)) {
+                (*scenarios)[sce_idx].decision.option_num = option_num->valueint;
+                strncpy((*scenarios)[sce_idx].decision.question, decision_question->valuestring,
+                        sizeof((*scenarios)[sce_idx].decision.question) - 1);
+                (*scenarios)[sce_idx].decision.question[sizeof((*scenarios)[sce_idx].decision.question) - 1] = '\0';  // Ensure null-termination
 
-            if (cJSON_IsNumber(decision_id) && cJSON_IsString(decision_question) && cJSON_IsObject(options)) {
-                (*scenarios)[sce_idx].decisions[decision_idx].option_num = decision_id->valueint;
+                int option_idx = 0;
+                cJSON* option_json = NULL;
+                cJSON_ArrayForEach(option_json, options) {
+                    if (option_idx >= MAX_DECISION)
+                        break;
 
-                cJSON* responses = cJSON_GetObjectItemCaseSensitive(options, "response");
-                cJSON* narrative_bf = cJSON_GetObjectItemCaseSensitive(options, "narra_bf");
-                cJSON* narrative_af = cJSON_GetObjectItemCaseSensitive(options, "narra_af");
-                cJSON* enemies = cJSON_GetObjectItemCaseSensitive(options, "enemies");
+                    cJSON* response = cJSON_GetObjectItemCaseSensitive(option_json, "response");
+                    cJSON* narrative_bf = cJSON_GetObjectItemCaseSensitive(option_json, "narra_bf");
+                    cJSON* narrative_af = cJSON_GetObjectItemCaseSensitive(option_json, "narra_af");
+                    cJSON* enemies = cJSON_GetObjectItemCaseSensitive(option_json, "enemies");
 
-                if (cJSON_IsString(responses) && cJSON_IsString(narrative_bf) && cJSON_IsString(narrative_af) && cJSON_IsArray(enemies)) {
-                    strncpy((*scenarios)[sce_idx].decisions[decision_idx].options.response, responses->valuestring,
-                            sizeof((*scenarios)[sce_idx].decisions[decision_idx].options.response) - 1);
-                    strncpy((*scenarios)[sce_idx].decisions[decision_idx].options.narra_bf, narrative_bf->valuestring,
-                            sizeof((*scenarios)[sce_idx].decisions[decision_idx].options.narra_bf) - 1);
-                    strncpy((*scenarios)[sce_idx].decisions[decision_idx].options.narra_af, narrative_af->valuestring,
-                            sizeof((*scenarios)[sce_idx].decisions[decision_idx].options.narra_af) - 1);
+                    if (cJSON_IsString(response) && cJSON_IsString(narrative_bf) && cJSON_IsString(narrative_af) && cJSON_IsArray(enemies)) {
+                        strncpy((*scenarios)[sce_idx].decision.options[option_idx].response, response->valuestring,
+                                sizeof((*scenarios)[sce_idx].decision.options[option_idx].response) - 1);
+                        //(*scenarios)[sce_idx].decision.options[option_idx].response[sizeof((*scenarios)[sce_idx].decision.options[option_idx].response) - 1] = '\0';  // Ensure null-termination
 
-                    int enemy_idx = 0;
-                    cJSON* enemy = NULL;
-                    cJSON_ArrayForEach(enemy, enemies) {
-                        if (enemy_idx >= MAX_ENEMIES)
-                            break;
-                        if (cJSON_IsString(enemy)) {
-                            strncpy((*scenarios)[sce_idx].decisions[decision_idx].options.enemies[enemy_idx], enemy->valuestring,
-                                    MAX_CHAR_NAME - 1);
-                            enemy_idx++;
+                        strncpy((*scenarios)[sce_idx].decision.options[option_idx].narra_bf, narrative_bf->valuestring,
+                                sizeof((*scenarios)[sce_idx].decision.options[option_idx].narra_bf) - 1);
+                        //(*scenarios)[sce_idx].decision.options[option_idx].narra_bf[sizeof((*scenarios)[sce_idx].decision.options[option_idx].narra_bf) - 1] = '\0';  // Ensure null-termination
+
+                        strncpy((*scenarios)[sce_idx].decision.options[option_idx].narra_af, narrative_af->valuestring,
+                                sizeof((*scenarios)[sce_idx].decision.options[option_idx].narra_af) - 1);
+                        //(*scenarios)[sce_idx].decision.options[option_idx].narra_af[sizeof((*scenarios)[sce_idx].decision.options[option_idx].narra_af) - 1] = '\0';  // Ensure null-termination
+
+                        int enemy_idx = 0;
+                        cJSON* enemy = NULL;
+                        cJSON_ArrayForEach(enemy, enemies) {
+                            if (enemy_idx >= MAX_ENEMIES)
+                                break;
+                            if (cJSON_IsString(enemy)) {
+                                strncpy((*scenarios)[sce_idx].decision.options[option_idx].enemies[enemy_idx], enemy->valuestring,
+                                        sizeof((*scenarios)[sce_idx].decision.options[option_idx].enemies[enemy_idx]) - 1);
+                                (*scenarios)[sce_idx].decision.options[option_idx].enemies[enemy_idx][sizeof((*scenarios)[sce_idx].decision.options[option_idx].enemies[enemy_idx]) - 1] = '\0';  // Ensure null-termination
+                                enemy_idx++;
+                            }
                         }
                     }
+                    option_idx++;
                 }
             }
-            decision_idx++;
         }
         sce_idx++;
     }
@@ -108,7 +120,7 @@ void loadScenario(const char* jsonString, Scenario** scenarios, int* num_sce) {
 
 
 // Initialize skills
-void loadSkills (const char* jsonString, Character** players, int* num_charac)
+void characterInit (const char* jsonString, Character** players, int* num_charac)
 {
     cJSON *json = cJSON_Parse(jsonString);
     if (json == NULL) 
@@ -186,7 +198,7 @@ void loadSkills (const char* jsonString, Character** players, int* num_charac)
 }
 
 
-void loadEnemySkills (const char* jsonString, Enemy** enemies, int* num_enemy)
+void enemyInit (const char* jsonString, Enemy** enemies, int* num_enemy)
 {
     cJSON *json = cJSON_Parse(jsonString);
     if (json == NULL) 
@@ -260,8 +272,5 @@ void loadEnemySkills (const char* jsonString, Enemy** enemies, int* num_enemy)
         }
         enemy_idx++;
     }
-
-    
-
     cJSON_Delete(json);
 }

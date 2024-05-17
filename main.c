@@ -94,7 +94,8 @@ int main()
 
     //test02();
     // test03();
-    test04();
+    // test04();
+    test06 ();
     return 0;
 }
 

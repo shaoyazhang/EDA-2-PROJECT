@@ -13,6 +13,7 @@
                 "${fileDirname}/main.c",
                 "${fileDirname}/initialization.c",
                 "${fileDirname}/cJSON.c",
+                "${fileDirname}/graph.c",
                 "-o",
                 "${fileDirname}/main"
             ],

@@ -14,6 +14,7 @@
 #define MAX_CHAR_NAME 50
 #define MAX_SKILL_NAME 80
 #define MAX_SCENARIO_NAME 80
+#define MAX_SCENARIOS 4
 #define MAX_DESCRIPTION 200
 #define MAX_SKILL 4
 #define MAX_QUESTION 100
@@ -58,7 +59,7 @@ typedef struct
 typedef struct
 {
     char question[MAX_QUESTION];
-    Option options;
+    Option options[MAX_DECISION];
     int option_num;
 }Decision;
 
@@ -68,7 +69,7 @@ typedef struct
 {
     char name[MAX_SCENARIO_NAME];
     char description[MAX_DESCRIPTION];
-    Decision decisions[MAX_DECISION];
+    Decision decision;
 }Scenario;
 
 
@@ -89,7 +90,7 @@ void charcter_init(Character* players);
 //void scenarioInit(Scenario* scenarios);
 //void decision_init(Decision* decisions);
 //void option_init(Option* options);
-void enemy_init(Enemy* enemies, int scenario_num);
+//void enemy_init(Enemy* enemies, int scenario_num);
 void game(Character *players);
 
 
@@ -122,7 +123,6 @@ void dequeue (Queue* q);
 void queueTurn (Queue* q, Character* player, Enemy* enemies);
 void fightFlow (Queue* q);
 
-
-
 //********** DO NOT MODIFY ********//
+
 #endif
