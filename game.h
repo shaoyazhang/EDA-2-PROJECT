@@ -84,6 +84,7 @@ typedef struct
 
 // Initializations
 // void skill_init(Skill* skills);
+void menu();
 void charcter_init(Character* players); 
 //void scenarioInit(Scenario* scenarios);
 //void decision_init(Decision* decisions);

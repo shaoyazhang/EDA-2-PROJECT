@@ -264,7 +264,7 @@ void fightFlow (Queue* q)
     }
     else if (q->front->player == NULL)
     {
-        printf("Select skill:\n" );
+        printf("Skill:\n" );
         printEnemySkill (q->front->enemy);
         dequeue (q);
         return;

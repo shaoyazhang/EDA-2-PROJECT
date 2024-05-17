@@ -92,9 +92,9 @@ int main()
     }while(input);
     # endif
 
-    //test02();
+    test02();
     // test03();
-    test04();
+    // test04();
     return 0;
 }
 
