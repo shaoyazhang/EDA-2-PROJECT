@@ -6,7 +6,8 @@
 
 // Initialize charcters
 void charcter_init(Character* players)
-{
+{   
+    players = (Character*)realloc(players, sizeof(Character) * MAX_CHARACTS); 
     // Initialize characters' name
     strcpy(players[0].name, "night walker");
     strcpy(players[1].name, "snow flier");
@@ -49,9 +50,68 @@ void charcter_init(Character* players)
 }
 
 
+void enemy_init(Enemy* enemies, int scenario_num)
+{
+    
+    enemies = (Enemy*)realloc(enemies,sizeof(Enemy) * 8);
+           
+    strcpy(enemies[0].name, "Goblin"); // first scenario
+    enemies->atk = 0;
+    enemies->def = 0;
+    enemies->hp = 0;
+    
+    strcpy(enemies[1].name, "fire_enemy"); // second scenario
+    enemies->atk = 0;
+    enemies->def = 0;
+    enemies->hp = 0;
+
+    strcpy(enemies[2].name, "Rock_Golem"); // third scenario
+    enemies->atk = 0;
+    enemies->def = 0;
+    enemies->hp = 0;
+
+    strcpy(enemies[3].name, "water_wizard"); // fourth scenario
+    enemies->atk = 0;
+    enemies->def = 0;
+    enemies->hp = 0;
+
+    
+    strcpy(enemies[4].name, "Goblin"); // first scenario
+    enemies->atk = 0;
+    enemies->def = 0;
+    enemies->hp = 0;
+    strcpy(enemies[1].name, "fire_enemy"); // second scenario
+    enemies->atk = 0;
+    enemies->def = 0;
+    enemies->hp = 0;
+
+    strcpy(enemies[5].name, "Rock_Golem"); // third scenario
+    enemies->atk = 0;
+    enemies->def = 0;
+    enemies->hp = 0;
+    strcpy(enemies[6].name, "water_wizard"); // fourth scenario
+    enemies->atk = 0;
+    enemies->def = 0;
+    enemies->hp = 0;
+            
+
+            
+    strcpy(enemies[7].name, "Goblin"); // first scenario
+    enemies->atk = 0;
+    enemies->def = 0;
+    enemies->hp = 0; 
+    strcpy(enemies[1].name, "fire_enemy"); // second scenario
+    enemies->atk = 0;
+    enemies->def = 0;
+    enemies->hp = 0;          
+}
+   
+
 // ********* DO NOT MODIFY ********//
 
-// ********* LAB 1 ****************//
+
+
+// ************ LAB 2 *************//
 // ********* DO NOT MODIFY ********//
 
 // Show character's skill attributions
@@ -78,7 +138,6 @@ void printEnemySkill (Enemy* enemy)
 }
 
 // 1. Initialize queue
-
 // void queueInit (Queue* q)
 // {
 //     q->front = q->rear = NULL;
@@ -215,7 +274,7 @@ void fightFlow (Queue* q)
     if (q->front->enemy == NULL)
     {
         printf("Select skill:\n" );
-        Character* playerTurn = q->front->player;
+        // Character* playerTurn = q->front->player;
         printCharacterSkill (q->front->player);
         dequeue (q);  
         // return playerTurn; // return character structure pointer    
@@ -223,23 +282,23 @@ void fightFlow (Queue* q)
     else if (q->front->player == NULL)
     {
         printf("Select skill:\n" );
-        char* enemyTurn = q->front->enemy;
+        // char* enemyTurn = q->front->enemy;
         // printEnemySkill (q->front->enemy); 
         dequeue (q);
         int ret = rand() % 4; 
         switch (ret)
         {
             case 0:
-                printf("%s\n", q->front->enemy->skills[0]);
+                printf("%s\n", q->front->enemy->skills[0].name);
                 break;
             case 1:
-                printf("%s\n", q->front->enemy->skills[1]);
+                printf("%s\n", q->front->enemy->skills[1].name);
                 break;
             case 2:
-                printf("%s\n", q->front->enemy->skills[2]);
+                printf("%s\n", q->front->enemy->skills[2].name);
                 break;
             case 3:
-                printf("%s\n", q->front->enemy->skills[3]);
+                printf("%s\n", q->front->enemy->skills[3].name);
                 break;
             default:
                 printf("Not an available option\n");
