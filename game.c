@@ -273,18 +273,15 @@ void fightFlow (Queue* q)
 
     if (q->front->enemy == NULL)
     {
-        printf("Select skill:\n" );
+        printf("Your turn, please select skill:\n" );
         // Character* playerTurn = q->front->player;
         printCharacterSkill (q->front->player);
-        dequeue (q);  
-        // return playerTurn; // return character structure pointer    
+        dequeue (q);    
+        return;
     }
     else if (q->front->player == NULL)
-    {
-        printf("Select skill:\n" );
-        // char* enemyTurn = q->front->enemy;
-        // printEnemySkill (q->front->enemy); 
-        dequeue (q);
+    { 
+        printf("Devil's turn:\n" );
         int ret = rand() % 4; 
         switch (ret)
         {
@@ -302,9 +299,11 @@ void fightFlow (Queue* q)
                 break;
             default:
                 printf("Not an available option\n");
+                break;
+            dequeue (q);
 
         }
-        // return enemyTurn; // return enemy structure pointer
+        return;
     }
 }
 
