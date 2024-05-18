@@ -36,7 +36,6 @@ void addEdges (Graph* graph, int srcIndex, int destIndex)
     }
 }
 
-
 // Function to print the graph
 void printGraph (Graph* graph)
 {
@@ -59,4 +58,55 @@ void printGraph (Graph* graph)
         printf("\n");
     }
     
+}
+
+void printSenario (Scenario* scenario)
+{
+    printf("Details for Scenario: %s\n", scenario->name);
+    printf("    Description: %s\n", scenario->description);
+    printf("    Question: %s\n", scenario->decision.question);
+    for (int j = 0; j < MAX_DECISION; j++) 
+        {
+            printf("    Option %d: %s\n", j+1, scenario->decision.options[j].response);
+            printf("        Narrative: %s\n", scenario->decision.options[j].narra_bf);
+            printf("        Narrative: %s\n", scenario->decision.options[j].narra_af);
+        }
+}
+
+// navigate scenarios
+void navigateScenario (Graph* graph, int curScenarioIdx, bool winAllBattles)
+{
+    if (winAllBattles)
+    {
+        if (graph->nodes[curScenarioIdx].num_adjacent == 0) 
+        {
+        printf("No adjacent scenarios available.\n");
+        return;
+        }
+        else
+        {
+            printf("You can navigate to these bases:\n");
+            for (int i = 0; i < graph->nodes[curScenarioIdx].num_adjacent; i++) 
+            {
+                printf("%d. %s\n", i + 1, graph->nodes[curScenarioIdx].adjacent[i]->scenario.name);
+            }
+        }
+        printf("Please select one base you want to navigate:\n");
+        int option;
+        scanf("%d", &option);
+        if (option < 1 || option > graph->nodes[curScenarioIdx].num_adjacent) 
+        {
+            printf("Invalid choice.\n");
+            return;
+        }
+        int nextScenarioIdx = option - 1;
+        printf("Navigating to %s\n", graph->nodes[curScenarioIdx].adjacent[nextScenarioIdx]->scenario.name);
+        printSenario (&graph->nodes[curScenarioIdx].adjacent[nextScenarioIdx]->scenario);
+        // printf("    Adjacent senarios: ");
+        // for (int j = 0; j < graph->nodes[nextScenarioIdx].num_adjacent; j++)
+        // {
+        //     printf("%s ", graph->nodes[nextScenarioIdx].adjacent[j]->scenario.name);
+        // }
+        // printf("\n");
+    }
 }

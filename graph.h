@@ -20,3 +20,4 @@ void graphInit(Graph* graph);
 void addScenario (Graph* graph, Scenario Scenario);
 void addEdges (Graph* graph, int srcIndex, int destIndex);
 void printGraph (Graph* graph);
+void navigateScenario (Graph* graph, int currentScenarioIndex, bool winAllBattles);

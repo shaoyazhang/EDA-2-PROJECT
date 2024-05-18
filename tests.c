@@ -240,4 +240,43 @@ void test06 ()
         }
     }
     printGraph (&graph);
+
+}
+
+void test07()
+{
+    Graph graph;
+    graphInit(&graph);
+    const char* fp = "scenario_config.json";
+    char* jsonString = readFile (fp);
+
+    if (jsonString == NULL)
+    {
+        fprintf(stderr, "Failed to read JSON file\n");
+        return;
+    }
+
+    Scenario* scenarios = NULL;
+    int num_scenarios;
+    scenarioInit(jsonString, &scenarios, &num_scenarios);
+    for (int i = 0; i < num_scenarios; i++) {
+        addScenario(&graph, scenarios[i]);
+    }
+    // addEdges(&graph, 0, 1);
+    // addEdges(&graph, 0, 2);
+    // addEdges(&graph, 0, 3);
+    // addEdges(&graph, 1, 0);
+    // addEdges(&graph, 1, 2);
+    // addEdges(&graph, 1, 3);
+
+    for (int i = 0; i < MAX_SCENARIOS; i++)
+    {
+        for (int j = 0; j < MAX_SCENARIOS; j++)
+        {   if (i != j)
+                addEdges(&graph, i, j);
+        }
+    }
+
+    bool winAllBattles = true;
+    navigateScenario (&graph, 2, winAllBattles);
 }
