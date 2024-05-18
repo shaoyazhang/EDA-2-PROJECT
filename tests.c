@@ -6,7 +6,6 @@ void test01()
 {
     srand((unsigned)time(NULL));
     Queue* q = queueInit ();
-
     Skill playerSkills[4] = {
         {"skill 1", "skill 1", 1, 2, 3, 4, 5},
         {"skill 2", "skill 2", 1, 2, 3, 4, 5},
@@ -159,14 +158,23 @@ void test04 ()
     Character* players = NULL;
     int num_charcter;
     characterInit(jsonString, &players, &num_charcter);
-    for (int i = 0; i < MAX_SKILL; i++)
+    // printf("Player %d name: %s\n", 1, players[1].name);
+    // printf("skill %d name: %s\n", 1, players[1].skills[0].name);
+    // printf("    Description: %s\n", players[1].skills[0].description);
+    // printf("    type: %s\n", players[1].skills[0].type);
+    // printf("    duration: %d\n", players[0].skills[0].duration);
+    // printf("    atk: %d\n", players[0].skills[0].atk);
+    // printf("    hp: %d\n", players[0].skills[0].hp);
+    // printf("    def: %d\n", players[0].skills[0].def);
+
+    for (int i = 0; i < MAX_CHARACTS; i++)
     {   
-        printf("skill %d:\n", (i+1));
-        for (int j = 0; j < MAX_DECISION; j++)
+        printf("Player %d name: %s\n", i+1, players[i].name);
+        for (int j = 0; j < MAX_SKILL; j++)
         { 
-            printf("name: %s\n", players[i].skills[j].name);
+            printf("skill %d name: %s\n", j+1, players[i].skills[j].name);
             printf("    Description: %s\n", players[i].skills[j].description);
-            printf("    type: %d\n", players[i].skills[j].type);
+            printf("    type: %s\n", players[i].skills[j].type);
             printf("    duration: %d\n", players[i].skills[j].duration);
             printf("    atk: %d\n", players[i].skills[j].atk);
             printf("    hp: %d\n", players[i].skills[j].hp);
@@ -196,7 +204,7 @@ void test05 ()
         {
             printf("name: %s\n", enemies[i].skills[j].name);
             printf("    Description: %s\n", enemies[i].skills[j].description);
-            printf("    type: %d\n", enemies[i].skills[j].type);
+            printf("    type: %s\n", enemies[i].skills[j].type);
             printf("    duration: %d\n", enemies[i].skills[j].duration);
             printf("    atk: %d\n", enemies[i].skills[j].atk);
             printf("    hp: %d\n", enemies[i].skills[j].hp);

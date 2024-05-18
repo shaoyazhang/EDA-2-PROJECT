@@ -92,11 +92,12 @@ int main()
     }while(input);
     # endif
 
+    test01();
     //test02();
     // test03();
-    // test04();
+    //test04();
     // test06 ();
-    test07 ();
+    //test07 ();
     return 0;
 }
 

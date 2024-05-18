@@ -2,197 +2,197 @@
 {
     "characters": 
     [
-        {   "characters_name": "name 1",
-            "hp":0,
-            "atk":0,
-            "def":0,
+        {   "characters_name": "Night walker",
+            "hp":100,
+            "atk":70,
+            "def":30,
             "skills":
             [
                 {
-                    "skill_name": "name 1 ",
-                    "description": "description 1 ",
+                    "skill_name": "jump high",
+                    "description": "Increase defense power by 20% for 5 turns.",
                     "type": 0,
-                    "duration": 0,
+                    "duration": 5,
                     "atk": 0,
+                    "hp": 0,
+                    "def": 20
+                },
+        
+                {
+                    "skill_name": "high kick",
+                    "description": "Increase attack power by 30% for 3 turns",
+                    "type": 0,
+                    "duration": 3,
+                    "atk": 30,
                     "hp": 0,
                     "def": 0
                 },
         
                 {
-                    "skill_name": "name 2 ",
-                    "description": "description 2 ",
+                    "skill_name": "advance/step back",
+                    "description": "Increase defense power by 10% for 10 turns",
                     "type": 0,
-                    "duration": 1,
-                    "atk": 1,
-                    "hp": 1,
-                    "def": 1
+                    "duration": 10,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 10
                 },
         
                 {
-                    "skill_name": "name 3 ",
-                    "description": "description 3 ",
+                    "skill_name": "punch",
+                    "description": "Cause 15 damage to the enemy's life point",
                     "type": 0,
-                    "duration": 12,
-                    "atk": 2,
-                    "hp": 2,
-                    "def": 2
-                },
-        
-                {
-                    "skill_name": "name 4 ",
-                    "description": "description 4 ",
-                    "type": 0,
-                    "duration": 12,
-                    "atk": 2,
-                    "hp": 2,
-                    "def": 2
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": -15,
+                    "def": 0
                 }
                 
             ]
         },
 
-        {   "characters_name": "name 2",
-            "hp":0,
-            "atk":0,
-            "def":0,
+        {   "characters_name": "Snow flier",
+            "hp":100,
+            "atk":40,
+            "def":60,
             "skills":
             [
                 {
-                    "skill_name": "name 1 ",
-                    "description": "description 1 ",
-                    "type": 0,
+                    "skill_name": "launch star darts",
+                    "description": "Cause 20 damage to the enemy's life point",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 0,
-                    "hp": 0,
+                    "hp": -20,
                     "def": 0
                 },
         
                 {
-                    "skill_name": "name 2 ",
-                    "description": "description 2 ",
-                    "type": 0,
-                    "duration": 1,
-                    "atk": 1,
-                    "hp": 1,
-                    "def": 1
+                    "skill_name": "shielding",
+                    "description": "Increase defense power by 20% for 5 turns.",
+                    "type": "Temporary modifier",
+                    "duration": 5,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 20
                 },
         
                 {
-                    "skill_name": "name 3 ",
-                    "description": "description 3 ",
-                    "type": 0,
-                    "duration": 12,
-                    "atk": 2,
-                    "hp": 2,
-                    "def": 2
+                    "skill_name": "advance/step back",
+                    "description": "Increase defense power by 10% for 10 turns",
+                    "type": "Temporary modifier",
+                    "duration": 10,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 10
                 },
         
                 {
-                    "skill_name": "name 4 ",
-                    "description": "description 4 ",
-                    "type": 0,
-                    "duration": 12,
-                    "atk": 2,
-                    "hp": 2,
-                    "def": 2
+                    "skill_name": "roundhouse kick",
+                    "description": "Cause 20 damage to the enemy's life point",
+                    "type": "Direct attack",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": -20,
+                    "def": 0
                 }
                 
             ]
         },
 
-        {   "characters_name": "name 3",
-            "hp":0,
-            "atk":0,
-            "def":0,
+        {   "characters_name": "sword wanderer",
+            "hp":100,
+            "atk":75,
+            "def":25,
             "skills":
             [
                 {
-                    "skill_name": "name 1 ",
-                    "description": "description 1 ",
-                    "type": 0,
+                    "skill_name": "Stab",
+                    "description": "Cause 30 damage to the enemy's life point",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 0,
-                    "hp": 0,
+                    "hp": -30,
                     "def": 0
                 },
         
                 {
-                    "skill_name": "name 2 ",
-                    "description": "description 2 ",
-                    "type": 0,
-                    "duration": 1,
-                    "atk": 1,
-                    "hp": 1,
-                    "def": 1
+                    "skill_name": "wrestle",
+                    "description": "Cause 15 damage to the enemy's life point",
+                    "type": "Direct attack",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": -15,
+                    "def": 0
                 },
         
                 {
-                    "skill_name": "name 3 ",
-                    "description": "description 3 ",
-                    "type": 0,
-                    "duration": 12,
-                    "atk": 2,
-                    "hp": 2,
-                    "def": 2
+                    "skill_name": "advance/step back",
+                    "description": "Increase defense power by 10% for 10 turns",
+                    "type": "Temporary modifier",
+                    "duration": 10,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 10
                 },
         
                 {
-                    "skill_name": "name 4 ",
-                    "description": "description 4 ",
+                    "skill_name": "punch",
+                    "description": "Cause 15 damage to the enemy's life point",
                     "type": 0,
-                    "duration": 12,
-                    "atk": 2,
-                    "hp": 2,
-                    "def": 2
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": -15,
+                    "def": 0
                 }
                 
             ]
         },
 
-        {   "characters_name": "name 4",
-            "hp":0,
-            "atk":0,
-            "def":0,
+        {   "characters_name": "shadowless",
+            "hp":100,
+            "atk":40,
+            "def":60,
             "skills":
             [
                 {
-                    "skill_name": "name 1 ",
-                    "description": "description 1 ",
-                    "type": 0,
-                    "duration": 0,
+                    "skill_name": "Move fast",
+                    "description": "Increase defense power by 10% for 10 turns",
+                    "type": "Temporary modifier",
+                    "duration": 10,
                     "atk": 0,
                     "hp": 0,
-                    "def": 0
+                    "def": 10
                 },
         
                 {
-                    "skill_name": "name 2 ",
-                    "description": "description 2 ",
-                    "type": 0,
-                    "duration": 1,
-                    "atk": 1,
+                    "skill_name": "sneak attack",
+                    "description": "Increase attack power by 10% for 3 turns",
+                    "type": "Temporary modifier",
+                    "duration": 3,
+                    "atk": 10,
                     "hp": 1,
                     "def": 1
                 },
         
                 {
-                    "skill_name": "name 3 ",
-                    "description": "description 3 ",
+                    "skill_name": "advance/step back",
+                    "description": "Increase defense power by 10% for 10 turns",
                     "type": 0,
-                    "duration": 12,
-                    "atk": 2,
-                    "hp": 2,
-                    "def": 2
+                    "duration": 10,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 10
                 },
         
                 {
-                    "skill_name": "name 4 ",
-                    "description": "description 4 ",
-                    "type": 0,
-                    "duration": 12,
-                    "atk": 2,
-                    "hp": 2,
-                    "def": 2
+                    "skill_name": "kick",
+                    "description": "Cause 15 damage to the enemy's life point",
+                    "type": "Direct attack",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": -15,
+                    "def": 0
                 }
                 
             ]

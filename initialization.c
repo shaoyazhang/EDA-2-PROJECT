@@ -179,12 +179,13 @@ void characterInit (const char* jsonString, Character** players, int* num_charac
                 cJSON *hp = cJSON_GetObjectItemCaseSensitive(skill_json, "hp");
                 cJSON *def = cJSON_GetObjectItemCaseSensitive(skill_json, "def");
 
-                if (cJSON_IsString(skill_name) && cJSON_IsString(description) && cJSON_IsNumber(type) && cJSON_IsNumber(duration)
+                if (cJSON_IsString(skill_name) && cJSON_IsString(description) && cJSON_IsString(type) && cJSON_IsNumber(duration)
                     && cJSON_IsNumber(atk) && cJSON_IsNumber(hp) && cJSON_IsNumber(def)) 
                 {
                     strncpy((*players)[player_idx].skills[skill_idx].name, skill_name->valuestring, sizeof((*players)[player_idx].skills[skill_idx].name) -1);
                     strncpy((*players)[player_idx].skills[skill_idx].description, description->valuestring, sizeof((*players)[player_idx].skills[skill_idx].description) -1);
-                    (*players)[player_idx].skills[skill_idx].type = type->valueint;
+                    strncpy((*players)[player_idx].skills[skill_idx].type, type->valuestring, sizeof((*players)[player_idx].skills[skill_idx].type) -1);
+                    // (*players)[player_idx].skills[skill_idx].type = type->valueint;
                     (*players)[player_idx].skills[skill_idx].duration = duration->valueint;
                     (*players)[player_idx].skills[skill_idx].atk = atk->valueint;
                     (*players)[player_idx].skills[skill_idx].hp = hp->valueint;
@@ -257,12 +258,12 @@ void enemyInit (const char* jsonString, Enemy** enemies, int* num_enemy)
             cJSON *hp = cJSON_GetObjectItemCaseSensitive(skill_json, "hp");
             cJSON *def = cJSON_GetObjectItemCaseSensitive(skill_json, "def");
 
-            if (cJSON_IsString(skill_name) && cJSON_IsString(description) && cJSON_IsNumber(type) && cJSON_IsNumber(duration)
+            if (cJSON_IsString(skill_name) && cJSON_IsString(description) && cJSON_IsString(type) && cJSON_IsNumber(duration)
                 && cJSON_IsNumber(atk) && cJSON_IsNumber(hp) && cJSON_IsNumber(def)) 
             {
                 strncpy((*enemies)[enemy_idx].skills[skill_idx].name, skill_name->valuestring, sizeof((*enemies)[enemy_idx].skills[skill_idx].name) -1);
                 strncpy((*enemies)[enemy_idx].skills[skill_idx].description, description->valuestring, sizeof((*enemies)[enemy_idx].skills[skill_idx].description) -1);
-                (*enemies)[enemy_idx].skills[skill_idx].type = type->valueint;
+                strncpy((*enemies)[enemy_idx].skills[skill_idx].type, type->valuestring, sizeof((*enemies)[enemy_idx].skills[skill_idx].type) -1);
                 (*enemies)[enemy_idx].skills[skill_idx].duration = duration->valueint;
                 (*enemies)[enemy_idx].skills[skill_idx].atk = atk->valueint;
                 (*enemies)[enemy_idx].skills[skill_idx].hp = hp->valueint;

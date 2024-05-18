@@ -25,12 +25,16 @@
 #define MAX_DECISION 2
 #define MAX_ENEMY_SKILLS 8
 
+
+#define TEMP_MODIFIER 0
+#define DIRECT_ATL 1
+
 // 1. Skills
 typedef struct
 {
     char name[MAX_SKILL_NAME];
     char description[MAX_DESCRIPTION];
-    int type; // 0 means temporary modifier; 1 means direct attack
+    char type[MAX_CHAR_NAME]; 
     int duration;
     int atk;
     int hp; 

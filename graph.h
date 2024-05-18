@@ -2,6 +2,8 @@
 
 //************ LAB 2 **************//
 //********** DO NOT MODIFY ********//
+#define START_NODE_IDX 0
+#define END_NODE_IX 3
 
 typedef struct SNode {
     Scenario scenario;
