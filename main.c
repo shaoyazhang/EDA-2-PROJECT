@@ -20,7 +20,7 @@ void game(Character *players)
     // charcter_init(players);
     // printf("1. %s\n2. %s\n3. %s\n4. %s\n",
     //     players[0].name, players[1].name, players[2].name, players[3].name);
-    
+
     const char* fp = "skills.json";
     char* jsonString = readFile (fp);
 
@@ -110,7 +110,7 @@ void game(Character *players)
             }while(selection > 4 || selection < 1);    
             break;
     }
-
+    printf("Welcome to the new game!\n");
 }
 
 
@@ -119,6 +119,7 @@ int main()
     # if 1
     Character players[MAX_CHARACTS];
     int input = 0;
+    bool continueGame = true;
     menu();
     do
     {
@@ -127,16 +128,33 @@ int main()
         switch(input)
         {
             case 1: 
-                game(players);         
+                game(players);
+                int selec;
+                printf("Do you want to start the new game?\n 1. YES  2. NO\n");
+                scanf("%d", &selec);
+                switch (selec)
+                {
+                    case 1:
+                        printf("welcome on board\n");
+                        continueGame = false;
+                        break;
+                    case 2:
+                        printf("Go back to Menu\n");
+                        break;
+                    default:
+                        printf("Wrong option\n");
+                        break;
+                }          
                 break;
             case 0:
-                printf("Exit game\n");  
+                printf("Exit game\n"); 
+                continueGame = false; 
                 break;
             default:
                 printf("Wrong option, please select again\n");
                 break;
         }
-    }while(input);
+    }while(continueGame);
     # endif
 
     // test01(); // test queue 
