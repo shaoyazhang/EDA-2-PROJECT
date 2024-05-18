@@ -11,7 +11,7 @@
                 {
                     "skill_name": "jump high",
                     "description": "Increase defense power by 20% for 5 turns.",
-                    "type": 0,
+                    "type": "Temporary modifier",
                     "duration": 5,
                     "atk": 0,
                     "hp": 0,
@@ -21,7 +21,7 @@
                 {
                     "skill_name": "high kick",
                     "description": "Increase attack power by 30% for 3 turns",
-                    "type": 0,
+                    "type": "Temporary modifier",
                     "duration": 3,
                     "atk": 30,
                     "hp": 0,
@@ -31,7 +31,7 @@
                 {
                     "skill_name": "advance/step back",
                     "description": "Increase defense power by 10% for 10 turns",
-                    "type": 0,
+                    "type": "Temporary modifier",
                     "duration": 10,
                     "atk": 0,
                     "hp": 0,
@@ -41,7 +41,7 @@
                 {
                     "skill_name": "punch",
                     "description": "Cause 15 damage to the enemy's life point",
-                    "type": 0,
+                    "type": "Temporary modifier",
                     "duration": 0,
                     "atk": 0,
                     "hp": -15,

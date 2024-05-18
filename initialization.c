@@ -136,7 +136,7 @@ void characterInit (const char* jsonString, Character** players, int* num_charac
             cJSON_Delete(json);
             return;
         }
-        //
+        
         *num_charac = cJSON_GetArraySize (players_json);
         *players = (Character*)malloc((*num_charac) * sizeof(Character));
         if (*players == NULL) {
@@ -149,8 +149,8 @@ void characterInit (const char* jsonString, Character** players, int* num_charac
         cJSON* player_json = NULL;
         cJSON_ArrayForEach(player_json, players_json)
         {
-            if (player_idx >= MAX_CHARACTS)
-                break;
+            // if (player_idx >= MAX_CHARACTS)
+            //     break;
             cJSON *characters_name = cJSON_GetObjectItemCaseSensitive (player_json, "characters_name");
             cJSON *hp = cJSON_GetObjectItemCaseSensitive (player_json, "hp");
             cJSON *atk = cJSON_GetObjectItemCaseSensitive (player_json, "atk");
@@ -185,7 +185,6 @@ void characterInit (const char* jsonString, Character** players, int* num_charac
                     strncpy((*players)[player_idx].skills[skill_idx].name, skill_name->valuestring, sizeof((*players)[player_idx].skills[skill_idx].name) -1);
                     strncpy((*players)[player_idx].skills[skill_idx].description, description->valuestring, sizeof((*players)[player_idx].skills[skill_idx].description) -1);
                     strncpy((*players)[player_idx].skills[skill_idx].type, type->valuestring, sizeof((*players)[player_idx].skills[skill_idx].type) -1);
-                    // (*players)[player_idx].skills[skill_idx].type = type->valueint;
                     (*players)[player_idx].skills[skill_idx].duration = duration->valueint;
                     (*players)[player_idx].skills[skill_idx].atk = atk->valueint;
                     (*players)[player_idx].skills[skill_idx].hp = hp->valueint;

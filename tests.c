@@ -6,7 +6,8 @@ void test01()
 {
     srand((unsigned)time(NULL));
     Queue* q = queueInit ();
-    Skill playerSkills[4] = {
+    Skill playerSkills[4] = 
+    {
         {"skill 1", "skill 1", 1, 2, 3, 4, 5},
         {"skill 2", "skill 2", 1, 2, 3, 4, 5},
         {"skill 3", "skill 2", 1, 2, 3, 4, 5},
@@ -15,7 +16,8 @@ void test01()
 
     Character player = {"Player", 100, 20, 10, {playerSkills[0],playerSkills[1], playerSkills[2], playerSkills[3]}};
 
-    Skill enemySkills[4] = {
+    Skill enemySkills[4] = 
+    {
         {"Eskill 1", "Eskill 1", 1, 2, 3, 4, 5},
         {"Eskill 2", "Eskill 2", 1, 2, 3, 4, 5},
         {"Eskill 3", "Eskill 2", 1, 2, 3, 4, 5},
@@ -66,7 +68,7 @@ void test01()
 
 }
 
-
+// test for queue turn && fight flow
 void test02()
 {
     srand((unsigned)time(NULL));
@@ -105,7 +107,7 @@ void test02()
     fightFlow(q);
 }
 
-
+// test for loading secenarios' data
 void test03()
 {   
     
@@ -143,7 +145,7 @@ void test03()
     free(jsonString);
 }
 
-
+// test for loading characters' data
 void test04 ()
 {
     const char* fp = "skills.json";
@@ -183,6 +185,7 @@ void test04 ()
    }  
 }
 
+// test for enemies' data
 void test05 ()
 {
     const char* fp = "enemy_skills.json";
@@ -251,6 +254,7 @@ void test06 ()
 
 }
 
+// test for scenario navigation
 void test07()
 {
     Graph graph;
