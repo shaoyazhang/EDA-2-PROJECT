@@ -116,7 +116,7 @@ void game(Character *players)
 
 int main()
 {
-    # if 1
+    # if 0
     Character players[MAX_CHARACTS];
     int input = 0;
     bool continueGame = true;
@@ -130,7 +130,7 @@ int main()
             case 1: 
                 game(players);
                 int selec;
-                printf("Do you want to start the new game?\n 1. YES  2. NO\n");
+                printf("Do you want to enter the game?\n 1. YES  2. NO\n");
                 scanf("%d", &selec);
                 switch (selec)
                 {
@@ -162,7 +162,7 @@ int main()
     // test03();
     // test04();
     // test05();
-    // test06 ();
+    test06 ();
     // test07 ();
     return 0;
 }

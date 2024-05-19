@@ -221,7 +221,8 @@ void test06 ()
 {
     Graph graph;
     graphInit(&graph);
-    const char* fp = "scenario_config.json";
+    //const char* fp = "scenario_config.json";
+    const char* fp = "scenarios_test.json";
     char* jsonString = readFile (fp);
 
     if (jsonString == NULL)
