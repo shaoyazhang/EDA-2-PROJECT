@@ -10,3 +10,4 @@ Each realm presents its own set of challenges and adversaries, putting our hero'
 
 c) What type of functionalities do you wish to add to your game
 
+We plan to add four different scenarios to play in, the option to choose from four different characters, and objects with unique abilities and stats. Additionally, there will be new decisions for each of the four scenarios.
