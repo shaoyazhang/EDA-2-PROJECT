@@ -9,7 +9,7 @@
                 {
                     "skill_id": "wood_arrow",
                     "description": "Shoots a deadly arrow made from the forest's wood.",
-                    "type": "ranged",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 20,
                     "hp": 0,
@@ -18,7 +18,7 @@
                 {
                     "skill_id": "forest_curse",
                     "description": "Curses the target with nature's wrath, reducing their defense.",
-                    "type": "curse",
+                    "type": "Temporary modifier",
                     "duration": 3,
                     "atk": 0,
                     "hp": 0,
@@ -27,7 +27,7 @@
                 {
                     "skill_id": "shadow_strike",
                     "description": "Strikes from the shadows, dealing extra damage.",
-                    "type": "melee",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 30,
                     "hp": 0,
@@ -36,7 +36,7 @@
                 {
                     "skill_id": "entangle",
                     "description": "Entangles the enemy with vines, immobilizing them.",
-                    "type": "bind",
+                    "type": "Temporary modifier",
                     "duration": 2,
                     "atk": 0,
                     "hp": 0,
@@ -53,7 +53,7 @@
                 {
                     "skill_id": "cave_claw",
                     "description": "Attacks with sharp claws.",
-                    "type": "melee",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 25,
                     "hp": 0,
@@ -62,7 +62,7 @@
                 {
                     "skill_id": "shadow_meld",
                     "description": "Blends into the shadows, increasing evasion.",
-                    "type": "buff",
+                    "type": "Temporary modifier",
                     "duration": 3,
                     "atk": 0,
                     "hp": 0,
@@ -71,7 +71,7 @@
                 {
                     "skill_id": "fear_howl",
                     "description": "Lets out a terrifying howl that reduces the enemy's attack.",
-                    "type": "debuff",
+                    "type": "Temporary modifier",
                     "duration": 2,
                     "atk": -10,
                     "hp": 0,
@@ -80,7 +80,7 @@
                 {
                     "skill_id": "dark_charge",
                     "description": "Charges at the enemy with dark energy.",
-                    "type": "charge",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 35,
                     "hp": 0,
@@ -97,7 +97,7 @@
                 {
                     "skill_id": "beak_peck",
                     "description": "Pecks the enemy with a sharp beak.",
-                    "type": "melee",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 15,
                     "hp": 0,
@@ -106,7 +106,7 @@
                 {
                     "skill_id": "aerial_strike",
                     "description": "Strikes from the air, avoiding ground defenses.",
-                    "type": "aerial",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 20,
                     "hp": 0,
@@ -115,7 +115,7 @@
                 {
                     "skill_id": "feather_fury",
                     "description": "Unleashes a flurry of feathers that damages and distracts the enemy.",
-                    "type": "ranged",
+                    "type": "Temporary modifier",
                     "duration": 2,
                     "atk": 10,
                     "hp": 0,
@@ -124,9 +124,9 @@
                 {
                     "skill_id": "wind_gust",
                     "description": "Creates a gust of wind that knocks back the enemy.",
-                    "type": "knockback",
+                    "type": "Direct attack",
                     "duration": 0,
-                    "atk": 0,
+                    "atk": 12,
                     "hp": 0,
                     "def": 0
                 }
@@ -141,7 +141,7 @@
                 {
                     "skill_id": "fire_blast",
                     "description": "Blasts the enemy with intense fire.",
-                    "type": "ranged",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 30,
                     "hp": 0,
@@ -150,7 +150,7 @@
                 {
                     "skill_id": "heat_wave",
                     "description": "Emits a wave of heat that damages all enemies in range.",
-                    "type": "area",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 20,
                     "hp": 0,
@@ -159,7 +159,7 @@
                 {
                     "skill_id": "flame_shield",
                     "description": "Envelops itself in flames, increasing defense.",
-                    "type": "buff",
+                    "type": "Temporary modifier",
                     "duration": 3,
                     "atk": 0,
                     "hp": 0,
@@ -168,7 +168,7 @@
                 {
                     "skill_id": "inferno",
                     "description": "Unleashes a devastating inferno.",
-                    "type": "ultimate",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 50,
                     "hp": 0,
@@ -185,7 +185,7 @@
                 {
                     "skill_id": "flame_sword",
                     "description": "Strikes with a sword engulfed in flames.",
-                    "type": "melee",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 25,
                     "hp": 0,
@@ -194,7 +194,7 @@
                 {
                     "skill_id": "molten_armor",
                     "description": "Covers itself in molten armor, increasing defense.",
-                    "type": "buff",
+                    "type": "Temporary modifier",
                     "duration": 3,
                     "atk": 0,
                     "hp": 0,
@@ -203,7 +203,7 @@
                 {
                     "skill_id": "fire_whirl",
                     "description": "Spins rapidly, creating a whirlwind of fire.",
-                    "type": "area",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 30,
                     "hp": 0,
@@ -212,7 +212,7 @@
                 {
                     "skill_id": "burning_rush",
                     "description": "Charges at the enemy with a burning force.",
-                    "type": "charge",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 35,
                     "hp": 0,
@@ -229,7 +229,7 @@
                 {
                     "skill_id": "club_smash",
                     "description": "Smashes the enemy with a heavy club.",
-                    "type": "melee",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 35,
                     "hp": 0,
@@ -238,7 +238,7 @@
                 {
                     "skill_id": "stone_skin",
                     "description": "Hardened skin increases defense.",
-                    "type": "buff",
+                    "type": "Temporary modifier",
                     "duration": 4,
                     "atk": 0,
                     "hp": 0,
@@ -247,7 +247,7 @@
                 {
                     "skill_id": "earthquake",
                     "description": "Causes the ground to quake, damaging all enemies.",
-                    "type": "area",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 30,
                     "hp": 0,
@@ -256,7 +256,7 @@
                 {
                     "skill_id": "regeneration",
                     "description": "Slowly regenerates health over time.",
-                    "type": "heal",
+                    "type": "Temporary modifier",
                     "duration": 5,
                     "atk": 0,
                     "hp": 10,
@@ -273,7 +273,7 @@
                 {
                     "skill_id": "stone_bite",
                     "description": "Bites with its stone jaws.",
-                    "type": "melee",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 20,
                     "hp": 0,
@@ -282,7 +282,7 @@
                 {
                     "skill_id": "wing_buffet",
                     "description": "Buffets the enemy with its powerful wings.",
-                    "type": "melee",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 15,
                     "hp": 0,
@@ -291,7 +291,7 @@
                 {
                     "skill_id": "petrify_gaze",
                     "description": "Petrifies the enemy, reducing their defense.",
-                    "type": "debuff",
+                    "type": "Temporary modifier",
                     "duration": 3,
                     "atk": 0,
                     "hp": 0,
@@ -300,7 +300,7 @@
                 {
                     "skill_id": "crystal_shield",
                     "description": "Creates a shield of crystal, increasing defense.",
-                    "type": "buff",
+                    "type": "Temporary modifier",
                     "duration": 3,
                     "atk": 0,
                     "hp": 0,
@@ -317,7 +317,7 @@
                 {
                     "skill_id": "rotten_grasp",
                     "description": "Grasps the enemy with decaying hands.",
-                    "type": "melee",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 25,
                     "hp": 0,
@@ -326,7 +326,7 @@
                 {
                     "skill_id": "toxic_cloud",
                     "description": "Releases a cloud of toxic gas that poisons the enemy.",
-                    "type": "debuff",
+                    "type": "Temporary modifier",
                     "duration": 3,
                     "atk": 0,
                     "hp": 0,
@@ -335,7 +335,7 @@
                 {
                     "skill_id": "putrid_breath",
                     "description": "Exhales a putrid breath that weakens the enemy.",
-                    "type": "debuff",
+                    "type": "Temporary modifier",
                     "duration": 2,
                     "atk": -10,
                     "hp": 0,
@@ -343,9 +343,9 @@
                 },
                 {
                     "skill_id": "undead_rise",
-                    "description": "Summons undead minions to aid in battle.",
-                    "type": "summon",
-                    "duration": 0,
+                    "description": "Summons undead minions to aid in battle during 2 turns.",
+                    "type": "Temporary modifier",
+                    "duration": 2,
                     "atk": 20,
                     "hp": 50,
                     "def": 0
@@ -361,7 +361,7 @@
                 {
                     "skill_id": "razor_teeth",
                     "description": "Bites with razor-sharp teeth.",
-                    "type": "melee",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 20,
                     "hp": 0,
@@ -370,7 +370,7 @@
                 {
                     "skill_id": "swarm_attack",
                     "description": "Swarm the enemy in a coordinated attack.",
-                    "type": "swarm",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 25,
                     "hp": 0,
@@ -379,7 +379,7 @@
                 {
                     "skill_id": "aquatic_ambush",
                     "description": "Lurks beneath the surface, ambushing unsuspecting prey.",
-                    "type": "ambush",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 30,
                     "hp": 0,
@@ -388,7 +388,7 @@
                 {
                     "skill_id": "blood_frenzy",
                     "description": "Enters a blood frenzy, increasing attack.",
-                    "type": "buff",
+                    "type": "Temporary modifier",
                     "duration": 2,
                     "atk": 10,
                     "hp": 0,
@@ -405,7 +405,7 @@
                 {
                     "skill_id": "aquatic_bolt",
                     "description": "Launches a bolt of water at the enemy.",
-                    "type": "ranged",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 30,
                     "hp": 0,
@@ -414,7 +414,7 @@
                 {
                     "skill_id": "tidal_wave",
                     "description": "Creates a tidal wave to wash over the enemy.",
-                    "type": "area",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 25,
                     "hp": 0,
@@ -423,7 +423,7 @@
                 {
                     "skill_id": "bubble_barrier",
                     "description": "Forms a barrier of bubbles to protect itself.",
-                    "type": "shield",
+                    "type": "Temporary modifier",
                     "duration": 3,
                     "atk": 0,
                     "hp": 0,
@@ -432,7 +432,7 @@
                 {
                     "skill_id": "hydro_vortex",
                     "description": "Summons a vortex of water to engulf the enemy.",
-                    "type": "ultimate",
+                    "type": "Direct attack",
                     "duration": 0,
                     "atk": 50,
                     "hp": 0,
