@@ -112,32 +112,28 @@ void navigateScenario (Graph* graph, int curScenarioIdx, bool winAllBattles)
 }
 
 // ********* LAB 3 *********// 
-// char** makeDecision(Graph* graph, int currScenarioIdx, int decision_index) 
-// {
-
-//     if (decision_index >= 0 && decision_index < MAX_DECISION) 
-//     {
-//         // mostrar the enemy name array
-//         return graph->nodes[currScenarioIdx].scenario.decision.options[decision_index].enemies;
-//     }
-//     else 
-//     {
-//         printf("Invalid decision index\n");
-//     }
-// }
-
-
-// Serch enemy's name
-char* findEnemy (Enemy* enemies, char* enemyName)
+void makeDecision(Graph* graph, int currScenarioIdx, int decision_index) 
 {
-    for (int i = 0; i < MAX_ENEMIES; i++)
+    if (decision_index >= 0 && decision_index < graph->nodes[currScenarioIdx].scenario.decision.option_num) 
     {
-        if (strcmp(enemies[i].name, enemyName) ==0)
+        // Get the enemy array
+        Enemy* enemies = graph->nodes[currScenarioIdx].scenario.decision.options[decision_index].enemies;
+        
+        // Loop through the enemy array and print their names
+        for (int i = 0; i < MAX_ENEMIES; i++) 
         {
-            return enemyName;
+            // Check if the enemy name is not empty to avoid printing uninitialized data
+            if (strlen(enemies[i].name) > 0) 
+            {
+                printf("%s\n", enemies[i].name);
+            }
         }
-    } 
-    printf("Enemy not found\n");
-    return NULL;  
+    }
+    else 
+    {
+        printf("Invalid decision index\n");
+    }
 }
+
+
 // ********* LAB 3 *********//
