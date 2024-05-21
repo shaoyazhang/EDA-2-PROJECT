@@ -19,7 +19,7 @@
 #define MAX_DESCRIPTION 200
 #define MAX_SKILL 4
 #define MAX_QUESTION 100
-#define MAX_ENEMIES 4
+#define MAX_ENEMIES 2
 #define MAX_CHARACTS 4
 #define NUM_TURNS 4
 #define MAX_DECISION 2
@@ -51,12 +51,23 @@ typedef struct
     Skill skills[MAX_SKILL];
 }Character;
 
+// 6. enemy
+typedef struct
+{
+    char name[MAX_CHAR_NAME];
+    int atk;
+    int hp; 
+    int def;
+    Skill skills[MAX_SKILL];   
+}Enemy;
+
 // 3. Option
 typedef struct
 {
     char response[MAX_QUESTION];
     char narra_bf[MAX_QUESTION];
-    char enemies[MAX_ENEMIES][MAX_CHAR_NAME];
+    //char enemies[MAX_ENEMIES][MAX_CHAR_NAME]; //[MAX_CHAR_NAME];
+    Enemy enemies[MAX_ENEMIES];
     char narra_af[MAX_QUESTION];
 }Option;
 
@@ -77,16 +88,6 @@ typedef struct
     Decision decision;
 }Scenario;
 
-
-// 6. enemy
-typedef struct
-{
-    char name[MAX_CHAR_NAME];
-    int atk;
-    int hp; 
-    int def;
-    Skill skills[MAX_SKILL];   
-}Enemy;
 
 // Initializations
 // void skill_init(Skill* skills);

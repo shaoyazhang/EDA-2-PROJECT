@@ -1,4 +1,5 @@
-# include "game.h"
+#include "game.h"
+
 
 //************ LAB 2 **************//
 //********** DO NOT MODIFY ********//
@@ -7,7 +8,7 @@
 
 typedef struct SNode {
     Scenario scenario;
-    struct SNode* adjacent[MAX_SCENARIOS];
+    struct SNode* adjacent[MAX_SCENARIOS-1];
     int num_adjacent;
 }SN;
 
@@ -23,3 +24,4 @@ void addScenario (Graph* graph, Scenario Scenario);
 void addEdges (Graph* graph, int srcIndex, int destIndex);
 void printGraph (Graph* graph);
 void navigateScenario (Graph* graph, int currentScenarioIndex, bool winAllBattles);
+//Enemy* makeDecision(Graph* graph, int currScenarioIdx, int decision_index);
