@@ -24,4 +24,5 @@ void addScenario (Graph* graph, Scenario Scenario);
 void addEdges (Graph* graph, int srcIndex, int destIndex);
 void printGraph (Graph* graph);
 void navigateScenario (Graph* graph, int currentScenarioIndex, bool winAllBattles);
-//Enemy* makeDecision(Graph* graph, int currScenarioIdx, int decision_index);
+void makeDecision(Graph* graph, int currScenarioIdx, int decision_index);
+void printEnemySkillDetail (Enemy* enemy);

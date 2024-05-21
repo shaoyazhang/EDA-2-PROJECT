@@ -80,7 +80,7 @@ void navigateScenario (Graph* graph, int curScenarioIdx, bool winAllBattles)
     {
         if (graph->nodes[curScenarioIdx].num_adjacent == 0) 
         {
-        printf("No adjacent scenarios available.\n");
+        printf("The next base will not be available until you win this battle.\n");
         return;
         }
         else
@@ -111,7 +111,7 @@ void navigateScenario (Graph* graph, int curScenarioIdx, bool winAllBattles)
     }
 }
 
-// ********* LAB 3 *********// 
+// ********* LAB 3 DO NOT MODIFY*********// 
 void makeDecision(Graph* graph, int currScenarioIdx, int decision_index) 
 {
     if (decision_index >= 0 && decision_index < graph->nodes[currScenarioIdx].scenario.decision.option_num) 
@@ -125,7 +125,7 @@ void makeDecision(Graph* graph, int currScenarioIdx, int decision_index)
             // Check if the enemy name is not empty to avoid printing uninitialized data
             if (strlen(enemies[i].name) > 0) 
             {
-                printf("%s\n", enemies[i].name);
+                printEnemySkillDetail(&enemies[i]);
             }
         }
     }
@@ -134,6 +134,4 @@ void makeDecision(Graph* graph, int currScenarioIdx, int decision_index)
         printf("Invalid decision index\n");
     }
 }
-
-
 // ********* LAB 3 *********//

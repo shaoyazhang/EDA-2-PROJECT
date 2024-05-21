@@ -307,8 +307,9 @@ void test07()
 }
 
 # endif
-// test for decision make
 
+
+// test for decision make
 void test08()
 {
     Graph graph;
@@ -329,10 +330,6 @@ void test08()
         addScenario(&graph, scenarios[i]);
     }
 
-    Enemy* enemy = makeDecision(&graph, 1, 1);
-    for (int i = 0; i < MAX_ENEMIES; i++)
-    {
-        printf("%s\n", enemy[i].name);
-
-    }
+    makeDecision(&graph, 1, 1);
+   
 }
