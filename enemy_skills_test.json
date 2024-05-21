@@ -1,49 +1,51 @@
 {
     "enemies": [
+        
         {
-            "enemy_name": "Wood Devil",
-            "atk": 50,
-            "hp": 200,
-            "def": 30,
+            "enemy_name": "Creatures",
+            "atk": 40,
+            "hp": 150,
+            "def": 20,
             "skills": [
                 {
-                    "skill_id": "wood_arrow",
-                    "description": "Shoots a deadly arrow made from the forest's wood.",
+                    "skill_id": "cave_claw",
+                    "description": "Attacks with sharp claws.",
                     "type": "Direct attack",
                     "duration": 0,
-                    "atk": 20,
+                    "atk": 25,
                     "hp": 0,
                     "def": 0
                 },
                 {
-                    "skill_id": "forest_curse",
-                    "description": "Curses the target with nature's wrath, reducing their defense.",
+                    "skill_id": "shadow_meld",
+                    "description": "Blends into the shadows, increasing evasion.",
                     "type": "Temporary modifier",
                     "duration": 3,
                     "atk": 0,
                     "hp": 0,
-                    "def": -10
+                    "def": 10
                 },
                 {
-                    "skill_id": "shadow_strike",
-                    "description": "Strikes from the shadows, dealing extra damage.",
-                    "type": "Direct attack",
-                    "duration": 0,
-                    "atk": 30,
+                    "skill_id": "fear_howl",
+                    "description": "Lets out a terrifying howl that reduces the enemy's attack.",
+                    "type": "Temporary modifier",
+                    "duration": 2,
+                    "atk": -10,
                     "hp": 0,
                     "def": 0
                 },
                 {
-                    "skill_id": "entangle",
-                    "description": "Entangles the enemy with vines, immobilizing them.",
-                    "type": "Temporary modifier",
-                    "duration": 2,
-                    "atk": 0,
+                    "skill_id": "dark_charge",
+                    "description": "Charges at the enemy with dark energy.",
+                    "type": "Direct attack",
+                    "duration": 0,
+                    "atk": 35,
                     "hp": 0,
                     "def": 0
                 }
             ]
         },
+
         {
             "enemy_name": "Dark Cave Creature",
             "atk": 40,
@@ -127,6 +129,50 @@
                     "type": "Direct attack",
                     "duration": 0,
                     "atk": 12,
+                    "hp": 0,
+                    "def": 0
+                }
+            ]
+        },
+        {
+            "enemy_name": "Wood Devil",
+            "atk": 50,
+            "hp": 200,
+            "def": 30,
+            "skills": [
+                {
+                    "skill_id": "wood_arrow",
+                    "description": "Shoots a deadly arrow made from the forest's wood.",
+                    "type": "Direct attack",
+                    "duration": 0,
+                    "atk": 20,
+                    "hp": 0,
+                    "def": 0
+                },
+                {
+                    "skill_id": "forest_curse",
+                    "description": "Curses the target with nature's wrath, reducing their defense.",
+                    "type": "Temporary modifier",
+                    "duration": 3,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": -10
+                },
+                {
+                    "skill_id": "shadow_strike",
+                    "description": "Strikes from the shadows, dealing extra damage.",
+                    "type": "Direct attack",
+                    "duration": 0,
+                    "atk": 30,
+                    "hp": 0,
+                    "def": 0
+                },
+                {
+                    "skill_id": "entangle",
+                    "description": "Entangles the enemy with vines, immobilizing them.",
+                    "type": "Temporary modifier",
+                    "duration": 2,
+                    "atk": 0,
                     "hp": 0,
                     "def": 0
                 }
@@ -224,6 +270,50 @@
             "enemy_name": "Mountain Troll",
             "atk": 45,
             "hp": 300,
+            "def": 50,
+            "skills": [
+                {
+                    "skill_id": "club_smash",
+                    "description": "Smashes the enemy with a heavy club.",
+                    "type": "Direct attack",
+                    "duration": 0,
+                    "atk": 35,
+                    "hp": 0,
+                    "def": 0
+                },
+                {
+                    "skill_id": "stone_skin",
+                    "description": "Hardened skin increases defense.",
+                    "type": "Temporary modifier",
+                    "duration": 4,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 25
+                },
+                {
+                    "skill_id": "earthquake",
+                    "description": "Causes the ground to quake, damaging all enemies.",
+                    "type": "Direct attack",
+                    "duration": 0,
+                    "atk": 30,
+                    "hp": 0,
+                    "def": 0
+                },
+                {
+                    "skill_id": "regeneration",
+                    "description": "Slowly regenerates health over time.",
+                    "type": "Temporary modifier",
+                    "duration": 5,
+                    "atk": 0,
+                    "hp": 10,
+                    "def": 0
+                }
+            ]
+        },
+        {
+            "enemy_name": "Stone Guardians",
+            "atk": 30,
+            "hp": 270,
             "def": 50,
             "skills": [
                 {
@@ -439,6 +529,42 @@
                     "def": 0
                 }
             ]
+        },
+        {
+            "enemy_name": "Water Devil",
+            "atk": 50,
+            "hp": 240,
+            "def": 30,
+            "skills": [
+                {
+                    "skill_id": "Aqua prison",
+                    "description": "Traps its targets in a watery prison, immobilizing them and causing damage",
+                    "type": "Direct attack",
+                    "duration": 0,
+                    "atk": 20,
+                    "hp": 0,
+                    "def": 0
+                },
+                {
+                    "skill_id": "Water curse",
+                    "description": "Curses the target with the devils powers and reduces defense.",
+                    "type": "Temporary modifier",
+                    "duration": 3,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": -10
+                },
+                {
+                    "skill_id": "Hydro vortex",
+                    "description": "Strikes from the shadows, dealing extra damage.",
+                    "type": "Direct attack",
+                    "duration": 0,
+                    "atk": 46,
+                    "hp": 0,
+                    "def": 0
+                }
+            ]
         }
+        
     ]
 }
