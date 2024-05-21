@@ -1,5 +1,4 @@
 #include "tests.h"
-# include "initialization.h"
 
 // test queue
 void test01()
@@ -108,9 +107,11 @@ void test02()
 }
 
 // test for loading secenarios' data
+# if 1
 void test03()
 {   
     
+    // const char* fp = "scenarios_config.json";
     const char* fp = "scenario_config.json";
     char* jsonString = readFile (fp);
 
@@ -137,14 +138,21 @@ void test03()
             printf("    Enemies:\n");
             for (int k = 0; k < MAX_ENEMIES; k++)
             {
-                printf("    -%s\n", scenarios[i].decision.options[j].enemies[k]);
+                printf("    %s\n", scenarios[i].decision.options[j].enemies[k].name);
+                for (int m = 0; m < MAX_SKILL; m++)
+                {
+                    printf("        %s\n", scenarios[i].decision.options[j].enemies[k].skills[m].name);
+                }
+                
+
             }
         }
     }
+    //printf("%s", scenarios[0].decision.options[0].enemies[0].skills[0].name);
     free(scenarios);
     free(jsonString);
 }
-
+# endif
 // test for loading characters' data
 void test04 ()
 {
@@ -186,6 +194,7 @@ void test04 ()
 }
 
 // test for enemies' data
+# if 1
 void test05 ()
 {
     const char* fp = "enemy_skills.json";
@@ -216,7 +225,9 @@ void test05 ()
     }
 }
 
+# endif
 // test graph
+# if 1
 void test06 ()
 {
     Graph graph;
@@ -254,8 +265,9 @@ void test06 ()
     printGraph (&graph);
 
 }
-
+# endif
 // test for scenario navigation
+# if 1
 void test07()
 {
     Graph graph;
@@ -292,4 +304,35 @@ void test07()
 
     bool winAllBattles = true;
     navigateScenario (&graph, 2, winAllBattles);
+}
+
+# endif
+// test for decision make
+
+void test08()
+{
+    Graph graph;
+    graphInit(&graph);
+    const char* fp = "scenario_config.json";
+    char* jsonString = readFile (fp);
+
+    if (jsonString == NULL)
+    {
+        fprintf(stderr, "Failed to read JSON file\n");
+        return;
+    }
+
+    Scenario* scenarios = NULL;
+    int num_scenarios;
+    scenarioInit(jsonString, &scenarios, &num_scenarios);
+    for (int i = 0; i < num_scenarios; i++) {
+        addScenario(&graph, scenarios[i]);
+    }
+
+    Enemy* enemy = makeDecision(&graph, 1, 1);
+    for (int i = 0; i < MAX_ENEMIES; i++)
+    {
+        printf("%s\n", enemy[i].name);
+
+    }
 }

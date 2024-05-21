@@ -1,6 +1,5 @@
 # include "game.h"
-
-
+# include "initialization.h"
 // ********* LAB 1 ****************//
 // ********* DO NOT MODIFY ********//
 
@@ -288,4 +287,29 @@ void fightFlow (Queue* q)
     }
 }
 
+// 7. Print enemy skill's details
+void printEnemySkillDetail (Enemy* enemy)
+{
+    if (enemy == NULL) {
+        printf("Enemy not found.\n");
+        return;
+    }
+
+    printf("Name: %s\n", enemy->name);
+    printf("Life points: %d\n", enemy->hp);
+    printf("Attack points: %d\n", enemy->atk);
+    printf("Defense points: %d\n", enemy->def);
+    for (int i = 0; i < MAX_SKILL; i++)
+    {
+        printf("Skill %d: %s\n", i+1, enemy->skills[0].name);
+        printf("    Skill detail: %s\n", enemy->skills[0].description);
+        printf("    Type: %s\n", enemy->skills[0].type);
+        printf("    Duration: %d\n", enemy->skills[0].duration);
+        printf("    Life points: %d\n", enemy->skills[0].hp);
+        printf("    Attack points: %d\n", enemy->skills[0].atk);
+        printf("    Defense points: %d\n", enemy->skills[0].def);
+    }
+}
+
 // ********* DO NOT MODIFY ********//
+

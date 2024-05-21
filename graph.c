@@ -68,8 +68,8 @@ void printSenario (Scenario* scenario)
     for (int j = 0; j < MAX_DECISION; j++) 
         {
             printf("    Option %d: %s\n", j+1, scenario->decision.options[j].response);
-            printf("        Narrative: %s\n", scenario->decision.options[j].narra_bf);
-            printf("        Narrative: %s\n", scenario->decision.options[j].narra_af);
+            printf("        Narrative before: %s\n", scenario->decision.options[j].narra_bf);
+            printf("        Narrative after: %s\n", scenario->decision.options[j].narra_af);
         }
 }
 
@@ -110,3 +110,34 @@ void navigateScenario (Graph* graph, int curScenarioIdx, bool winAllBattles)
         // printf("\n");
     }
 }
+
+// ********* LAB 3 *********// 
+// char** makeDecision(Graph* graph, int currScenarioIdx, int decision_index) 
+// {
+
+//     if (decision_index >= 0 && decision_index < MAX_DECISION) 
+//     {
+//         // mostrar the enemy name array
+//         return graph->nodes[currScenarioIdx].scenario.decision.options[decision_index].enemies;
+//     }
+//     else 
+//     {
+//         printf("Invalid decision index\n");
+//     }
+// }
+
+
+// Serch enemy's name
+char* findEnemy (Enemy* enemies, char* enemyName)
+{
+    for (int i = 0; i < MAX_ENEMIES; i++)
+    {
+        if (strcmp(enemies[i].name, enemyName) ==0)
+        {
+            return enemyName;
+        }
+    } 
+    printf("Enemy not found\n");
+    return NULL;  
+}
+// ********* LAB 3 *********//

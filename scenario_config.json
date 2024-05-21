@@ -12,78 +12,225 @@
                 [
                     {
                         "response": "response 1",
-                        "narra_bf": "To be up dated1",
-                        "enemies": ["enemy 1", "enemy 2", "enemy 3"],
-                        "narra_af": "To be up dated"
-                    },
-                    {
-                        "response": "response 2",
-                        "narra_bf": "narra_bf 2",
-                        "enemies": ["enemy 1", "enemy 2", "enemy 3"],
-                        "narra_af": "To be up dated"
-                    }
-                ]
-            }
-            
-        },
+                        "narra_bf": "To be up dated 1",
+                        "enemies": 
+                        [
+                            { 
+                                "enemy_name": "name 1",
+                                "atk": 0,
+                                "hp": 0,
+                                "def": 0,
+                                "skills":
+                                [
+                                    {
+                                        "skill_id": "skill 1",
+                                        "description": "description 1 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
 
-        {
-            "scenario_id": "S2", 
-            "description": "To be up dated1",
-            "decision": 
-            {
-                "option_num": 2,
-                "decision_question": "To be up dated1",
-                "options": 
-                [
-                    {
-                        "response": "response 1",
-                        "narra_bf": "To be up dated1",
-                        "enemies": ["enemy 1", "enemy 2", "enemy 3"],
-                        "narra_af": "To be up dated"
-                    },
-                    {
-                        "response": "response 2",
-                        "narra_bf": "narra_bf 2",
-                        "enemies": ["enemy 1", "enemy 2", "enemy 3"],
-                        "narra_af": "To be up dated"
-                    }
-                ]
-            }
-            
-        },
+                                    {
+                                        "skill_id": "skill 2",
+                                        "description": "description 2 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
 
-        {
-            "scenario_id": "S3", 
-            "description": "To be up dated1",
-            "decision":       
-            {
-                "option_num": 2,
-                "decision_question": "To be up dated1",
-                "options": 
-                [
-                    {
-                        "response": "response 1",
-                        "narra_bf": "To be up dated1",
-                        "enemies": ["enemy 1", "enemy 2", "enemy 3"],
+                                    {
+                                        "skill_id": "skill 3",
+                                        "description": "description 3 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 4",
+                                        "description": "description 4 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    }
+                                ]
+                            },
+
+                            { 
+                                "enemy_name": "name 2",
+                                "atk": 0,
+                                "hp": 0,
+                                "def": 0,
+                                "skills":
+                                [
+                                    {
+                                        "skill_id": "skill 1",
+                                        "description": "description 1 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 2",
+                                        "description": "description 2 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 3",
+                                        "description": "description 3 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 4",
+                                        "description": "description 4 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    }
+                                ]
+                            }
+
+                        ],
                         "narra_af": "To be up dated"
                     },
+                    
                     {
                         "response": "response 2",
-                        "narra_bf": "narra_bf 2",
-                        "enemies": ["enemy 1", "enemy 2", "enemy 3"],
+                        "narra_bf": "To be up dated 2",
+                        "enemies": 
+                        [
+                            { 
+                                "enemy_name": "name 1",
+                                "atk": 0,
+                                "hp": 0,
+                                "def": 0,
+                                "skills":
+                                [
+                                    {
+                                        "skill_id": "skill 1",
+                                        "description": "description 1 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 2",
+                                        "description": "description 2 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 3",
+                                        "description": "description 3 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 4",
+                                        "description": "description 4 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    }
+                                ]
+                            },
+
+                            { 
+                                "enemy_name": "name 2",
+                                "atk": 0,
+                                "hp": 0,
+                                "def": 0,
+                                "skills":
+                                [
+                                    {
+                                        "skill_id": "skill 1",
+                                        "description": "description 1 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 2",
+                                        "description": "description 2 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 3",
+                                        "description": "description 3 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 4",
+                                        "description": "description 4 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    }
+                                ]
+                            }
+
+                        ],
                         "narra_af": "To be up dated"
                     }
                 ]
             }   
         },
 
-
         {
-            "scenario_id": "S4", 
-            "description": "To be up dated1",
+            "scenario_id": "S2", 
+            "description": "To be up dated 2",
             "decision": 
-            
             {
                 "option_num": 2,
                 "decision_question": "To be up dated1",
@@ -91,18 +238,670 @@
                 [
                     {
                         "response": "response 1",
-                        "narra_bf": "To be up dated1",
-                        "enemies": ["enemy 1", "enemy 2", "enemy 3"],
+                        "narra_bf": "To be up dated 1",
+                        "enemies": 
+                        [
+                            { 
+                                "enemy_name": "name 1",
+                                "atk": 0,
+                                "hp": 0,
+                                "def": 0,
+                                "skills":
+                                [
+                                    {
+                                        "skill_id": "skill 1",
+                                        "description": "description 1 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 2",
+                                        "description": "description 2 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 3",
+                                        "description": "description 3 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 4",
+                                        "description": "description 4 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    }
+                                ]
+                            },
+
+                            { 
+                                "enemy_name": "name 2",
+                                "atk": 0,
+                                "hp": 0,
+                                "def": 0,
+                                "skills":
+                                [
+                                    {
+                                        "skill_id": "skill 1",
+                                        "description": "description 1 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 2",
+                                        "description": "description 2 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 3",
+                                        "description": "description 3 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 4",
+                                        "description": "description 4 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    }
+                                ]
+                            }
+
+                        ],
                         "narra_af": "To be up dated"
                     },
+                    
                     {
                         "response": "response 2",
-                        "narra_bf": "narra_bf 2",
-                        "enemies": ["enemy 1", "enemy 2", "enemy 3"],
+                        "narra_bf": "To be up dated 2",
+                        "enemies": 
+                        [
+                            { 
+                                "enemy_name": "name 1",
+                                "atk": 0,
+                                "hp": 0,
+                                "def": 0,
+                                "skills":
+                                [
+                                    {
+                                        "skill_id": "skill 1",
+                                        "description": "description 1 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 2",
+                                        "description": "description 2 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 3",
+                                        "description": "description 3 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 4",
+                                        "description": "description 4 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    }
+                                ]
+                            },
+
+                            { 
+                                "enemy_name": "name 2",
+                                "atk": 0,
+                                "hp": 0,
+                                "def": 0,
+                                "skills":
+                                [
+                                    {
+                                        "skill_id": "skill 1",
+                                        "description": "description 1 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 2",
+                                        "description": "description 2 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 3",
+                                        "description": "description 3 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 4",
+                                        "description": "description 4 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    }
+                                ]
+                            }
+
+                        ],
                         "narra_af": "To be up dated"
                     }
                 ]
-            }           
+            }   
+        },
+        {
+            "scenario_id": "S3", 
+            "description": "To be up dated1",
+            "decision": 
+            {
+                "option_num": 2,
+                "decision_question": "To be up dated1",
+                "options": 
+                [
+                    {
+                        "response": "response 1",
+                        "narra_bf": "To be up dated 1",
+                        "enemies": 
+                        [
+                            { 
+                                "enemy_name": "name 1",
+                                "atk": 0,
+                                "hp": 0,
+                                "def": 0,
+                                "skills":
+                                [
+                                    {
+                                        "skill_id": "skill 1",
+                                        "description": "description 1 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 2",
+                                        "description": "description 2 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 3",
+                                        "description": "description 3 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 4",
+                                        "description": "description 4 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    }
+                                ]
+                            },
+
+                            { 
+                                "enemy_name": "name 2",
+                                "atk": 0,
+                                "hp": 0,
+                                "def": 0,
+                                "skills":
+                                [
+                                    {
+                                        "skill_id": "skill 1",
+                                        "description": "description 1 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 2",
+                                        "description": "description 2 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 3",
+                                        "description": "description 3 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 4",
+                                        "description": "description 4 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    }
+                                ]
+                            }
+
+                        ],
+                        "narra_af": "To be up dated"
+                    },
+                    
+                    {
+                        "response": "response 2",
+                        "narra_bf": "To be up dated 2",
+                        "enemies": 
+                        [
+                            { 
+                                "enemy_name": "name 1",
+                                "atk": 0,
+                                "hp": 0,
+                                "def": 0,
+                                "skills":
+                                [
+                                    {
+                                        "skill_id": "skill 1",
+                                        "description": "description 1 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 2",
+                                        "description": "description 2 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 3",
+                                        "description": "description 3 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 4",
+                                        "description": "description 4 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    }
+                                ]
+                            },
+
+                            { 
+                                "enemy_name": "name 2",
+                                "atk": 0,
+                                "hp": 0,
+                                "def": 0,
+                                "skills":
+                                [
+                                    {
+                                        "skill_id": "skill 1",
+                                        "description": "description 1 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 2",
+                                        "description": "description 2 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 3",
+                                        "description": "description 3 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 4",
+                                        "description": "description 4 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    }
+                                ]
+                            }
+
+                        ],
+                        "narra_af": "To be up dated"
+                    }
+                ]
+            }   
+        },
+
+        {
+            "scenario_id": "S4", 
+            "description": "To be up dated1",
+            "decision": 
+            {
+                "option_num": 2,
+                "decision_question": "To be up dated1",
+                "options": 
+                [
+                    {
+                        "response": "response 1",
+                        "narra_bf": "To be up dated 1",
+                        "enemies": 
+                        [
+                            { 
+                                "enemy_name": "name 1",
+                                "atk": 0,
+                                "hp": 0,
+                                "def": 0,
+                                "skills":
+                                [
+                                    {
+                                        "skill_id": "skill 1",
+                                        "description": "description 1 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 2",
+                                        "description": "description 2 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 3",
+                                        "description": "description 3 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 4",
+                                        "description": "description 4 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    }
+                                ]
+                            },
+
+                            { 
+                                "enemy_name": "name 2",
+                                "atk": 0,
+                                "hp": 0,
+                                "def": 0,
+                                "skills":
+                                [
+                                    {
+                                        "skill_id": "skill 1",
+                                        "description": "description 1 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 2",
+                                        "description": "description 2 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 3",
+                                        "description": "description 3 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 4",
+                                        "description": "description 4 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    }
+                                ]
+                            }
+
+                        ],
+                        "narra_af": "To be up dated"
+                    },
+                    
+                    {
+                        "response": "response 2",
+                        "narra_bf": "To be up dated 2",
+                        "enemies": 
+                        [
+                            { 
+                                "enemy_name": "name 1",
+                                "atk": 0,
+                                "hp": 0,
+                                "def": 0,
+                                "skills":
+                                [
+                                    {
+                                        "skill_id": "skill 1",
+                                        "description": "description 1 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 2",
+                                        "description": "description 2 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 3",
+                                        "description": "description 3 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 4",
+                                        "description": "description 4 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    }
+                                ]
+                            },
+
+                            { 
+                                "enemy_name": "name 2",
+                                "atk": 0,
+                                "hp": 0,
+                                "def": 0,
+                                "skills":
+                                [
+                                    {
+                                        "skill_id": "skill 1",
+                                        "description": "description 1 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 2",
+                                        "description": "description 2 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 3",
+                                        "description": "description 3 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    },
+
+                                    {
+                                        "skill_id": "skill 4",
+                                        "description": "description 4 ",
+                                        "type": "type",
+                                        "duration": 0,
+                                        "atk": 0,
+                                        "hp": 0,
+                                        "def": 0
+                                    }
+                                ]
+                            }
+
+                        ],
+                        "narra_af": "To be up dated"
+                    }
+                ]
+            }   
         }
     ]
 }
