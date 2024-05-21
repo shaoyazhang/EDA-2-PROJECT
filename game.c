@@ -50,61 +50,7 @@ void charcter_init(Character* players)
 }
 
 
-void enemy_init(Enemy* enemies, int scenario_num)
-{
-    
-    enemies = (Enemy*)realloc(enemies,sizeof(Enemy) * 8);
-           
-    strcpy(enemies[0].name, "Goblin"); // first scenario
-    enemies->atk = 0;
-    enemies->def = 0;
-    enemies->hp = 0;
-    
-    strcpy(enemies[1].name, "fire_enemy"); // second scenario
-    enemies->atk = 0;
-    enemies->def = 0;
-    enemies->hp = 0;
 
-    strcpy(enemies[2].name, "Rock_Golem"); // third scenario
-    enemies->atk = 0;
-    enemies->def = 0;
-    enemies->hp = 0;
-
-    strcpy(enemies[3].name, "water_wizard"); // fourth scenario
-    enemies->atk = 0;
-    enemies->def = 0;
-    enemies->hp = 0;
-
-    
-    strcpy(enemies[4].name, "Goblin"); // first scenario
-    enemies->atk = 0;
-    enemies->def = 0;
-    enemies->hp = 0;
-    strcpy(enemies[1].name, "fire_enemy"); // second scenario
-    enemies->atk = 0;
-    enemies->def = 0;
-    enemies->hp = 0;
-
-    strcpy(enemies[5].name, "Rock_Golem"); // third scenario
-    enemies->atk = 0;
-    enemies->def = 0;
-    enemies->hp = 0;
-    strcpy(enemies[6].name, "water_wizard"); // fourth scenario
-    enemies->atk = 0;
-    enemies->def = 0;
-    enemies->hp = 0;
-            
-
-            
-    strcpy(enemies[7].name, "Goblin"); // first scenario
-    enemies->atk = 0;
-    enemies->def = 0;
-    enemies->hp = 0; 
-    strcpy(enemies[1].name, "fire_enemy"); // second scenario
-    enemies->atk = 0;
-    enemies->def = 0;
-    enemies->hp = 0;          
-}
    
 
 // ********* DO NOT MODIFY ********//
