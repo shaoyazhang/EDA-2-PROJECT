@@ -82,7 +82,7 @@
                     {
                         "response": "Search for a boat",
                         "narra_bf": "Instead of diving headfirst into the water, you decide to search for a more cautious approach. Scanning the shoreline, you spot a weather-beaten rowboat half-buried in the sand, a relic of some forgotten voyage.",
-                        "enemies": ["water elemental"],
+                        "enemies": ["water devil"],
                         "narra_af": "After a fierce battle, you emerge victorious, the wizard's magic fading into the depths. As you catch your breath, you feel a strange sensation wash over you. (You have absorbed the wizard's power and now you can swim freely)."
                     }
                 ]
