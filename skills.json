@@ -3,7 +3,7 @@
     "characters": 
     [
         {   "characters_name": "Night walker",
-            "hp":60,
+            "hp":75,
             "atk":40,
             "def":35,
             "skills":
@@ -52,7 +52,7 @@
         },
 
         {   "characters_name": "Snow flier",
-            "hp":70,
+            "hp":80,
             "atk":30,
             "def":30,
             "skills":
@@ -101,7 +101,7 @@
         },
 
         {   "characters_name": "sword wanderer",
-            "hp":65,
+            "hp":75,
             "atk":75,
             "def":25,
             "skills":
