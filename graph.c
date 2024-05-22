@@ -1,4 +1,5 @@
 # include "graph.h"
+
 // Initialize graph
 // Use array to build graph
 void graphInit(Graph* graph)
@@ -10,7 +11,7 @@ void graphInit(Graph* graph)
 // Insert a scenario to the graph
 void addScenario (Graph* graph, Scenario scenario)
 {
-    if (graph->num_nodes >= MAX_SCENARIOS)
+    if (graph->num_nodes >= MAX_SCENARIOS) 
     {
         printf("Maximum scenario number has reached\n");
         return;
@@ -23,7 +24,7 @@ void addScenario (Graph* graph, Scenario scenario)
     }
 }
 
-//
+// Implement adjacent 
 void addEdges (Graph* graph, int srcIndex, int destIndex)
 {
     if (srcIndex >= 0 && srcIndex < graph->num_nodes && destIndex >= 0 && destIndex < graph->num_nodes) {

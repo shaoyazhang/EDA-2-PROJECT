@@ -233,6 +233,27 @@ void fightFlow (Queue* q)
     }
 }
 
+void applySkillCharacter (Character* player, Enemy* enemy, int input, int turnIdx)
+{
+    if (turnIdx == 1) // players turn
+    {
+        if (strcmp(player->skills[input].type, "Direct attack") == 0)
+        {
+            enemy->hp += player->skills[input].hp;
+        }
+        else if (strcmp(player->skills[input].type, "Temporary modifier") == 0)
+        {
+            player->atk = player->skills[input].atk;
+            player->def = player->skills[input].def;
+            player->hp = player->skills[input].hp;
+        }
+    }
+    else if (turnIdx == 2) // enemy's turn
+    {
+        
+    }
+}
+
 // 7. Print enemy skill's details
 void printEnemySkillDetail (Enemy* enemy)
 {
