@@ -51,7 +51,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -35,
+                                        "hp": -20,
                                         "def": 0
                                     }
                                 ]
@@ -96,7 +96,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -35,
+                                        "hp": -19,
                                         "def": 0
                                     }
                                 ]
@@ -142,7 +142,7 @@
                                         "duration": 2,
                                         "atk": 10,
                                         "hp": 0,
-                                        "def": -5
+                                        "def": 5
                                     },
                                     {
                                         "skill_id": "wind_gust",
@@ -167,8 +167,8 @@
                                         "description": "Shoots a deadly arrow made from the forest's wood.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 20,
-                                        "hp": 0,
+                                        "atk": 0,
+                                        "hp": -22,
                                         "def": 0
                                     },
                                     {
@@ -178,7 +178,7 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": -10
+                                        "def": 10
                                     },
                                     {
                                         "skill_id": "shadow_strike",
@@ -196,7 +196,7 @@
                                         "duration": 2,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": -4
+                                        "def": 4
                                     }
                                 ]
                             }
@@ -232,8 +232,8 @@
                                         "description": "Blasts the enemy with intense fire.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 30,
-                                        "hp": 0,
+                                        "atk": 0,
+                                        "hp": -16,
                                         "def": 0
                                     },
                                     {
@@ -241,8 +241,8 @@
                                         "description": "Emits a wave of heat that damages all enemies in range.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 20,
-                                        "hp": 0,
+                                        "atk": 0,
+                                        "hp": -20,
                                         "def": 0
                                     },
                                     {
@@ -277,8 +277,8 @@
                                         "description": "Strikes with a sword engulfed in flames.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 25,
-                                        "hp": 0,
+                                        "atk": 0,
+                                        "hp": -13,
                                         "def": 0
                                     },
                                     {
@@ -288,15 +288,15 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 20
+                                        "def": 18
                                     },
                                     {
                                         "skill_id": "fire_whirl",
                                         "description": "Spins rapidly, creating a whirlwind of fire.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 30,
-                                        "hp": 0,
+                                        "atk": 0,
+                                        "hp": -30,
                                         "def": 0
                                     },
                                     {
@@ -304,8 +304,8 @@
                                         "description": "Charges at the enemy with a burning force.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 35,
-                                        "hp": 0,
+                                        "atk": 0,
+                                        "hp": -12,
                                         "def": 0
                                     }
                                 ]
@@ -331,8 +331,8 @@
                                         "description": "Strikes with a sword engulfed in flames.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 25,
-                                        "hp": 0,
+                                        "atk": 0,
+                                        "hp": -18,
                                         "def": 0
                                     },
                                     {
@@ -358,8 +358,8 @@
                                         "description": "Charges at the enemy with a burning force.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 35,
-                                        "hp": 0,
+                                        "atk": 0,
+                                        "hp": -20,
                                         "def": 0
                                     }
                                 ]
@@ -396,8 +396,8 @@
                                         "description": "Smashes the enemy with a heavy club.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 35,
-                                        "hp": 0,
+                                        "atk": 0,
+                                        "hp": -15,
                                         "def": 0
                                     },
                                     {
@@ -414,7 +414,7 @@
                                         "description": "Causes the ground to quake, damaging all enemies.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 30,
+                                        "atk":0,
                                         "hp": 0,
                                         "def": 0
                                     },
