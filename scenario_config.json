@@ -15,7 +15,7 @@
                             {
                                 "enemy_name": "Creatures",
                                 "atk": 40,
-                                "hp": 150,
+                                "hp": 20,
                                 "def": 20,
                                 "skills": [
                                     {
@@ -23,8 +23,8 @@
                                         "description": "Attacks with sharp claws.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 25,
-                                        "hp": 0,
+                                        "atk": 0,
+                                        "hp": -5,
                                         "def": 0
                                     },
                                     {
@@ -34,7 +34,7 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 10
+                                        "def": 5
                                     },
                                     {
                                         "skill_id": "fear_howl",
@@ -50,8 +50,8 @@
                                         "description": "Charges at the enemy with dark energy.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 35,
-                                        "hp": 0,
+                                        "atk": 0,
+                                        "hp": -35,
                                         "def": 0
                                     }
                                 ]
@@ -59,17 +59,17 @@
 
                             {
                                 "enemy_name": "Dark Cave Creature",
-                                "atk": 40,
-                                "hp": 150,
-                                "def": 20,
+                                "atk": 30,
+                                "hp": 25,
+                                "def": 17,
                                 "skills": [
                                     {
                                         "skill_id": "cave_claw",
                                         "description": "Attacks with sharp claws.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 25,
-                                        "hp": 0,
+                                        "atk": 0,
+                                        "hp": -25,
                                         "def": 0
                                     },
                                     {
@@ -86,7 +86,7 @@
                                         "description": "Lets out a terrifying howl that reduces the enemy's attack.",
                                         "type": "Temporary modifier",
                                         "duration": 2,
-                                        "atk": -10,
+                                        "atk": 10,
                                         "hp": 0,
                                         "def": 0
                                     },
@@ -95,8 +95,8 @@
                                         "description": "Charges at the enemy with dark energy.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 35,
-                                        "hp": 0,
+                                        "atk": 0,
+                                        "hp": -35,
                                         "def": 0
                                     }
                                 ]
@@ -114,7 +114,7 @@
                             {
                                 "enemy_name": "Wood Bird",
                                 "atk": 30,
-                                "hp": 100,
+                                "hp": 30,
                                 "def": 10,
                                 "skills": [
                                     {
@@ -122,8 +122,8 @@
                                         "description": "Pecks the enemy with a sharp beak.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 15,
-                                        "hp": 0,
+                                        "atk": 0,
+                                        "hp": -15,
                                         "def": 0
                                     },
                                     {
@@ -131,8 +131,8 @@
                                         "description": "Strikes from the air, avoiding ground defenses.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 20,
-                                        "hp": 0,
+                                        "atk": 0,
+                                        "hp": -20,
                                         "def": 0
                                     },
                                     {
@@ -158,8 +158,8 @@
 
                             {
                                 "enemy_name": "Wood Devil",
-                                "atk": 50,
-                                "hp": 200,
+                                "atk": 30,
+                                "hp": 45,
                                 "def": 30,
                                 "skills": [
                                     {
@@ -196,7 +196,7 @@
                                         "duration": 2,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 0
+                                        "def": -4
                                     }
                                 ]
                             }
@@ -223,9 +223,9 @@
                         [
                             {
                                 "enemy_name": "Fire Elemental",
-                                "atk": 60,
-                                "hp": 250,
-                                "def": 40,
+                                "atk": 23,
+                                "hp": 29,
+                                "def": 30,
                                 "skills": [
                                     {
                                         "skill_id": "fire_blast",
@@ -252,15 +252,15 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 15
+                                        "def": 5
                                     },
                                     {
                                         "skill_id": "inferno",
                                         "description": "Unleashes a devastating inferno.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 50,
-                                        "hp": 0,
+                                        "atk": 0,
+                                        "hp": -7,
                                         "def": 0
                                     }
                                 ]
@@ -268,9 +268,9 @@
 
                             {
                                 "enemy_name": "Fiery Guardian",
-                                "atk": 55,
-                                "hp": 230,
-                                "def": 35,
+                                "atk": 27,
+                                "hp": 36,
+                                "def": 18,
                                 "skills": [
                                     {
                                         "skill_id": "flame_sword",
@@ -322,9 +322,9 @@
                         [
                             {
                                 "enemy_name": "Fiery Guardian",
-                                "atk": 55,
-                                "hp": 230,
-                                "def": 35,
+                                "atk": 20,
+                                "hp": 30,
+                                "def": 25,
                                 "skills": [
                                     {
                                         "skill_id": "flame_sword",
@@ -387,9 +387,9 @@
                         [
                             {
                                 "enemy_name": "Mountain Troll",
-                                "atk": 45,
-                                "hp": 300,
-                                "def": 50,
+                                "atk": 19,
+                                "hp": 45,
+                                "def": 30,
                                 "skills": [
                                     {
                                         "skill_id": "club_smash",
@@ -433,7 +433,7 @@
                             {
                                 "enemy_name": "Stone Guardians",
                                 "atk": 30,
-                                "hp": 270,
+                                "hp": 30,
                                 "def": 50,
                                 "skills": [
                                     {
@@ -486,9 +486,9 @@
                         [
                             {
                                 "enemy_name": "Rock Gargoyle",
-                                "atk": 50,
-                                "hp": 200,
-                                "def": 40,
+                                "atk": 20,
+                                "hp": 48,
+                                "def": 32,
                                 "skills": [
                                     {
                                         "skill_id": "stone_bite",
@@ -531,7 +531,7 @@
                             {
                                 "enemy_name": "Decaying Corpse",
                                 "atk": 35,
-                                "hp": 180,
+                                "hp": 37,
                                 "def": 25,
                                 "skills": [
                                     {
@@ -596,8 +596,8 @@
                         [
                             {
                                 "enemy_name": "Piranhas",
-                                "atk": 40,
-                                "hp": 120,
+                                "atk": 30,
+                                "hp": 37,
                                 "def": 15,
                                 "skills": [
                                     {
@@ -641,7 +641,7 @@
                             {
                                 "enemy_name": "Water Wizard",
                                 "atk": 55,
-                                "hp": 200,
+                                "hp": 65,
                                 "def": 30,
                                 "skills": [
                                     {
@@ -695,7 +695,7 @@
                             {
                                 "enemy_name": "Water Devil",
                                 "atk": 50,
-                                "hp": 240,
+                                "hp": 55,
                                 "def": 30,
                                 "skills": [
                                     {
