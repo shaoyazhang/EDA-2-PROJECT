@@ -103,11 +103,13 @@ void test03()
         count++;
     }
     printf("Enqued number: %d\n", count);
-    // dequeue(q); 
-    // dequeue(q);
-    // dequeue(q);
-    // dequeue(q);
-    // dequeue(q);
+    
+    dequeue(q); 
+    dequeue(q);
+    dequeue(q);
+    dequeue(q);
+    dequeue(q);
+    printf("Queue size: %d", q->size);
 
 }
 # endif 
@@ -227,7 +229,6 @@ void test06 ()
 
 }
 # endif
-
 
 // test for scenario navigation
 # if 1

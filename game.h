@@ -107,6 +107,7 @@ void applySkill (Character* player, Enemy* enemy, int input, int pcNum, int turn
 //************ LAB 2 **************//
 //********** DO NOT MODIFY ********//
 
+// Node structure modified 
 // typedef struct Node
 // {
 //     Character* player;
@@ -127,11 +128,11 @@ typedef struct queue
     int size;
 }Queue;
 
-void printCharacter (Character* player);
+void printCharacterSkill (Character* player);
 int isEmpty (Queue* q);
 Queue* queueInit ();
-//void enqueueCharacter (Queue* q, Character* player);
-//void enqueueEnemy (Queue* q, Enemy* enemy);
+//void enqueueCharacter (Queue* q, Character* player); // function cancelled
+//void enqueueEnemy (Queue* q, Enemy* enemy); // function cancelled
 void enqueue (Queue* q, const char* name);
 void dequeue (Queue* q);
 void queueTurn (Queue* q, Character* player, Enemy* enemies);

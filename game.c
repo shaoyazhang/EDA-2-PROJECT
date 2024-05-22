@@ -3,7 +3,8 @@
 // ********* LAB 1 ****************//
 // ********* DO NOT MODIFY ********//
 
-// Initialize charcters
+// Initialize charcters ---> function updated and cancelled
+# if 0
 void charcter_init(Character* players)
 {   
     players = (Character*)realloc(players, sizeof(Character) * MAX_CHARACTS); 
@@ -47,10 +48,7 @@ void charcter_init(Character* players)
     strcpy(players[3].skills[3].name, "punch");
 
 }
-
-
-
-   
+# endif
 
 // ********* DO NOT MODIFY ********//
 
@@ -82,7 +80,7 @@ void printEnemySkill (Enemy* enemy)
 
 }
 
-
+// Initialize queue
 Queue* queueInit ()
 {   
     Queue* newQueue = (Queue*)malloc(sizeof(Queue));
@@ -97,72 +95,54 @@ int isEmpty (Queue* q)
     return (q->size == 0);
 }
 
-// 3. Enqueue
-// void enqueue (Queue* q, void* rol)
-// {
+# if 0
+// 3.1 Enque Character  ---> function cancelled
+void enqueueCharacter (Queue* q, Character* player)
+{
     
-//     Node* newNode = (Node*)malloc(sizeof(Node));
-//     newNode->rol = rol;
-//     newNode->next = NULL;
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    newNode->player = player;
+    newNode->enemy = NULL;
+    newNode->next = NULL;
 
-//     if (isEmpty(q))
-//     {
-//         q->front = newNode;
-//         q->rear = newNode;
-//     }
-//     else
-//     {
-//         q->rear->next = newNode;
-//         q->rear = newNode;
-//     }
-//     q->size++;
-// }
+    if (q->front == NULL)
+    {
+        q->front = newNode;
+        q->rear = newNode;
+    }
+    else
+    {
+        q->rear->next = newNode;
+        q->rear = newNode;
+    }
+    q->size++;
+}
+# endif
 
-// 3.1 Enque Character
-// void enqueueCharacter (Queue* q, Character* player)
-// {
+# if 0
+// 3.2 Enque Enemy  ---> function cancelled
+void enqueueEnemy (Queue* q, Enemy* enemy)
+{
     
-//     Node* newNode = (Node*)malloc(sizeof(Node));
-//     newNode->player = player;
-//     newNode->enemy = NULL;
-//     newNode->next = NULL;
-
-//     if (q->front == NULL)
-//     {
-//         q->front = newNode;
-//         q->rear = newNode;
-//     }
-//     else
-//     {
-//         q->rear->next = newNode;
-//         q->rear = newNode;
-//     }
-//     q->size++;
-// }
-
-
-// 3.2 Enque Enemy
-// void enqueueEnemy (Queue* q, Enemy* enemy)
-// {
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    newNode->player = NULL;
+    newNode->enemy = enemy;
+    newNode->next = NULL;
+    //
+    if (q->rear == NULL)
+    {
+        q->front = newNode;
+        q->rear = newNode;
+    }
+    else
+    {
+        q->rear->next = newNode;
+        q->rear = newNode;
+    }
     
-//     Node* newNode = (Node*)malloc(sizeof(Node));
-//     newNode->player = NULL;
-//     newNode->enemy = enemy;
-//     newNode->next = NULL;
-//     //
-//     if (q->rear == NULL)
-//     {
-//         q->front = newNode;
-//         q->rear = newNode;
-//     }
-//     else
-//     {
-//         q->rear->next = newNode;
-//         q->rear = newNode;
-//     }
-    
-//     q->size++;
-// }
+    q->size++;
+}
+# endif
 
 // 3. Enqueue 
 void enqueue (Queue* q, const char* name) // name is either "player" or "enemy"
@@ -205,8 +185,9 @@ void dequeue (Queue* q)
 }
 
 
-// 5. Generate queue-based turn 
+
 # if 0
+// 5. Generate queue-based turn   ---> function cancelled
 void queueTurn (Queue* q, Character* player, Enemy* enemies)
 {
     for ( int i = 0; i < NUM_TURNS; i++)
@@ -224,7 +205,8 @@ void queueTurn (Queue* q, Character* player, Enemy* enemies)
 }
 
 # endif
-// Function to make character and enemy apply their skills and update their points
+
+// 5. Function to make character and enemy apply their skills and update their points
 void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkillIdx, int turnIdx)
 {
     if (turnIdx == 1) // players turn
@@ -237,9 +219,11 @@ void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkil
             enemy->atk += player->skills[playerSkillIdx].atk;
             enemy->def += player->skills[playerSkillIdx].def;
         }
-        else if (strcmp(player->skills[playerSkillIdx].type, "Temporary modifier") == 0)
+        else if ((strcmp(player->skills[playerSkillIdx].type, "Temporary modifier") == 0) &&
+            player->skills[playerSkillIdx].duration)
         {
             // if it is a temporary modifier, we update player's points
+            player->skills[playerSkillIdx].duration--;
             player->atk = player->skills[playerSkillIdx].atk;
             player->def = player->skills[playerSkillIdx].def;
             player->hp = player->skills[playerSkillIdx].hp;
@@ -255,7 +239,8 @@ void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkil
             player->def += enemy->skills[pcSkillIdx].def;
             player->hp += enemy->skills[pcSkillIdx].hp;
         }
-        else if (strcmp(enemy->skills[pcSkillIdx].type, "Temporary modifier") == 0)
+        else if (strcmp(enemy->skills[pcSkillIdx].type, "Temporary modifier") == 0 &&
+            enemy->skills[pcSkillIdx].duration > 0)
         {
             // if it is a temporary modifier, we update enemy's points
             
@@ -266,7 +251,8 @@ void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkil
     }
 }
 
-// 6. Fight flow
+# if 0
+// 6. Fight flow ---> cancelled
 // void fightFlow (Queue* q)
 // {
 //     if (isEmpty(q))
@@ -298,7 +284,9 @@ void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkil
 //     dequeue (q);
 //     return;
 // }
+# endif
 
+// 6. Fight flow design
 void fightFlow (Queue* q, Character* player, Enemy* enemy)
 {
     if (isEmpty(q))
@@ -315,7 +303,6 @@ void fightFlow (Queue* q, Character* player, Enemy* enemy)
         int playerInput;
         scanf ("%d", &playerInput);
 
-        
         // Added while condition in case player inputs wrong number
         // so they can select again
         while (playerInput < 1 || playerInput > MAX_SKILL)
@@ -362,6 +349,5 @@ void printEnemySkillDetail (Enemy* enemy)
         printf("    Defense points: %d\n", enemy->skills[0].def);
     }
 }
-
 // ********* DO NOT MODIFY ********//
 
