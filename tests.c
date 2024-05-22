@@ -1,40 +1,36 @@
 #include "tests.h"
 
-// test queue
-# if 1
+// test for loading characters' data
 void test01()
 {
-    srand((unsigned)time(NULL));
-    Queue* q = queueInit ();
-    Skill playerSkills[4] = 
+    const char* fp = "skills.json";
+    char* jsonString = readFile (fp);
+
+    if (jsonString == NULL)
     {
-        {"skill 1", "skill 1", 1, 2, 3, 4, 5},
-        {"skill 2", "skill 2", 1, 2, 3, 4, 5},
-        {"skill 3", "skill 2", 1, 2, 3, 4, 5},
-        {"skill 4", "skill 2", 1, 2, 3, 4, 5}
-    };
+        fprintf(stderr, "Failed to read JSON file\n");
+        return;
+    }
 
-    Character player = {"Player", 100, 20, 10, {playerSkills[0],playerSkills[1], playerSkills[2], playerSkills[3]}};
-
-    Skill enemySkills[4] = 
-    {
-        {"Eskill 1", "Eskill 1", 1, 2, 3, 4, 5},
-        {"Eskill 2", "Eskill 2", 1, 2, 3, 4, 5},
-        {"Eskill 3", "Eskill 2", 1, 2, 3, 4, 5},
-        {"Eskill 4", "Eskill 2", 1, 2, 3, 4, 5}
-    };
-    Enemy enemy = {"Enemy", 30, 50, 5, {enemySkills[0], enemySkills[1], enemySkills[2], enemySkills[3]}};
-    
-
-    dequeue(q); 
-    dequeue(q);
-    dequeue(q);
-    dequeue(q);
-    dequeue(q);
-
+    Character* players = NULL;
+    int num_charcter;
+    characterInit(jsonString, &players, &num_charcter);
+ 
+    for (int i = 0; i < MAX_CHARACTS; i++)
+    {   
+        printf("Player %d name: %s\n", i+1, players[i].name);
+        for (int j = 0; j < MAX_SKILL; j++)
+        { 
+            printf("skill %d name: %s\n", j+1, players[i].skills[j].name);
+            printf("    Description: %s\n", players[i].skills[j].description);
+            printf("    type: %s\n", players[i].skills[j].type);
+            printf("    duration: %d\n", players[i].skills[j].duration);
+            printf("    atk: %d\n", players[i].skills[j].atk);
+            printf("    hp: %d\n", players[i].skills[j].hp);
+            printf("    def: %d\n", players[i].skills[j].def);
+        }       
+   }  
 }
-
-# endif 
 
 // test for loading secenarios' data
 # if 1
@@ -89,37 +85,32 @@ void test02()
 }
 # endif
 
-// test for loading characters' data
+// test for queue 
+# if 1
 void test03()
 {
-    const char* fp = "skills.json";
-    char* jsonString = readFile (fp);
-
-    if (jsonString == NULL)
+    srand((unsigned)time(NULL));
+    Queue* q = queueInit ();
+    int q_num = 0;
+    int count = 0;
+    while (q_num< MAX_BATTLE_TURNS)
     {
-        fprintf(stderr, "Failed to read JSON file\n");
-        return;
+        enqueue (q, "player");
+        q_num++;
+        count++;
+        enqueue (q, "enemy");
+        q_num++;
+        count++;
     }
+    printf("Enqued number: %d\n", count);
+    // dequeue(q); 
+    // dequeue(q);
+    // dequeue(q);
+    // dequeue(q);
+    // dequeue(q);
 
-    Character* players = NULL;
-    int num_charcter;
-    characterInit(jsonString, &players, &num_charcter);
- 
-    for (int i = 0; i < MAX_CHARACTS; i++)
-    {   
-        printf("Player %d name: %s\n", i+1, players[i].name);
-        for (int j = 0; j < MAX_SKILL; j++)
-        { 
-            printf("skill %d name: %s\n", j+1, players[i].skills[j].name);
-            printf("    Description: %s\n", players[i].skills[j].description);
-            printf("    type: %s\n", players[i].skills[j].type);
-            printf("    duration: %d\n", players[i].skills[j].duration);
-            printf("    atk: %d\n", players[i].skills[j].atk);
-            printf("    hp: %d\n", players[i].skills[j].hp);
-            printf("    def: %d\n", players[i].skills[j].def);
-        }       
-   }  
 }
+# endif 
 
 // test for queue turn && fight flow
 void test04()

@@ -158,8 +158,8 @@ int main()
     # endif
 
     // test01(); // test queue 
-    test02();
-    // test03();
+    // test02();
+    test03();
     // test04();
     // test05();
     // test06 ();
