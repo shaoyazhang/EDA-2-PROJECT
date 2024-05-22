@@ -240,6 +240,8 @@ void applySkillCharacter (Character* player, Enemy* enemy, int input, int turnId
         if (strcmp(player->skills[input].type, "Direct attack") == 0)
         {
             enemy->hp += player->skills[input].hp;
+            enemy->atk += player->skills[input].atk;
+            enemy->def += player->skills[input].def;
         }
         else if (strcmp(player->skills[input].type, "Temporary modifier") == 0)
         {

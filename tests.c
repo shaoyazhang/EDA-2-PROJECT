@@ -137,12 +137,17 @@ void test03()
             printf("    Narrative after: %s\n", scenarios[i].decision.options[j].narra_af);
             printf("    Enemies:\n");
             for (int k = 0; k < MAX_ENEMIES; k++)
-            {
-                printf("    %s\n", scenarios[i].decision.options[j].enemies[k].name);
-                for (int m = 0; m < MAX_SKILL; m++)
+            {   
+                if(strlen(scenarios[i].decision.options[j].enemies[k].name) > 0)
                 {
-                    printf("        %s\n", scenarios[i].decision.options[j].enemies[k].skills[m].name);
+                    printf("    %s\n", scenarios[i].decision.options[j].enemies[k].name);
+                    for (int m = 0; m < MAX_SKILL; m++)
+                    {
+                        if(strlen(scenarios[i].decision.options[j].enemies[k].skills[m].name) > 0)
+                            printf("        Skill %d %s\n", m+1, scenarios[i].decision.options[j].enemies[k].skills[m].name);
+                    }
                 }
+                
                 
 
             }
