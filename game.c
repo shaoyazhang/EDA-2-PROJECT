@@ -82,12 +82,7 @@ void printEnemySkill (Enemy* enemy)
 
 }
 
-// 1. Initialize queue
-// void queueInit (Queue* q)
-// {
-//     q->front = q->rear = NULL;
-//     q->size = 0;
-// }
+
 Queue* queueInit ()
 {   
     Queue* newQueue = (Queue*)malloc(sizeof(Queue));
@@ -124,38 +119,57 @@ int isEmpty (Queue* q)
 // }
 
 // 3.1 Enque Character
-void enqueueCharacter (Queue* q, Character* player)
-{
+// void enqueueCharacter (Queue* q, Character* player)
+// {
     
-    Node* newNode = (Node*)malloc(sizeof(Node));
-    newNode->player = player;
-    newNode->enemy = NULL;
-    newNode->next = NULL;
+//     Node* newNode = (Node*)malloc(sizeof(Node));
+//     newNode->player = player;
+//     newNode->enemy = NULL;
+//     newNode->next = NULL;
 
-    if (q->front == NULL)
-    {
-        q->front = newNode;
-        q->rear = newNode;
-    }
-    else
-    {
-        q->rear->next = newNode;
-        q->rear = newNode;
-    }
-    q->size++;
-}
+//     if (q->front == NULL)
+//     {
+//         q->front = newNode;
+//         q->rear = newNode;
+//     }
+//     else
+//     {
+//         q->rear->next = newNode;
+//         q->rear = newNode;
+//     }
+//     q->size++;
+// }
 
 
 // 3.2 Enque Enemy
-void enqueueEnemy (Queue* q, Enemy* enemy)
-{
+// void enqueueEnemy (Queue* q, Enemy* enemy)
+// {
     
+//     Node* newNode = (Node*)malloc(sizeof(Node));
+//     newNode->player = NULL;
+//     newNode->enemy = enemy;
+//     newNode->next = NULL;
+//     //
+//     if (q->rear == NULL)
+//     {
+//         q->front = newNode;
+//         q->rear = newNode;
+//     }
+//     else
+//     {
+//         q->rear->next = newNode;
+//         q->rear = newNode;
+//     }
+    
+//     q->size++;
+// }
+
+// 3. Enqueue 
+void enqueue (Queue* q, const char* name) // name is either "player" or "enemy"
+{
     Node* newNode = (Node*)malloc(sizeof(Node));
-    newNode->player = NULL;
-    newNode->enemy = enemy;
-    newNode->next = NULL;
-    //
-    if (q->rear == NULL)
+    strcpy(newNode->name, name);
+    if (q->rear == NULL && q->front == NULL)
     {
         q->front = newNode;
         q->rear = newNode;
@@ -164,9 +178,10 @@ void enqueueEnemy (Queue* q, Enemy* enemy)
     {
         q->rear->next = newNode;
         q->rear = newNode;
-    }
-    
+
+    } 
     q->size++;
+    return;
 }
 
 // 4. Dequeue
@@ -191,6 +206,7 @@ void dequeue (Queue* q)
 
 
 // 5. Generate queue-based turn 
+# if 0
 void queueTurn (Queue* q, Character* player, Enemy* enemies)
 {
     for ( int i = 0; i < NUM_TURNS; i++)
@@ -207,51 +223,120 @@ void queueTurn (Queue* q, Character* player, Enemy* enemies)
     }    
 }
 
+# endif
+// Function to make character and enemy apply their skills and update their points
+void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkillIdx, int turnIdx)
+{
+    if (turnIdx == 1) // players turn
+    {
+        // update points after player applies a skill
+        if (strcmp(player->skills[playerSkillIdx].type, "Direct attack") == 0)
+        {
+            // if it is a direct attack, we update enemy's points
+            enemy->hp += player->skills[playerSkillIdx].hp;
+            enemy->atk += player->skills[playerSkillIdx].atk;
+            enemy->def += player->skills[playerSkillIdx].def;
+        }
+        else if (strcmp(player->skills[playerSkillIdx].type, "Temporary modifier") == 0)
+        {
+            // if it is a temporary modifier, we update player's points
+            player->atk = player->skills[playerSkillIdx].atk;
+            player->def = player->skills[playerSkillIdx].def;
+            player->hp = player->skills[playerSkillIdx].hp;
+        }
+    }
+    else if (turnIdx == 2) // enemy's turn
+    {
+        // update points after enemy applies a skill
+        if (strcmp(enemy->skills[pcSkillIdx].type, "Direct attack") == 0)
+        {   
+            // if it is a direct attack, we update player's points 
+            player->atk += enemy->skills[pcSkillIdx].atk; 
+            player->def += enemy->skills[pcSkillIdx].def;
+            player->hp += enemy->skills[pcSkillIdx].hp;
+        }
+        else if (strcmp(enemy->skills[pcSkillIdx].type, "Temporary modifier") == 0)
+        {
+            // if it is a temporary modifier, we update enemy's points
+            
+            enemy->atk += enemy->skills[pcSkillIdx].atk;
+            enemy->def += enemy->skills[pcSkillIdx].def;
+            enemy->hp += enemy->skills[pcSkillIdx].hp;
+        }
+    }
+}
+
 // 6. Fight flow
-void fightFlow (Queue* q)
+// void fightFlow (Queue* q)
+// {
+//     if (isEmpty(q))
+//     {
+//         printf("Combat turns are over\n");
+//         return;
+//     }
+
+//     if (q->front->enemy == NULL)
+//     {
+//         printf("Your turn, please select skill:\n" );
+//         printCharacterSkill (q->front->player);
+//         int playerInput;
+//         scanf ("%d", &playerInput);
+//         switch (playerInput)
+//         {
+//             case 1:
+//                 applySkill (q->front->player, , playerInput, turnIdx)
+//         }
+            
+//     }
+//     else if (q->front->player == NULL)
+//     {
+//         printf("Select skill:\n" );
+//         printEnemySkill (q->front->enemy);
+//         dequeue (q);
+//         return;
+//     }
+//     dequeue (q);
+//     return;
+// }
+
+void fightFlow (Queue* q, Character* player, Enemy* enemy)
 {
     if (isEmpty(q))
     {
         printf("Combat turns are over\n");
         return;
     }
-
-    if (q->front->enemy == NULL)
+    int turnIdx = -1;
+    if (strcmp(q->front->name, "player"))
     {
         printf("Your turn, please select skill:\n" );
-        // Character* playerTurn = q->front->player;
-        printCharacterSkill (q->front->player);
-        dequeue (q);    
-        return;
-    }
-    else if (q->front->player == NULL)
-    {
-        printf("Select skill:\n" );
-        printEnemySkill (q->front->enemy);
-        dequeue (q);
-        return;
-    }
-}
+        printCharacterSkill (player);
+        turnIdx = 1;
+        int playerInput;
+        scanf ("%d", &playerInput);
 
-void applySkillCharacter (Character* player, Enemy* enemy, int input, int turnIdx)
-{
-    if (turnIdx == 1) // players turn
-    {
-        if (strcmp(player->skills[input].type, "Direct attack") == 0)
-        {
-            enemy->hp += player->skills[input].hp;
-        }
-        else if (strcmp(player->skills[input].type, "Temporary modifier") == 0)
-        {
-            player->atk = player->skills[input].atk;
-            player->def = player->skills[input].def;
-            player->hp = player->skills[input].hp;
-        }
-    }
-    else if (turnIdx == 2) // enemy's turn
-    {
         
+        // Added while condition in case player inputs wrong number
+        // so they can select again
+        while (playerInput < 1 || playerInput > MAX_SKILL)
+        {
+            printf("Invalid option, please select again\n");
+            scanf ("%d", &playerInput);
+        } 
+        // Apply skill according to the option of player  
+        applySkill(player, enemy, playerInput - 1, -1, turnIdx);       
     }
+    else if (strcmp(q->front->name, "enemy"))
+    {
+        printf("Enemy's turn:\n");
+        // printCharacterSkill (player->skills);
+        turnIdx = 2;
+        int enemyInput = rand() % MAX_SKILL; 
+        printf("%s\n", enemy->skills[enemyInput].name);     
+        applySkill (player, enemy, -1, enemyInput, turnIdx);
+    }
+    dequeue (q);
+    return;
 }
 
 // 7. Print enemy skill's details
