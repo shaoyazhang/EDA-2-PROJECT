@@ -13,14 +13,9 @@ void menu()
     printf("**************************\n");
 }
 
-// Run game
+// New game
 void game(Character *players)
 {   
-    // Initialize Character structures 
-    // charcter_init(players);
-    // printf("1. %s\n2. %s\n3. %s\n4. %s\n",
-    //     players[0].name, players[1].name, players[2].name, players[3].name);
-
     const char* fp = "skills.json";
     char* jsonString = readFile (fp);
 
@@ -113,10 +108,14 @@ void game(Character *players)
     printf("Welcome to the new game!\n");
 }
 
+// Run game
+void runGame ()
+{
 
+}
 int main()
 {
-    # if 0
+    # if 1
     Character players[MAX_CHARACTS];
     int input = 0;
     bool continueGame = true;
@@ -160,7 +159,7 @@ int main()
     // test01(); // test queue 
     // test02();
     // test03();
-    test04();
+    // test04();
     // test05();
     // test06 ();
     // test07 ();
