@@ -1,6 +1,7 @@
 #include "tests.h"
 
 // test queue
+# if 1
 void test01()
 {
     srand((unsigned)time(NULL));
@@ -23,42 +24,8 @@ void test01()
         {"Eskill 4", "Eskill 2", 1, 2, 3, 4, 5}
     };
     Enemy enemy = {"Enemy", 30, 50, 5, {enemySkills[0], enemySkills[1], enemySkills[2], enemySkills[3]}};
-    queueTurn (q, &player, &enemy);
-
-    Node* tmp = q->front;
-    for ( int i = 0; i < NUM_TURNS; i++)
-    {
-        if (tmp->enemy == NULL)
-        {
-            printf("%s\n", tmp->player->name);
-        }
-        else if(tmp->player == NULL)
-        {
-            printf("%s\n", tmp->enemy->name);
-        }
-
-        tmp = tmp->next;  
-    }
-    printf("%d \n", q->size);
-
-    // printf("%p ", q->front);
     
-    // while (q->size)
-    // {
-    //     printf("%p\n", q->front);
-    //     if(q->front->player == NULL)
-    //     {
-    //         printf("%s\n", q->front->enemy->name);
-    //     }
-    //     else if (q->front->enemy == NULL)
-    //     {
-    //         printf("%s\n", q->front->player->name);
-    //     }
 
-    //     printf("%d\n", q->size);
-    //     dequeue(q);
-        
-    // }
     dequeue(q); 
     dequeue(q);
     dequeue(q);
@@ -67,48 +34,11 @@ void test01()
 
 }
 
-// test for queue turn && fight flow
-void test02()
-{
-    srand((unsigned)time(NULL));
-    Queue* q = queueInit ();
-    
-    const char* fp = "enemy_skills.json";
-    char* jsonString = readFile (fp);
-
-    if (jsonString == NULL)
-    {
-        fprintf(stderr, "Failed to read JSON file\n");
-        return;
-    }
-
-    Enemy* enemies = NULL;
-    int num_enemies;
-
-    enemyInit(jsonString, &enemies, &num_enemies);
-
-    // printf("%s ", enemies[1].name);
-    const char* fp01 = "skills.json";
-    char* jsonString1 = readFile (fp01);
-
-    if (jsonString1 == NULL)
-    {
-        fprintf(stderr, "Failed to read JSON file\n");
-        return;
-    }
-
-    Character* players = NULL;
-    int num_charcter;
-    characterInit(jsonString1, &players, &num_charcter);
-
-    printf("%s\n", players[1].name);
-    queueTurn (q, &players[1], &enemies[1]);
-    fightFlow(q);
-}
+# endif 
 
 // test for loading secenarios' data
 # if 1
-void test03()
+void test02()
 {   
     
     // const char* fp = "scenarios_config.json";
@@ -158,8 +88,9 @@ void test03()
     free(jsonString);
 }
 # endif
+
 // test for loading characters' data
-void test04 ()
+void test03()
 {
     const char* fp = "skills.json";
     char* jsonString = readFile (fp);
@@ -173,15 +104,7 @@ void test04 ()
     Character* players = NULL;
     int num_charcter;
     characterInit(jsonString, &players, &num_charcter);
-    // printf("Player %d name: %s\n", 1, players[1].name);
-    // printf("skill %d name: %s\n", 1, players[1].skills[0].name);
-    // printf("    Description: %s\n", players[1].skills[0].description);
-    // printf("    type: %s\n", players[1].skills[0].type);
-    // printf("    duration: %d\n", players[0].skills[0].duration);
-    // printf("    atk: %d\n", players[0].skills[0].atk);
-    // printf("    hp: %d\n", players[0].skills[0].hp);
-    // printf("    def: %d\n", players[0].skills[0].def);
-
+ 
     for (int i = 0; i < MAX_CHARACTS; i++)
     {   
         printf("Player %d name: %s\n", i+1, players[i].name);
@@ -198,8 +121,56 @@ void test04 ()
    }  
 }
 
-// test for enemies' data
-# if 1
+// test for queue turn && fight flow
+void test04()
+{
+    srand((unsigned)time(NULL));
+    Queue* q = queueInit ();
+    int q_num = 0;
+    while (q_num< MAX_BATTLE_TURNS)
+    {
+        enqueue (q, "player");
+        q_num++;
+        enqueue (q, "enemy");
+        q_num++;
+    }
+    
+    // Load scenarios
+    const char* fp = "scenario_config.json";
+    char* jsonString = readFile (fp);
+    if (jsonString == NULL)
+    {
+        fprintf(stderr, "Failed to read JSON file\n");
+        return;
+    }
+    Scenario* scenarios = NULL;
+    int num_escenario;
+    scenarioInit(jsonString, &scenarios, &num_escenario);
+    
+    // Load charcter's data
+    const char* fp01 = "skills.json";
+    char* jsonString1 = readFile (fp01);
+
+    if (jsonString1 == NULL)
+    {
+        fprintf(stderr, "Failed to read JSON file\n");
+        return;
+    }
+
+    Character* players = NULL;
+    int num_charcter;
+    characterInit(jsonString1, &players, &num_charcter);
+    
+    //********** fight flow after modified******//
+    while(q->size)
+    {
+        fightFlow(q, &players[1], &(scenarios[1].decision.options[0].enemies[1]));
+    }
+    winAllBattles(&players[1], &(scenarios[1].decision.options[0].enemies[1]));
+}
+
+// test for enemies' data ---> This function has been merged to scenarioInit()
+# if 0
 void test05 ()
 {
     const char* fp = "enemy_skills.json";
@@ -229,8 +200,8 @@ void test05 ()
         }
     }
 }
-
 # endif
+
 // test graph
 # if 1
 void test06 ()
@@ -253,12 +224,6 @@ void test06 ()
     for (int i = 0; i < num_scenarios; i++) {
         addScenario(&graph, scenarios[i]);
     }
-    // addEdges(&graph, 0, 1);
-    // addEdges(&graph, 0, 2);
-    // addEdges(&graph, 0, 3);
-    // addEdges(&graph, 1, 0);
-    // addEdges(&graph, 1, 2);
-    // addEdges(&graph, 1, 3);
 
     for (int i = 0; i < MAX_SCENARIOS; i++)
     {
@@ -271,6 +236,8 @@ void test06 ()
 
 }
 # endif
+
+
 // test for scenario navigation
 # if 1
 void test07()
@@ -292,12 +259,6 @@ void test07()
     for (int i = 0; i < num_scenarios; i++) {
         addScenario(&graph, scenarios[i]);
     }
-    // addEdges(&graph, 0, 1);
-    // addEdges(&graph, 0, 2);
-    // addEdges(&graph, 0, 3);
-    // addEdges(&graph, 1, 0);
-    // addEdges(&graph, 1, 2);
-    // addEdges(&graph, 1, 3);
 
     for (int i = 0; i < MAX_SCENARIOS; i++)
     {

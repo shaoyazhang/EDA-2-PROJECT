@@ -12,7 +12,7 @@
 
 //********** DO NOT MODIFY ********//
 //*********** LAB 1 **************//
-#define MAX_CHAR_NAME 50
+#define MAX_CHAR_NAME 60
 #define MAX_SKILL_NAME 80
 #define MAX_SCENARIO_NAME 80
 #define MAX_SCENARIOS 4
@@ -24,7 +24,7 @@
 #define NUM_TURNS 4
 #define MAX_DECISION 2
 #define MAX_ENEMY_SKILLS 8
-
+#define MAX_BATTLE_TURNS 16
 
 #define TEMP_MODIFIER 0
 #define DIRECT_ATL 1
@@ -98,6 +98,7 @@ void charcter_init(Character* players);
 //void option_init(Option* options);
 //void enemy_init(Enemy* enemies, int scenario_num);
 void game(Character *players);
+void applySkill (Character* player, Enemy* enemy, int input, int pcNum, int turnIdx);
 
 
 
@@ -106,10 +107,16 @@ void game(Character *players);
 //************ LAB 2 **************//
 //********** DO NOT MODIFY ********//
 
+// typedef struct Node
+// {
+//     Character* player;
+//     Enemy* enemy;
+//     struct Node* next;
+// }Node;
+
 typedef struct Node
 {
-    Character* player;
-    Enemy* enemy;
+    char name[MAX_CHAR_NAME];
     struct Node* next;
 }Node;
 
@@ -123,12 +130,13 @@ typedef struct queue
 void printCharacter (Character* player);
 int isEmpty (Queue* q);
 Queue* queueInit ();
-void enqueueCharacter (Queue* q, Character* player);
-void enqueueEnemy (Queue* q, Enemy* enemy);
+//void enqueueCharacter (Queue* q, Character* player);
+//void enqueueEnemy (Queue* q, Enemy* enemy);
+void enqueue (Queue* q, const char* name);
 void dequeue (Queue* q);
 void queueTurn (Queue* q, Character* player, Enemy* enemies);
-void fightFlow (Queue* q);
-
+void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkillIdx, int turnIdx);
+void fightFlow (Queue* q, Character* player, Enemy* enemy);
+bool winAllBattles(Character* player, Enemy* enemy);
 //********** DO NOT MODIFY ********//
-
 #endif

@@ -74,6 +74,24 @@ void printSenario (Scenario* scenario)
         }
 }
 
+
+// Check if player wins the game
+bool winAllBattles(Character* player, Enemy* enemy) {
+    if (player->hp > 0 && enemy->hp == 0) {
+        printf("Congratulations, you win!!\n");
+        return true;
+    }
+    if (enemy->atk == 0 && enemy->def == 0) {
+        if (player->atk > 0 || player->def > 0 || player->hp > 0) {
+            printf("Congratulations, you win!!\n");
+            return true;
+        }
+    }
+    printf("Sorry your lost, game over\n");
+    return false;
+}
+
+
 // navigate scenarios
 void navigateScenario (Graph* graph, int curScenarioIdx, bool winAllBattles)
 {
