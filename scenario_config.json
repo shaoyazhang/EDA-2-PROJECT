@@ -51,7 +51,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -20,
+                                        "hp": -12,
                                         "def": 0
                                     }
                                 ]
@@ -69,7 +69,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -25,
+                                        "hp": -12,
                                         "def": 0
                                     },
                                     {
@@ -96,7 +96,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -19,
+                                        "hp": -13,
                                         "def": 0
                                     }
                                 ]
@@ -114,7 +114,7 @@
                             {
                                 "enemy_name": "Wood Bird",
                                 "atk": 30,
-                                "hp": 30,
+                                "hp": 27,
                                 "def": 10,
                                 "skills": [
                                     {
@@ -123,7 +123,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -15,
+                                        "hp": -11,
                                         "def": 0
                                     },
                                     {
@@ -132,7 +132,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -20,
+                                        "hp": -8,
                                         "def": 0
                                     },
                                     {
@@ -159,7 +159,7 @@
                             {
                                 "enemy_name": "Wood Devil",
                                 "atk": 30,
-                                "hp": 45,
+                                "hp": 30,
                                 "def": 30,
                                 "skills": [
                                     {
@@ -168,7 +168,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -22,
+                                        "hp": -9,
                                         "def": 0
                                     },
                                     {
@@ -242,7 +242,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -20,
+                                        "hp": -9,
                                         "def": 0
                                     },
                                     {
@@ -269,7 +269,7 @@
                             {
                                 "enemy_name": "Fiery Guardian",
                                 "atk": 27,
-                                "hp": 36,
+                                "hp": 30,
                                 "def": 18,
                                 "skills": [
                                     {
@@ -278,7 +278,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -13,
+                                        "hp": -10,
                                         "def": 0
                                     },
                                     {
@@ -296,7 +296,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -30,
+                                        "hp": -14,
                                         "def": 0
                                     },
                                     {
