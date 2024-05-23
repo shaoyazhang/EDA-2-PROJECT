@@ -76,20 +76,44 @@ void printSenario (Scenario* scenario)
 
 // 6. Check if player wins the game
 bool winAllBattles(Character* player, Enemy* enemy) {
-    if (player->hp > 0 && enemy->hp == 0) {
-        printf("Congratulations, you win!!\n");
+    // Print the current status for debugging
+    printf("Player HP: %d, ATK: %d, DEF: %d\n", player->hp, player->atk, player->def);
+    printf("Enemy HP: %d, ATK: %d, DEF: %d\n", enemy->hp, enemy->atk, enemy->def);
+
+    // Check if the player has won
+    if (player->hp > 0 && enemy->hp <= 0) 
+    {
+        printf("Congratulations, you win the battle!!\n");
         return true;
     }
-    if (enemy->atk == 0 && enemy->def == 0) {
-        if (player->atk > 0 || player->def > 0 || player->hp > 0) {
-            printf("Congratulations, you win!!\n");
+
+    // Check if the enemy is defeated due to lack of attack and defense power
+    if (enemy->atk == 0 && enemy->def == 0) 
+    {
+        if (player->atk > 0 || player->def > 0 || player->hp > 0) 
+        {
+            printf("Congratulations, you win the battle!!\n");
             return true;
         }
     }
-    printf("Sorry your lost, game over\n");
+
+    // Check if player loses
+    if (enemy->hp > 0 &&  player->hp <= 0) 
+    {
+        printf("Sorry, you lost. Game over.\n");
+        return false;
+    }
+
+    if (enemy->def == 0 && enemy->atk == 0) 
+    {
+        if (enemy->atk > 0 || enemy->def > 0 || enemy->hp > 0) 
+        {
+            printf("Sorry, you lost. Game over.\n");
+            return false;
+        }
+    }
     return false;
 }
-
 
 // 7. Traverse scenarios by its adjancency
 void navigateScenario (Graph* graph, int curScenarioIdx, bool winAllBattles)

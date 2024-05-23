@@ -114,18 +114,30 @@ void test03()
 // test for queue turn && fight flow
 void test04()
 {
+
     srand((unsigned)time(NULL));
+    //Queue* q = NULL;
     Queue* q = queueInit ();
-    // int q_num = 0;
-    // while (q_num< MAX_BATTLE_TURNS)
-    // {
-    //     enqueue (q, "player");
-    //     q_num++;
-    //     enqueue (q, "enemy");
-    //     q_num++;
-    // }
     enqueueTurns(q);
-    
+    printf("Head: %s\n", q->front->name);
+    printQueue(q);
+    // while(q->size)
+    // {
+    //     printf("%s\n", q->front->name);
+    //     printf("%p\n", q->front->next);
+    //     dequeue(q);
+    // }
+
+    // while (q->size) {
+    //     printf("Dequeuing: %s\n", q->front->name);
+    //     dequeue(q);
+    //     if (!isEmpty(q)) {
+    //         printf("Next front: %s\n", q->front->name);
+    //     } else {
+    //         printf("Queue is now empty.\n");
+    //     }
+    // }
+
     // Load scenarios
     const char* fp = "scenario_config.json";
     char* jsonString = readFile (fp);
@@ -153,11 +165,14 @@ void test04()
     characterInit(jsonString1, &players, &num_charcter);
     
     //********** fight flow after modified******//
-    while(q->size)
+    while (1)
     {
-        fightFlow(q, &players[1], &(scenarios[1].decision.options[0].enemies[1]));
+    bool gameResult = fightFlow(q, &players[1], &(scenarios[1].decision.options[0].enemies[1]));
+        if (gameResult)
+            break;
+        if(gameResult == false)
+            break;
     }
-    winAllBattles(&players[1], &(scenarios[1].decision.options[0].enemies[1]));
 }
 
 

@@ -131,14 +131,16 @@ typedef struct queue
 void printCharacterSkill (Character* player);
 int isEmpty (Queue* q);
 Queue* queueInit ();
+//void initQueue(Queue* q);
 //void enqueueCharacter (Queue* q, Character* player); // function cancelled
 //void enqueueEnemy (Queue* q, Enemy* enemy); // function cancelled
 void enqueue (Queue* q, const char* name);
 void dequeue (Queue* q);
 void enqueueTurns(Queue* q);
+void printQueue(Queue* q);
 // void queueTurn (Queue* q, Character* player, Enemy* enemies);
 void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkillIdx, int turnIdx);
-void fightFlow (Queue* q, Character* player, Enemy* enemy);
+bool fightFlow (Queue* q, Character* player, Enemy* enemy);
 bool winAllBattles(Character* player, Enemy* enemy);
 //********** DO NOT MODIFY ********//
 #endif
