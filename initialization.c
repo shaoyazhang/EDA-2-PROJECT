@@ -336,8 +336,9 @@ void scenarioInit(const char* jsonString, Scenario** scenarios, int* num_sce) {
                     cJSON* narrative_bf = cJSON_GetObjectItemCaseSensitive(option_json, "narra_bf");
                     cJSON* narrative_af = cJSON_GetObjectItemCaseSensitive(option_json, "narra_af");
                     cJSON* enemies = cJSON_GetObjectItemCaseSensitive(option_json, "enemies");
+                    cJSON* enemy_num = cJSON_GetObjectItemCaseSensitive(option_json, "enemy_num");
 
-                    if (cJSON_IsString(response) && cJSON_IsString(narrative_bf) && cJSON_IsString(narrative_af) && cJSON_IsArray(enemies)) {
+                    if (cJSON_IsString(response) && cJSON_IsString(narrative_bf) && cJSON_IsString(narrative_af) && cJSON_IsArray(enemies) && cJSON_IsNumber(enemy_num)) {
                         strncpy((*scenarios)[sce_idx].decision.options[option_idx].response, response->valuestring,
                                 sizeof((*scenarios)[sce_idx].decision.options[option_idx].response) - 1);
                         (*scenarios)[sce_idx].decision.options[option_idx].response[sizeof((*scenarios)[sce_idx].decision.options[option_idx].response) - 1] = '\0'; // Ensure null-termination
@@ -349,6 +350,7 @@ void scenarioInit(const char* jsonString, Scenario** scenarios, int* num_sce) {
                         strncpy((*scenarios)[sce_idx].decision.options[option_idx].narra_af, narrative_af->valuestring,
                                 sizeof((*scenarios)[sce_idx].decision.options[option_idx].narra_af) - 1);
                         (*scenarios)[sce_idx].decision.options[option_idx].narra_af[sizeof((*scenarios)[sce_idx].decision.options[option_idx].narra_af) - 1] = '\0'; // Ensure null-termination
+                        (*scenarios)[sce_idx].decision.options[option_idx].enemy_num = enemy_num->valueint;
 
                         int enemy_idx = 0;
                         cJSON* enemy_json = NULL;

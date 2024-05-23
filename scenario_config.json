@@ -10,6 +10,7 @@
                     {
                         "response": "Take the boat",
                         "narra_bf": "You decide to jump on the boat not knowing where the river takes. You start going through the river and you can see behind the trees tiny creatures looking at you quietly.",
+                        "enemy_num": 2,
                         "enemies": 
                         [
                             {
@@ -109,6 +110,7 @@
                     {
                         "response": "Take the road",
                         "narra_bf": "You decide to take the road as it is more luminous. You don't see anything at first. It's very quiet. Suddenly you see in the distance the fire of the next element. You're almost there when all of a sudden you see a group of flying wood birds come your way trying to attack you.",
+                        "enemy_num": 2,
                         "enemies": 
                         [
                             {
@@ -219,6 +221,7 @@
                     {
                         "response": "Venture into the Volcano's Crater",
                         "narra_bf": "Opting for the thrill of exploration, you decide to descend into the fiery depths of the volcano's crater. As you approach, waves of scorching heat wash over you, and the acrid smell of sulfur fills the air. Peering into the fiery abyss, you can make out the faint outline of a cave entrance beckoning you inside.",
+                        "enemy_num": 2,
                         "enemies": 
                         [
                             {
@@ -318,6 +321,7 @@
                     {
                         "response": "Traverse the Fiery Bridge",
                         "narra_bf": "Opting for a more direct route, you choose to cross the fiery bridge that spans the chasm of flames ahead. Each step brings you closer to the searing heat rising from below, testing your resolve with every fiery gust of wind.",
+                        "enemy_num": 1,
                         "enemies": 
                         [
                             {
@@ -383,6 +387,7 @@
                     {
                         "response": "Climb the mountain",
                         "narra_bf": "You decide to take the rocky path that climbs to the top of the giant mountain. As you ascend, the air grows colder and thinner, and the path becomes steeper and more treacherous. But your determination drives you forward, pushing you to conquer the formidable peak.",
+                        "enemy_num": 2,
                         "enemies": 
                         [
                             {
@@ -482,6 +487,7 @@
                     {
                         "response": "Explore the town",
                         "narra_bf": "You get to the town and it looks empty but you feel observed. It gets dark and you decide to sleep there but when you are about to close your eyes a rock gargoyle attacks you from a house roof.",
+                        "enemy_num": 2,
                         "enemies": 
                         [
                             {
@@ -528,6 +534,7 @@
                                     }
                                 ]
                             },
+                            
                             {
                                 "enemy_name": "Decaying Corpse",
                                 "atk": 35,
@@ -592,6 +599,7 @@
                     {
                         "response": "Dive into the water",
                         "narra_bf": "With a determined resolve, you plunge into the cool depths of the water, ready to face whatever challenges lie beneath the surface. As you swim deeper, you encounter a school of razor-toothed piranhas, their sharp teeth glinting ominously in the dim light.",
+                        "enemy_num": 2,
                         "enemies": 
                         [
                             {
@@ -690,6 +698,7 @@
                     {
                         "response": "Search for a boat",
                         "narra_bf": "Instead of diving headfirst into the water, you decide to search for a more cautious approach. Scanning the shoreline, you spot a weather-beaten rowboat half-buried in the sand, a relic of some forgotten voyage.",
+                        "enemy_num": 1,
                         "enemies": 
                         [
                             {

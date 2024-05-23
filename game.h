@@ -66,7 +66,7 @@ typedef struct
 {
     char response[MAX_QUESTION];
     char narra_bf[MAX_QUESTION];
-    //char enemies[MAX_ENEMIES][MAX_CHAR_NAME]; //[MAX_CHAR_NAME];
+    int enemy_num;
     Enemy enemies[MAX_ENEMIES];
     char narra_af[MAX_QUESTION];
 }Option;

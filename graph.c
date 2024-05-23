@@ -220,10 +220,15 @@ void navigateScenario(Graph* graph, int curScenarioIdx, Character* player) {
         Queue* q = queueInit();
         enqueueTurns(q);
         bool battleResult = true;
-        for (int i = 0; strlen(currentScenario->decision.options[decisionIndex].enemies[i].name) >0 ; i++) {
+        for (int i = 0; i < currentScenario->decision.options[decisionIndex].enemy_num; i++) 
+        {
             if (!fightFlow(q, player, &currentScenario->decision.options[decisionIndex].enemies[i])) {
                 battleResult = false;
                 break;
+            }
+            else if (fightFlow(q, player, &currentScenario->decision.options[decisionIndex].enemies[i]))
+            {
+                printf("You have defeated the enemy\n");
             }
         }
 
@@ -237,7 +242,7 @@ void navigateScenario(Graph* graph, int curScenarioIdx, Character* player) {
 
             // List available adjacent scenarios
             printf("*************************************\n");
-            printf("You can navigate to these bases:\n");
+            printf("You can navigate to next base:\n");
             for (int i = 0; i < graph->nodes[curScenarioIdx].num_adjacent; i++) {
                 printf("%d. %s\n", i + 1, graph->nodes[curScenarioIdx].adjacent[i]->scenario.name);
             }
