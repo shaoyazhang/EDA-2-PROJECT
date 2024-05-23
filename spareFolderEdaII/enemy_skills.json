@@ -1,0 +1,396 @@
+{
+    "enemies":
+    [
+        {
+            "enemy_name": "name 1",
+            "atk": 0,
+            "hp": 0,
+            "def": 0,
+            "skills":
+            [
+                {
+                    "skill_id": "skill 1",
+                    "description": "description 1 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 2",
+                    "description": "description 2 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 3",
+                    "description": "description 3 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 4",
+                    "description": "description 4 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                }
+            ]
+        },
+
+        {
+            "enemy_name": "name 2",
+            "atk": 0,
+            "hp": 0,
+            "def": 0,
+            "skills":
+            [
+                {
+                    "skill_id": "skill 1",
+                    "description": "description 1 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 2",
+                    "description": "description 2 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 3",
+                    "description": "description 3 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 4",
+                    "description": "description 4 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                }
+            ]
+        },  
+        
+        {
+            "enemy_name": "name 3",
+            "atk": 0,
+            "hp": 0,
+            "def": 0,
+            "skills":
+            [
+                {
+                    "skill_id": "skill 1",
+                    "description": "description 1 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 2",
+                    "description": "description 2 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 3",
+                    "description": "description 3 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 4",
+                    "description": "description 4 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                }
+            ]
+        },  
+
+        {
+            "enemy_name": "name 4",
+            "atk": 0,
+            "hp": 0,
+            "def": 0,
+            "skills":
+            [
+                {
+                    "skill_id": "skill 1",
+                    "description": "description 1 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 2",
+                    "description": "description 2 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 3",
+                    "description": "description 3 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 4",
+                    "description": "description 4 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                }
+            ]
+        },
+        
+        {
+            "enemy_name": "name 5",
+            "atk": 0,
+            "hp": 0,
+            "def": 0,
+            "skills":
+            [
+                {
+                    "skill_id": "skill 1",
+                    "description": "description 1 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 2",
+                    "description": "description 2 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 3",
+                    "description": "description 3 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 4",
+                    "description": "description 4 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                }
+            ]
+        },
+
+        {
+            "enemy_name": "name 6",
+            "atk": 0,
+            "hp": 0,
+            "def": 0,
+            "skills":
+            [
+                {
+                    "skill_id": "skill 1",
+                    "description": "description 1 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 2",
+                    "description": "description 2 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 3",
+                    "description": "description 3 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 4",
+                    "description": "description 4 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                }
+            ]
+        },
+
+        {
+            "enemy_name": "name 7",
+            "atk": 0,
+            "hp": 0,
+            "def": 0,
+            "skills":
+            [
+                {
+                    "skill_id": "skill 1",
+                    "description": "description 1 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 2",
+                    "description": "description 2 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 3",
+                    "description": "description 3 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 4",
+                    "description": "description 4 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                }
+            ]
+        },
+        
+        {
+            "enemy_name": "name 8",
+            "atk": 0,
+            "hp": 0,
+            "def": 0,
+            "skills":
+            [
+                {
+                    "skill_id": "skill 1",
+                    "description": "description 1 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 2",
+                    "description": "description 2 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 3",
+                    "description": "description 3 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                },
+
+                {
+                    "skill_id": "skill 4",
+                    "description": "description 4 ",
+                    "type": "type",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": 0,
+                    "def": 0
+                }
+            ]
+        }  
+    ]
+}

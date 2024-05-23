@@ -36,8 +36,6 @@ void test01()
 # if 1
 void test02()
 {   
-    
-    // const char* fp = "scenarios_config.json";
     const char* fp = "scenario_config.json";
     char* jsonString = readFile (fp);
 
@@ -79,7 +77,6 @@ void test02()
             }
         }
     }
-    //printf("%s", scenarios[0].decision.options[0].enemies[0].skills[0].name);
     free(scenarios);
     free(jsonString);
 }
@@ -119,14 +116,15 @@ void test04()
 {
     srand((unsigned)time(NULL));
     Queue* q = queueInit ();
-    int q_num = 0;
-    while (q_num< MAX_BATTLE_TURNS)
-    {
-        enqueue (q, "player");
-        q_num++;
-        enqueue (q, "enemy");
-        q_num++;
-    }
+    // int q_num = 0;
+    // while (q_num< MAX_BATTLE_TURNS)
+    // {
+    //     enqueue (q, "player");
+    //     q_num++;
+    //     enqueue (q, "enemy");
+    //     q_num++;
+    // }
+    enqueueTurns(q);
     
     // Load scenarios
     const char* fp = "scenario_config.json";
@@ -162,8 +160,9 @@ void test04()
     winAllBattles(&players[1], &(scenarios[1].decision.options[0].enemies[1]));
 }
 
-// test for enemies' data ---> This function has been merged to scenarioInit()
+
 # if 0
+// test for enemies' data ---> This function has been merged to scenarioInit()
 void test05 ()
 {
     const char* fp = "enemy_skills.json";
@@ -230,7 +229,7 @@ void test06 ()
 }
 # endif
 
-// test for scenario navigation
+// test for scenarios navigation
 # if 1
 void test07()
 {
@@ -265,7 +264,6 @@ void test07()
 }
 
 # endif
-
 
 // test for decision make
 void test08()

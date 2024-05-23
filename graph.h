@@ -23,6 +23,7 @@ void graphInit(Graph* graph);
 void addScenario (Graph* graph, Scenario Scenario);
 void addEdges (Graph* graph, int srcIndex, int destIndex);
 void printGraph (Graph* graph);
+void printSenario (Scenario* scenario);
 void navigateScenario (Graph* graph, int currentScenarioIndex, bool winAllBattles);
 void makeDecision(Graph* graph, int currScenarioIdx, int decision_index);
 void printEnemySkillDetail (Enemy* enemy);

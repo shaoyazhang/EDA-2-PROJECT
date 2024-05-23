@@ -1,14 +1,12 @@
 # include "graph.h"
 
-// Initialize graph
-// Use array to build graph
+// 1. Initialize graph
 void graphInit(Graph* graph)
 {
     graph->num_nodes = 0;
 }
 
-
-// Insert a scenario to the graph
+// 2. Insert a scenario to the graph
 void addScenario (Graph* graph, Scenario scenario)
 {
     if (graph->num_nodes >= MAX_SCENARIOS) 
@@ -24,7 +22,7 @@ void addScenario (Graph* graph, Scenario scenario)
     }
 }
 
-// Implement adjacent 
+// 3. Implement adjacent matrix to build directed graph
 void addEdges (Graph* graph, int srcIndex, int destIndex)
 {
     if (srcIndex >= 0 && srcIndex < graph->num_nodes && destIndex >= 0 && destIndex < graph->num_nodes) {
@@ -37,7 +35,7 @@ void addEdges (Graph* graph, int srcIndex, int destIndex)
     }
 }
 
-// Function to print the graph
+// 4. Function to print the graph
 void printGraph (Graph* graph)
 {
     for (int i = 0; i < MAX_SCENARIOS; i++)
@@ -61,6 +59,7 @@ void printGraph (Graph* graph)
     
 }
 
+// 5. Function to print one scenario
 void printSenario (Scenario* scenario)
 {
     printf("Details for Scenario: %s\n", scenario->name);
@@ -75,7 +74,7 @@ void printSenario (Scenario* scenario)
 }
 
 
-// Check if player wins the game
+// 6. Check if player wins the game
 bool winAllBattles(Character* player, Enemy* enemy) {
     if (player->hp > 0 && enemy->hp == 0) {
         printf("Congratulations, you win!!\n");
@@ -92,7 +91,7 @@ bool winAllBattles(Character* player, Enemy* enemy) {
 }
 
 
-// navigate scenarios
+// 7. Traverse scenarios by its adjancency
 void navigateScenario (Graph* graph, int curScenarioIdx, bool winAllBattles)
 {
     if (winAllBattles)
@@ -130,7 +129,9 @@ void navigateScenario (Graph* graph, int curScenarioIdx, bool winAllBattles)
     }
 }
 
-// ********* LAB 3 DO NOT MODIFY*********// 
+// ********* LAB 3 DO NOT MODIFY*********//
+
+// 8. Decision that affects the enemies that faces
 void makeDecision(Graph* graph, int currScenarioIdx, int decision_index) 
 {
     if (decision_index >= 0 && decision_index < graph->nodes[currScenarioIdx].scenario.decision.option_num) 
@@ -153,4 +154,4 @@ void makeDecision(Graph* graph, int currScenarioIdx, int decision_index)
         printf("Invalid decision index\n");
     }
 }
-// ********* LAB 3 *********//
+// ********************** LAB 3 ***********************//

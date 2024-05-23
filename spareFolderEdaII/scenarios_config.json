@@ -1,0 +1,92 @@
+{
+    "scenarios": [
+        {
+            "scenario_id": "Wood field",
+            "description": "You're in the heart of a dark forest, it's the first element of Wuxing, wood. Watch out for the Wood Devil and other sneaky creatures armed with arrows made from the forest's own wood attacking from the shadows. Be careful exploring here, as both treasure and danger lurk within, where it's hard to tell what's real and what's just stories among the rustling leaves.",
+            "decision": {
+                "option_num": 2,
+                "decision_question": "You see a dark river with a boat and on the left there is a luminous path, which path are you taking?",
+                "options": [
+                    {
+                        "response": "Take the boat",
+                        "narra_bf": "You decide to jump on the boat not knowing where the river takes. You start going through the river and you can see behind the trees tiny creatures looking at you quietly.",
+                        "enemies": ["creatures", "dark cave creatures"],
+                        "narra_af": "You reach a point where the boat cannot continue sailing, you have to hop off. You're not sure if those creatures are kind, should you go and talk to the creatures? You also see a kind of dark cave inside a big tree. Do you want to go inside the cave?"
+                    },
+                    {
+                        "response": "Take the road",
+                        "narra_bf": "You decide to take the road as it is more luminous. You don't see anything at first. It's very quiet. Suddenly you see in the distance the fire of the next element. You're almost there when all of a sudden you see a group of flying wood birds come your way trying to attack you.",
+                        "enemies": ["wood birds", "wood devil"],
+                        "narra_af": "You have to decide if you want to risk and run to the fire or hide inside a tree."
+                    }
+                ]
+            }
+        },
+        {
+            "scenario_id": "Fire field",
+            "description": "You find yourself in a place that looks and feels as if you're in hell. You made it to the second element of Wuxing, fire. You see the devil in flames. Pass its relentless fire attacks as you navigate through the flaming space in order to get out of this hot place whilst escaping the flames. Failure to withstand results in instant defeat, mission over.",
+            "decision": {
+                "option_num": 2,
+                "decision_question": "At the crossroads of your journey, you confront two diverging paths; a volcano and a bridge. Where are you going?",
+                "options": [
+                    {
+                        "response": "Venture into the Volcano's Crater",
+                        "narra_bf": "Opting for the thrill of exploration, you decide to descend into the fiery depths of the volcano's crater. As you approach, waves of scorching heat wash over you, and the acrid smell of sulfur fills the air. Peering into the fiery abyss, you can make out the faint outline of a cave entrance beckoning you inside.",
+                        "enemies": ["fire elemental"],
+                        "narra_af": "You see Lava Caverns and a Cave. Choose your path."
+                    },
+                    {
+                        "response": "Traverse the Fiery Bridge",
+                        "narra_bf": "Opting for a more direct route, you choose to cross the fiery bridge that spans the chasm of flames ahead. Each step brings you closer to the searing heat rising from below, testing your resolve with every fiery gust of wind.",
+                        "enemies": ["fiery guardian"],
+                        "narra_af": "Recognizing the danger posed by the fiery bridge, you seek shelter beneath its sturdy structure, waiting patiently for the flames to subside before continuing your journey."
+                    }
+                ]
+            }
+        },
+        {
+            "scenario_id": "Earth field",
+            "description": "As you journey on, you come across a rugged landscape, surrounded by towering cliffs and jagged rocks. Welcome to the third element of Wuxing, Earth. To your left is a dark, rocky path that climbs to the top of a giant mountain. And just on the opposite side, in the distance you can discern a town, an option that seems much quieter.",
+            "decision": {
+                "option_num": 2,
+                "decision_question": "Which path do you want to take?",
+                "options": [
+                    {
+                        "response": "Climb the mountain",
+                        "narra_bf": "You decide to take the rocky path that climbs to the top of the giant mountain. As you ascend, the air grows colder and thinner, and the path becomes steeper and more treacherous. But your determination drives you forward, pushing you to conquer the formidable peak.",
+                        "enemies": ["mountain trolls", "stone guardians"],
+                        "narra_af": "After hours of arduous climbing, you finally reach a plateau halfway up the mountain. Here, you encounter your first challenge: a group of mountain trolls guarding the path ahead. They are large and fearsome, with rocky skin and clubs fashioned from ancient tree trunks."
+                    },
+                    {
+                        "response": "Explore the town",
+                        "narra_bf": "You get to the town and it looks empty but you feel observed. It gets dark and you decide to sleep there but when you are about to close your eyes a rock gargoyle attacks you from a house roof.",
+                        "enemies": ["rock gargoyle", "decaying corpse"],
+                        "narra_af": "After the town you follow your path and reach a fork, one path continues straight towards some desert lands, the other towards an old mine. You decide to investigate the mine."
+                    }
+                ]
+            }
+        },
+        {
+            "scenario_id": "Water field",
+            "description": "You finally arrive at your last destination, but what awaits you is even more breathtaking than you anticipated. In front of you lies a vast expanse of water, the final element of Wuxing. Here, amidst the serene surface, lurk hidden dangers and formidable enemies. Battle against fierce adversaries and overcome their aquatic assaults as you search for the tool to unlock the power of swimming. Only then will you be able to traverse the raging river and emerge victorious. But beware, defeat at the hands of your enemies will lead your journey to an abrupt end.",
+            "decision": {
+                "option_num": 2,
+                "decision_question": "As you stand at the water's edge, you assess your options:",
+                "options": [
+                    {
+                        "response": "Dive into the water",
+                        "narra_bf": "With a determined resolve, you plunge into the cool depths of the water, ready to face whatever challenges lie beneath the surface. As you swim deeper, you encounter a school of razor-toothed piranhas, their sharp teeth glinting ominously in the dim light.",
+                        "enemies": ["piranhas", "water wizard"],
+                        "narra_af": "After defeating the piranhas, you notice a floating wooden stem nearby, drifting lazily on the current. Grasping it tightly, you find that it provides just enough buoyancy to keep you afloat in the water. With your newfound makeshift floatation device, you continue your journey through the aquatic realm."
+                    },
+                    {
+                        "response": "Search for a boat",
+                        "narra_bf": "Instead of diving headfirst into the water, you decide to search for a more cautious approach. Scanning the shoreline, you spot a weather-beaten rowboat half-buried in the sand, a relic of some forgotten voyage.",
+                        "enemies": ["water devil"],
+                        "narra_af": "After a fierce battle, you emerge victorious, the wizard's magic fading into the depths. As you catch your breath, you feel a strange sensation wash over you. (You have absorbed the wizard's power and now you can swim freely)."
+                    }
+                ]
+            }
+        }
+    ]
+}

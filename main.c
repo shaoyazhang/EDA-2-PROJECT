@@ -115,7 +115,7 @@ void runGame ()
 }
 int main()
 {
-    # if 1
+    # if 0
     Character players[MAX_CHARACTS];
     int input = 0;
     bool continueGame = true;
@@ -154,12 +154,22 @@ int main()
                 break;
         }
     }while(continueGame);
-    # endif
+    
 
-    // test01(); // test queue 
+    //**********Add global path to the graphic**********//
+    int path01[] ={START_NODE_IDX, 1};  // S1 - S2, S1 is the start node
+    int path02[] ={1, 2};   
+    int path03[] ={2, 1}; 
+    int path04[] ={2, END_NODE_IX};
+    # endif
+    
+    
+    
+    //*******************all tests**************//
+    // test01(); 
     // test02();
     // test03();
-    // test04();
+    test04();
     // test05();
     // test06 ();
     // test07 ();

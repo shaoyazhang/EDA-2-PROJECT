@@ -1,0 +1,292 @@
+ 
+
+You're in the heart of a dark forest, it's the first element of Wuxing, wood. 
+Watch out for the Wood Devil and other sneaky creatures armed with arrows made from the forest's own wood
+attacking from the shadows. Be careful exploring here, as both treasure and danger lurk within, 
+where it's hard to tell what's real and what's just stories among the rustling leaves.
+Hint: Look after protecting yourself from the wood's devil as it is very strong.
+
+// Decision question.
+You see a dark river with a boat and on the left there is a luminous path, which path are you taking?
+
+// Option 1 -->response
+a) Take the boat
+
+You decide to jump on the boat not knowing where the river takes. You start going through the river and you can see behind the 
+trees tiny creatures looking at you quietly.
+
+a.1)  You reach a point where the boat cannot continue sailing, you have to hop off. You're not sure if those creatures are kind,
+should you go and talk to the creatures?. You also see a kind of dark cave inside a big tree. Do you want to go inside the cave? 
+
+a.1.1) Talk to creatures
+
+You decide to talk to the creatures to see if they can help you get to the next element of Wuxing. These creatures stare at you without
+saying a word. Finally, you get tired of talking alone and you decide to walk away. In that moment, the creatures start screaming
+and they try to attack you, you must defend yourself!
+
+a.1.2) Ignore the creatures and go inside the cave
+You find yourself alone in the cave. It's cold and smells like rotten wood. You can slightly see some sort of stairs that can 
+help you climb the tree. You decide to do so. A the top of the tree there's a big throne and a tree-like big creature sitting in 
+it. It looks asleep, but as you start walking away it wakes up. You got him angry and you have to defend yourself.
+
+// Option 2 --> response
+b) Take the road
+
+You decide to take the road as it is more luminous. You don't see anything at first. It's very quite. Suddenly you see in the
+distance the fire of the next element. You're almost there when all of a sudden you see a group of flying wood birds come your
+way trying to attack you. 
+
+b.1) You have to decide if you want to risk and run to the fire or hide inside a tree. 
+
+b.1.1) Run!
+
+You decide to run to escape but some birds reach you with the arrows (less life xp but they get to the final devil)
+
+b.1.2) Hide!
+You decide to hide until you don't hear them anymore. After a while you accomplish getting out. 
+
+
+In all the cases, when the battle ends they encounter the wood devil and fight. 
+
+--------------------------------------
+2nd scenario: Fire field
+
+You find yourself in a place that looks and feels as if you're in hell. You made it to the second element of Wuxing, fire. 
+You see the devil in flames. Pass its relentless fire attacks as you navigate through the flaming space in order to get out 
+of this hot place whilst escaping the flames. Failure to withstand results in instant defeat, mission over.
+
+At the crossroads of your journey, you confront two diverging paths; a volcano and a bridge. Where are you going?
+
+a) Venture into the Volcano's Crater
+
+Opting for the thrill of exploration, you decide to descend into the fiery depths of the volcano's crater. As you approach,
+ waves of scorching heat wash over you, and the acrid smell of sulfur fills the air. Peering into the fiery abyss, you can make
+  out the faint outline of a cave entrance beckoning you inside. You see Lava Caverns and a Cave. Choosee your path.
+
+a.1) Explore the Lava Caverns
+
+Intrigued by the promise of hidden treasures within the lava caverns, you venture deeper into the cavernous maze. Glowing veins
+ of molten lava illuminate the rocky walls, casting an eerie light on your surroundings. Suddenly, you come face to face with a 
+ fearsome fire elemental guarding a cache of ancient artifacts. Will you engage in battle for the chance to claim the treasure, 
+ risking your life in the process?
+
+a.1.1) Engage in Battle
+
+With determination coursing through your veins, you ready your weapon and confront the fire elemental in a fierce battle. The 
+clash of steel against flame echoes through the cavern as you fight for supremacy. Victory brings rewards beyond measure. 
+
+a.1.2) Seek a Peaceful Resolution
+
+Preferring diplomacy over conflict, you attempt to reason with the fire elemental, offering a peaceful solution to your encounter. 
+Through skillful negotiation, you manage to secure safe passage through the caverns without resorting to violence, preserving your
+ life experience for future challenges.
+
+
+a.2) Explore the Cave Entrance
+
+Intrigued by the mysterious allure of the cave entrance, you cautiously step inside, seeking refuge from the blistering heat of the Fire
+ Field. As you venture deeper into the cavern's shadowy depths, the air grows cooler, providing a brief respite from the oppressive heat outside.
+
+
+a.2.1) Encounter a Fiery Guardian
+
+As you progress further into the cave, you stumble upon a chamber guarded by a formidable fire elemental, its blazing eyes fixated on your every 
+move. With danger lurking at every turn, you must decide whether to engage in battle with the fiery guardian or attempt to bypass it unnoticed.
+
+a.2.1.1) Engage in Battle
+
+Drawing upon your strength and resolve, you prepare to confront the fiery guardian in a fierce battle for supremacy. With each strike, the clash 
+of steel against flame reverberates through the cavern, testing your skills and determination to their limits. Victory brings rewards beyond measure,
+ but at the cost of a portion of your life experience.
+
+a.2.1.2) Bypass Unnoticed
+
+Preferring to avoid unnecessary conflict, you carefully navigate around the fiery guardian, using stealth and cunning to evade its watchful gaze. 
+He noticed you, and he won't let you pass unless you defeat him.
+
+a.2.2) Discover a Hidden Passage
+
+As you explore the cavern's winding tunnels, you stumble upon a hidden passage concealed behind a veil of shimmering flames. Intrigued by the promise 
+of adventure that lies beyond, you muster your courage and venture forth into the unknown, eager to uncover the secrets hidden within the fiery depths 
+of the cave.
+
+b) Traverse the Fiery Bridge
+
+Opting for a more direct route, you choose to cross the fiery bridge that spans the chasm of flames ahead. Each step brings you
+ closer to the searing heat rising from below, testing your resolve with every fiery gust of wind.
+
+b.1) Run Across the Bridge
+
+Driven by a desire to reach the other side quickly, you break into a sprint, dodging flames that lick at your heels as you race
+ across the bridge. With adrenaline coursing through your veins, you narrowly escape the fiery onslaught, but at a cost to your 
+ life experience from the harrowing experience.
+
+b.2) Take Shelter Beneath the Bridge risking being seen
+
+Recognizing the danger posed by the fiery bridge, you seek shelter beneath its sturdy structure, waiting patiently for the flames
+ to subside before continuing your journey. Though delayed, your cautious approach preserves your life experience, ensuring you're
+  ready to face whatever challenges lie ahead.
+
+--------------------------------------
+ NAME
+
+3rd scenario: Earth field    
+
+DESCRIPTION
+
+As you journey on, you come across a rugged landscape, surrounded by towering cliffs and jagged rocks. 
+Welcome to the third element of Wuxing, Earth. To your left is a dark, rocky path that climbs to the top of a giant mountain. 
+And just on the opposite side, in the distance you can discern a town, an option that seems much quieter.
+
+DECISION
+
+Which path do you want to take ?
+
+a) Climb the mountain. 
+    
+    RESPONSE
+
+    You have chosen climbing the mountain.
+
+    NARRATIVE BEFORE COMBAT 
+    
+    You decide to take the rocky path that climbs to the top of the giant mountain. As you ascend, the air grows colder and thinner,
+    and the path becomes steeper and more treacherous. But your determination drives you forward, pushing you to conquer the formidable peak.
+
+    After hours of arduous climbing, you finally reach a plateau halfway up the mountain. 
+    Here, you encounter your first challenge: a group of mountain trolls guarding the path ahead. 
+    They are large and fearsome, with rocky skin and clubs fashioned from ancient tree trunks.
+    
+    NARRATIVE AFTER COMBAT
+
+    After overcoming the mountain trolls, you continue your ascent, determined to reach the summit.
+    As you climb higher, the path grows narrower and more precarious, and the winds begin to howl ominously around you.
+
+    NARRATIVE BEFORE COMBAT
+
+    Finally, you reach the peak of the mountain, where a massive cavern looms before you. At the entrance a pair of stone guardians are waiting
+    your arrival and confront you. (Battle begins)
+
+    NARRATIVE AFTER COMBAT AND BEFORE COMBAT WITH THE DEVIL
+
+    This cave is the lair of the Earth Devil, a fearsome rock golem that dwells deep within the mountain, your next adversary if you want to keep going.
+    Its presence fills you with a sense of dread, but you know that confronting it is the only way to complete your quest.
+    You can't see much because the obscurity of the golem's domain but you can feel all the cave shaking. 
+
+
+b) Explore the town.
+
+    RESPONSE
+
+    You have chosen exploring the town.
+
+    NARRATIVE BEFORE COMBAT
+
+    You get to the town and it looks empty but you feel observed. It gets dark and you decide to sleep there but when you are about
+    to close your eyes a rock gargoyle attacks you from a house roof.
+    (The fight starts)
+
+    NARRATIVE AFTER COMBAT
+
+    After the town you follow your path and reach a fork, one path continues straight towards some desert lands,
+    the other towards an old mine. You decide to investigate the mine.
+
+        NARRATIVE BEFORE COMBAT
+
+        You find danger signs that advert of traps and other dangers set by the miners to scare thiefs. You keep going and a pickaxe is thrown
+        towards you from behind a column. Following it, a decaying corpse from a miner stands up and starts to run fiercley in you direction.
+        (Battle begins).
+        
+        NARRATIVE AFTER COMBAT AND BEFORE BATTLE WITH THE DEVIL
+
+        You keep walking and the path gets smaller every time until you get in front of a lever you pull it and floor under your feet disappear.
+        You close your eyes thinking that you arrived at the end of your adventure, but you fall just a few meters and end up in front of a cave.
+
+        This cave is the lair of the Earth Devil, a fearsome rock golem that dwells deep within the mountain, your next adversary if you want to keep going.
+        Its presence fills you with a sense of dread, but you know that confronting it is the only way to complete your quest.
+        You can't see much because the obscurity of the golem's domain but you can feel all the cave shaking.
+
+
+--------------------------------------
+
+NAME 
+
+4th scenario: Water field
+
+DESCRIPTION
+
+You finally arrive at your last destination, but what awaits you is even more breathtaking than you anticipated.
+In front of you lies a vast expanse of water, the final element of Wuxing. Here, amidst the serene surface,
+lurk hidden dangers and formidable enemies. Battle against fierce adversaries and overcome their aquatic assaults as you search
+for the tool to unlock the power of swimming. Only then will you be able to traverse the raging river and emerge victorious.
+But beware, defeat at the hands of your enemies will lead your journey to an abrupt end.
+
+DECISION
+As you stand at the water's edge, you assess your options:
+
+a) Dive into the water
+    RESPONSE
+
+    You have chosen to dive into the water
+
+    NARRATIVE BEFORE COMBAT 
+
+    With a determined resolve, you plunge into the cool depths of the water, ready to face whatever challenges lie beneath the surface.
+    As you swim deeper, you encounter a school of razor-toothed piranhas, their sharp teeth glinting ominously in the dim light.
+    They swarm around you, snapping their jaws hungrily, intent on making you their next meal. 
+    (Battle begins, If you have the flying boots, you're able to fight them off with ease, your aerial advantage giving you the upper hand.
+    But if not, you find your attacks slightly weakened by the resistance of the water.)
+    
+    NARRATIVE AFTER COMBAT
+
+    After defeating the piranhas, you notice a floating wooden stem nearby, drifting lazily on the current. 
+    Grasping it tightly, you find that it provides just enough buoyancy to keep you afloat in the water. 
+    With your newfound makeshift floatation device,you continue your journey through the aquatic realm.
+
+    NARRATIVE BEFORE COMBAT 
+
+    But just as you begin to relax, a sudden surge of magic disrupts the water around you, and you find yourself
+    face to face with a water wizard. This powerful sorcerer had been lurking beneath the surface,
+    waiting for an unsuspecting victim to cross its path. (second fight)
+    
+    NARRATIVE AFTER COMBAT AND BEFORE BATTLE WITH THE DEVIL
+
+    After a fierce battle, you emerge victorious,the wizard's magic fading into the depths. As you catch your breath,
+    you feel a strange sensation wash over you. (You have absorved the wizard power and now you can swim freely)
+
+    You hear monstrous noises in the distance that sound closer with each passing moment. After a while, 
+    they disappear, and just when you least expect it, a kraken appears in front of you, the Water Devil.
+
+
+b) Search for a boat.
+    
+    RESPONSE 
+
+    You have chosen searching for a boat.
+
+    NARRATIVE BEFORE COMBAT
+
+    Instead of diving headfirst into the water, you decide to search for a more cautious approach. Scanning the shoreline,
+    you spot a weather-beaten rowboat half-buried in the sand, a relic of some forgotten voyage.
+    You approach it cautiously, wary of any lurking dangers that may be hiding nearby.
+
+    You sail but just as seconds past a whirpool appears and from inside of it water being starts to emerge.
+    You fight against a water elemental who throws powerful water spels.
+    
+    NARRATIVE AFTERE COMBAT
+
+    After a fierce battle, you emerge victorious,the wizard's magic fading into the depths. As you catch your breath,
+    you feel a strange sensation wash over you. (You have absorved the wizard power and now you can swim freely).
+    
+    NARRATIVE BFORE COMBAT
+
+    As you swim deeper, you encounter a school of razor-toothed piranhas, their sharp teeth glinting ominously in the dim light.
+    They swarm around you, snapping their jaws hungrily, intent on making you their next meal. 
+
+    NARRATIVE AFTER COMBAT AND BEFORE BATTLE WITH THE DEVIL
+
+    After a fierce battle, you emerge victorious, following defeating the piranhas, You hear monstrous noises in the distance that 
+    sound closer with each passing moment. After a while, they disappear, and just when you least expect it, a kraken appears in front of you,
+    the Water Devil, your last enemy to finally get the all of the four elements Wuxing.
+
+

@@ -60,12 +60,15 @@ void charcter_init(Character* players)
 // Show character's skill attributions
 void printCharacterSkill (Character* player)
 {
-    printf("skill:\n1. %s\n2. %s\n3. %s\n4. %s\n", 
-    player->skills[0].name,
-    player->skills[1].name,
-    player->skills[2].name,
-    player->skills[3].name
-    );
+    for (int i = 0; i < MAX_SKILL; i++) 
+    {
+        if ((player->skills[i].duration > 0 && strcmp(player->skills[i].type, "Temporary modifier") == 0) ||
+            strcmp(player->skills[i].type, "Direct attack") == 0) 
+        { // Make sure only the available skills are printed
+            printf("%d. %s \n", i + 1, player->skills[i].name);
+        }
+    }
+    
 }
 
 // Show enemy's skill attributions
@@ -149,6 +152,7 @@ void enqueue (Queue* q, const char* name) // name is either "player" or "enemy"
 {
     Node* newNode = (Node*)malloc(sizeof(Node));
     strcpy(newNode->name, name);
+    newNode->next = NULL;
     if (q->rear == NULL && q->front == NULL)
     {
         q->front = newNode;
@@ -162,6 +166,20 @@ void enqueue (Queue* q, const char* name) // name is either "player" or "enemy"
     } 
     q->size++;
     return;
+}
+
+// Enqueue by turn
+void enqueueTurns(Queue* q) {
+    int q_num = 0;
+    while (q_num < MAX_BATTLE_TURNS) {
+        enqueue(q, "player");
+        q_num++;
+        if (q_num < MAX_BATTLE_TURNS) { // Ensure not to exceed max battle turns
+            enqueue(q, "enemy");
+            q_num++;
+        }
+    }
+    // printf("%d\n", q_num);
 }
 
 // 4. Dequeue
@@ -220,13 +238,13 @@ void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkil
             enemy->def += player->skills[playerSkillIdx].def;
         }
         else if ((strcmp(player->skills[playerSkillIdx].type, "Temporary modifier") == 0) &&
-            player->skills[playerSkillIdx].duration)
+            player->skills[playerSkillIdx].duration >0)
         {
             // if it is a temporary modifier, we update player's points
-            player->skills[playerSkillIdx].duration--;
             player->atk = player->skills[playerSkillIdx].atk;
             player->def = player->skills[playerSkillIdx].def;
             player->hp = player->skills[playerSkillIdx].hp;
+            player->skills[playerSkillIdx].duration--;
         }
     }
     else if (turnIdx == 2) // enemy's turn
@@ -243,48 +261,13 @@ void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkil
             enemy->skills[pcSkillIdx].duration > 0)
         {
             // if it is a temporary modifier, we update enemy's points
-            
             enemy->atk += enemy->skills[pcSkillIdx].atk;
             enemy->def += enemy->skills[pcSkillIdx].def;
             enemy->hp += enemy->skills[pcSkillIdx].hp;
+            enemy->skills[pcSkillIdx].duration--;
         }
     }
 }
-
-# if 0
-// 6. Fight flow ---> cancelled
-// void fightFlow (Queue* q)
-// {
-//     if (isEmpty(q))
-//     {
-//         printf("Combat turns are over\n");
-//         return;
-//     }
-
-//     if (q->front->enemy == NULL)
-//     {
-//         printf("Your turn, please select skill:\n" );
-//         printCharacterSkill (q->front->player);
-//         int playerInput;
-//         scanf ("%d", &playerInput);
-//         switch (playerInput)
-//         {
-//             case 1:
-//                 applySkill (q->front->player, , playerInput, turnIdx)
-//         }
-            
-//     }
-//     else if (q->front->player == NULL)
-//     {
-//         printf("Select skill:\n" );
-//         printEnemySkill (q->front->enemy);
-//         dequeue (q);
-//         return;
-//     }
-//     dequeue (q);
-//     return;
-// }
-# endif
 
 // 6. Fight flow design
 void fightFlow (Queue* q, Character* player, Enemy* enemy)
@@ -298,29 +281,86 @@ void fightFlow (Queue* q, Character* player, Enemy* enemy)
     if (strcmp(q->front->name, "player"))
     {
         printf("Your turn, please select skill:\n" );
-        printCharacterSkill (player);
+        //printCharacterSkill (player);
         turnIdx = 1;
         int playerInput;
-        scanf ("%d", &playerInput);
+        bool validInput = false; 
+        // scanf ("%d", &playerInput);
 
         // Added while condition in case player inputs wrong number
         // so they can select again
-        while (playerInput < 1 || playerInput > MAX_SKILL)
-        {
-            printf("Invalid option, please select again\n");
-            scanf ("%d", &playerInput);
-        } 
-        // Apply skill according to the option of player  
-        applySkill(player, enemy, playerInput - 1, -1, turnIdx);       
+        // while (playerInput < 1 || playerInput > MAX_SKILL)
+        // {
+        //     printf("Invalid option, please select again\n");
+        //     scanf ("%d", &playerInput);
+        // } 
+        // // Apply skill according to the option of player
+        // if (playerInput >= 0 && playerInput < MAX_SKILL &&
+        //     (strcmp(player->skills[playerInput].type, "Direct attack") == 0 || player->skills[playerInput].duration > 0)) {
+        //     applySkill(player, enemy, playerInput, -1, turnIdx);
+        // } else {
+        //     printf("Invalid skill or skill duration is 0. Please select again.\n");
+        // }
+
+
+        // while loop to make sure player can reselect in case of invalid selection
+        while (!validInput) {
+            printCharacterSkill(player);
+            scanf("%d", &playerInput);
+            playerInput--; // to match array index
+
+            if (playerInput >= 0 && playerInput < MAX_SKILL &&
+                (strcmp(player->skills[playerInput].type, "Direct attack") == 0 || 
+                (strcmp(player->skills[playerInput].type, "Temporary modifier") == 0 && 
+                player->skills[playerInput].duration > 0))) 
+            {
+                applySkill(player, enemy, playerInput, -1, turnIdx);
+                validInput = true;
+            } else {
+                printf("Invalid skill or skill duration is 0. Please select again.\n");
+            }
+        }     
+        
     }
     else if (strcmp(q->front->name, "enemy"))
     {
         printf("Enemy's turn:\n");
         // printCharacterSkill (player->skills);
         turnIdx = 2;
-        int enemyInput = rand() % MAX_SKILL; 
-        printf("%s\n", enemy->skills[enemyInput].name);     
-        applySkill (player, enemy, -1, enemyInput, turnIdx);
+
+        // Control of available skills in case of temporary
+        int availableSkills[MAX_SKILL];
+        int availableSkillCount = 0; 
+        for (int i = 0; i < MAX_SKILL; i++) {
+            if (enemy->skills[i].duration > 0) {
+                availableSkills[availableSkillCount++] = i;
+            }
+        }
+
+        // int enemyInput = rand() % MAX_SKILL; 
+        // printf("%s\n", enemy->skills[enemyInput].name);     
+        // applySkill (player, enemy, -1, enemyInput, turnIdx);
+
+        // Collect available skills
+        for (int i = 0; i < MAX_SKILL; i++) 
+        {
+            if (strcmp(enemy->skills[i].type, "Direct attack") == 0 || (strcmp(enemy->skills[i].type, "Temporary modifier") == 0
+                && enemy->skills[i].duration > 0)) 
+            {
+                availableSkills[availableSkillCount++] = i;
+            }
+        }
+
+        if (availableSkillCount > 0) 
+        {
+            int skillIdx = availableSkills[rand() % availableSkillCount];
+            printf("%s\n", enemy->skills[skillIdx].name);
+            applySkill(player, enemy, -1, skillIdx, turnIdx);
+        } 
+        else 
+        {
+            printf("Enemy has no available skills to use.\n");
+        }
     }
     dequeue (q);
     return;

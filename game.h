@@ -135,7 +135,8 @@ Queue* queueInit ();
 //void enqueueEnemy (Queue* q, Enemy* enemy); // function cancelled
 void enqueue (Queue* q, const char* name);
 void dequeue (Queue* q);
-void queueTurn (Queue* q, Character* player, Enemy* enemies);
+void enqueueTurns(Queue* q);
+// void queueTurn (Queue* q, Character* player, Enemy* enemies);
 void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkillIdx, int turnIdx);
 void fightFlow (Queue* q, Character* player, Enemy* enemy);
 bool winAllBattles(Character* player, Enemy* enemy);
