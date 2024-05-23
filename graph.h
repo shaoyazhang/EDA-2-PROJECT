@@ -26,6 +26,6 @@ void addEdges (Graph* graph, int srcIndex, int destIndex);
 void drawGraphic(Graph* graph);
 void printGraph (Graph* graph);
 void printSenario (Scenario* scenario);
-void navigateScenario (Graph* graph, int curScenarioIdx, bool winAllBattles);
+void navigateScenario(Graph* graph, int curScenarioIdx, Character* player);
 void makeDecision(Graph* graph, int currScenarioIdx, int decision_index);
 void printEnemySkillDetail (Enemy* enemy);

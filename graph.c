@@ -146,6 +146,7 @@ bool winAllBattles(Character* player, Enemy* enemy) {
 }
 
 // 7. Traverse scenarios by its adjancency
+# if 0
 void navigateScenario (Graph* graph, int curScenarioIdx, bool winAllBattles)
 {
     if (winAllBattles)
@@ -171,7 +172,7 @@ void navigateScenario (Graph* graph, int curScenarioIdx, bool winAllBattles)
         }
         input--;
         makeDecision(graph, curScenarioIdx, input);
-        
+
         printf("*************************************\n");
             printf("You can navigate to these bases:\n");
             for (int i = 0; i < graph->nodes[curScenarioIdx].num_adjacent; i++) 
@@ -189,6 +190,68 @@ void navigateScenario (Graph* graph, int curScenarioIdx, bool winAllBattles)
         int nextScenarioIdx = option - 1;
         printf("Navigating to %s\n", graph->nodes[curScenarioIdx].adjacent[nextScenarioIdx]->scenario.name);
         printSenario (&graph->nodes[curScenarioIdx].adjacent[nextScenarioIdx]->scenario);
+    }
+}
+# endif
+void navigateScenario(Graph* graph, int curScenarioIdx, Character* player) {
+    while (true) {
+        Scenario* currentScenario = &graph->nodes[curScenarioIdx].scenario;
+        printf("You are now in %s\n", currentScenario->name);
+        printSenario(currentScenario);
+
+        // Let the player choose a decision path
+        int decisionIndex = -1;
+        if (currentScenario->decision.option_num > 1) {
+            printf("Please choose your path:\n");
+            for (int i = 0; i < currentScenario->decision.option_num; i++) {
+                printf("%d. %s\n", i + 1, currentScenario->decision.options[i].enemies[0].name);
+            }
+            scanf("%d", &decisionIndex);
+            while (decisionIndex < 1 || decisionIndex > currentScenario->decision.option_num) {
+                printf("Invalid option, please select again\n");
+                scanf("%d", &decisionIndex);
+            }
+            decisionIndex--;
+        } else {
+            decisionIndex = 0;
+        }
+
+        // Engage in battle with the chosen enemies
+        Queue* q = queueInit();
+        enqueueTurns(q);
+        bool battleResult = true;
+        for (int i = 0; strlen(currentScenario->decision.options[decisionIndex].enemies[i].name) >0 ; i++) {
+            if (!fightFlow(q, player, &currentScenario->decision.options[decisionIndex].enemies[i])) {
+                battleResult = false;
+                break;
+            }
+        }
+
+        if (battleResult) {
+            printf("You have won all battles in this scenario.\n");
+
+            if (graph->nodes[curScenarioIdx].num_adjacent == 0) {
+                printf("Congratulations!! You win the game\n");
+                return;
+            }
+
+            // List available adjacent scenarios
+            printf("*************************************\n");
+            printf("You can navigate to these bases:\n");
+            for (int i = 0; i < graph->nodes[curScenarioIdx].num_adjacent; i++) {
+                printf("%d. %s\n", i + 1, graph->nodes[curScenarioIdx].adjacent[i]->scenario.name);
+            }
+            printf("Please select one base you want to navigate:\n");
+            int option;
+            scanf("%d", &option);
+            while (option < 1 || option > graph->nodes[curScenarioIdx].num_adjacent) {
+                printf("Invalid choice, please select again.\n");
+                scanf("%d", &option);
+            }
+            curScenarioIdx = option - 1;
+        } else {
+            printf("You lost the battle. Try again from this scenario.\n");
+        }
     }
 }
 

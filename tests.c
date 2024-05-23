@@ -272,13 +272,11 @@ void test07()
     
     const char* fp = "scenario_config.json";
     char* jsonString = readFile (fp);
-
     if (jsonString == NULL)
     {
         fprintf(stderr, "Failed to read JSON file\n");
         return;
     }
-
     Scenario* scenarios = NULL;
     int num_scenarios;
     scenarioInit(jsonString, &scenarios, &num_scenarios);
@@ -294,8 +292,20 @@ void test07()
         }
     }
 
-    bool winAllBattles = true;
-    navigateScenario (graph, 2, winAllBattles);
+    const char* fp_charc = "skills.json";
+    char* jsonString_charc = readFile (fp_charc);
+    if (jsonString == NULL)
+    {
+        fprintf(stderr, "Failed to read JSON file\n");
+        return;
+    }
+
+    Character* players = NULL;
+    int num_characters;
+    characterInit(jsonString_charc, &players, &num_characters);
+
+    // bool winAllBattles = true;
+    navigateScenario (graph, 0, &(players[1]));
 }
 
 # endif
