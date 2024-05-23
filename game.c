@@ -2,6 +2,8 @@
 # include "initialization.h"
 // ********* LAB 1 ****************//
 // ********* DO NOT MODIFY ********//
+// ************All the initialized function is in initialization files***************//
+
 
 // Initialize charcters ---> function updated and cancelled
 # if 0
@@ -71,24 +73,7 @@ void printCharacterSkill (Character* player)
     
 }
 
-// Show enemy's skill attributions
-void printEnemySkill (Enemy* enemy)
-{
-    printf("skill:\n1. %s\n2. %s\n3. %s\n4. %s\n",
-    enemy->skills[0].name,
-    enemy->skills[1].name,
-    enemy->skills[2].name,
-    enemy->skills[3].name
-    );
-
-}
-
 // Initialize queue
-// void initQueue(Queue* q) {
-//     q->front = NULL;
-//     q->rear = NULL;
-//     q->size = 0;
-// }
 Queue* queueInit ()
 {   
     Queue* newQueue = (Queue*)malloc(sizeof(Queue));
@@ -102,55 +87,6 @@ int isEmpty (Queue* q)
 {
     return (q->size == 0);
 }
-
-# if 0
-// 3.1 Enque Character  ---> function cancelled
-void enqueueCharacter (Queue* q, Character* player)
-{
-    
-    Node* newNode = (Node*)malloc(sizeof(Node));
-    newNode->player = player;
-    newNode->enemy = NULL;
-    newNode->next = NULL;
-
-    if (q->front == NULL)
-    {
-        q->front = newNode;
-        q->rear = newNode;
-    }
-    else
-    {
-        q->rear->next = newNode;
-        q->rear = newNode;
-    }
-    q->size++;
-}
-# endif
-
-# if 0
-// 3.2 Enque Enemy  ---> function cancelled
-void enqueueEnemy (Queue* q, Enemy* enemy)
-{
-    
-    Node* newNode = (Node*)malloc(sizeof(Node));
-    newNode->player = NULL;
-    newNode->enemy = enemy;
-    newNode->next = NULL;
-    //
-    if (q->rear == NULL)
-    {
-        q->front = newNode;
-        q->rear = newNode;
-    }
-    else
-    {
-        q->rear->next = newNode;
-        q->rear = newNode;
-    }
-    
-    q->size++;
-}
-# endif
 
 // 3. Enqueue 
 void enqueue (Queue* q, const char* name) // name is either "player" or "enemy"
@@ -458,15 +394,15 @@ void printEnemySkillDetail (Enemy* enemy)
     printf("Life points: %d\n", enemy->hp);
     printf("Attack points: %d\n", enemy->atk);
     printf("Defense points: %d\n", enemy->def);
-    for (int i = 0; i < MAX_SKILL; i++)
+    for (int i = 0; strlen(enemy->skills[i].name) >0; i++)
     {
-        printf("Skill %d: %s\n", i+1, enemy->skills[0].name);
-        printf("    Skill detail: %s\n", enemy->skills[0].description);
-        printf("    Type: %s\n", enemy->skills[0].type);
-        printf("    Duration: %d\n", enemy->skills[0].duration);
-        printf("    Life points: %d\n", enemy->skills[0].hp);
-        printf("    Attack points: %d\n", enemy->skills[0].atk);
-        printf("    Defense points: %d\n", enemy->skills[0].def);
+        printf("Skill %d: %s\n", i+1, enemy->skills[i].name);
+        printf("    Skill detail: %s\n", enemy->skills[i].description);
+        printf("    Type: %s\n", enemy->skills[i].type);
+        printf("    Duration: %d\n", enemy->skills[i].duration);
+        printf("    Life points: %d\n", enemy->skills[i].hp);
+        printf("    Attack points: %d\n", enemy->skills[i].atk);
+        printf("    Defense points: %d\n", enemy->skills[i].def);
     }
 }
 // ********* DO NOT MODIFY ********//

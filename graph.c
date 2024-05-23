@@ -1,9 +1,17 @@
 # include "graph.h"
 
 // 1. Initialize graph
-void graphInit(Graph* graph)
-{
+// void graphInit(Graph* graph)
+// {   
+//     graph = (Graph*)malloc(sizeof(Graph));
+//     graph->num_nodes = 0;
+// }
+
+Graph* graphInit()
+{   
+    Graph* graph = (Graph*)malloc(sizeof(Graph));
     graph->num_nodes = 0;
+    return graph;
 }
 
 // 2. Insert a scenario to the graph
@@ -28,13 +36,29 @@ void addEdges (Graph* graph, int srcIndex, int destIndex)
     if (srcIndex >= 0 && srcIndex < graph->num_nodes && destIndex >= 0 && destIndex < graph->num_nodes) {
         SN* srcNode = &graph->nodes[srcIndex];
         SN* destNode = &graph->nodes[destIndex];
-        if (srcNode->num_adjacent < MAX_SCENARIOS)
+        if (srcNode->num_adjacent < (MAX_SCENARIOS-1))
             srcNode->adjacent[srcNode->num_adjacent++] = destNode;
     } else {
         printf("Invalid node index!\n");
     }
 }
 
+// Draw graphic
+void drawGraphic(Graph* graph)
+{
+    int path01[] ={START_NODE_IDX, 1};  // S1 - S2, S1 is the start node
+    int path02[] = {START_NODE_IDX, 2};
+    int path03[] ={1, 2};   // S2-S3
+    int path04[] ={2, 1};   // S3-S2
+    int path05[] ={1, END_NODE_IX}; // S3 -S4, S4 is the end node
+    int path06[] ={2, END_NODE_IX}; 
+    addEdges(graph, path01[0], path01[1]);
+    addEdges(graph, path02[0], path02[1]);
+    addEdges(graph, path03[0], path03[1]);
+    addEdges(graph, path04[0], path04[1]);
+    addEdges(graph, path05[0], path05[1]);
+    addEdges(graph, path06[0], path06[1]);
+}
 // 4. Function to print the graph
 void printGraph (Graph* graph)
 {
@@ -42,21 +66,27 @@ void printGraph (Graph* graph)
     {
         printf("Scenario %d: %s\n", i+1, graph->nodes[i].scenario.name);
         printf("    Description: %s\n", graph->nodes[i].scenario.description);
-        printf("    Question: %s\n", graph->nodes[i].scenario.decision.question);
-        for (int j = 0; j < MAX_DECISION; j++) 
-        {
-            printf("    Option %d: %s\n", j+1, graph->nodes[i].scenario.decision.options[j].response);
-            printf("        Narrative: %s\n", graph->nodes[i].scenario.decision.options[j].narra_bf);
-            printf("        Narrative: %s\n", graph->nodes[i].scenario.decision.options[j].narra_af);
-        }
+        // printf("    Question: %s\n", graph->nodes[i].scenario.decision.question);
+        // for (int j = 0; j < MAX_DECISION; j++) 
+        // {
+        //     printf("    Option %d: %s\n", j+1, graph->nodes[i].scenario.decision.options[j].response);
+        //     printf("        Narrative: %s\n", graph->nodes[i].scenario.decision.options[j].narra_bf);
+        //     printf("        Narrative: %s\n", graph->nodes[i].scenario.decision.options[j].narra_af);
+        // }
         printf("    Adjacent senarios: ");
-        for (int j = 0; j < graph->nodes[i].num_adjacent; j++)
+        if (graph->nodes[i].num_adjacent <= 0)
         {
-            printf("%s ", graph->nodes[i].adjacent[j]->scenario.name);
+            printf("None\n");
         }
+        else
+        {
+            for (int j = 0; j < graph->nodes[i].num_adjacent; j++)
+            {
+                printf("%s ", graph->nodes[i].adjacent[j]->scenario.name);   
+            }
+        }  
         printf("\n");
-    }
-    
+    }  
 }
 
 // 5. Function to print one scenario
@@ -120,19 +150,34 @@ void navigateScenario (Graph* graph, int curScenarioIdx, bool winAllBattles)
 {
     if (winAllBattles)
     {
+        printf("The next base will not be available until you win all battles from this base.\n");
         if (graph->nodes[curScenarioIdx].num_adjacent == 0) 
         {
-        printf("The next base will not be available until you win this battle.\n");
-        return;
+            printf("Congratulations!! You win the game\n");
+            return;
         }
-        else
+
+        // Makde decision to choose the path
+        int input = 0;
+        printf("Please choose your path: 1.%s 2.%s", 
+            graph->nodes[curScenarioIdx].scenario.decision.options[0].enemies[0].name,
+            graph->nodes[curScenarioIdx].scenario.decision.options[1].enemies[0].name
+        );
+        scanf("%d", &input);
+        while (input < 1 || input > 2)
         {
+            printf("Invalid option, please select again\n");
+            scanf("%d", &input);
+        }
+        input--;
+        makeDecision(graph, curScenarioIdx, input);
+        
+        printf("*************************************\n");
             printf("You can navigate to these bases:\n");
             for (int i = 0; i < graph->nodes[curScenarioIdx].num_adjacent; i++) 
             {
                 printf("%d. %s\n", i + 1, graph->nodes[curScenarioIdx].adjacent[i]->scenario.name);
             }
-        }
         printf("Please select one base you want to navigate:\n");
         int option;
         scanf("%d", &option);
@@ -144,12 +189,6 @@ void navigateScenario (Graph* graph, int curScenarioIdx, bool winAllBattles)
         int nextScenarioIdx = option - 1;
         printf("Navigating to %s\n", graph->nodes[curScenarioIdx].adjacent[nextScenarioIdx]->scenario.name);
         printSenario (&graph->nodes[curScenarioIdx].adjacent[nextScenarioIdx]->scenario);
-        // printf("    Adjacent senarios: ");
-        // for (int j = 0; j < graph->nodes[nextScenarioIdx].num_adjacent; j++)
-        // {
-        //     printf("%s ", graph->nodes[nextScenarioIdx].adjacent[j]->scenario.name);
-        // }
-        // printf("\n");
     }
 }
 

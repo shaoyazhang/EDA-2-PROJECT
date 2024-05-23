@@ -213,43 +213,11 @@ void test05 ()
 # if 1
 void test06 ()
 {
-    Graph graph;
-    graphInit(&graph);
+    // Graph* graph = NULL;
+    // graphInit(graph);
+
+    Graph* graph = graphInit();
     //const char* fp = "scenario_config.json";
-    const char* fp = "scenarios_config.json";
-    char* jsonString = readFile (fp);
-
-    if (jsonString == NULL)
-    {
-        fprintf(stderr, "Failed to read JSON file\n");
-        return;
-    }
-
-    Scenario* scenarios = NULL;
-    int num_scenarios;
-    scenarioInit(jsonString, &scenarios, &num_scenarios);
-    for (int i = 0; i < num_scenarios; i++) {
-        addScenario(&graph, scenarios[i]);
-    }
-
-    for (int i = 0; i < MAX_SCENARIOS; i++)
-    {
-        for (int j = 0; j < MAX_SCENARIOS; j++)
-        {   if (i != j)
-                addEdges(&graph, i, j);
-        }
-    }
-    printGraph (&graph);
-
-}
-# endif
-
-// test for scenarios navigation
-# if 1
-void test07()
-{
-    Graph graph;
-    graphInit(&graph);
     const char* fp = "scenario_config.json";
     char* jsonString = readFile (fp);
 
@@ -263,19 +231,71 @@ void test07()
     int num_scenarios;
     scenarioInit(jsonString, &scenarios, &num_scenarios);
     for (int i = 0; i < num_scenarios; i++) {
-        addScenario(&graph, scenarios[i]);
+        addScenario(graph, scenarios[i]);
+    }
+
+    // for (int i = 0; i < MAX_SCENARIOS; i++)
+    // {
+    //     for (int j = 0; j < MAX_SCENARIOS; j++)
+    //     {   if (i != j)
+    //             addEdges(&graph, i, j);
+    //     }
+    // }
+
+    //**********Add global path to the graphic**********//
+    int path01[] ={START_NODE_IDX, 1};  // S1 - S2, S1 is the start node
+    int path02[] = {START_NODE_IDX, 2};
+    int path03[] ={1, 2};   // S2-S3
+    int path04[] ={2, 1};   // S3-S2
+    int path05[] ={1, END_NODE_IX}; // S3 -S4, S4 is the end node
+    int path06[] ={2, END_NODE_IX}; 
+    addEdges(graph, path01[0], path01[1]);
+    addEdges(graph, path02[0], path02[1]);
+    addEdges(graph, path03[0], path03[1]);
+    addEdges(graph, path04[0], path04[1]);
+    addEdges(graph, path05[0], path05[1]);
+    addEdges(graph, path06[0], path06[1]);
+
+    // printf("adj num S1: %s\n", graph.nodes[3].adjacent[0]->scenario.name);
+    // printf("adj num S1: %s\n", graph.nodes[3].adjacent[0]->scenario.name);
+    printGraph (graph);
+
+
+}
+# endif
+
+// test for scenarios navigation
+# if 1
+void test07()
+{
+    Graph* graph = graphInit();
+    
+    const char* fp = "scenario_config.json";
+    char* jsonString = readFile (fp);
+
+    if (jsonString == NULL)
+    {
+        fprintf(stderr, "Failed to read JSON file\n");
+        return;
+    }
+
+    Scenario* scenarios = NULL;
+    int num_scenarios;
+    scenarioInit(jsonString, &scenarios, &num_scenarios);
+    for (int i = 0; i < num_scenarios; i++) {
+        addScenario(graph, scenarios[i]);
     }
 
     for (int i = 0; i < MAX_SCENARIOS; i++)
     {
         for (int j = 0; j < MAX_SCENARIOS; j++)
         {   if (i != j)
-                addEdges(&graph, i, j);
+                addEdges(graph, i, j);
         }
     }
 
     bool winAllBattles = true;
-    navigateScenario (&graph, 2, winAllBattles);
+    navigateScenario (graph, 2, winAllBattles);
 }
 
 # endif

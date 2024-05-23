@@ -116,7 +116,40 @@ void runGame ()
 int main()
 {
     # if 0
-    Character players[MAX_CHARACTS];
+    // *********** Initializations**********//
+    // 1. Initialize character
+    const char* fp = "skills.json";
+    char* jsonString = readFile (fp);
+    if (jsonString == NULL)
+    {
+        fprintf(stderr, "Failed to read JSON file\n");
+        return -1;
+    }
+
+    Character* players = NULL;
+    int num_characters;
+    characterInit(jsonString, &players, &num_characters);
+
+    // 2. Initialize scenarios
+    const char* fp_sc = "scenario_config.json";
+    char* jsonString_sc = readFile (fp_sc);
+    if (jsonString == NULL)
+    {
+        fprintf(stderr, "Failed to read JSON file\n");
+        return -1;
+    }
+
+    Scenario* scenarios = NULL;
+    int num_scenarios;
+    scenarioInit(jsonString_sc, &scenarios, &num_scenarios);
+
+    // 3. Initialize queue
+    Queue* q = queueInit ();
+
+    // 4. Initialize graph
+    Graph* graph = graphInit();
+    
+    //***************New game**************//
     int input = 0;
     bool continueGame = true;
     menu();
@@ -155,24 +188,20 @@ int main()
         }
     }while(continueGame);
     
+    // *********** Enter the game**********//
+    drawGraphic(graph); 
 
-    //**********Add global path to the graphic**********//
-    int path01[] ={START_NODE_IDX, 1};  // S1 - S2, S1 is the start node
-    int path02[] ={1, 2};   
-    int path03[] ={2, 1}; 
-    int path04[] ={2, END_NODE_IX};
     # endif
-    
-    
-    
+
+
     //*******************all tests**************//
     // test01(); 
     // test02();
     // test03();
-    test04();
+    // test04();
     // test05();
     // test06 ();
-    // test07 ();
+    test07 ();
     // test08();
     return 0;
 }
