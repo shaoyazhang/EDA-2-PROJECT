@@ -35,14 +35,14 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 5
+                                        "def": 2
                                     },
                                     {
                                         "skill_id": "fear_howl",
                                         "description": "Lets out a terrifying howl that reduces the enemy's attack.",
                                         "type": "Temporary modifier",
                                         "duration": 2,
-                                        "atk": -10,
+                                        "atk": -8,
                                         "hp": 0,
                                         "def": 0
                                     },
@@ -52,7 +52,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -12,
+                                        "hp": -7,
                                         "def": 0
                                     }
                                 ]
@@ -70,7 +70,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -12,
+                                        "hp": -6,
                                         "def": 0
                                     },
                                     {
@@ -80,14 +80,14 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 10
+                                        "def": 4
                                     },
                                     {
                                         "skill_id": "fear_howl",
                                         "description": "Lets out a terrifying howl that reduces the enemy's attack.",
                                         "type": "Temporary modifier",
                                         "duration": 2,
-                                        "atk": 10,
+                                        "atk": 2,
                                         "hp": 0,
                                         "def": 0
                                     },
@@ -97,7 +97,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -13,
+                                        "hp": -3,
                                         "def": 0
                                     }
                                 ]
@@ -125,7 +125,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -11,
+                                        "hp": -4,
                                         "def": 0
                                     },
                                     {
@@ -142,16 +142,16 @@
                                         "description": "Unleashes a flurry of feathers that damages and distracts the enemy.",
                                         "type": "Temporary modifier",
                                         "duration": 2,
-                                        "atk": 10,
+                                        "atk": 3,
                                         "hp": 0,
-                                        "def": 5
+                                        "def": 3
                                     },
                                     {
                                         "skill_id": "wind_gust",
                                         "description": "Creates a gust of wind that knocks back the enemy.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 12,
+                                        "atk": 8,
                                         "hp": 0,
                                         "def": 0
                                     }
@@ -170,7 +170,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -9,
+                                        "hp": -7,
                                         "def": 0
                                     },
                                     {
@@ -180,14 +180,14 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 10
+                                        "def": 3
                                     },
                                     {
                                         "skill_id": "shadow_strike",
                                         "description": "Strikes from the shadows, dealing extra damage.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 30,
+                                        "atk": 10,
                                         "hp": 0,
                                         "def": 0
                                     },
@@ -291,7 +291,7 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 18
+                                        "def": 8
                                     },
                                     {
                                         "skill_id": "fire_whirl",
@@ -299,7 +299,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -9,
+                                        "hp": -7,
                                         "def": 0
                                     },
                                     {
@@ -308,7 +308,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -7,
+                                        "hp": -3,
                                         "def": 0
                                     }
                                 ]
@@ -346,14 +346,14 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 20
+                                        "def": 7
                                     },
                                     {
                                         "skill_id": "fire_whirl",
                                         "description": "Spins rapidly, creating a whirlwind of fire.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 30,
+                                        "atk": 8,
                                         "hp": 0,
                                         "def": 0
                                     },
@@ -363,7 +363,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -12,
+                                        "hp": -5,
                                         "def": 0
                                     }
                                 ]
@@ -402,7 +402,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -5,
+                                        "hp": -2,
                                         "def": 0
                                     },
                                     {
@@ -412,7 +412,7 @@
                                         "duration": 4,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 9
+                                        "def": 5
                                     },
                                     {
                                         "skill_id": "earthquake",
@@ -420,7 +420,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk":0,
-                                        "hp": 0,
+                                        "hp": -7,
                                         "def": 0
                                     },
                                     {
@@ -446,7 +446,7 @@
                                         "description": "Smashes the enemy with a heavy club.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 9,
+                                        "atk": 7,
                                         "hp": 0,
                                         "def": 0
                                     },
@@ -457,7 +457,7 @@
                                         "duration": 4,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 8
+                                        "def": 6
                                     },
                                     {
                                         "skill_id": "earthquake",
@@ -465,7 +465,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -10,
+                                        "hp": -8,
                                         "def": 0
                                     },
                                     {
@@ -474,7 +474,7 @@
                                         "type": "Temporary modifier",
                                         "duration": 5,
                                         "atk": 0,
-                                        "hp": 10,
+                                        "hp": 7,
                                         "def": 0
                                     }
                                 ]
@@ -501,7 +501,7 @@
                                         "description": "Bites with its stone jaws.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 8,
+                                        "atk": 2,
                                         "hp": 0,
                                         "def": 0
                                     },
@@ -521,7 +521,7 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 8
+                                        "def": 6
                                     },
                                     {
                                         "skill_id": "crystal_shield",
@@ -530,7 +530,7 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 12
+                                        "def": 7
                                     }
                                 ]
                             },
@@ -565,7 +565,7 @@
                                         "type": "Direct attack",
                                         "duration": 2,
                                         "atk": 0,
-                                        "hp": -7,
+                                        "hp": -5,
                                         "def": 0
                                     },
                                     {
@@ -573,7 +573,7 @@
                                         "description": "Summons undead minions to aid in battle during 2 turns.",
                                         "type": "Temporary modifier",
                                         "duration": 2,
-                                        "atk": 13,
+                                        "atk": 10,
                                         "hp": 0,
                                         "def": 0
                                     }
@@ -623,7 +623,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -11,
+                                        "hp": -3,
                                         "def": 0
                                     },
                                     {
@@ -640,7 +640,7 @@
                                         "description": "Enters a blood frenzy, increasing attack.",
                                         "type": "Temporary modifier",
                                         "duration": 2,
-                                        "atk": 10,
+                                        "atk": 4,
                                         "hp": 0,
                                         "def": 0
                                     }
@@ -658,7 +658,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -9,
+                                        "hp": -7,
                                         "def": 0
                                     },
                                     {
@@ -667,7 +667,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -12,
+                                        "hp": -8,
                                         "def": 0
                                     },
                                     {
@@ -677,7 +677,7 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 25
+                                        "def": 9
                                     },
                                     {
                                         "skill_id": "hydro_vortex",
@@ -685,7 +685,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": 11,
+                                        "hp": -4,
                                         "def": 0
                                     }
                                 ]
@@ -713,7 +713,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -9,
+                                        "hp": -6,
                                         "def": 0
                                     },
                                     {
@@ -723,7 +723,7 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": -10
+                                        "def": -4
                                     },
                                     {
                                         "skill_id": "Hydro vortex",
@@ -731,7 +731,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -13,
+                                        "hp": -10,
                                         "def": 0
                                     }
                                 ]
