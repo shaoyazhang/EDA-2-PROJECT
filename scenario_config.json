@@ -52,7 +52,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -7,
+                                        "hp": -5,
                                         "def": 0
                                     }
                                 ]
@@ -70,7 +70,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -6,
+                                        "hp": -5,
                                         "def": 0
                                     },
                                     {
@@ -80,14 +80,14 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 4
+                                        "def": 3
                                     },
                                     {
                                         "skill_id": "fear_howl",
                                         "description": "Lets out a terrifying howl that reduces the enemy's attack.",
                                         "type": "Temporary modifier",
                                         "duration": 2,
-                                        "atk": 2,
+                                        "atk": 1,
                                         "hp": 0,
                                         "def": 0
                                     },
@@ -125,7 +125,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -4,
+                                        "hp": -5,
                                         "def": 0
                                     },
                                     {
@@ -142,7 +142,7 @@
                                         "description": "Unleashes a flurry of feathers that damages and distracts the enemy.",
                                         "type": "Temporary modifier",
                                         "duration": 2,
-                                        "atk": 3,
+                                        "atk": 1,
                                         "hp": 0,
                                         "def": 3
                                     },
@@ -151,8 +151,8 @@
                                         "description": "Creates a gust of wind that knocks back the enemy.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 8,
-                                        "hp": 0,
+                                        "atk": 0,
+                                        "hp": -5,
                                         "def": 0
                                     }
                                 ]
@@ -170,7 +170,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -7,
+                                        "hp": -5,
                                         "def": 0
                                     },
                                     {
@@ -180,15 +180,15 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 3
+                                        "def": 2
                                     },
                                     {
                                         "skill_id": "shadow_strike",
                                         "description": "Strikes from the shadows, dealing extra damage.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 10,
-                                        "hp": 0,
+                                        "atk": 0,
+                                        "hp": -5,
                                         "def": 0
                                     },
                                     {
@@ -198,7 +198,7 @@
                                         "duration": 2,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 4
+                                        "def": 2
                                     }
                                 ]
                             }
@@ -255,7 +255,7 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 5
+                                        "def": 2
                                     },
                                     {
                                         "skill_id": "inferno",
@@ -291,7 +291,7 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 8
+                                        "def": 2
                                     },
                                     {
                                         "skill_id": "fire_whirl",
@@ -346,7 +346,7 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 7
+                                        "def": 1
                                     },
                                     {
                                         "skill_id": "fire_whirl",
@@ -363,7 +363,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -5,
+                                        "hp": -10,
                                         "def": 0
                                     }
                                 ]
@@ -429,7 +429,7 @@
                                         "type": "Temporary modifier",
                                         "duration": 5,
                                         "atk": 0,
-                                        "hp": 10,
+                                        "hp": 1,
                                         "def": 0
                                     }
                                 ]
@@ -446,15 +446,15 @@
                                         "description": "Smashes the enemy with a heavy club.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 7,
-                                        "hp": 0,
+                                        "atk": 0,
+                                        "hp": -5,
                                         "def": 0
                                     },
                                     {
                                         "skill_id": "stone_skin",
                                         "description": "Hardened skin increases defense.",
                                         "type": "Temporary modifier",
-                                        "duration": 4,
+                                        "duration": 2,
                                         "atk": 0,
                                         "hp": 0,
                                         "def": 6
@@ -474,7 +474,7 @@
                                         "type": "Temporary modifier",
                                         "duration": 5,
                                         "atk": 0,
-                                        "hp": 7,
+                                        "hp": 2,
                                         "def": 0
                                     }
                                 ]
@@ -501,8 +501,8 @@
                                         "description": "Bites with its stone jaws.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 2,
-                                        "hp": 0,
+                                        "atk": 0,
+                                        "hp": -5,
                                         "def": 0
                                     },
                                     {
@@ -521,7 +521,7 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 6
+                                        "def": 1
                                     },
                                     {
                                         "skill_id": "crystal_shield",
@@ -530,7 +530,7 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 7
+                                        "def": 1
                                     }
                                 ]
                             },
@@ -557,7 +557,7 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 5
+                                        "def": 2
                                     },
                                     {
                                         "skill_id": "putrid_breath",
@@ -573,7 +573,7 @@
                                         "description": "Summons undead minions to aid in battle during 2 turns.",
                                         "type": "Temporary modifier",
                                         "duration": 2,
-                                        "atk": 10,
+                                        "atk": 1,
                                         "hp": 0,
                                         "def": 0
                                     }
@@ -623,7 +623,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -3,
+                                        "hp": -10,
                                         "def": 0
                                     },
                                     {

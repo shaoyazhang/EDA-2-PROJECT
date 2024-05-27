@@ -10,41 +10,41 @@
             [
                 {
                     "skill_name": "jump high",
-                    "description": "Increase defense power by 20% for 5 turns.",
+                    "description": "Increase defense power by 2 points for 5 turns.",
                     "type": "Temporary modifier",
                     "duration": 5,
                     "atk": 0,
                     "hp": 0,
-                    "def": 20
+                    "def": 2
                 },
         
                 {
                     "skill_name": "high kick",
-                    "description": "Increase attack power by 30% for 3 turns",
+                    "description": "Increase attack power by 2 points for 3 turns",
                     "type": "Temporary modifier",
                     "duration": 3,
-                    "atk": 30,
+                    "atk": 2,
                     "hp": 0,
                     "def": 0
                 },
         
                 {
                     "skill_name": "advance/step back",
-                    "description": "Increase defense power by 10% for 10 turns",
+                    "description": "Increase defense power by 2 points for 3 turns",
                     "type": "Temporary modifier",
-                    "duration": 10,
+                    "duration": 3,
                     "atk": 0,
                     "hp": 0,
-                    "def": 10
+                    "def": 2
                 },
         
                 {
                     "skill_name": "punch",
                     "description": "Cause 15 damage to the enemy's life point",
-                    "type": "Temporary modifier",
-                    "duration": 0,
+                    "type": "Direct attack",
+                    "duration": 3,
                     "atk": 0,
-                    "hp": -15,
+                    "hp": -10,
                     "def": 0
                 }
                 
@@ -63,37 +63,37 @@
                     "type": "Direct attack",
                     "duration": 0,
                     "atk": 0,
-                    "hp": -20,
+                    "hp": -8,
                     "def": 0
                 },
         
                 {
                     "skill_name": "shielding",
-                    "description": "Increase defense power by 20% for 5 turns.",
+                    "description": "Increase defense power by 2 points for 5 turns.",
                     "type": "Temporary modifier",
-                    "duration": 5,
+                    "duration": 3,
                     "atk": 0,
                     "hp": 0,
-                    "def": 20
+                    "def": 2
                 },
         
                 {
                     "skill_name": "advance/step back",
-                    "description": "Increase defense power by 10% for 10 turns",
+                    "description": "Increase defense power by 5 points for 10 turns",
                     "type": "Temporary modifier",
                     "duration": 10,
                     "atk": 0,
                     "hp": 0,
-                    "def": 10
+                    "def": 5
                 },
         
                 {
                     "skill_name": "roundhouse kick",
-                    "description": "Cause 20 damage to the enemy's life point",
+                    "description": "Cause 10 damage to the enemy's life point",
                     "type": "Direct attack",
                     "duration": 0,
                     "atk": 0,
-                    "hp": -20,
+                    "hp": -10,
                     "def": 0
                 }
                 
@@ -108,16 +108,6 @@
             [
                 {
                     "skill_name": "Stab",
-                    "description": "Cause 30 damage to the enemy's life point",
-                    "type": "Direct attack",
-                    "duration": 0,
-                    "atk": 0,
-                    "hp": -30,
-                    "def": 0
-                },
-        
-                {
-                    "skill_name": "wrestle",
                     "description": "Cause 15 damage to the enemy's life point",
                     "type": "Direct attack",
                     "duration": 0,
@@ -127,13 +117,23 @@
                 },
         
                 {
+                    "skill_name": "wrestle",
+                    "description": "Cause 5 damage to the enemy's life point",
+                    "type": "Direct attack",
+                    "duration": 0,
+                    "atk": 0,
+                    "hp": -5,
+                    "def": 0
+                },
+        
+                {
                     "skill_name": "advance/step back",
-                    "description": "Increase defense power by 10% for 10 turns",
+                    "description": "Increase defense power by 5 points for 10 turns",
                     "type": "Temporary modifier",
-                    "duration": 10,
+                    "duration": 2,
                     "atk": 0,
                     "hp": 0,
-                    "def": 10
+                    "def": 5
                 },
         
                 {
@@ -157,7 +157,7 @@
             [
                 {
                     "skill_name": "Move fast",
-                    "description": "Increase defense power by 10% for 10 turns",
+                    "description": "Increase defense power by 10 points for 10 turns",
                     "type": "Temporary modifier",
                     "duration": 10,
                     "atk": 0,
@@ -167,22 +167,22 @@
         
                 {
                     "skill_name": "sneak attack",
-                    "description": "Increase attack power by 10% for 3 turns",
+                    "description": "Increase attack power by 5 points for 3 turns",
                     "type": "Temporary modifier",
                     "duration": 3,
                     "atk": 10,
-                    "hp": 1,
-                    "def": 1
+                    "hp": 0,
+                    "def": 5
                 },
         
                 {
                     "skill_name": "advance/step back",
-                    "description": "Increase defense power by 10% for 10 turns",
+                    "description": "Increase defense power by 5 points for 10 turns",
                     "type": 0,
                     "duration": 10,
                     "atk": 0,
                     "hp": 0,
-                    "def": 10
+                    "def": 5
                 },
         
                 {

@@ -14,7 +14,7 @@ void menu()
 }
 
 // New game
-void game(Character *players)
+void game(Character *players, int* selec)
 {   
     const char* fp = "skills.json";
     char* jsonString = readFile (fp);
@@ -26,15 +26,15 @@ void game(Character *players)
     }
 
     //Character* players = NULL;
-    int num_charcter;
-    characterInit(jsonString, &players, &num_charcter);
+    // int num_charcter;
+    // characterInit(jsonString, &players, &num_charcter);
 
     // Select character and associate their skills
-    int selection;
+    // int selection;
     printf("Please select your one charcter:\n1. %s\n2. %s\n3. %s\n4. %s\n", 
         players[0].name, players[1].name, players[2].name, players[3].name);
-    scanf("%d", &selection);
-    switch (selection)
+    scanf("%d", selec);
+    switch (*selec)
     {
         case 1:
             printf("Charcter info:\n");
@@ -101,21 +101,18 @@ void game(Character *players)
             do
             {
                 printf("Wrong option, please select again\n");
-                scanf("%d", &selection);
-            }while(selection > 4 || selection < 1);    
+                scanf("%d", selec);
+            }while(*selec > 4 || *selec < 1);    
             break;
     }
     printf("Welcome to the new game!\n");
 }
 
-// Run game
-void runGame ()
-{
 
-}
 int main()
 {
-    # if 0
+    # if 1
+    int selec_charac = -1;
     // *********** Initializations**********//
     // 1. Initialize character
     const char* fp = "skills.json";
@@ -133,7 +130,7 @@ int main()
     // 2. Initialize scenarios
     const char* fp_sc = "scenario_config.json";
     char* jsonString_sc = readFile (fp_sc);
-    if (jsonString == NULL)
+    if (jsonString_sc == NULL)
     {
         fprintf(stderr, "Failed to read JSON file\n");
         return -1;
@@ -144,7 +141,7 @@ int main()
     scenarioInit(jsonString_sc, &scenarios, &num_scenarios);
 
     // 3. Initialize queue
-    Queue* q = queueInit ();
+    // Queue* q = queueInit ();
 
     // 4. Initialize graph
     Graph* graph = graphInit();
@@ -160,7 +157,7 @@ int main()
         switch(input)
         {
             case 1: 
-                game(players);
+                game(players, &selec_charac);
                 int selec;
                 printf("Do you want to enter the game?\n 1. YES  2. NO\n");
                 scanf("%d", &selec);
@@ -189,7 +186,30 @@ int main()
     }while(continueGame);
     
     // *********** Enter the game**********//
-    drawGraphic(graph); 
+    
+    //**********Add global path to the graphic**********//
+    // scenarioInit(jsonString, &scenarios, &num_scenarios);
+    for (int i = 0; i < num_scenarios; i++) {
+        addScenario(graph, scenarios[i]);
+    }
+
+    int path01[] ={START_NODE_IDX, 1};  // S1 - S2, S1 is the start node
+    int path02[] = {START_NODE_IDX, 2};
+    int path03[] ={1, 2};   // S2-S3
+    int path04[] ={2, 1};   // S3-S2
+    int path05[] ={1, END_NODE_IX}; // S3 -S4, S4 is the end node
+    int path06[] ={2, END_NODE_IX}; 
+    addEdges(graph, path01[0], path01[1]);
+    addEdges(graph, path02[0], path02[1]);
+    addEdges(graph, path03[0], path03[1]);
+    addEdges(graph, path04[0], path04[1]);
+    addEdges(graph, path05[0], path05[1]);
+    addEdges(graph, path06[0], path06[1]);
+
+    navigateScenario (graph, 0, players, selec_charac-1);
+    free(graph);
+    free(players);
+    free(scenarios);
 
     # endif
 
@@ -201,7 +221,7 @@ int main()
     // test04();
     // test05();
     // test06 ();
-     test07 ();
+    // test07 ();
     // test08();
     return 0;
 }
