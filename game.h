@@ -25,6 +25,7 @@
 #define MAX_DECISION 2
 #define MAX_ENEMY_SKILLS 8
 #define MAX_BATTLE_TURNS 16
+#define TABLE_SIZE 8
 
 #define TEMP_MODIFIER 0
 #define DIRECT_ATL 1
@@ -88,17 +89,23 @@ typedef struct
     Decision decision;
 }Scenario;
 
+// 
+typedef struct SkillCount {
+    char skillName[50];
+    int count;
+    struct SkillCount* next;
+} SkillCount;
 
-// Initializations
-// void skill_init(Skill* skills);
+ // aqui defino  la struct
+typedef struct {
+    SkillCount* table[TABLE_SIZE];
+} HashTable;
+
+
 void menu();
-//void charcter_init(Character* players); 
-//void scenarioInit(Scenario* scenarios);
-//void decision_init(Decision* decisions);
-//void option_init(Option* options);
-//void enemy_init(Enemy* enemies, int scenario_num);
 void game(Character *players, int* selec);
 void applySkill (Character* player, Enemy* enemy, int input, int pcNum, int turnIdx);
+
 
 
 
@@ -131,9 +138,7 @@ typedef struct queue
 void printCharacterSkill (Character* player);
 int isEmpty (Queue* q);
 Queue* queueInit ();
-//void initQueue(Queue* q);
-//void enqueueCharacter (Queue* q, Character* player); // function cancelled
-//void enqueueEnemy (Queue* q, Enemy* enemy); // function cancelled
+int hash(const char* skillName);
 void enqueue (Queue* q, const char* name);
 void dequeue (Queue* q);
 void freeQueue(Queue* q);

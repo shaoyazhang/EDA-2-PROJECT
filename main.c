@@ -39,6 +39,9 @@ void game(Character *players, int* selec)
         case 1:
             printf("Charcter info:\n");
             printf("Character name: %s\n", players[0].name);
+            printf("hp: %d\n", players[0].hp);
+            printf("atk: %d\n", players[0].atk);
+            printf("def: %d\n", players[0].def);
             printf("Skills: \n");
             for (int i = 0; i < MAX_SKILL; i++)
             { 
@@ -53,6 +56,9 @@ void game(Character *players, int* selec)
             break;
         case 2: 
             printf("Character name: %s\n", players[1].name);
+            printf("hp: %d\n", players[1].hp);
+            printf("atk: %d\n", players[1].atk);
+            printf("def: %d\n", players[1].def);
             printf("Skills: \n");
             for (int i = 0; i < MAX_SKILL; i++)
             {
@@ -68,6 +74,9 @@ void game(Character *players, int* selec)
 
         case 3: 
             printf("Character name: %s\n", players[2].name);
+            printf("hp: %d\n", players[2].hp);
+            printf("atk: %d\n", players[2].atk);
+            printf("def: %d\n", players[2].def);
             printf("Skills: \n");
             for (int i = 0; i < MAX_SKILL; i++)
             {
@@ -83,6 +92,9 @@ void game(Character *players, int* selec)
 
         case 4: 
             printf("Character name: %s\n", players[3].name);
+            printf("hp: %d\n", players[3].hp);
+            printf("atk: %d\n", players[3].atk);
+            printf("def: %d\n", players[3].def);
             printf("Skills: \n");
             for (int i = 0; i < MAX_SKILL; i++)
             {

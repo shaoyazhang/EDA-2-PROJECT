@@ -230,6 +230,8 @@ void navigateScenario(Graph* graph, int curScenarioIdx, Character* players, int 
         bool battleResult = true;
         for (int i = 0; i < currentScenario.decision.options[decisionIndex].enemy_num; i++) 
         {
+            Queue* q = queueInit();
+            enqueueTurns(q);
             printf("\n");
             printf("You are fighting against: %s\n", currentScenario.decision.options[decisionIndex].enemies[i].name);
             printf("\n");
@@ -243,8 +245,6 @@ void navigateScenario(Graph* graph, int curScenarioIdx, Character* players, int 
                 printf("You have defeated the enemy\n");
                 printf("\n");
                 freeQueue(q);
-                Queue* q = queueInit();
-                enqueueTurns(q);
             }
         }
 

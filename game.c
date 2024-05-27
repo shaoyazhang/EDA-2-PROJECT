@@ -129,7 +129,6 @@ void enqueueTurns(Queue* q) {
             enqueue(q, "enemy");
         } 
     }
-    printf("%d\n", q->size);
 }
 # endif
 
@@ -517,6 +516,42 @@ void printEnemySkillDetail (Enemy* enemy)
         printf("    Life points: %d\n", enemy->skills[i].hp);
         printf("    Attack points: %d\n", enemy->skills[i].atk);
         printf("    Defense points: %d\n", enemy->skills[i].def);
+    }
+}
+
+// 8. Hash table system
+int hash(const char* skillName) {
+    unsigned int hashValue = 0;
+    while (*skillName) {
+        hashValue = (hashValue << 5) + *skillName++;
+    }
+    return hashValue % TABLE_SIZE;
+}
+
+
+// Initialize hash table
+HashTable* createHashTable() 
+{
+    HashTable* ht = (HashTable*)malloc(sizeof(HashTable));
+    for (int i = 0; i < TABLE_SIZE; i++) {
+        ht->table[i] = NULL;
+    }
+    return ht;
+}
+
+// Count system
+void incrementSkillCount(HashTable* ht, const char* skillName) 
+{
+    unsigned int index = hash(skillName);
+    SkillCount* entry = ht->table[index];
+
+    while (entry != NULL) 
+    {
+        if (strcmp(entry->skillName, skillName) == 0) {
+            entry->count++;
+            return;
+        }
+        entry = entry->next;
     }
 }
 // ********* DO NOT MODIFY ********//
