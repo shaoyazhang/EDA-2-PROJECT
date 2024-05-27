@@ -167,7 +167,7 @@ void test04()
     //********** fight flow after modified******//
     while (1)
     {
-    bool gameResult = fightFlow(q, &players[1], &(scenarios[1].decision.options[0].enemies[1]));
+    bool gameResult = fightFlow(q, players[1], (scenarios[1].decision.options[0].enemies[1]));
         if (gameResult)
             break;
         if(gameResult == false)
@@ -258,7 +258,7 @@ void test06 ()
 
     // printf("adj num S1: %s\n", graph.nodes[3].adjacent[0]->scenario.name);
     // printf("adj num S1: %s\n", graph.nodes[3].adjacent[0]->scenario.name);
-    printGraph (graph);
+    // printGraph (graph);
 
 
 }
@@ -284,13 +284,13 @@ void test07()
         addScenario(graph, scenarios[i]);
     }
 
-    for (int i = 0; i < MAX_SCENARIOS; i++)
-    {
-        for (int j = 0; j < MAX_SCENARIOS; j++)
-        {   if (i != j)
-                addEdges(graph, i, j);
-        }
-    }
+    // for (int i = 0; i < MAX_SCENARIOS; i++)
+    // {
+    //     for (int j = 0; j < MAX_SCENARIOS; j++)
+    //     {   if (i != j)
+    //             addEdges(graph, i, j);
+    //     }
+    // }
 
     const char* fp_charc = "skills.json";
     char* jsonString_charc = readFile (fp_charc);
@@ -304,9 +304,36 @@ void test07()
     int num_characters;
     characterInit(jsonString_charc, &players, &num_characters);
 
-    // bool winAllBattles = true;
-    navigateScenario (graph, 0, &(players[1]));
+    //**********Add global path to the graphic**********//
+    int path01[] ={START_NODE_IDX, 1};  // S1 - S2, S1 is the start node
+    int path02[] = {START_NODE_IDX, 2};
+    int path03[] ={1, 2};   // S2-S3
+    int path04[] ={2, 1};   // S3-S2
+    int path05[] ={1, END_NODE_IX}; // S3 -S4, S4 is the end node
+    int path06[] ={2, END_NODE_IX}; 
+    addEdges(graph, path01[0], path01[1]);
+    addEdges(graph, path02[0], path02[1]);
+    addEdges(graph, path03[0], path03[1]);
+    addEdges(graph, path04[0], path04[1]);
+    addEdges(graph, path05[0], path05[1]);
+    addEdges(graph, path06[0], path06[1]);
+
+    // for (int j = 0; j < MAX_SCENARIOS; j++)
+    // {   
+    //     printf("%s, Adjacent:\n", graph->nodes[j].scenario.name);
+    //     for (int i = 0; i < graph->nodes[j].num_adjacent; i++)
+    //     {
+    //         printf("    %s ", graph->nodes[j].adjacent[i]->scenario.name);
+    //     }
+    //     printf("\n");
+    // }
+
+    navigateScenario (graph, 0, players, 1);
+    free(graph);
+    free(players);
+    free(scenarios);
 }
+
 
 # endif
 

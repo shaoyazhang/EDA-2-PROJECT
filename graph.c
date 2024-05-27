@@ -36,7 +36,7 @@ void addEdges (Graph* graph, int srcIndex, int destIndex)
     if (srcIndex >= 0 && srcIndex < graph->num_nodes && destIndex >= 0 && destIndex < graph->num_nodes) {
         SN* srcNode = &graph->nodes[srcIndex];
         SN* destNode = &graph->nodes[destIndex];
-        if (srcNode->num_adjacent < (MAX_SCENARIOS-1))
+        if (srcNode->num_adjacent < MAX_SCENARIOS)
             srcNode->adjacent[srcNode->num_adjacent++] = destNode;
     } else {
         printf("Invalid node index!\n");
@@ -60,12 +60,13 @@ void drawGraphic(Graph* graph)
     addEdges(graph, path06[0], path06[1]);
 }
 // 4. Function to print the graph
-void printGraph (Graph* graph)
+void printGraph (SN node)
 {
-    for (int i = 0; i < MAX_SCENARIOS; i++)
+    for (int i = 0; i < node.num_adjacent; i++)
     {
-        printf("Scenario %d: %s\n", i+1, graph->nodes[i].scenario.name);
-        printf("    Description: %s\n", graph->nodes[i].scenario.description);
+        // printf("Scenario %d: %s\n", i+1, graph->nodes[i].scenario.name);
+        // printf("    Description: %s\n", graph->nodes[i].scenario.description);
+
         // printf("    Question: %s\n", graph->nodes[i].scenario.decision.question);
         // for (int j = 0; j < MAX_DECISION; j++) 
         // {
@@ -73,47 +74,38 @@ void printGraph (Graph* graph)
         //     printf("        Narrative: %s\n", graph->nodes[i].scenario.decision.options[j].narra_bf);
         //     printf("        Narrative: %s\n", graph->nodes[i].scenario.decision.options[j].narra_af);
         // }
-        printf("    Adjacent senarios: ");
-        if (graph->nodes[i].num_adjacent <= 0)
-        {
-            printf("None\n");
-        }
-        else
-        {
-            for (int j = 0; j < graph->nodes[i].num_adjacent; j++)
-            {
-                printf("%s ", graph->nodes[i].adjacent[j]->scenario.name);   
-            }
-        }  
-        printf("\n");
+        printf("%s: Adjacent senarios: ", node.scenario.name);
+        printf("%s   ", node.adjacent[i]->scenario.name);
+   
     }  
 }
 
 // 5. Function to print one scenario
-void printSenario (Scenario* scenario)
+void printSenario (Scenario scenario)
 {
-    printf("Details for Scenario: %s\n", scenario->name);
-    printf("    Description: %s\n", scenario->description);
-    printf("    Question: %s\n", scenario->decision.question);
+    printf("Details for Scenario: %s\n", scenario.name);
+    printf("    Description: %s\n", scenario.description);
+    printf("    Question: %s\n", scenario.decision.question);
     for (int j = 0; j < MAX_DECISION; j++) 
         {
-            printf("    Option %d: %s\n", j+1, scenario->decision.options[j].response);
-            printf("        Narrative before: %s\n", scenario->decision.options[j].narra_bf);
-            printf("        Narrative after: %s\n", scenario->decision.options[j].narra_af);
+            printf("    Option %d: %s\n", j+1, scenario.decision.options[j].response);
+            printf("        Narrative before: %s\n", scenario.decision.options[j].narra_bf);
+            printf("        Narrative after: %s\n", scenario.decision.options[j].narra_af);
         }
 }
 
 
 // 6. Check if player wins the game
-bool winAllBattles(Character* player, Enemy* enemy) {
-    // Print the current status for debugging
-    printf("Player HP: %d, ATK: %d, DEF: %d\n", player->hp, player->atk, player->def);
-    printf("Enemy HP: %d, ATK: %d, DEF: %d\n", enemy->hp, enemy->atk, enemy->def);
+int winAllBattles(Character* player, Enemy* enemy) {
+    
+    // Print the current status 
+    // printf("Player HP: %d, ATK: %d, DEF: %d\n", player->hp, player->atk, player->def);
+    // printf("Enemy HP: %d, ATK: %d, DEF: %d\n", enemy->hp, enemy->atk, enemy->def);
 
     // Check if the player has won
     if (player->hp > 0 && enemy->hp <= 0) 
     {
-        printf("Congratulations, you win the battle!!\n");
+        // printf("Congratulations, you win the battle!!\n");
         return true;
     }
 
@@ -122,7 +114,7 @@ bool winAllBattles(Character* player, Enemy* enemy) {
     {
         if (player->atk > 0 || player->def > 0 || player->hp > 0) 
         {
-            printf("Congratulations, you win the battle!!\n");
+            // printf("Congratulations, you win the battle!!\n");
             return true;
         }
     }
@@ -130,19 +122,30 @@ bool winAllBattles(Character* player, Enemy* enemy) {
     // Check if player loses
     if (enemy->hp > 0 &&  player->hp <= 0) 
     {
-        printf("Sorry, you lost. Game over.\n");
-        return false;
+        // printf("Sorry, you lost. Game over.\n");
+        return 0;
     }
 
-    if (enemy->def == 0 && enemy->atk == 0) 
+    if (player->def == 0 && player->atk == 0) 
     {
         if (enemy->atk > 0 || enemy->def > 0 || enemy->hp > 0) 
         {
-            printf("Sorry, you lost. Game over.\n");
-            return false;
+            // printf("Sorry, you lost. Game over.\n");
+            return 1;
         }
     }
-    return false;
+
+    // Check if both player and enemy have no attack and defense power
+    if (player->def == 0 && player->atk == 0 && enemy->def == 0 && enemy->atk == 0) 
+    {
+        // This can be considered as a tie or a stalemate condition
+        // You can handle this case based on your game's rules
+        printf("It's a tie!\n");
+        // For now, let's consider it as a tie
+        return 0;
+    }
+    // return true;
+    return -1;
 }
 
 // 7. Traverse scenarios by its adjancency
@@ -193,21 +196,26 @@ void navigateScenario (Graph* graph, int curScenarioIdx, bool winAllBattles)
     }
 }
 # endif
-void navigateScenario(Graph* graph, int curScenarioIdx, Character* player) {
-    while (true) {
-        Scenario* currentScenario = &graph->nodes[curScenarioIdx].scenario;
-        printf("You are now in %s\n", currentScenario->name);
+void navigateScenario(Graph* graph, int curScenarioIdx, Character* players, int CharacterIdx) 
+{
+    int countDefeat = 0;
+    bool completedScenario2 = false;
+    bool completedScenario3 = false;
+    while (countDefeat < 4) 
+    {
+        Scenario currentScenario = graph->nodes[curScenarioIdx].scenario;
+        printf("You are now in %s\n", currentScenario.name);
         printSenario(currentScenario);
 
         // Let the player choose a decision path
         int decisionIndex = -1;
-        if (currentScenario->decision.option_num > 1) {
+        if (currentScenario.decision.option_num > 1 && decisionIndex <= currentScenario.decision.option_num) {
             printf("Please choose your path:\n");
-            for (int i = 0; i < currentScenario->decision.option_num; i++) {
-                printf("%d. %s\n", i + 1, currentScenario->decision.options[i].enemies[0].name);
+            for (int i = 0; i < currentScenario.decision.option_num; i++) {
+                printf("%d. %s\n", i + 1, currentScenario.decision.options[i].response);
             }
             scanf("%d", &decisionIndex);
-            while (decisionIndex < 1 || decisionIndex > currentScenario->decision.option_num) {
+            while (decisionIndex < 1 || decisionIndex > currentScenario.decision.option_num) {
                 printf("Invalid option, please select again\n");
                 scanf("%d", &decisionIndex);
             }
@@ -220,42 +228,78 @@ void navigateScenario(Graph* graph, int curScenarioIdx, Character* player) {
         Queue* q = queueInit();
         enqueueTurns(q);
         bool battleResult = true;
-        for (int i = 0; i < currentScenario->decision.options[decisionIndex].enemy_num; i++) 
+        for (int i = 0; i < currentScenario.decision.options[decisionIndex].enemy_num; i++) 
         {
-            if (!fightFlow(q, player, &currentScenario->decision.options[decisionIndex].enemies[i])) {
+            printf("\n");
+            printf("You are fighting against: %s\n", currentScenario.decision.options[decisionIndex].enemies[i].name);
+            printf("\n");
+            if (! fightFlow(q, players[CharacterIdx], currentScenario.decision.options[decisionIndex].enemies[i])) {
                 battleResult = false;
                 break;
             }
-            else if (fightFlow(q, player, &currentScenario->decision.options[decisionIndex].enemies[i]))
+            else // if ( fightFlow(q, players[CharacterIdx], currentScenario.decision.options[decisionIndex].enemies[i]))
             {
+                printf("\n");
                 printf("You have defeated the enemy\n");
+                printf("\n");
+
             }
         }
 
-        if (battleResult) {
-            printf("You have won all battles in this scenario.\n");
+        if (battleResult) 
+        {
+            printf("\n");
+            printf("You have won all battles in this base.\n");
+            printf("\n");
+
+            // Check if player has won the battles in both of these two scenarios
+            if (curScenarioIdx == 1) {
+                completedScenario2 = true;
+            } else if (curScenarioIdx == 2) {
+                completedScenario3 = true;
+            }
 
             if (graph->nodes[curScenarioIdx].num_adjacent == 0) {
+                printf("\n");
                 printf("Congratulations!! You win the game\n");
+                printf("\n");
                 return;
             }
 
             // List available adjacent scenarios
             printf("*************************************\n");
             printf("You can navigate to next base:\n");
-            for (int i = 0; i < graph->nodes[curScenarioIdx].num_adjacent; i++) {
+            int validOptions = 0; 
+            int* adjScenarioIndices = (int*)malloc(graph->nodes[curScenarioIdx].num_adjacent * sizeof(int));
+
+            for (int i = 0; i < graph->nodes[curScenarioIdx].num_adjacent; i++) 
+            {
+                int adjScenarioIdx = graph->nodes[curScenarioIdx].adjacent[i] - graph->nodes;
+                if (adjScenarioIdx  == END_NODE_IX && (!completedScenario2 || !completedScenario3)) 
+                {
+                    continue; // Skip the end scenario if prerequisites are not met
+                }
                 printf("%d. %s\n", i + 1, graph->nodes[curScenarioIdx].adjacent[i]->scenario.name);
+                adjScenarioIndices[validOptions] = adjScenarioIdx;
+                validOptions++;
             }
+
             printf("Please select one base you want to navigate:\n");
             int option;
             scanf("%d", &option);
-            while (option < 1 || option > graph->nodes[curScenarioIdx].num_adjacent) {
+            while (option < 1 || option > validOptions) 
+            {
                 printf("Invalid choice, please select again.\n");
                 scanf("%d", &option);
             }
-            curScenarioIdx = option - 1;
+            // Update curScenarioIdx to the index of the selected adjacent scenario
+            curScenarioIdx = adjScenarioIndices[option - 1];
+            free(adjScenarioIndices);
         } else {
-            printf("You lost the battle. Try again from this scenario.\n");
+            countDefeat++;
+            printf("\n");
+            printf("You lost the battle. Try again from this scenario. You have %d chances left\n", (4-countDefeat));
+            printf("\n");
         }
     }
 }
@@ -279,10 +323,6 @@ void makeDecision(Graph* graph, int currScenarioIdx, int decision_index)
                 printEnemySkillDetail(&enemies[i]);
             }
         }
-    }
-    else 
-    {
-        printf("Invalid decision index\n");
     }
 }
 // ********************** LAB 3 ***********************//

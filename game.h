@@ -97,7 +97,7 @@ void menu();
 //void decision_init(Decision* decisions);
 //void option_init(Option* options);
 //void enemy_init(Enemy* enemies, int scenario_num);
-void game(Character *players);
+void game(Character *players, int* selec);
 void applySkill (Character* player, Enemy* enemy, int input, int pcNum, int turnIdx);
 
 
@@ -136,11 +136,14 @@ Queue* queueInit ();
 //void enqueueEnemy (Queue* q, Enemy* enemy); // function cancelled
 void enqueue (Queue* q, const char* name);
 void dequeue (Queue* q);
+void freeQueue(Queue* q);
 void enqueueTurns(Queue* q);
 void printQueue(Queue* q);
 // void queueTurn (Queue* q, Character* player, Enemy* enemies);
 void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkillIdx, int turnIdx);
-bool fightFlow (Queue* q, Character* player, Enemy* enemy);
-bool winAllBattles(Character* player, Enemy* enemy);
+//bool fightFlow (Queue* q, Character* player, Enemy* enemy);
+bool fightFlow (Queue* q, Character player, Enemy enemy);
+// bool winAllBattles(Character* player, Enemy* enemy);
+int winAllBattles(Character* player, Enemy* enemy);
 //********** DO NOT MODIFY ********//
 #endif
