@@ -242,7 +242,9 @@ void navigateScenario(Graph* graph, int curScenarioIdx, Character* players, int 
                 printf("\n");
                 printf("You have defeated the enemy\n");
                 printf("\n");
-
+                freeQueue(q);
+                Queue* q = queueInit();
+                enqueueTurns(q);
             }
         }
 

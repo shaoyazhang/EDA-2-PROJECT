@@ -178,7 +178,7 @@ int main()
             case 0:
                 printf("Exit game\n"); 
                 continueGame = false; 
-                break;
+                exit(0);
             default:
                 printf("Wrong option, please select again\n");
                 break;
@@ -220,8 +220,8 @@ int main()
     // test03();
     // test04();
     // test05();
-    // test06 ();
-    // test07 ();
+    // test06();
+    // test07();
     // test08();
     return 0;
 }

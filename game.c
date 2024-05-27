@@ -221,9 +221,9 @@ void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkil
             player->skills[playerSkillIdx].duration >0)
         {
             // if it is a temporary modifier, we update player's points
-            player->atk = player->skills[playerSkillIdx].atk;
-            player->def = player->skills[playerSkillIdx].def;
-            player->hp = player->skills[playerSkillIdx].hp;
+            player->atk += player->skills[playerSkillIdx].atk;
+            player->def += player->skills[playerSkillIdx].def;
+            player->hp += player->skills[playerSkillIdx].hp;
             player->skills[playerSkillIdx].duration--;
         }
     }
@@ -344,6 +344,7 @@ bool fightFlow (Queue* q, Character player, Enemy enemy)
 {
     printf("Player HP: %d, ATK: %d, DEF: %d\n", player.hp, player.atk, player.def);
     printf("Enemy HP: %d, ATK: %d, DEF: %d\n", enemy.hp, enemy.atk, enemy.def);
+    printf("\n");
     while (!isEmpty(q))
     {
         int turnIdx = -1;
@@ -353,13 +354,15 @@ bool fightFlow (Queue* q, Character player, Enemy enemy)
 
             turnIdx = 1;
             int playerInput;
-            bool validInput = false; // 
+            bool validInput = false;  
             // while loop to make sure player can reselect in case of invalid selection
             while (!validInput) {
                 printCharacterSkill(&player);
                 scanf("%d", &playerInput);
                 playerInput--; // to match array index
 
+                // It is a valid option only if it is a "Direct attack",
+                // or "Temporary modifier" type's durations is greater than 0
                 if (playerInput >= 0 && playerInput < MAX_SKILL &&
                     (strcmp(player.skills[playerInput].type, "Direct attack") == 0 || 
                     (strcmp(player.skills[playerInput].type, "Temporary modifier") == 0 && 
@@ -375,11 +378,10 @@ bool fightFlow (Queue* q, Character player, Enemy enemy)
         }
         else if (strcmp(q->front->name, "enemy") ==0)
         {
-            printf("Enemy's turn:\n");
-            // printCharacterSkill (player->skills);
+            printf("Enemy's turn: ");
             turnIdx = 2;
 
-            // Control of available skills in case of temporary
+            // Control of available skills in case of temporary modifier
             int availableSkills[MAX_SKILL];
             int availableSkillCount = 0; 
             for (int i = 0; i < MAX_SKILL; i++) {
@@ -410,22 +412,22 @@ bool fightFlow (Queue* q, Character player, Enemy enemy)
             }
         }
         dequeue (q);
+        printf("\n");
         printf("Player HP: %d, ATK: %d, DEF: %d\n", player.hp, player.atk, player.def);
         printf("Enemy HP: %d, ATK: %d, DEF: %d\n", enemy.hp, enemy.atk, enemy.def);
+        printf("\n");
         // check if player wins or looses
         if (winAllBattles(&player, &enemy) == 1) 
         {
-            //free(q);
             return true; // return true if player wins      
         }
         // 
         else if(winAllBattles(&player, &enemy) == 0) 
         {
-            //free(q);
             return false; // return false if player looses          
         }        
     }
-    //free(q);
+    printf("Fight turns are over, you need to restart the fight again\n");
     return false;
 }
 # if 0
