@@ -110,12 +110,6 @@ void game(Character *players, int* selec);
 
 
 //**************Stack***************//
-// typedef struct Move
-// {
-//     int skillIndex;
-//     int power;
-// }Move;
-
 typedef struct StackNode 
 {
     int skillIndex;
@@ -133,8 +127,7 @@ Stack* stackInit();
 void push(Stack* stack, int skillIdx);
 void pop(Stack* stack);
 bool isEmptyStack(Stack* stack);
-int getKthMoveIndexFromTop(Stack* stack, int k);
-// void executeTimeStrike(Character* player, Enemy* enemy, Stack* moveHistory, bool* timeStrikeUsed); 
+int getKthMoveIndexFromTop(Stack* stack, int k); 
 int getKthMoveIndexFromTop(Stack* stack, int k);
 
 //********** DO NOT MODIFY ********//
@@ -172,9 +165,5 @@ void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkil
 bool fightFlow (Queue* q, Character player, Enemy enemy);
 int winAllBattles(Character* player, Enemy* enemy);
 //********** DO NOT MODIFY ********//
-
-
-
-//*************test TCP************
 
 #endif
