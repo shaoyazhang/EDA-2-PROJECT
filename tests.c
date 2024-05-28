@@ -77,7 +77,6 @@ void test02()
             }
         }
     }
-    free(scenarios);
     free(jsonString);
 }
 # endif
@@ -106,7 +105,16 @@ void test03()
     dequeue(q);
     dequeue(q);
     dequeue(q);
+    dequeue(q);
     printf("Queue size: %d", q->size);
+    // dequeue(q);
+    // dequeue(q);
+    // dequeue(q);
+    // dequeue(q);
+    // dequeue(q);
+    // dequeue(q);
+    // dequeue(q);
+    // printf("Queue size: %d", q->size);
 
 }
 # endif 
@@ -119,24 +127,24 @@ void test04()
     Queue* q = queueInit ();
     enqueueTurns(q);
     printf("Head: %s\n", q->front->name);
-    // printQueue(q);
-    // while(q->size)
-    // {
-    //     printf("%s\n", q->front->name);
-    //     // printf("%p\n", q->front->next);
-    //     dequeue(q);
-    // }
+    printQueue(q);
+    while(q->size)
+    {
+        printf("%s\n", q->front->name);
+        // printf("%p\n", q->front->next);
+        dequeue(q);
+    }
 
-    // while (q->size) {
-    //     printf("Dequeuing: %s\n", q->front->name);
-    //     dequeue(q);
-    //     if (!isEmpty(q)) {
-    //         printf("Next front: %s\n", q->front->name);
-    //     } else {
-    //         printf("Queue is now empty.\n");
-    //     }
-    // }
-
+    while (q->size) {
+        printf("Dequeuing: %s\n", q->front->name);
+        dequeue(q);
+        if (!isEmpty(q)) {
+            printf("Next front: %s\n", q->front->name);
+        } else {
+            printf("Queue is now empty.\n");
+        }
+    }
+    printf("***************************************\n");
     // Load scenarios
     const char* fp = "scenario_config.json";
     char* jsonString = readFile (fp);
@@ -172,6 +180,8 @@ void test04()
         if(gameResult == false)
             break;
     }
+    free(jsonString);
+    free(jsonString1);
 }
 
 
@@ -205,6 +215,7 @@ void test05 ()
             printf("    def: %d\n", enemies[i].skills[j].def);
         }
     }
+    free(jsonString);
 }
 # endif
 
@@ -243,8 +254,8 @@ void test06 ()
     int path02[] = {START_NODE_IDX, 2};
     int path03[] ={1, 2};   // S2-S3
     int path04[] ={2, 1};   // S3-S2
-    int path05[] ={1, END_NODE_IX}; // S3 -S4, S4 is the end node
-    int path06[] ={2, END_NODE_IX}; 
+    int path05[] ={1, END_NODE_IX}; // S2 -S4, S4 is the end node
+    int path06[] ={2, END_NODE_IX}; // S3 -S4
     addEdges(graph, path01[0], path01[1]);
     addEdges(graph, path02[0], path02[1]);
     addEdges(graph, path03[0], path03[1]);
@@ -280,6 +291,7 @@ void test07()
         addScenario(graph, scenarios[i]);
     }
 
+    // Test passed
     // for (int i = 0; i < MAX_SCENARIOS; i++)
     // {
     //     for (int j = 0; j < MAX_SCENARIOS; j++)
@@ -305,8 +317,8 @@ void test07()
     int path02[] = {START_NODE_IDX, 2};
     int path03[] ={1, 2};   // S2-S3
     int path04[] ={2, 1};   // S3-S2
-    int path05[] ={1, END_NODE_IX}; // S3 -S4, S4 is the end node
-    int path06[] ={2, END_NODE_IX}; 
+    int path05[] ={1, END_NODE_IX}; // S2 -S4, S4 is the end node
+    int path06[] ={2, END_NODE_IX}; // S3 -S4
     addEdges(graph, path01[0], path01[1]);
     addEdges(graph, path02[0], path02[1]);
     addEdges(graph, path03[0], path03[1]);
@@ -317,16 +329,15 @@ void test07()
 
     navigateScenario (graph, 0, players, 1);
     free(graph);
-    free(players);
-    free(scenarios);
+    free(jsonString);
+    free(jsonString_charc);
 }
 # endif
 
 // test for decision make
-void test08()
+void test08() // Test passed
 {
-    Graph graph;
-    graphInit(&graph);
+    Graph* graph = graphInit();
     const char* fp = "scenario_config.json";
     char* jsonString = readFile (fp);
 
@@ -344,5 +355,6 @@ void test08()
     }
 
     makeDecision(&graph, 1, 1);
-   
+    free(graph);
+    free(jsonString);  
 }
