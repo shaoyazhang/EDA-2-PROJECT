@@ -24,49 +24,68 @@ void printCharacterSkill (Character* player)
     }  
 }
 
-//********************Time Strike stack
-void push(Stack* stack, Move move) {
-    StackNode* newNode = (StackNode*)malloc(sizeof(StackNode));
-    if (newNode == NULL) {
-        // Handle memory allocation failure
-        return;
+//********************Time Strike stack****************
+Stack* stackInit() 
+{
+    Stack* stack = (Stack*)malloc(sizeof(Stack));
+    if (stack == NULL) 
+    {
+        // Memory allocation failed
+        return NULL;
     }
-    newNode->move = move;
-    newNode->next = stack->top;
-    stack->top = newNode;
-    stack->size++;
-}
-
-Move pop(Stack* stack) {
-    if (stack->top == NULL) {
-        Move invalidMove = {-1, 0};
-        return invalidMove;
-    }
-    StackNode* temp = stack->top;
-    Move move = temp->move;
-    stack->top = stack->top->next;
-    free(temp);
-    stack->size--; // Reduce the size of the stack
-    return move;
-}
-
-Move getKthMoveFromTop(Stack* stack, int k) { // k refer to the random k-th move
-    StackNode* current = stack->top;
-    for (int i = 1; i < k && current != NULL; i++) {
-        current = current->next;
-    }
-    if (current != NULL) {
-        return current->move;
-    } else {
-        Move invalidMove = {-1, 0};
-        return invalidMove;
-    }
+    stack->top = NULL;  // Set the top pointer to NULL to indicate an empty stack
+    return stack;
 }
 
 
 bool isEmptyStack(Stack* stack) {
     return stack->top == NULL;
 }
+
+void push(Stack* stack, int skillIdx) {
+    StackNode* newNode = (StackNode*)malloc(sizeof(StackNode));
+    if (newNode == NULL) {       
+        printf("Failed in allocating node space\n");
+        return;
+    }
+    newNode->next = stack->top;
+    stack->top = newNode;
+    stack->size++;
+}
+
+void pop(Stack* stack) {
+    if (stack->top == NULL) {
+        printf("Stack is empty");
+        return;
+    }
+    StackNode* temp = stack->top;
+    stack->top = stack->top->next;
+    free(temp);
+    stack->size--; // Reduce the size of the stack
+}
+
+int getKthMoveIndexFromTop(Stack* stack, int k) {
+    StackNode* current = stack->top;
+    if (stack->top == NULL)
+    {
+        printf("Stack is empty\n");
+        return -1;
+    }
+    // Traverse the stack until the k-th move or the end of the stack is reached
+    for (int i = 1; i < k && current != NULL; i++) {
+        current = current->next;
+    }
+
+    // If current is NULL, the stack is empty or k is out of range
+    // Otherwise, return the index of the move at current position
+    if (current == NULL) {
+        printf("Reached stack end\n");
+        return -1; // Return -1 to indicate an error
+    } else {
+        return current->skillIndex;
+    }
+}
+
 
 
 //**************Queue****************//
@@ -182,28 +201,49 @@ void freeQueue(Queue* q) {
 
 
 // 5. Function to make character and enemy apply their skills and update their points
-void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkillIdx, int turnIdx)
+void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkillIdx, int turnIdx, Stack* stack, bool timeStrikeUsed)
 {
     if (turnIdx == 1) // players turn
     {
         // update points after player applies a skill
         if (strcmp(player->skills[playerSkillIdx].type, "Direct attack") == 0)
         {
+            push(stack, playerSkillIdx); // push the player's used skills into the stack
+            if (timeStrikeUsed) // if it's a strike, double the power of skills
+            {
             // if it is a direct attack, we update enemy's points
-            enemy->hp += player->skills[playerSkillIdx].hp;
-            enemy->atk += player->skills[playerSkillIdx].atk;
-            enemy->def += player->skills[playerSkillIdx].def;
-            // Move move = {playerSkillIdx, player->skills[playerSkillIdx].atk};
+            enemy->hp += player->skills[playerSkillIdx].hp * 2;
+            enemy->atk += player->skills[playerSkillIdx].atk * 2;
+            enemy->def += player->skills[playerSkillIdx].def * 2;
+            }
+            else if (!timeStrikeUsed) // If it is not a strike use skills normally
+            {
+                // if it is a direct attack, we update enemy's points
+                enemy->hp += player->skills[playerSkillIdx].hp;
+                enemy->atk += player->skills[playerSkillIdx].atk;
+                enemy->def += player->skills[playerSkillIdx].def;
+            }
         }
         else if ((strcmp(player->skills[playerSkillIdx].type, "Temporary modifier") == 0) &&
             player->skills[playerSkillIdx].duration >0)
         {
+            if (timeStrikeUsed)
+            {      
             // if it is a temporary modifier, we update player's points
-            player->atk += player->skills[playerSkillIdx].atk;
-            player->def += player->skills[playerSkillIdx].def;
-            player->hp += player->skills[playerSkillIdx].hp;
+            player->atk += player->skills[playerSkillIdx].atk * 2;
+            player->def += player->skills[playerSkillIdx].def * 2;
+            player->hp += player->skills[playerSkillIdx].hp * 2;
             player->skills[playerSkillIdx].duration--;
-            // Move move = {playerSkillIdx, player->skills[playerSkillIdx].atk};
+            push(stack, playerSkillIdx);
+            }
+            else if(!timeStrikeUsed)
+            {
+                player->atk += player->skills[playerSkillIdx].atk;
+                player->def += player->skills[playerSkillIdx].def;
+                player->hp += player->skills[playerSkillIdx].hp;
+                player->skills[playerSkillIdx].duration--;
+                push(stack, playerSkillIdx);
+            }
         }
     }
     else if (turnIdx == 2) // enemy's turn
@@ -215,7 +255,6 @@ void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkil
             player->atk += enemy->skills[pcSkillIdx].atk; 
             player->def += enemy->skills[pcSkillIdx].def;
             player->hp += enemy->skills[pcSkillIdx].hp;
-            // Move move = {playerSkillIdx, player->skills[playerSkillIdx].atk};
         }
         else if (strcmp(enemy->skills[pcSkillIdx].type, "Temporary modifier") == 0 &&
             enemy->skills[pcSkillIdx].duration > 0)
@@ -224,8 +263,7 @@ void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkil
             enemy->atk += enemy->skills[pcSkillIdx].atk;
             enemy->def += enemy->skills[pcSkillIdx].def;
             enemy->hp += enemy->skills[pcSkillIdx].hp;
-            enemy->skills[pcSkillIdx].duration--;
-            // Move move = {playerSkillIdx, player->skills[playerSkillIdx].atk};
+            enemy->skills[pcSkillIdx].duration--; 
         }
     }
 }
@@ -237,11 +275,11 @@ bool fightFlow (Queue* q, Character player, Enemy enemy)
     printf("Enemy HP: %d, ATK: %d, DEF: %d\n", enemy.hp, enemy.atk, enemy.def);
     printf("\n");
     
-    // Stack 
-    // Stack moveHistory;
-    // moveHistory.top = NULL;
-    // bool timeStrikeUsed = false;
-
+    Stack* stack = stackInit(); 
+    bool timeStrikeUsed = false;
+    int oneTimeStrike = 1;
+    int k = rand()%stack->size + 1; // random k-th move
+    int strikeSkillIdx = getKthMoveIndexFromTop(stack, k);
     // Hash table
     HashTable* ht = createHashTable();
     while (!isEmpty(q))
@@ -254,8 +292,6 @@ bool fightFlow (Queue* q, Character player, Enemy enemy)
             turnIdx = 1;
             int playerInput;
             bool validInput = false;
-
-            
             // while loop to make sure player can reselect in case of invalid selection
             while (!validInput) 
             {
@@ -263,15 +299,6 @@ bool fightFlow (Queue* q, Character player, Enemy enemy)
                 scanf("%d", &playerInput);
                 playerInput--; // to match array index
 
-
-                // Check if player has used time strike
-                // if (playerInput == 5 && !timeStrikeUsed)
-                // {
-                //     // Execute logic for Time Strike
-                //     executeTimeStrike(&player, &enemy, &moveHistory, &timeStrikeUsed);
-                //     timeStrikeUsed = true; // Set flag to indicate Time Strike is used
-                //     validInput = true; // Set valid input to exit the loop
-                // }
                 // It is a valid option only if it is a "Direct attack",
                 // or "Temporary modifier" type's durations is greater than 0
                 if (playerInput >= 0 && playerInput < MAX_SKILL &&
@@ -279,7 +306,15 @@ bool fightFlow (Queue* q, Character player, Enemy enemy)
                     (strcmp(player.skills[playerInput].type, "Temporary modifier") == 0 && 
                     player.skills[playerInput].duration > 0))) 
                 {
-                    applySkill(&player, &enemy, playerInput, -1, turnIdx);
+                    // If player input a strike time number, we apply the double power by 
+                    // update timeStrikeUsed in true
+                    if (playerInput == strikeSkillIdx && oneTimeStrike)
+                    {
+                        printf("It's a strike\n");
+                        timeStrikeUsed = true;
+                        oneTimeStrike--; // update the time as 0, so it will not be used next time
+                    }
+                    applySkill(&player, &enemy, playerInput, -1, turnIdx, stack, timeStrikeUsed);
                     incrementSkillCount(ht, player.skills[playerInput].name);
                     validInput = true;
                 } else {
@@ -316,7 +351,7 @@ bool fightFlow (Queue* q, Character player, Enemy enemy)
             {
                 int skillIdx = availableSkills[rand() % availableSkillCount];
                 printf("%s\n", enemy.skills[skillIdx].name);
-                applySkill(&player, &enemy, -1, skillIdx, turnIdx);
+                applySkill(&player, &enemy, -1, skillIdx, turnIdx, stack, timeStrikeUsed);
                 incrementSkillCount(ht, enemy.skills[skillIdx].name);
             } 
             else 

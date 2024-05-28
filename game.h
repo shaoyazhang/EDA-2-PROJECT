@@ -25,7 +25,7 @@
 #define NUM_TURNS 4
 #define MAX_DECISION 2
 #define MAX_ENEMY_SKILLS 8
-#define MAX_BATTLE_TURNS 16
+#define MAX_BATTLE_TURNS 30
 #define TABLE_SIZE 100
 
 #define TEMP_MODIFIER 0
@@ -110,15 +110,15 @@ void game(Character *players, int* selec);
 
 
 //**************Stack***************//
-typedef struct Move
-{
-    int skillIndex;
-    int power;
-}Move;
+// typedef struct Move
+// {
+//     int skillIndex;
+//     int power;
+// }Move;
 
 typedef struct StackNode 
 {
-    Move move;
+    int skillIndex;
     struct StackNode* next;
 } StackNode;
 
@@ -129,12 +129,14 @@ typedef struct Stack
 } Stack;
 
 // Functions to Time Strike stack
-void push(Stack* stack, Move move);
-Move pop(Stack* stack);
-Move getKthMoveFromTop(Stack* stack, int k);
-void executeTimeStrike(Character* player, Enemy* enemy, Stack* moveHistory, bool* timeStrikeUsed); 
+Stack* stackInit();
+void push(Stack* stack, int skillIdx);
+void pop(Stack* stack);
 bool isEmptyStack(Stack* stack);
-//void applySkill (Character* player, Enemy* enemy, int input, int pcNum, int turnIdx, Stack* moveHistory, bool* timeStrikeUsed);
+int getKthMoveIndexFromTop(Stack* stack, int k);
+// void executeTimeStrike(Character* player, Enemy* enemy, Stack* moveHistory, bool* timeStrikeUsed); 
+int getKthMoveIndexFromTop(Stack* stack, int k);
+
 //********** DO NOT MODIFY ********//
 
 //************ LAB 2 **************//
@@ -166,7 +168,7 @@ void dequeue (Queue* q);
 void enqueueTurns(Queue* q);
 void freeQueue(Queue* q);
 void printQueue(Queue* q);
-void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkillIdx, int turnIdx);
+void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkillIdx, int turnIdx, Stack* stack, bool timeStrikeUsed);
 bool fightFlow (Queue* q, Character player, Enemy enemy);
 int winAllBattles(Character* player, Enemy* enemy);
 //********** DO NOT MODIFY ********//
