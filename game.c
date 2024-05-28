@@ -186,6 +186,7 @@ bool fightFlow (Queue* q, Character player, Enemy enemy)
     printf("Player HP: %d, ATK: %d, DEF: %d\n", player.hp, player.atk, player.def);
     printf("Enemy HP: %d, ATK: %d, DEF: %d\n", enemy.hp, enemy.atk, enemy.def);
     printf("\n");
+    HashTable* ht = createHashTable();
     while (!isEmpty(q))
     {
         int turnIdx = -1;
@@ -197,7 +198,8 @@ bool fightFlow (Queue* q, Character player, Enemy enemy)
             int playerInput;
             bool validInput = false;  
             // while loop to make sure player can reselect in case of invalid selection
-            while (!validInput) {
+            while (!validInput) 
+            {
                 printCharacterSkill(&player);
                 scanf("%d", &playerInput);
                 playerInput--; // to match array index
@@ -210,6 +212,7 @@ bool fightFlow (Queue* q, Character player, Enemy enemy)
                     player.skills[playerInput].duration > 0))) 
                 {
                     applySkill(&player, &enemy, playerInput, -1, turnIdx);
+                    incrementSkillCount(ht, player.skills[playerInput].name);
                     validInput = true;
                 } else {
                     printf("Invalid skill or skill duration is 0. Please select again.\n");
@@ -246,28 +249,34 @@ bool fightFlow (Queue* q, Character player, Enemy enemy)
                 int skillIdx = availableSkills[rand() % availableSkillCount];
                 printf("%s\n", enemy.skills[skillIdx].name);
                 applySkill(&player, &enemy, -1, skillIdx, turnIdx);
+                incrementSkillCount(ht, enemy.skills[skillIdx].name);
             } 
             else 
             {
                 printf("Enemy has no available skills to use.\n");
             }
         }
+
         dequeue (q);
         printf("\n");
         printf("Player HP: %d, ATK: %d, DEF: %d\n", player.hp, player.atk, player.def);
         printf("Enemy HP: %d, ATK: %d, DEF: %d\n", enemy.hp, enemy.atk, enemy.def);
         printf("\n");
         // check if player wins or looses
-        if (winAllBattles(&player, &enemy) == 1) 
+        int result = winAllBattles(&player, &enemy);
+        if (result == 1) 
         {
+            printSkillCounts(ht);
             return true; // return true if player wins      
         }
         // 
-        else if(winAllBattles(&player, &enemy) == 0) 
+        else if(result == 0) 
         {
+            printSkillCounts(ht);
             return false; // return false if player looses          
         }        
     }
+    printSkillCounts(ht);
     printf("Fight turns are over, you need to restart the fight again\n");
     return false;
 }
@@ -297,6 +306,7 @@ void printEnemySkillDetail (Enemy* enemy)
 }
 
 // 8. Hash table system
+// Hash value
 int hash(const char* skillName) {
     unsigned int hashValue = 0;
     while (*skillName) {
@@ -321,14 +331,50 @@ void incrementSkillCount(HashTable* ht, const char* skillName)
 {
     unsigned int index = hash(skillName);
     SkillCount* entry = ht->table[index];
+    SkillCount* prev = NULL;
 
+    // Search for the skill name in the linked list
     while (entry != NULL) 
     {
         if (strcmp(entry->skillName, skillName) == 0) {
+            // If found, increment the count and return
             entry->count++;
             return;
         }
+        prev = entry;
         entry = entry->next;
+    }
+
+    // If the skill name is not found, create a new node
+    SkillCount* newEntry = (SkillCount*)malloc(sizeof(SkillCount));
+    if (newEntry == NULL) {
+        // Handle memory allocation failure
+        return;
+    }
+    strcpy(newEntry->skillName, skillName);
+    newEntry->count = 1;
+    newEntry->next = NULL;
+
+    // Insert the new node at the beginning of the linked list
+    if (prev == NULL) {
+        ht->table[index] = newEntry;  // Update the head of the list
+    } else {
+        prev->next = newEntry;         // Insert after the previous node
+    }
+}
+
+// Print table
+void printSkillCounts(HashTable* ht) 
+{
+    printf("Skill usage stats:\n");
+    for (int i = 0; i < TABLE_SIZE; i++) 
+    {
+        SkillCount* entry = ht->table[i];
+        while (entry != NULL) {
+            printf("Skill: %s, Count: %d\n", entry->skillName, entry->count);
+            entry = entry->next;
+
+        }
     }
 }
 // ********* DO NOT MODIFY ********//

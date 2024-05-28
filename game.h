@@ -25,7 +25,7 @@
 #define MAX_DECISION 2
 #define MAX_ENEMY_SKILLS 8
 #define MAX_BATTLE_TURNS 16
-#define TABLE_SIZE 8
+#define TABLE_SIZE 100
 
 #define TEMP_MODIFIER 0
 #define DIRECT_ATL 1
@@ -131,6 +131,9 @@ void printCharacterSkill (Character* player);
 int isEmpty (Queue* q);
 Queue* queueInit ();
 int hash(const char* skillName);
+HashTable* createHashTable();
+void incrementSkillCount(HashTable* ht, const char* skillName);
+void printSkillCounts(HashTable* ht);
 void enqueue (Queue* q, const char* name);
 void dequeue (Queue* q);
 void enqueueTurns(Queue* q);

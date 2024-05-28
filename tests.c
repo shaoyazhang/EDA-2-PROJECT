@@ -119,23 +119,23 @@ void test04()
     Queue* q = queueInit ();
     enqueueTurns(q);
     printf("Head: %s\n", q->front->name);
-    printQueue(q);
-    while(q->size)
-    {
-        printf("%s\n", q->front->name);
-        printf("%p\n", q->front->next);
-        dequeue(q);
-    }
+    // printQueue(q);
+    // while(q->size)
+    // {
+    //     printf("%s\n", q->front->name);
+    //     // printf("%p\n", q->front->next);
+    //     dequeue(q);
+    // }
 
-    while (q->size) {
-        printf("Dequeuing: %s\n", q->front->name);
-        dequeue(q);
-        if (!isEmpty(q)) {
-            printf("Next front: %s\n", q->front->name);
-        } else {
-            printf("Queue is now empty.\n");
-        }
-    }
+    // while (q->size) {
+    //     printf("Dequeuing: %s\n", q->front->name);
+    //     dequeue(q);
+    //     if (!isEmpty(q)) {
+    //         printf("Next front: %s\n", q->front->name);
+    //     } else {
+    //         printf("Queue is now empty.\n");
+    //     }
+    // }
 
     // Load scenarios
     const char* fp = "scenario_config.json";
