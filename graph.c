@@ -85,7 +85,7 @@ int winAllBattles(Character* player, Enemy* enemy)
     if (player->hp > 0 && enemy->hp <= 0) 
     {
         // printf("Congratulations, you win the battle!!\n");
-        return true;
+        return 1;
     }
 
     // Check if the enemy is defeated due to lack of attack and defense power
@@ -94,14 +94,13 @@ int winAllBattles(Character* player, Enemy* enemy)
         if (player->atk > 0 || player->def > 0 || player->hp > 0) 
         {
             // printf("Congratulations, you win the battle!!\n");
-            return true;
+            return 1;
         }
     }
 
     // Check if player loses
     if (enemy->hp > 0 &&  player->hp <= 0) 
     {
-        // printf("Sorry, you lost. Game over.\n");
         return 0;
     }
 
@@ -110,20 +109,17 @@ int winAllBattles(Character* player, Enemy* enemy)
         if (enemy->atk > 0 || enemy->def > 0 || enemy->hp > 0) 
         {
             // printf("Sorry, you lost. Game over.\n");
-            return 1;
+            return 0; // changed from 1 to 0
         }
     }
 
-    // Check if both player and enemy have no attack and defense power
-    if (player->def == 0 && player->atk == 0 && enemy->def == 0 && enemy->atk == 0) 
+    // A tie situation, player still need to refight again
+    if (player->def == 0 && player->atk == 0 && enemy->def == 0 && enemy->atk == 0 && player->hp == 0 && enemy->hp== 0) 
     {
-        // This can be considered as a tie or a stalemate condition
-        // You can handle this case based on your game's rules
         printf("It's a tie!\n");
-        // For now, let's consider it as a tie
         return 0;
     }
-    // return true;
+    // return -1 in case of any other than the above cases;
     return -1;
 }
 

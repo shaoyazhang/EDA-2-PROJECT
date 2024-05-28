@@ -123,7 +123,7 @@ void game(Character *players, int* selec)
 
 int main()
 {
-    # if 0
+    # if 1
     srand((unsigned)time(NULL));
     int selec_charac = -1;
 
@@ -234,7 +234,7 @@ int main()
     // test03();
     // test04();
     // test05();
-    test06();
+    // test06();
     // test07();
     // test08();
     return 0;

@@ -35,14 +35,14 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 2
+                                        "def": 5
                                     },
                                     {
                                         "skill_id": "fear_howl",
                                         "description": "Lets out a terrifying howl that reduces the enemy's attack.",
                                         "type": "Temporary modifier",
                                         "duration": 2,
-                                        "atk": -8,
+                                        "atk": 5,
                                         "hp": 0,
                                         "def": 0
                                     },
@@ -52,7 +52,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -5,
+                                        "hp": -8,
                                         "def": 0
                                     }
                                 ]
@@ -60,7 +60,7 @@
 
                             {
                                 "enemy_name": "Dark Cave Creature",
-                                "atk": 30,
+                                "atk": 50,
                                 "hp": 25,
                                 "def": 17,
                                 "skills": [
@@ -86,8 +86,8 @@
                                         "skill_id": "fear_howl",
                                         "description": "Lets out a terrifying howl that reduces the enemy's attack.",
                                         "type": "Temporary modifier",
-                                        "duration": 2,
-                                        "atk": 1,
+                                        "duration": 3,
+                                        "atk": 2,
                                         "hp": 0,
                                         "def": 0
                                     },
@@ -97,7 +97,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -3,
+                                        "hp": -5,
                                         "def": 0
                                     }
                                 ]
@@ -115,9 +115,9 @@
                         [
                             {
                                 "enemy_name": "Wood Bird",
-                                "atk": 30,
+                                "atk": 50,
                                 "hp": 27,
-                                "def": 10,
+                                "def": 20,
                                 "skills": [
                                     {
                                         "skill_id": "beak_peck",
@@ -170,7 +170,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -5,
+                                        "hp": -10,
                                         "def": 0
                                     },
                                     {
@@ -188,7 +188,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -5,
+                                        "hp": -8,
                                         "def": 0
                                     },
                                     {
@@ -227,7 +227,7 @@
                             {
                                 "enemy_name": "Fire Elemental",
                                 "atk": 23,
-                                "hp": 20,
+                                "hp": 30,
                                 "def": 30,
                                 "skills": [
                                     {
@@ -255,7 +255,7 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 2
+                                        "def": 5
                                     },
                                     {
                                         "skill_id": "inferno",
@@ -271,7 +271,7 @@
 
                             {
                                 "enemy_name": "Fiery Guardian",
-                                "atk": 27,
+                                "atk": 40,
                                 "hp": 30,
                                 "def": 18,
                                 "skills": [
@@ -308,7 +308,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -3,
+                                        "hp": -8,
                                         "def": 0
                                     }
                                 ]
@@ -326,7 +326,7 @@
                         [
                             {
                                 "enemy_name": "Fiery Guardian",
-                                "atk": 20,
+                                "atk": 40,
                                 "hp": 30,
                                 "def": 25,
                                 "skills": [
@@ -346,15 +346,15 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 1
+                                        "def": 10
                                     },
                                     {
                                         "skill_id": "fire_whirl",
                                         "description": "Spins rapidly, creating a whirlwind of fire.",
                                         "type": "Direct attack",
                                         "duration": 0,
-                                        "atk": 8,
-                                        "hp": 0,
+                                        "atk": 0,
+                                        "hp": -10,
                                         "def": 0
                                     },
                                     {
@@ -363,7 +363,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -10,
+                                        "hp": -5,
                                         "def": 0
                                     }
                                 ]
@@ -402,7 +402,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -2,
+                                        "hp": -5,
                                         "def": 0
                                     },
                                     {
@@ -429,7 +429,7 @@
                                         "type": "Temporary modifier",
                                         "duration": 5,
                                         "atk": 0,
-                                        "hp": 1,
+                                        "hp": 10,
                                         "def": 0
                                     }
                                 ]
@@ -437,8 +437,8 @@
 
                             {
                                 "enemy_name": "Stone Guardians",
-                                "atk": 30,
-                                "hp": 30,
+                                "atk": 50,
+                                "hp": 40,
                                 "def": 50,
                                 "skills": [
                                     {
@@ -447,7 +447,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -5,
+                                        "hp": -8,
                                         "def": 0
                                     },
                                     {
@@ -474,7 +474,7 @@
                                         "type": "Temporary modifier",
                                         "duration": 5,
                                         "atk": 0,
-                                        "hp": 2,
+                                        "hp": 10,
                                         "def": 0
                                     }
                                 ]
@@ -521,7 +521,7 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 1
+                                        "def": 10
                                     },
                                     {
                                         "skill_id": "crystal_shield",
@@ -530,7 +530,7 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 1
+                                        "def": 10
                                     }
                                 ]
                             },
@@ -547,7 +547,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -4,
+                                        "hp": -10,
                                         "def": 0
                                     },
                                     {
@@ -557,7 +557,7 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": 2
+                                        "def": 5
                                     },
                                     {
                                         "skill_id": "putrid_breath",
@@ -573,7 +573,7 @@
                                         "description": "Summons undead minions to aid in battle during 2 turns.",
                                         "type": "Temporary modifier",
                                         "duration": 2,
-                                        "atk": 1,
+                                        "atk": 2,
                                         "hp": 0,
                                         "def": 0
                                     }
@@ -604,8 +604,8 @@
                         [
                             {
                                 "enemy_name": "Piranhas",
-                                "atk": 30,
-                                "hp": 27,
+                                "atk": 50,
+                                "hp": 40,
                                 "def": 15,
                                 "skills": [
                                     {
@@ -614,7 +614,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -6,
+                                        "hp": -5,
                                         "def": 0
                                     },
                                     {
@@ -623,7 +623,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -10,
+                                        "hp": -5,
                                         "def": 0
                                     },
                                     {
@@ -674,7 +674,7 @@
                                         "skill_id": "bubble_barrier",
                                         "description": "Forms a barrier of bubbles to protect itself.",
                                         "type": "Temporary modifier",
-                                        "duration": 3,
+                                        "duration": 5,
                                         "atk": 0,
                                         "hp": 0,
                                         "def": 9
@@ -685,7 +685,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -4,
+                                        "hp": -5,
                                         "def": 0
                                     }
                                 ]
@@ -713,7 +713,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -6,
+                                        "hp": -8,
                                         "def": 0
                                     },
                                     {
@@ -723,7 +723,7 @@
                                         "duration": 3,
                                         "atk": 0,
                                         "hp": 0,
-                                        "def": -4
+                                        "def": 4
                                     },
                                     {
                                         "skill_id": "Hydro vortex",
