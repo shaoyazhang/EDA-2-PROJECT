@@ -24,7 +24,7 @@ void printCharacterSkill (Character* player)
     }  
 }
 
-//********************Time Strike stack****************
+//********************Time Strike stack****************//
 Stack* stackInit() 
 {
     Stack* stack = (Stack*)malloc(sizeof(Stack));
@@ -88,8 +88,8 @@ int getKthMoveIndexFromTop(Stack* stack, int k) {
 
 
 
-//**************Queue****************//
-// Initialize queue
+//**********************Queue********************//
+// 1. Initialize queue
 Queue* queueInit ()
 {   
     Queue* newQueue = (Queue*)malloc(sizeof(Queue));
@@ -130,7 +130,7 @@ void enqueue (Queue* q, const char* name) // name is either "player" or "enemy"
 }
 
 # if 1
-// Enqueue by turn 50-50 odds
+// 4. Enqueue by turn 50-50 odds
 void enqueueTurns(Queue* q) {
  
     for ( int i = 0; i < MAX_BATTLE_TURNS; i++)
@@ -149,7 +149,7 @@ void enqueueTurns(Queue* q) {
 # endif
 
 
-// Print queue
+// 5. Print queue
 void printQueue(Queue* q) {
     if (isEmpty(q)) {
         printf("Queue is empty\n");
@@ -165,7 +165,7 @@ void printQueue(Queue* q) {
     printf("\n");
 }
 
-// 4. Dequeue
+// 5. Dequeue
 void dequeue (Queue* q)
 {
     if (isEmpty(q))
@@ -185,7 +185,7 @@ void dequeue (Queue* q)
     tmp = NULL;
 }
 
-// Free queue
+// 6. Free queue
 void freeQueue(Queue* q) {
     // Traverse the queue and free each node
     while (q->front != NULL) {
@@ -199,8 +199,9 @@ void freeQueue(Queue* q) {
     q->size = 0;
 }
 
+//***************************** Fight System****************************//
 
-// 5. Function to make character and enemy apply their skills and update their points
+// 1. Function to make character and enemy apply their skills and update their points
 void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkillIdx, int turnIdx, Stack* stack, bool timeStrikeUsed)
 {
     if (turnIdx == 1) // players turn
@@ -268,18 +269,20 @@ void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkil
     }
 }
 
-// 6. Fight flow design
+// 2. Fight flow design
 bool fightFlow (Queue* q, Character player, Enemy enemy)
 {
     printf("Player HP: %d, ATK: %d, DEF: %d\n", player.hp, player.atk, player.def);
     printf("Enemy HP: %d, ATK: %d, DEF: %d\n", enemy.hp, enemy.atk, enemy.def);
     printf("\n");
     
+    // stack
     Stack* stack = stackInit(); 
     bool timeStrikeUsed = false;
     int oneTimeStrike = 1;
     int k = rand()%stack->size + 1; // random k-th move
-    int strikeSkillIdx = getKthMoveIndexFromTop(stack, k);
+    int strikeSkillIdx = getKthMoveIndexFromTop(stack, k); // return the strike skill index
+    
     // Hash table
     HashTable* ht = createHashTable();
     while (!isEmpty(q))
@@ -387,7 +390,9 @@ bool fightFlow (Queue* q, Character player, Enemy enemy)
     return false;
 }
 
-// 7. Print enemy skill's details
+
+//********************Auxaliary Functons*********************//
+//1. Print enemy skill's details
 void printEnemySkillDetail (Enemy* enemy)
 {
     if (enemy == NULL) {
@@ -411,8 +416,9 @@ void printEnemySkillDetail (Enemy* enemy)
     }
 }
 
-// 8. Hash table system
-// Hash value
+
+//******************** Count Dict system********************//
+// 1. Hash value
 int hash(const char* skillName) {
     unsigned int hashValue = 0;
     while (*skillName) {
@@ -422,7 +428,7 @@ int hash(const char* skillName) {
 }
 
 
-// Initialize hash table
+// 2. Initialize hash table
 HashTable* createHashTable() 
 {
     HashTable* ht = (HashTable*)malloc(sizeof(HashTable));
@@ -432,7 +438,7 @@ HashTable* createHashTable()
     return ht;
 }
 
-// Count system
+// 3. count
 void incrementSkillCount(HashTable* ht, const char* skillName) 
 {
     unsigned int index = hash(skillName);
@@ -469,7 +475,7 @@ void incrementSkillCount(HashTable* ht, const char* skillName)
     }
 }
 
-// Print table
+// 4. Print table
 void printSkillCounts(HashTable* ht) 
 {
     printf("Skill usage stats:\n");

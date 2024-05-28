@@ -1,5 +1,4 @@
 
-
 #include "game.h"
 #include "initialization.h"
 
@@ -24,13 +23,10 @@ typedef struct graph
 }Graph;
 
 
-
 //************************//
-// void graphInit(Graph* graph);
 Graph* graphInit();
 void addScenario (Graph* graph, Scenario Scenario);
 void addEdges (Graph* graph, int srcIndex, int destIndex);
-void drawGraphic(Graph* graph);
 void printGraph (Graph* graph);
 void printSenario (Scenario scenario);
 void navigateScenario(Graph* graph, int curScenarioIdx, Character* player, int CharacterIdx); 

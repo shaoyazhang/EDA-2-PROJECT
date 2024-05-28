@@ -90,19 +90,9 @@ typedef struct
     Decision decision;
 }Scenario;
 
-// 
-typedef struct SkillCount {
-    char skillName[50];
-    int count;
-    struct SkillCount* next;
-} SkillCount;
-
- // aqui defino  la struct
-typedef struct {
-    SkillCount* table[TABLE_SIZE];
-} HashTable;
 
 
+//***************** game ******************//
 void menu();
 void game(Character *players, int* selec);
 
@@ -130,11 +120,12 @@ bool isEmptyStack(Stack* stack);
 int getKthMoveIndexFromTop(Stack* stack, int k); 
 int getKthMoveIndexFromTop(Stack* stack, int k);
 
-//********** DO NOT MODIFY ********//
+
 
 //************ LAB 2 **************//
 //********** DO NOT MODIFY ********//
 
+//*********** Queue**************//
 typedef struct Node
 {
     char name[MAX_CHAR_NAME];
@@ -148,19 +139,39 @@ typedef struct queue
     int size;
 }Queue;
 
-void printCharacterSkill (Character* player);
-int isEmpty (Queue* q);
 Queue* queueInit ();
-int hash(const char* skillName);
-HashTable* createHashTable();
-void incrementSkillCount(HashTable* ht, const char* skillName);
-void printSkillCounts(HashTable* ht);
-void freeHashTable(HashTable* ht);
+int isEmpty (Queue* q);
 void enqueue (Queue* q, const char* name);
 void dequeue (Queue* q);
 void enqueueTurns(Queue* q);
 void freeQueue(Queue* q);
 void printQueue(Queue* q);
+
+//****************************************//
+void printCharacterSkill (Character* player);
+
+//****************** Count Dict******************//
+// 1. Skill count node
+typedef struct SkillCount {
+    char skillName[50];
+    int count;
+    struct SkillCount* next;
+} SkillCount;
+
+// 2. Hash table
+typedef struct {
+    SkillCount* table[TABLE_SIZE];
+} HashTable;
+
+//****** Hash functions********//
+int hash(const char* skillName);
+HashTable* createHashTable();
+void incrementSkillCount(HashTable* ht, const char* skillName);
+void printSkillCounts(HashTable* ht);
+void freeHashTable(HashTable* ht);
+
+
+//********** Fight system***********//
 void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkillIdx, int turnIdx, Stack* stack, bool timeStrikeUsed);
 bool fightFlow (Queue* q, Character player, Enemy enemy);
 int winAllBattles(Character* player, Enemy* enemy);
