@@ -267,16 +267,19 @@ bool fightFlow (Queue* q, Character player, Enemy enemy)
         if (result == 1) 
         {
             printSkillCounts(ht);
+            freeHashTable(ht);
             return true; // return true if player wins      
         }
         // 
         else if(result == 0) 
         {
             printSkillCounts(ht);
+            freeHashTable(ht);
             return false; // return false if player looses          
         }        
     }
     printSkillCounts(ht);
+    freeHashTable(ht);
     printf("Fight turns are over, you need to restart the fight again\n");
     return false;
 }
@@ -376,6 +379,22 @@ void printSkillCounts(HashTable* ht)
 
         }
     }
+}
+
+// free hash table
+void freeHashTable(HashTable* ht) 
+{
+    for (int i = 0; i < TABLE_SIZE; i++) 
+    {
+        SkillCount* entry = ht->table[i];
+        while (entry != NULL) 
+        {
+            SkillCount* tmp = entry;
+            entry = entry->next;
+            free(tmp);
+        }
+    }
+    free(ht);
 }
 // ********* DO NOT MODIFY ********//
 

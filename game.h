@@ -134,6 +134,7 @@ int hash(const char* skillName);
 HashTable* createHashTable();
 void incrementSkillCount(HashTable* ht, const char* skillName);
 void printSkillCounts(HashTable* ht);
+void freeHashTable(HashTable* ht);
 void enqueue (Queue* q, const char* name);
 void dequeue (Queue* q);
 void enqueueTurns(Queue* q);
