@@ -116,27 +116,26 @@ void test04()
 {
 
     srand((unsigned)time(NULL));
-    //Queue* q = NULL;
     Queue* q = queueInit ();
     enqueueTurns(q);
     printf("Head: %s\n", q->front->name);
     printQueue(q);
-    // while(q->size)
-    // {
-    //     printf("%s\n", q->front->name);
-    //     printf("%p\n", q->front->next);
-    //     dequeue(q);
-    // }
+    while(q->size)
+    {
+        printf("%s\n", q->front->name);
+        printf("%p\n", q->front->next);
+        dequeue(q);
+    }
 
-    // while (q->size) {
-    //     printf("Dequeuing: %s\n", q->front->name);
-    //     dequeue(q);
-    //     if (!isEmpty(q)) {
-    //         printf("Next front: %s\n", q->front->name);
-    //     } else {
-    //         printf("Queue is now empty.\n");
-    //     }
-    // }
+    while (q->size) {
+        printf("Dequeuing: %s\n", q->front->name);
+        dequeue(q);
+        if (!isEmpty(q)) {
+            printf("Next front: %s\n", q->front->name);
+        } else {
+            printf("Queue is now empty.\n");
+        }
+    }
 
     // Load scenarios
     const char* fp = "scenario_config.json";
@@ -176,7 +175,7 @@ void test04()
 }
 
 
-# if 0
+# if 1
 // test for enemies' data ---> This function has been merged to scenarioInit()
 void test05 ()
 {
@@ -213,9 +212,6 @@ void test05 ()
 # if 1
 void test06 ()
 {
-    // Graph* graph = NULL;
-    // graphInit(graph);
-
     Graph* graph = graphInit();
     //const char* fp = "scenario_config.json";
     const char* fp = "scenario_config.json";
@@ -258,7 +254,7 @@ void test06 ()
 
     // printf("adj num S1: %s\n", graph.nodes[3].adjacent[0]->scenario.name);
     // printf("adj num S1: %s\n", graph.nodes[3].adjacent[0]->scenario.name);
-    // printGraph (graph);
+    printGraph (graph);
 
 
 }
@@ -318,23 +314,12 @@ void test07()
     addEdges(graph, path05[0], path05[1]);
     addEdges(graph, path06[0], path06[1]);
 
-    // for (int j = 0; j < MAX_SCENARIOS; j++)
-    // {   
-    //     printf("%s, Adjacent:\n", graph->nodes[j].scenario.name);
-    //     for (int i = 0; i < graph->nodes[j].num_adjacent; i++)
-    //     {
-    //         printf("    %s ", graph->nodes[j].adjacent[i]->scenario.name);
-    //     }
-    //     printf("\n");
-    // }
 
     navigateScenario (graph, 0, players, 1);
     free(graph);
     free(players);
     free(scenarios);
 }
-
-
 # endif
 
 // test for decision make

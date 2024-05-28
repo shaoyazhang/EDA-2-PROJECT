@@ -123,8 +123,10 @@ void game(Character *players, int* selec)
 
 int main()
 {
-    # if 1
+    # if 0
+    srand((unsigned)time(NULL));
     int selec_charac = -1;
+
     // *********** Initializations**********//
     // 1. Initialize character
     const char* fp = "skills.json";
@@ -152,10 +154,7 @@ int main()
     int num_scenarios;
     scenarioInit(jsonString_sc, &scenarios, &num_scenarios);
 
-    // 3. Initialize queue
-    // Queue* q = queueInit ();
-
-    // 4. Initialize graph
+    // 3. Initialize graph
     Graph* graph = graphInit();
     
     //***************New game**************//
@@ -200,8 +199,8 @@ int main()
     // *********** Enter the game**********//
     
     //**********Add global path to the graphic**********//
-    // scenarioInit(jsonString, &scenarios, &num_scenarios);
-    for (int i = 0; i < num_scenarios; i++) {
+    for (int i = 0; i < num_scenarios; i++) 
+    {
         addScenario(graph, scenarios[i]);
     }
 
@@ -209,8 +208,8 @@ int main()
     int path02[] = {START_NODE_IDX, 2};
     int path03[] ={1, 2};   // S2-S3
     int path04[] ={2, 1};   // S3-S2
-    int path05[] ={1, END_NODE_IX}; // S3 -S4, S4 is the end node
-    int path06[] ={2, END_NODE_IX}; 
+    int path05[] ={1, END_NODE_IX}; // S2 -S4, S4 is the end node
+    int path06[] ={2, END_NODE_IX}; // S3 -S4
     addEdges(graph, path01[0], path01[1]);
     addEdges(graph, path02[0], path02[1]);
     addEdges(graph, path03[0], path03[1]);
@@ -219,10 +218,13 @@ int main()
     addEdges(graph, path06[0], path06[1]);
 
     navigateScenario (graph, 0, players, selec_charac-1);
-    free(graph);
-    free(players);
-    free(scenarios);
 
+    // Free all allocated memory spaces
+    free(graph);
+    // free(players);
+    // free(scenarios);
+    free(jsonString);
+    free(jsonString_sc);
     # endif
 
 
@@ -232,7 +234,7 @@ int main()
     // test03();
     // test04();
     // test05();
-    // test06();
+    test06();
     // test07();
     // test08();
     return 0;

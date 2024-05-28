@@ -1,12 +1,6 @@
 # include "graph.h"
 
 // 1. Initialize graph
-// void graphInit(Graph* graph)
-// {   
-//     graph = (Graph*)malloc(sizeof(Graph));
-//     graph->num_nodes = 0;
-// }
-
 Graph* graphInit()
 {   
     Graph* graph = (Graph*)malloc(sizeof(Graph));
@@ -43,42 +37,31 @@ void addEdges (Graph* graph, int srcIndex, int destIndex)
     }
 }
 
-// Draw graphic
-void drawGraphic(Graph* graph)
-{
-    int path01[] ={START_NODE_IDX, 1};  // S1 - S2, S1 is the start node
-    int path02[] = {START_NODE_IDX, 2};
-    int path03[] ={1, 2};   // S2-S3
-    int path04[] ={2, 1};   // S3-S2
-    int path05[] ={1, END_NODE_IX}; // S3 -S4, S4 is the end node
-    int path06[] ={2, END_NODE_IX}; 
-    addEdges(graph, path01[0], path01[1]);
-    addEdges(graph, path02[0], path02[1]);
-    addEdges(graph, path03[0], path03[1]);
-    addEdges(graph, path04[0], path04[1]);
-    addEdges(graph, path05[0], path05[1]);
-    addEdges(graph, path06[0], path06[1]);
-}
-// 4. Function to print the graph
-void printGraph (SN node)
-{
-    for (int i = 0; i < node.num_adjacent; i++)
-    {
-        // printf("Scenario %d: %s\n", i+1, graph->nodes[i].scenario.name);
-        // printf("    Description: %s\n", graph->nodes[i].scenario.description);
 
-        // printf("    Question: %s\n", graph->nodes[i].scenario.decision.question);
-        // for (int j = 0; j < MAX_DECISION; j++) 
-        // {
-        //     printf("    Option %d: %s\n", j+1, graph->nodes[i].scenario.decision.options[j].response);
-        //     printf("        Narrative: %s\n", graph->nodes[i].scenario.decision.options[j].narra_bf);
-        //     printf("        Narrative: %s\n", graph->nodes[i].scenario.decision.options[j].narra_af);
-        // }
-        printf("%s: Adjacent senarios: ", node.scenario.name);
-        printf("%s   ", node.adjacent[i]->scenario.name);
-   
+// 4. Function to print the graph ---> Function only used at test at the end, cancelled
+# if 1 
+void printGraph (Graph* graph)
+{
+    for (int i = 0; i < MAX_SCENARIOS; i++)
+    {
+        printf("Scenario %d: %s\n", i+1, graph->nodes[i].scenario.name);
+        printf("    Description: %s\n", graph->nodes[i].scenario.description);
+
+        printf("    Question: %s\n", graph->nodes[i].scenario.decision.question);
+        for (int j = 0; j < MAX_DECISION; j++) 
+        {
+            printf("    Option %d: %s\n", j+1, graph->nodes[i].scenario.decision.options[j].response);
+            printf("        Narrative: %s\n", graph->nodes[i].scenario.decision.options[j].narra_bf);
+            printf("        Narrative: %s\n", graph->nodes[i].scenario.decision.options[j].narra_af);
+            printf("        Adjacent senarios:");
+            for (int k = 0; k < graph->nodes[j].num_adjacent; k++)
+            {
+                printf("    %s ", graph->nodes[j].adjacent[k]->scenario.name);
+            }
+        }
     }  
 }
+# endif
 
 // 5. Function to print one scenario
 void printSenario (Scenario scenario)
@@ -94,14 +77,10 @@ void printSenario (Scenario scenario)
         }
 }
 
-
 // 6. Check if player wins the game
-int winAllBattles(Character* player, Enemy* enemy) {
+int winAllBattles(Character* player, Enemy* enemy) 
+{
     
-    // Print the current status 
-    // printf("Player HP: %d, ATK: %d, DEF: %d\n", player->hp, player->atk, player->def);
-    // printf("Enemy HP: %d, ATK: %d, DEF: %d\n", enemy->hp, enemy->atk, enemy->def);
-
     // Check if the player has won
     if (player->hp > 0 && enemy->hp <= 0) 
     {
@@ -149,53 +128,6 @@ int winAllBattles(Character* player, Enemy* enemy) {
 }
 
 // 7. Traverse scenarios by its adjancency
-# if 0
-void navigateScenario (Graph* graph, int curScenarioIdx, bool winAllBattles)
-{
-    if (winAllBattles)
-    {
-        printf("The next base will not be available until you win all battles from this base.\n");
-        if (graph->nodes[curScenarioIdx].num_adjacent == 0) 
-        {
-            printf("Congratulations!! You win the game\n");
-            return;
-        }
-
-        // Makde decision to choose the path
-        int input = 0;
-        printf("Please choose your path: 1.%s 2.%s", 
-            graph->nodes[curScenarioIdx].scenario.decision.options[0].enemies[0].name,
-            graph->nodes[curScenarioIdx].scenario.decision.options[1].enemies[0].name
-        );
-        scanf("%d", &input);
-        while (input < 1 || input > 2)
-        {
-            printf("Invalid option, please select again\n");
-            scanf("%d", &input);
-        }
-        input--;
-        makeDecision(graph, curScenarioIdx, input);
-
-        printf("*************************************\n");
-            printf("You can navigate to these bases:\n");
-            for (int i = 0; i < graph->nodes[curScenarioIdx].num_adjacent; i++) 
-            {
-                printf("%d. %s\n", i + 1, graph->nodes[curScenarioIdx].adjacent[i]->scenario.name);
-            }
-        printf("Please select one base you want to navigate:\n");
-        int option;
-        scanf("%d", &option);
-        if (option < 1 || option > graph->nodes[curScenarioIdx].num_adjacent) 
-        {
-            printf("Invalid choice.\n");
-            return;
-        }
-        int nextScenarioIdx = option - 1;
-        printf("Navigating to %s\n", graph->nodes[curScenarioIdx].adjacent[nextScenarioIdx]->scenario.name);
-        printSenario (&graph->nodes[curScenarioIdx].adjacent[nextScenarioIdx]->scenario);
-    }
-}
-# endif
 void navigateScenario(Graph* graph, int curScenarioIdx, Character* players, int CharacterIdx) 
 {
     int countDefeat = 0;
@@ -246,6 +178,7 @@ void navigateScenario(Graph* graph, int curScenarioIdx, Character* players, int 
                 printf("\n");
                 freeQueue(q);
             }
+            
         }
 
         if (battleResult) 
@@ -306,6 +239,7 @@ void navigateScenario(Graph* graph, int curScenarioIdx, Character* players, int 
     }
 }
 
+
 // ********* LAB 3 DO NOT MODIFY*********//
 
 // 8. Decision that affects the enemies that faces
@@ -327,4 +261,4 @@ void makeDecision(Graph* graph, int currScenarioIdx, int decision_index)
         }
     }
 }
-// ********************** LAB 3 ***********************//
+// ******************* LAB 3 ********************//

@@ -114,14 +114,6 @@ void applySkill (Character* player, Enemy* enemy, int input, int pcNum, int turn
 //************ LAB 2 **************//
 //********** DO NOT MODIFY ********//
 
-// Node structure modified 
-// typedef struct Node
-// {
-//     Character* player;
-//     Enemy* enemy;
-//     struct Node* next;
-// }Node;
-
 typedef struct Node
 {
     char name[MAX_CHAR_NAME];
@@ -141,14 +133,11 @@ Queue* queueInit ();
 int hash(const char* skillName);
 void enqueue (Queue* q, const char* name);
 void dequeue (Queue* q);
-void freeQueue(Queue* q);
 void enqueueTurns(Queue* q);
+void freeQueue(Queue* q);
 void printQueue(Queue* q);
-// void queueTurn (Queue* q, Character* player, Enemy* enemies);
 void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkillIdx, int turnIdx);
-//bool fightFlow (Queue* q, Character* player, Enemy* enemy);
 bool fightFlow (Queue* q, Character player, Enemy enemy);
-// bool winAllBattles(Character* player, Enemy* enemy);
 int winAllBattles(Character* player, Enemy* enemy);
 //********** DO NOT MODIFY ********//
 #endif

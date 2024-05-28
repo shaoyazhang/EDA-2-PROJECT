@@ -24,7 +24,7 @@ Graph* graphInit();
 void addScenario (Graph* graph, Scenario Scenario);
 void addEdges (Graph* graph, int srcIndex, int destIndex);
 void drawGraphic(Graph* graph);
-void printGraph (SN node);
+void printGraph (Graph* graph);
 void printSenario (Scenario scenario);
 void navigateScenario(Graph* graph, int curScenarioIdx, Character* player, int CharacterIdx); 
 void makeDecision(Graph* graph, int currScenarioIdx, int decision_index);
