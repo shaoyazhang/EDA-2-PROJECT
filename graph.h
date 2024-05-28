@@ -1,5 +1,10 @@
+
+
 #include "game.h"
 #include "initialization.h"
+
+# ifndef _GRAPH_H
+# define ___GRAPH_H
 
 //************ LAB 2 **************//
 //********** DO NOT MODIFY ********//
@@ -19,6 +24,8 @@ typedef struct graph
 }Graph;
 
 
+
+//************************//
 // void graphInit(Graph* graph);
 Graph* graphInit();
 void addScenario (Graph* graph, Scenario Scenario);
@@ -29,3 +36,5 @@ void printSenario (Scenario scenario);
 void navigateScenario(Graph* graph, int curScenarioIdx, Character* player, int CharacterIdx); 
 void makeDecision(Graph* graph, int currScenarioIdx, int decision_index);
 void printEnemySkillDetail (Enemy* enemy);
+
+# endif

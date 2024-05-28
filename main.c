@@ -120,7 +120,7 @@ void game(Character *players, int* selec)
     printf("Welcome to the new game!\n");
 }
 
-
+# if 1
 int main()
 {
     # if 1
@@ -241,3 +241,5 @@ int main()
 }
 
 // ************* DO NOT MODIFY **********//
+
+# endif

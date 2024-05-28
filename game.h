@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -5,9 +6,9 @@
 #include <time.h> 
 #include "cJSON.h"
 
-
 # ifndef _GAME_H
 # define _GAME_H
+
 
 
 //********** DO NOT MODIFY ********//
@@ -104,11 +105,36 @@ typedef struct {
 
 void menu();
 void game(Character *players, int* selec);
-void applySkill (Character* player, Enemy* enemy, int input, int pcNum, int turnIdx);
 
 
 
 
+//**************Stack***************//
+typedef struct Move
+{
+    int skillIndex;
+    int power;
+}Move;
+
+typedef struct StackNode 
+{
+    Move move;
+    struct StackNode* next;
+} StackNode;
+
+typedef struct Stack 
+{
+    StackNode* top;
+    int size;
+} Stack;
+
+// Functions to Time Strike stack
+void push(Stack* stack, Move move);
+Move pop(Stack* stack);
+Move getKthMoveFromTop(Stack* stack, int k);
+void executeTimeStrike(Character* player, Enemy* enemy, Stack* moveHistory, bool* timeStrikeUsed); 
+bool isEmptyStack(Stack* stack);
+//void applySkill (Character* player, Enemy* enemy, int input, int pcNum, int turnIdx, Stack* moveHistory, bool* timeStrikeUsed);
 //********** DO NOT MODIFY ********//
 
 //************ LAB 2 **************//
@@ -144,4 +170,9 @@ void applySkill (Character* player, Enemy* enemy, int playerSkillIdx, int pcSkil
 bool fightFlow (Queue* q, Character player, Enemy enemy);
 int winAllBattles(Character* player, Enemy* enemy);
 //********** DO NOT MODIFY ********//
+
+
+
+//*************test TCP************
+
 #endif
