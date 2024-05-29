@@ -25,6 +25,7 @@ void printCharacterSkill (Character* player)
 }
 
 //********************Time Strike stack****************//
+// 1. Initialize stack
 Stack* stackInit() 
 {
     Stack* stack = (Stack*)malloc(sizeof(Stack));
@@ -37,11 +38,12 @@ Stack* stackInit()
     return stack;
 }
 
-
+// 2. Check if stack is empty
 bool isEmptyStack(Stack* stack) {
     return stack->top == NULL;
 }
 
+// 3. Push stack
 void push(Stack* stack, int skillIdx) {
     StackNode* newNode = (StackNode*)malloc(sizeof(StackNode));
     if (newNode == NULL) {       
@@ -53,6 +55,7 @@ void push(Stack* stack, int skillIdx) {
     stack->size++;
 }
 
+// 4. Pop stack
 void pop(Stack* stack) {
     if (stack->top == NULL) {
         printf("Stack is empty");
@@ -64,6 +67,7 @@ void pop(Stack* stack) {
     stack->size--; // Reduce the size of the stack
 }
 
+// 5. Linear search the target k (since it is small dataset and unordered)
 int getKthMoveIndexFromTop(Stack* stack, int k) {
     StackNode* current = stack->top;
     if (stack->top == NULL)

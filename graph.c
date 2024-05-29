@@ -194,6 +194,8 @@ void navigateScenario(Graph* graph, int curScenarioIdx, Character* players, int 
                 printf("\n");
                 printf("Congratulations!! You win the game\n");
                 printf("\n");
+                printf("Now you have got the secret book after thousands of tough but brave fights, you have proved that you"
+                    "are the real warrior. May you be a great leader in the martial world\n");
                 return;
             }
 
