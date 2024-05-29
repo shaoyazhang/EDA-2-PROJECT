@@ -314,7 +314,7 @@ bool fightFlow (Queue* q, Character player, Enemy enemy)
                 strikeSkillIdx = getKthMoveIndexFromTop(stack, k); // return the strike skill index   
             }
             
-            //printf("k: %d\n", k); // To check the variation of k
+            // printf("k: %d\n", k); // To check the variation of k
             // printf("strikeSkillIdx: %d\n", strikeSkillIdx); // To check the validity of returned skill index
             turnIdx = 1;
             int playerInput;
@@ -347,6 +347,7 @@ bool fightFlow (Queue* q, Character player, Enemy enemy)
                     applySkill(&player, &enemy, playerInput, -1, turnIdx, stack, timeStrikeUsed);
                     incrementSkillCount(ht, player.skills[playerInput].name);
                     validInput = true;
+                    timeStrikeUsed = false; // Again set timeStrikeUsed as false
                     //****************//
                 } else {
                     printf("Invalid skill or skill duration is 0. Please select again.\n");
