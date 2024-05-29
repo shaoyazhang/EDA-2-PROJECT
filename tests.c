@@ -119,8 +119,44 @@ void test03()
 }
 # endif 
 
-// test for queue turn && fight flow
+// test for stack ---> test passed
 void test04()
+{
+    srand((unsigned)time(NULL));
+    Stack* stack = stackInit();
+    bool isEmpty = (stack);
+    printf("Is it empty? %d\n", isEmpty);
+
+    int skillIdx01 = 0;
+    int skillIdx02 = 1;
+    int skillIdx03 = 2;
+    int skillIdx04 = 3;
+    int skillIdx05 = 4;
+    int skillIdx06 = 5;
+    int skillIdx07 = 6;
+    int skillIdx08 = 7;
+
+    push(stack, skillIdx01);
+    push(stack, skillIdx02);
+    push(stack, skillIdx03);
+    push(stack, skillIdx04);
+    push(stack, skillIdx05);
+    push(stack, skillIdx06);
+    push(stack, skillIdx07);
+    push(stack, skillIdx08);
+
+    StackNode* temp = stack->top;
+    while (temp)
+    {
+        printf("%d\n", temp->skillIndex);
+        temp = temp->next;
+    }
+
+    int idx = getKthMoveIndexFromTop(stack, 3);
+    printf("Strike index %d", idx);
+}
+// test for queue turn && fight flow
+void test05()
 {
 
     srand((unsigned)time(NULL));
@@ -187,7 +223,7 @@ void test04()
 
 # if 1
 // test for enemies' data ---> This function has been merged to scenarioInit()
-void test05 ()
+void test06 ()
 {
     const char* fp = "enemy_skills.json";
     char* jsonString = readFile (fp);
@@ -221,7 +257,7 @@ void test05 ()
 
 // test graph
 # if 1
-void test06 ()
+void test07()
 {
     Graph* graph = graphInit();
     //const char* fp = "scenario_config.json";
@@ -273,7 +309,7 @@ void test06 ()
 
 // test for scenarios navigation
 # if 1
-void test07()
+void test08()
 {
     Graph* graph = graphInit();
     
@@ -335,7 +371,7 @@ void test07()
 # endif
 
 // test for decision make
-void test08() // Test passed
+void test09() // Test passed
 {
     Graph* graph = graphInit();
     const char* fp = "scenario_config.json";
@@ -351,10 +387,10 @@ void test08() // Test passed
     int num_scenarios;
     scenarioInit(jsonString, &scenarios, &num_scenarios);
     for (int i = 0; i < num_scenarios; i++) {
-        addScenario(&graph, scenarios[i]);
+        addScenario(graph, scenarios[i]);
     }
 
-    makeDecision(&graph, 1, 1);
+    makeDecision(graph, 1, 1);
     free(graph);
     free(jsonString);  
 }

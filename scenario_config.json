@@ -104,7 +104,7 @@
                             }
 
                         ],
-                        "narra_af": "You reach a point where the boat cannot continue sailing, you have to hop off. You're not sure if those creatures are kind, should you go and talk to the creatures? You also see a kind of dark cave inside a big tree. Do you want to go inside the cave?"
+                        "narra_af": "Your boat has taken you to reach the destination point, you hop off now and continue your journey to next stop!"
                     },
                     
                     {
@@ -170,7 +170,7 @@
                                         "type": "Direct attack",
                                         "duration": 0,
                                         "atk": 0,
-                                        "hp": -10,
+                                        "hp": -8,
                                         "def": 0
                                     },
                                     {
@@ -226,8 +226,8 @@
                         [
                             {
                                 "enemy_name": "Fire Elemental",
-                                "atk": 23,
-                                "hp": 30,
+                                "atk": 50,
+                                "hp": 40,
                                 "def": 30,
                                 "skills": [
                                     {
@@ -328,7 +328,7 @@
                                 "enemy_name": "Fiery Guardian",
                                 "atk": 40,
                                 "hp": 30,
-                                "def": 25,
+                                "def": 30,
                                 "skills": [
                                     {
                                         "skill_id": "flame_sword",
@@ -345,8 +345,8 @@
                                         "type": "Temporary modifier",
                                         "duration": 3,
                                         "atk": 0,
-                                        "hp": 0,
-                                        "def": 10
+                                        "hp": 10,
+                                        "def": 0
                                     },
                                     {
                                         "skill_id": "fire_whirl",
@@ -392,8 +392,8 @@
                         [
                             {
                                 "enemy_name": "Mountain Troll",
-                                "atk": 19,
-                                "hp": 45,
+                                "atk": 60,
+                                "hp": 50,
                                 "def": 30,
                                 "skills": [
                                     {
@@ -492,8 +492,8 @@
                         [
                             {
                                 "enemy_name": "Rock Gargoyle",
-                                "atk": 20,
-                                "hp": 29,
+                                "atk": 30,
+                                "hp": 50,
                                 "def": 32,
                                 "skills": [
                                     {
@@ -538,7 +538,7 @@
                             {
                                 "enemy_name": "Decaying Corpse",
                                 "atk": 35,
-                                "hp": 30,
+                                "hp": 50,
                                 "def": 25,
                                 "skills": [
                                     {
@@ -573,8 +573,8 @@
                                         "description": "Summons undead minions to aid in battle during 2 turns.",
                                         "type": "Temporary modifier",
                                         "duration": 2,
-                                        "atk": 2,
-                                        "hp": 0,
+                                        "atk": 0,
+                                        "hp": 5,
                                         "def": 0
                                     }
                                 ]
@@ -604,7 +604,7 @@
                         [
                             {
                                 "enemy_name": "Piranhas",
-                                "atk": 50,
+                                "atk": 30,
                                 "hp": 40,
                                 "def": 15,
                                 "skills": [
@@ -676,8 +676,8 @@
                                         "type": "Temporary modifier",
                                         "duration": 5,
                                         "atk": 0,
-                                        "hp": 0,
-                                        "def": 9
+                                        "hp": 10,
+                                        "def": 0
                                     },
                                     {
                                         "skill_id": "hydro_vortex",
@@ -703,7 +703,7 @@
                         [
                             {
                                 "enemy_name": "Water Devil",
-                                "atk": 50,
+                                "atk": 20,
                                 "hp": 55,
                                 "def": 30,
                                 "skills": [

@@ -35,6 +35,7 @@ Stack* stackInit()
         return NULL;
     }
     stack->top = NULL;  // Set the top pointer to NULL to indicate an empty stack
+    stack->size = 0;
     return stack;
 }
 
@@ -46,13 +47,24 @@ bool isEmptyStack(Stack* stack) {
 // 3. Push stack
 void push(Stack* stack, int skillIdx) {
     StackNode* newNode = (StackNode*)malloc(sizeof(StackNode));
+    newNode->next = NULL;
     if (newNode == NULL) {       
         printf("Failed in allocating node space\n");
         return;
     }
-    newNode->next = stack->top;
-    stack->top = newNode;
-    stack->size++;
+    if (isEmptyStack(stack))
+    {
+        stack->top = newNode;
+        stack->top->skillIndex = skillIdx;
+        stack->size++;
+    }
+    else
+    {
+        newNode->skillIndex = skillIdx;
+        newNode->next = stack->top;
+        stack->top = newNode;
+        stack->size++;
+    }
 }
 
 // 4. Pop stack
@@ -72,11 +84,11 @@ int getKthMoveIndexFromTop(Stack* stack, int k) {
     StackNode* current = stack->top;
     if (stack->top == NULL)
     {
-        printf("Stack is empty\n");
+        printf("Fight start\n");
         return -1;
     }
     // Traverse the stack until the k-th move or the end of the stack is reached
-    for (int i = 1; i < k && current != NULL; i++) {
+    for (int i = 1; i < stack->size && i < k; i++) {
         current = current->next;
     }
 
@@ -284,8 +296,7 @@ bool fightFlow (Queue* q, Character player, Enemy enemy)
     Stack* stack = stackInit(); 
     bool timeStrikeUsed = false;
     int oneTimeStrike = 1;
-    int k = rand()%stack->size + 1; // random k-th move
-    int strikeSkillIdx = getKthMoveIndexFromTop(stack, k); // return the strike skill index
+    int strikeSkillIdx = -1, k = -1;
     
     // Hash table
     HashTable* ht = createHashTable();
@@ -295,7 +306,16 @@ bool fightFlow (Queue* q, Character player, Enemy enemy)
         if (strcmp(q->front->name, "player") == 0)
         {
             printf("Your turn, please select skill:\n" );
-
+            
+            //opeartion on stack
+            if (stack->size > 0)
+            {
+                k = rand()% (stack->size) + 1; // random k-th move
+                strikeSkillIdx = getKthMoveIndexFromTop(stack, k); // return the strike skill index   
+            }
+            
+            //printf("k: %d\n", k); // To check the variation of k
+            // printf("strikeSkillIdx: %d\n", strikeSkillIdx); // To check the validity of returned skill index
             turnIdx = 1;
             int playerInput;
             bool validInput = false;
@@ -305,7 +325,7 @@ bool fightFlow (Queue* q, Character player, Enemy enemy)
                 printCharacterSkill(&player);
                 scanf("%d", &playerInput);
                 playerInput--; // to match array index
-
+                // printf("Player input: %d\n", playerInput); // to check player's input
                 // It is a valid option only if it is a "Direct attack",
                 // or "Temporary modifier" type's durations is greater than 0
                 if (playerInput >= 0 && playerInput < MAX_SKILL &&
@@ -315,15 +335,19 @@ bool fightFlow (Queue* q, Character player, Enemy enemy)
                 {
                     // If player input a strike time number, we apply the double power by 
                     // update timeStrikeUsed in true
-                    if (playerInput == strikeSkillIdx && oneTimeStrike)
+                    // printf("stack size: %d\n", stack->size); // tocheck stack size
+                    if (playerInput == strikeSkillIdx && oneTimeStrike && stack->size >= 4)
                     {
-                        printf("It's a strike\n");
+                        printf("\n");
+                        printf("It's a strike, your power is doubled\n");
+                        printf("\n");
                         timeStrikeUsed = true;
                         oneTimeStrike--; // update the time as 0, so it will not be used next time
                     }
                     applySkill(&player, &enemy, playerInput, -1, turnIdx, stack, timeStrikeUsed);
                     incrementSkillCount(ht, player.skills[playerInput].name);
                     validInput = true;
+                    //****************//
                 } else {
                     printf("Invalid skill or skill duration is 0. Please select again.\n");
                 }

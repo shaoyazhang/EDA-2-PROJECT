@@ -72,8 +72,8 @@ void printSenario (Scenario scenario)
     for (int j = 0; j < MAX_DECISION; j++) 
         {
             printf("    Option %d: %s\n", j+1, scenario.decision.options[j].response);
-            printf("        Narrative before: %s\n", scenario.decision.options[j].narra_bf);
-            printf("        Narrative after: %s\n", scenario.decision.options[j].narra_af);
+            printf("        %s\n", scenario.decision.options[j].narra_bf); // Narrative before
+            //printf("        Narrative after: %s\n", scenario.decision.options[j].narra_af);
         }
 }
 
@@ -182,6 +182,7 @@ void navigateScenario(Graph* graph, int curScenarioIdx, Character* players, int 
             printf("\n");
             printf("You have won all battles in this base.\n");
             printf("\n");
+            printf("%s\n", currentScenario.decision.options[decisionIndex].narra_af); // Narrative after 
 
             // Check if player has won the battles in both of these two scenarios
             if (curScenarioIdx == 1) {
